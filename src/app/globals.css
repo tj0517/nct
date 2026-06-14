@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+:root {
+  --main: #546150;
+  --accent: #2b4a2c;
+  --main-bg: #f4f1eb;
+  --second-bg: #e8e3d8;
+}
+
+[data-theme="british"] {
+  --main: #1e3a5f;
+  --accent: #8b1a2b;
+  --main-bg: #f0f2f5;
+  --second-bg: #dfe3e8;
+}
+
+@theme inline {
+  --color-main: var(--main);
+  --color-accent: var(--accent);
+  --color-main-bg: var(--main-bg);
+  --color-second-bg: var(--second-bg);
+  --font-fraunces: var(--font-fraunces-var);
+  --font-inter: var(--font-inter-var);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--main-bg);
+  color: var(--main);
+}

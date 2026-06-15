@@ -22,7 +22,7 @@ const themes = {
   },
   blue: {
     "--main": "#FFFFFF",
-    "--accent": "#C8102E",
+    "--accent": "#FFFFFF",
     "--main-bg": "#012169",
     "--second-bg": "#0A3080",
   },

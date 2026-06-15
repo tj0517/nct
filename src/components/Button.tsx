@@ -17,21 +17,21 @@ export default function Button({
       : "font-light text-2xl h-[75px] w-[300px]";
 
   const variantClasses = {
-    filled: "bg-main text-main-bg border-main",
+    filled: "bg-accent text-main-bg border-accent",
     outline: "bg-transparent text-main border-main",
-    inverse: "bg-main-bg text-main border-main-bg",
+    inverse: "bg-main-bg text-accent border-main-bg",
   };
 
   /* Fill sweep color — what slides in on hover */
   const fillClasses = {
     filled: "bg-main-bg",
     outline: "bg-main",
-    inverse: "bg-main",
+    inverse: "bg-accent",
   };
 
   /* Text color after fill has swept in */
   const hoverTextClasses = {
-    filled: "group-hover:text-main",
+    filled: "group-hover:text-accent",
     outline: "group-hover:text-main-bg",
     inverse: "group-hover:text-main-bg",
   };

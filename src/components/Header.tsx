@@ -38,7 +38,7 @@ export default function Header() {
             onMouseEnter={() => setCoursesOpen(true)}
             onMouseLeave={() => setCoursesOpen(false)}
           >
-            <button className="font-inter text-[13px] uppercase tracking-[0.08em] text-main/70 hover:text-main transition-colors flex items-center gap-1 cursor-pointer">
+            <button className="font-inter text-[13px] uppercase tracking-[0.08em] text-main/70 hover:text-accent transition-colors flex items-center gap-1 cursor-pointer">
               Courses
               <svg
                 width="10"
@@ -58,7 +58,7 @@ export default function Header() {
                     <a
                       key={link.href}
                       href={link.href}
-                      className="block px-4 py-2.5 font-inter text-[13px] text-main/70 hover:text-main hover:bg-main/5 rounded-lg transition-colors"
+                      className="block px-4 py-2.5 font-inter text-[13px] text-main/70 hover:text-accent hover:bg-accent/5 rounded-lg transition-colors"
                     >
                       {link.label}
                     </a>
@@ -72,7 +72,7 @@ export default function Header() {
             <a
               key={link.href}
               href={link.href}
-              className="font-inter text-[13px] uppercase tracking-[0.08em] text-main/70 hover:text-main transition-colors"
+              className="font-inter text-[13px] uppercase tracking-[0.08em] text-main/70 hover:text-accent transition-colors"
             >
               {link.label}
             </a>

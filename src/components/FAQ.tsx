@@ -107,7 +107,7 @@ export default function FAQ() {
 
   return (
     <section className="bg-second-bg pt-16 pb-32 w-full flex flex-col gap-[10px] px-16">
-      <p className="font-inter text-base text-main">FAQ</p>
+      <p className="font-inter text-base text-accent">FAQ</p>
       <h2 className="font-fraunces font-bold text-[64px] text-main leading-normal">
         Got questions? We&apos;ve got answers.
       </h2>

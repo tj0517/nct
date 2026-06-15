@@ -1,5 +1,3 @@
-import ThemeSwitcher from "./ThemeSwitcher";
-
 const footerLinks = [
   { label: "About", href: "#about" },
   { label: "Teachers", href: "#teachers" },
@@ -117,7 +115,9 @@ export default function Footer() {
           <p className="font-inter text-xs text-main-bg/40">
             &copy; {new Date().getFullYear()} A Nice Cup of Tea
           </p>
-          <ThemeSwitcher />
+          <p className="font-inter text-xs text-main-bg/40">
+            Designed in Warsaw
+          </p>
         </div>
       </div>
     </footer>

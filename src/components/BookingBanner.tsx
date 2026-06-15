@@ -8,7 +8,7 @@ export default function BookingBanner() {
         <div className="grid grid-cols-[1fr_0.85fr] gap-16 items-start">
           {/* Left: copy */}
           <div className="flex flex-col gap-6">
-            <p className="font-inter text-base text-main">GET STARTED</p>
+            <p className="font-inter text-base text-accent">GET STARTED</p>
             <h2 className="font-fraunces font-bold text-[64px] text-main leading-tight">
               Book your free
               <br />

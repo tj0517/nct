@@ -23,4 +23,5 @@ html {
 body {
   background: var(--main-bg);
   color: var(--main);
+  transition: background-color 0.5s ease, color 0.5s ease;
 }

@@ -27,3 +27,12 @@ body {
   color: var(--main);
   transition: background-color 0.5s ease, color 0.5s ease;
 }
+
+[data-theme="blue"] [data-invert-on-dark] {
+  filter: brightness(0) invert(1);
+  transition: filter 0.5s ease;
+}
+
+[data-theme="light"] [data-invert-on-dark] {
+  transition: filter 0.5s ease;
+}

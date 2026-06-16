@@ -68,7 +68,7 @@ export default function Hero() {
         </div>
 
         {/* Right: hero image */}
-        <div data-hero-image className="relative w-[424px] self-stretch shrink-0">
+        <div data-hero-image data-invert-on-dark className="relative w-[424px] self-stretch shrink-0">
           <Image
             src="/images/hero-bg.png"
             alt="Victorian illustration"

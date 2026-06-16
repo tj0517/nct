@@ -31,7 +31,7 @@ export default function Teachers() {
   return (
     <section className="bg-second-bg pt-48 pb-16 w-full">
       <div className="px-16">
-        <SectionLabel label="NATIVE SPEAKERS" title="Meet our Teachers" labelColor="accent" />
+        <SectionLabel label="NATIVE SPEAKERS" title="Meet our Teachers" labelColor="accent-text" />
       </div>
       <div className="grid grid-cols-2 gap-9 px-16 pt-16 pb-4">
         {teachers.map((teacher, i) => (

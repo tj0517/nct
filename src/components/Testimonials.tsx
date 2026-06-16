@@ -224,7 +224,7 @@ export default function Testimonials() {
     <section className="flex gap-[10px] items-start py-20 px-16 w-full">
       {/* Left side */}
       <div className="flex-1 flex flex-col items-start">
-        <SectionLabel label="TESTIMONIALS" title="What they say" labelColor="accent" />
+        <SectionLabel label="TESTIMONIALS" title="What they say" labelColor="accent-text" />
         <div className="flex flex-col items-start justify-end pt-8 w-full max-w-[663px]">
           <div className="w-full">
             <div className="flex gap-4 items-center">

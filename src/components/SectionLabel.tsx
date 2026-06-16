@@ -2,7 +2,7 @@ interface SectionLabelProps {
   label: string;
   title: string;
   titleColor?: "accent" | "main" | "main-bg";
-  labelColor?: "main" | "second-bg" | "accent";
+  labelColor?: "main" | "second-bg" | "accent-text";
 }
 
 export default function SectionLabel({

@@ -12,7 +12,7 @@ export default function Pricing() {
   return (
     <section className="border-t border-main px-16 py-16 flex flex-col gap-16 w-full">
       <div className="flex flex-col items-start">
-        <p className="font-inter text-base text-accent">PRICING</p>
+        <p className="font-inter text-base text-accent-text">PRICING</p>
         <h2 className="font-fraunces font-bold text-[64px] text-main leading-normal">
           Simple, transparent pricing.
         </h2>

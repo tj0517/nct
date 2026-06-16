@@ -17,12 +17,14 @@ const themes = {
   light: {
     "--main": "#012169",
     "--accent": "#C8102E",
+    "--accent-text": "#C8102E",
     "--main-bg": "#FFFFFF",
     "--second-bg": "#E8ECF2",
   },
   blue: {
     "--main": "#FFFFFF",
-    "--accent": "#FFFFFF",
+    "--accent": "#C8102E",
+    "--accent-text": "#FFFFFF",
     "--main-bg": "#012169",
     "--second-bg": "#0A3080",
   },

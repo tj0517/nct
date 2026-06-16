@@ -3,6 +3,7 @@
 :root {
   --main: #012169;
   --accent: #C8102E;
+  --accent-text: #C8102E;
   --main-bg: #FFFFFF;
   --second-bg: #E8ECF2;
 }
@@ -10,6 +11,7 @@
 @theme inline {
   --color-main: var(--main);
   --color-accent: var(--accent);
+  --color-accent-text: var(--accent-text);
   --color-main-bg: var(--main-bg);
   --color-second-bg: var(--second-bg);
   --font-fraunces: var(--font-fraunces-var);

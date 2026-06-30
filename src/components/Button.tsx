@@ -3,6 +3,7 @@ interface ButtonProps {
   variant?: "filled" | "outline" | "inverse";
   size?: "default" | "small";
   className?: string;
+  onClick?: () => void;
 }
 
 export default function Button({
@@ -10,11 +11,12 @@ export default function Button({
   variant = "filled",
   size = "default",
   className = "",
+  onClick,
 }: ButtonProps) {
   const sizeClasses =
     size === "small"
       ? "text-base px-7 py-2.5"
-      : "font-light text-2xl h-[75px] w-[300px]";
+      : "font-light text-lg md:text-2xl h-auto py-4 md:h-[75px] w-full md:w-auto md:px-10";
 
   const variantClasses = {
     filled: "bg-accent text-white border-accent",
@@ -33,11 +35,12 @@ export default function Button({
   const hoverTextClasses = {
     filled: "group-hover:text-main-bg",
     outline: "group-hover:text-main-bg",
-    inverse: "group-hover:text-main-bg",
+    inverse: "group-hover:text-white",
   };
 
   return (
     <button
+      onClick={onClick}
       className={`group relative font-fraunces ${sizeClasses} rounded-bl-[25px] rounded-tr-[25px] border flex items-center justify-center cursor-pointer overflow-hidden ${variantClasses[variant]} ${className}`}
     >
       {/* Background sweep — scales from 0 to full on hover */}
@@ -46,7 +49,7 @@ export default function Button({
       />
 
       {/* Label container — clips the sliding text */}
-      <span className="relative z-10 overflow-hidden block h-[1.2em] leading-[1.2em]">
+      <span className="relative z-10 overflow-hidden block h-[1.2em] leading-[1.2em] whitespace-nowrap">
         {/* First label — visible, slides up & out on hover */}
         <span
           className={`block transition-transform duration-500 ease-[cubic-bezier(.19,1,.22,1)] group-hover:-translate-y-full ${hoverTextClasses[variant]}`}

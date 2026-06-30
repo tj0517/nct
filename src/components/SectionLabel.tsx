@@ -15,7 +15,7 @@ export default function SectionLabel({
     <div className="flex flex-col items-start">
       <p className={`font-inter text-base text-${labelColor}`}>{label}</p>
       <h2
-        className={`font-fraunces font-bold text-[64px] leading-normal text-${titleColor}`}
+        className={`font-fraunces font-bold text-3xl md:text-[64px] leading-tight md:leading-normal text-${titleColor}`}
       >
         {title}
       </h2>

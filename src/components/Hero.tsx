@@ -5,11 +5,13 @@ import Image from "next/image";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useReducedMotion } from "./GsapProvider";
+import { useBookingModal } from "./BookingModalContext";
 import Button from "./Button";
 
 export default function Hero() {
   const ref = useRef<HTMLElement>(null);
   const reduced = useReducedMotion();
+  const openBooking = useBookingModal();
 
   useGSAP(
     () => {
@@ -31,13 +33,13 @@ export default function Hero() {
   );
 
   return (
-    <section ref={ref} className="w-full flex-1 px-16 flex items-center">
-      <div className="flex items-start justify-between gap-16 w-full">
+    <section ref={ref} className="w-full flex-1 px-5 md:px-16 pt-24 lg:pt-24 flex items-center">
+      <div className="relative flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 lg:gap-16 w-full">
         {/* Left: headline + CTA */}
-        <div className="flex flex-1 flex-col gap-[clamp(24px,3vh,56px)] items-start">
+        <div className="relative z-10 flex flex-1 flex-col gap-[clamp(24px,3vh,56px)] items-start">
           <h1
             data-hero-headline
-            className="font-fraunces font-bold text-[8vw] leading-none text-main"
+            className="font-fraunces font-bold text-[14vw] md:text-[8vw] leading-none text-main"
           >
             <span className="block">Speak the</span>
             <span>
@@ -48,7 +50,7 @@ export default function Hero() {
 
           <p
             data-hero-subtitle
-            className="font-fraunces font-normal text-2xl text-main max-w-[561px] leading-normal"
+            className="font-fraunces font-normal text-lg md:text-2xl text-main max-w-[561px] leading-normal text-justify"
           >
             Oxford-educated native speakers.
             <br />
@@ -57,26 +59,31 @@ export default function Hero() {
             Warsaw and online.
           </p>
 
-          <div data-hero-ctas className="flex gap-[38px] items-center">
-            <a href="#contact">
-              <Button variant="filled">Book your free 60-minute introduction</Button>
-            </a>
+          <div data-hero-ctas className="flex flex-col lg:flex-row gap-4 lg:gap-[38px] items-stretch lg:items-center w-full lg:w-auto">
+            <Button variant="filled" onClick={openBooking}>Book your free 60-minute introduction</Button>
             <a href="tel:+48453374984">
               <Button variant="outline">+48 453 374 984</Button>
             </a>
           </div>
         </div>
 
-        {/* Right: hero image */}
-        <div data-hero-image data-invert-on-dark className="relative w-[424px] self-stretch shrink-0">
-          <Image
-            src="/images/hero-bg.png"
-            alt="Victorian illustration"
-            fill
-            sizes="424px"
-            className="object-cover opacity-20"
-            priority
-          />
+        {/* Alice — cream panel at all sizes */}
+        <div
+          data-hero-image
+          className="w-full h-[280px] md:h-[340px] lg:w-[400px] lg:min-h-[480px] lg:h-auto lg:shrink-0 lg:self-stretch"
+        >
+          <div className="relative w-full h-full rounded-bl-[30px] rounded-tr-[30px] lg:rounded-bl-[40px] lg:rounded-tr-[40px] bg-[#F5F0E8] overflow-hidden shadow-[6px_6px_0px_var(--accent)] lg:shadow-[8px_8px_0px_var(--accent)] p-4 lg:p-6">
+            <div className="relative w-full h-full">
+              <Image
+                src="/images/hero-bg.png"
+                alt="Alice in Wonderland illustration"
+                fill
+                sizes="(max-width: 1024px) 100vw, 400px"
+                className="object-contain opacity-30"
+                priority
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>

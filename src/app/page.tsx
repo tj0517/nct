@@ -5,7 +5,7 @@ import WhoWeTeach from "@/components/WhoWeTeach";
 import Teachers from "@/components/Teachers";
 import Testimonials from "@/components/Testimonials";
 import Pricing from "@/components/Pricing";
-import FAQ from "@/components/FAQ";
+// FAQ removed from homepage — lives as /faq subpage only
 import BookingBanner from "@/components/BookingBanner";
 import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
@@ -13,28 +13,29 @@ import TrustBarAnimated from "@/components/TrustBarAnimated";
 import WhoWeTeachAnimated from "@/components/WhoWeTeachAnimated";
 import TeachersAnimated from "@/components/TeachersAnimated";
 import PricingAnimated from "@/components/PricingAnimated";
+import MapSection from "@/components/MapSection";
 import SectionBgReveal from "@/components/SectionBgReveal";
 
 export default function Home() {
   return (
     <>
       <main className="bg-main-bg flex flex-col items-center w-full">
-        <div className="h-screen flex flex-col w-full">
+        <div className="min-h-screen flex flex-col w-full">
           <div className="max-w-[1440px] mx-auto w-full flex-1 flex flex-col">
             <Hero />
           </div>
-          <div className="max-w-[1440px] mx-auto w-full pb-8">
-            <TrustBarAnimated>
-              <TrustBar />
-            </TrustBarAnimated>
-          </div>
         </div>
-        <div id="about" className="max-w-[1440px] mx-auto w-full mt-16">
+        <div className="max-w-[1440px] mx-auto w-full py-4 md:py-6 px-5 md:px-0">
+          <TrustBarAnimated>
+            <TrustBar />
+          </TrustBarAnimated>
+        </div>
+        <div id="about" className="max-w-[1440px] mx-auto w-full mt-8 md:mt-16">
           <AnimatedSection direction="up">
             <About />
           </AnimatedSection>
         </div>
-        <div className="w-full mt-16">
+        <div className="w-full mt-8 md:mt-16">
           <WhoWeTeachAnimated>
             <WhoWeTeach />
           </WhoWeTeachAnimated>
@@ -46,19 +47,19 @@ export default function Home() {
             </TeachersAnimated>
           </div>
         </SectionBgReveal>
-        <div className="max-w-[1440px] mx-auto w-full mt-16">
-          <Testimonials />
-        </div>
-        <div id="pricing" className="max-w-[1440px] mx-auto w-full mt-16">
+        <div id="pricing" className="w-full">
           <PricingAnimated>
             <Pricing />
           </PricingAnimated>
         </div>
-        <SectionBgReveal className="w-full mt-16">
-          <div id="faq" className="w-full">
-            <FAQ />
-          </div>
-        </SectionBgReveal>
+        <div className="w-full">
+          <Testimonials />
+        </div>
+        <div className="max-w-[1440px] mx-auto w-full mt-8 md:mt-16">
+          <AnimatedSection direction="up">
+            <MapSection />
+          </AnimatedSection>
+        </div>
       </main>
       <SectionBgReveal>
         <AnimatedSection direction="up">

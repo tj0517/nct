@@ -3,9 +3,10 @@ import { Fraunces, Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import GsapProvider from "@/components/GsapProvider";
-import CustomCursor from "@/components/CustomCursor";
+
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import ThemeProvider from "@/components/ThemeProvider";
+import { BookingModalProvider } from "@/components/BookingModalContext";
 
 const fraunces = Fraunces({
   variable: "--font-fraunces-var",
@@ -37,12 +38,13 @@ export default function RootLayout({
     >
       <body>
         <ThemeProvider>
-          <GsapProvider>
-            <CustomCursor />
-            <Header />
-            {children}
-            <WhatsAppFloat />
-          </GsapProvider>
+          <BookingModalProvider>
+            <GsapProvider>
+              <Header />
+              {children}
+              <WhatsAppFloat />
+            </GsapProvider>
+          </BookingModalProvider>
         </ThemeProvider>
       </body>
     </html>

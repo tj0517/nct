@@ -1,0 +1,74 @@
+# Homepage
+
+## Hero
+
+**Headline:** Speak the King's English
+**Headline (PL):** Angielski godny korony
+
+**Subheadline:** Oxford-educated native speakers — Warsaw and online
+
+**Description:** English lessons for children, adults and business
+
+**Phone:** +48 453 374 984
+
+**CTA:** Book your free 60-minute introduction
+
+---
+
+## Why NCT?
+
+So much depends
+upon the right teacher.
+
+Our Oxford University-educated native speakers
+prepare children, adults, and university applicants
+
+for the classroom, the conversation,
+the exam, and the interview.
+
+Speak the King's English
+
+at the moment
+you need it most.
+
+---
+
+## Trust
+
+- As heard on the BBC
+- Our work with Cambridge University Press
+
+---
+
+## Meet our Native Speakers
+
+### Anthony Goltz
+
+An Oxford-educated historian, Anthony began teaching English in India in 1994 and founded A Nice Cup of Tea in 2012. His clients have included bestselling author Katarzyna Bonda, as well as Google, the BBC, and the Polish Ministry of Foreign Affairs. He drinks Lapsang Souchong tea.
+
+### Ruq Jaffry
+
+A native English speaker living in Brisbane, Australia, Ruq brings an international outlook to her teaching. She holds a BA in International Business Management (with Distinction), and has lived, worked, and studied across Europe, the UK, the US, and Southeast Asia. She drinks green tea.
+
+### Dr Alan Bryson
+
+Holding a PhD in History from the University of St Andrews, Alan has taught English and History at several universities, including Oxford and Sheffield. He has contributed to research in archaeology and literature, and curated a British Library exhibition on Elizabeth I and Mary, Queen of Scots. He drinks builder's tea.
+
+### Dr Rishi Handa
+
+With a degree in Mathematics with Theoretical Physics from UCL and a PhD from SOAS, Rishi currently teaches Sanskrit at St James Independent School for Boys in London. Outside academia, he is also a musician, producer, and filmmaker. He has met the Prime Minister on the steps of Downing Street. Although he doesn't drink tea, Dr Handa somehow remains both fully awake and professionally British.
+
+---
+
+## Price List
+
+### English Lessons
+
+| Service | Price |
+|---|---|
+| First 60-minute consultation | **Free** |
+| Children's Lessons (1:1) | 225 PLN per 60-minute lesson |
+| Adults and Business English (1:1) | 250 PLN per 60-minute lesson |
+| Small Groups (2 to 3 learners) | From 300 PLN per 60-minute lesson (per group) |
+| University Applications | Tailored programmes and pricing after your free consultation |
+| Translation, Editing, and Proofreading | Charged per 1800-character page (with spaces). Pricing depends on subject, complexity, and urgency. |

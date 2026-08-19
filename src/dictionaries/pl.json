@@ -1,0 +1,326 @@
+{
+  "header": {
+    "coursesLabel": "Kursy",
+    "courseLinks": [
+      { "label": "Dzieci i m\u0142odzie\u017c", "href": "/children" },
+      { "label": "Doro\u015bli", "href": "/adults" },
+      { "label": "Aplikacje na studia", "href": "/university" },
+      { "label": "Business English", "href": "/business" },
+      { "label": "Matematyka po angielsku", "href": "/maths" }
+    ],
+    "navLinks": [
+      { "label": "Kontakt", "href": "/#contact" },
+      { "label": "FAQ", "href": "/#faq" }
+    ],
+    "bookNow": "Zapisz si\u0119"
+  },
+  "hero": {
+    "headlineLine1": "M\u00f3w jak",
+    "headlineItalic": "kr\u00f3lewski",
+    "headlineBold": " angielski",
+    "subtitle": "Nauczyciele z Oxfordu \u2014 native speakerzy.\nLekcje angielskiego dla dzieci, doros\u0142ych i biznesu.\nWarszawa i online.",
+    "ctaPrimary": "Um\u00f3w si\u0119 na bezp\u0142atn\u0105 60-minutow\u0105 konsultacj\u0119",
+    "ctaPrimaryShort": "Um\u00f3w bezp\u0142atn\u0105 konsultacj\u0119",
+    "ctaPhone": "+48 453 374 984"
+  },
+  "trustBar": {
+    "badges": [
+      {
+        "heading": "Anthony w BBC Radio 4",
+        "cta": "Pos\u0142uchaj wywiadu"
+      },
+      {
+        "heading": "Publikacja Cambridge University Press",
+        "description": "Rural History, Volume 32, Issue 1"
+      }
+    ]
+  },
+  "about": {
+    "heading": "O nas",
+    "body": "A Nice Cup of Tea zosta\u0142a za\u0142o\u017cona przez Anthony\u2019ego, absolwenta Uniwersytetu Oksfordzkiego, kt\u00f3ry od ponad dekady pomaga polskim uczniom budowa\u0107 pewno\u015b\u0107 siebie w m\u00f3wieniu po angielsku. Nasi nauczyciele \u2014 native speakerzy \u2014 przygotowuj\u0105 dzieci, doros\u0142ych i kandydat\u00f3w na studia do rozmowy, egzaminu i interview.",
+    "cta": "Poznaj za\u0142o\u017cyciela",
+    "imageAlt": "Anthony \u2014 za\u0142o\u017cyciel A Nice Cup of Tea"
+  },
+  "whoWeTeach": {
+    "label": "DLA KOGO",
+    "heading": "Angielski na ka\u017cdy etap \u017cycia",
+    "categories": [
+      {
+        "name": "Dzieci i m\u0142odzie\u017c",
+        "href": "/children",
+        "description": "Opowie\u015bci, pytania, rymowanki i rozmowy. Pomagamy dzieciom m\u00f3wi\u0107 wyra\u017anie, pisa\u0107 odwa\u017cnie i u\u017cywa\u0107 angielskiego z pewno\u015bci\u0105 siebie."
+      },
+      {
+        "name": "Doro\u015bli",
+        "href": "/adults",
+        "description": "Bogatsze s\u0142ownictwo, lepsza wymowa, prawdziwa pewno\u015b\u0107 siebie. Poprawiamy delikatnie, nie umniejszaj\u0105c."
+      },
+      {
+        "name": "Aplikacje na studia",
+        "href": "/university",
+        "description": "Personal statements, eseje rekrutacyjne, przygotowanie do interview. Nasi uczniowie dostali si\u0119 na Oxford, Stanford i inne uczelnie."
+      },
+      {
+        "name": "Business English",
+        "href": "/business",
+        "description": "Spotkania, prezentacje, negocjacje, rozmowy kwalifikacyjne. Pewny angielski na ka\u017cd\u0105 sytuacj\u0119 biznesow\u0105."
+      },
+      {
+        "name": "Matematyka po angielsku",
+        "href": "/maths",
+        "description": "IB, szko\u0142y mi\u0119dzynarodowe i egzaminy \u2014 matematyka online z Dr Rishi Hand\u0105. Matematyka i angielski matematyczny."
+      }
+    ]
+  },
+  "teachers": {
+    "label": "NATIVE SPEAKERZY",
+    "heading": "Poznaj naszych nauczycieli",
+    "list": [
+      {
+        "name": "Anthony Goltz",
+        "credential": "Oxford University",
+        "bio": "Za\u0142o\u017cyciel NCT. Uczy angielskiego od 1994 roku. W\u015br\u00f3d klient\u00f3w: Google, BBC i bestsellerowi autorzy. Pije Lapsang Souchong."
+      },
+      {
+        "name": "Dr Alan Bryson",
+        "credential": "PhD, University of St Andrews",
+        "bio": "Wyk\u0142ada\u0142 na Oxfordzie i w Sheffield. Kurator wystawy w British Library o El\u017cbiecie I. Pije builder\u2019s tea."
+      },
+      {
+        "name": "Dr Rishi Handa",
+        "credential": "UCL & SOAS",
+        "bio": "Matematyk i fizyk. Uczy sanskrytu w Londynie. Muzyk, producent i filmowiec. Nie pije herbaty."
+      }
+    ]
+  },
+  "testimonials": {
+    "label": "OPINIE",
+    "heading": "Co m\u00f3wi\u0105 o nas"
+  },
+  "pricing": {
+    "label": "CENNIK",
+    "heading": "Przejrzysty cennik",
+    "freePrice": "Bezp\u0142atnie",
+    "freeDesc": "30-minutowa konsultacja z Anthonym",
+    "freeCta": "Zapisz si\u0119",
+    "price": "250 PLN",
+    "priceDesc": "za 60-minutow\u0105 lekcj\u0119"
+  },
+  "booking": {
+    "label": "ZACZNIJ",
+    "heading": "Um\u00f3w si\u0119 na bezp\u0142atn\u0105\n60-minutow\u0105 konsultacj\u0119",
+    "body": "Ocena poziomu, analiza potrzeb, lekcja diagnostyczna i rekomendacja nauczyciela. Bez zobowi\u0105za\u0144.",
+    "locationNote": "Ch\u0119tnie przyjmiemy uczni\u00f3w przy S\u0142upeckiej 4 w Warszawie. Konsultacje online r\u00f3wnie\u017c dost\u0119pne.",
+    "namePlaceholder": "Imi\u0119",
+    "emailPlaceholder": "Email",
+    "phonePlaceholder": "Telefon",
+    "inPerson": "Stacjonarnie",
+    "online": "Online",
+    "messagePlaceholder": "Wiadomo\u015b\u0107 (opcjonalnie)",
+    "submitCta": "Um\u00f3w si\u0119 na bezp\u0142atn\u0105 konsultacj\u0119",
+    "modalHeading": "Um\u00f3w si\u0119 na bezp\u0142atn\u0105 konsultacj\u0119"
+  },
+  "contactForm": {
+    "heading": "Formularz kontaktowy",
+    "namePlaceholder": "Imi\u0119",
+    "emailPlaceholder": "Email",
+    "phonePlaceholder": "Telefon (opcjonalnie)",
+    "messagePlaceholder": "W czym mo\u017cemy pom\u00f3c? (opcjonalnie)",
+    "consent": "Wyra\u017cam zgod\u0119 na kontakt ze strony A Nice Cup of Tea.",
+    "submitCta": "Wy\u015blij formularz"
+  },
+  "map": {
+    "label": "ODWIED\u0179 NAS",
+    "heading": "S\u0142upecka 4, Warszawa",
+    "description": "W sercu Ochoty \u2014 prawdziwa szko\u0142a z prawdziwymi nauczycielami, z kt\u00f3rymi mo\u017cna usi\u0105\u015b\u0107 przy jednym stole. Lekcje online r\u00f3wnie\u017c dost\u0119pne."
+  },
+  "faq": {
+    "label": "FAQ",
+    "heading": "Masz pytania? Mamy odpowiedzi.",
+    "items": [
+      {
+        "question": "Czym jest A Nice Cup of Tea?",
+        "answer": "A Nice Cup of Tea (NCT) to kameralna szko\u0142a j\u0119zyka angielskiego z siedzib\u0105 w Warszawie i opcj\u0105 zaj\u0119\u0107 online. Oferujemy lekcje z native speakerami dla doros\u0142ych, dzieci, m\u0142odzie\u017cy, profesjonalist\u00f3w biznesowych, kandydat\u00f3w na studia za granic\u0105 oraz uczni\u00f3w potrzebuj\u0105cych wsparcia z matematyk\u0105 po angielsku."
+      },
+      {
+        "question": "Jak wygl\u0105da bezp\u0142atna konsultacja?",
+        "answer": "Bezp\u0142atna konsultacja to pe\u0142na 60-minutowa lekcja z Anthony\u2019m Goltzem, za\u0142o\u017cycielem NCT. Obejmuje ocen\u0119 poziomu, analiz\u0119 potrzeb, lekcj\u0119 diagnostyczn\u0105 i rekomendacj\u0119 najlepszego nauczyciela i planu zaj\u0119\u0107. Mo\u017ce odby\u0107 si\u0119 online lub stacjonarnie. Jest zawsze bezp\u0142atna i nie zobowi\u0105zuje do kontynuacji."
+      },
+      {
+        "question": "Ile kosztuj\u0105 lekcje?",
+        "answer": "Pierwsza 60-minutowa konsultacja jest bezp\u0142atna. Lekcje dla dzieci kosztuj\u0105 225 PLN za 60 minut. Doro\u015bli i Business English \u2014 250 PLN za 60 minut. Ma\u0142e grupy od 300 PLN za 60-minutow\u0105 sesj\u0119 grupow\u0105. Programy aplikacji na studia i korepetycje z matematyki \u2014 wycena po konsultacji."
+      },
+      {
+        "question": "Czym NCT r\u00f3\u017cni si\u0119 od zwyk\u0142ej szko\u0142y j\u0119zykowej?",
+        "answer": "NCT jest mniejsza, bardziej osobista i bardziej dopasowana ni\u017c standardowa szko\u0142a j\u0119zykowa. Lekcje nie opieraj\u0105 si\u0119 na mechanicznym przerobieniu podr\u0119cznika. Uczniowie pracuj\u0105 z do\u015bwiadczonymi native speakerami, kt\u00f3rzy poprawiaj\u0105 uwa\u017cnie, dostosowuj\u0105 si\u0119 do cel\u00f3w ucznia i koncentruj\u0105 si\u0119 na prawdziwym angielskim na realne sytuacje."
+      },
+      {
+        "question": "Czy oferujecie lekcje online?",
+        "answer": "Tak. NCT oferuje lekcje angielskiego online w ca\u0142ej Polsce i mi\u0119dzynarodowo. Zaj\u0119cia mog\u0105 odbywa\u0107 si\u0119 na Zoom, Google Meet, Microsoft Teams, WhatsApp video lub innej platformie preferowanej przez ucznia."
+      },
+      {
+        "question": "Jak um\u00f3wi\u0107 si\u0119 na bezp\u0142atn\u0105 konsultacj\u0119?",
+        "answer": "Mo\u017cna um\u00f3wi\u0107 si\u0119 na bezp\u0142atn\u0105 konsultacj\u0119 przez WhatsApp, telefon lub formularz kontaktowy. Mo\u017cna pisa\u0107 po polsku lub po angielsku. Numer telefonu: +48 453 374 984."
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Nauczyciele z Oxfordu \u2014 native speakerzy. Lekcje angielskiego dla dzieci, doros\u0142ych i biznesu.",
+    "links": [
+      { "label": "O nas", "href": "/#about" },
+      { "label": "Nauczyciele", "href": "/#teachers" },
+      { "label": "Cennik", "href": "/#pricing" },
+      { "label": "FAQ", "href": "/#faq" },
+      { "label": "Kontakt", "href": "/#contact" }
+    ],
+    "phoneLabel": "Telefon",
+    "emailLabel": "Email",
+    "socialLabel": "Social media",
+    "visitLabel": "Odwied\u017a nas",
+    "designedIn": "Zaprojektowano w Warszawie"
+  },
+  "meta": {
+    "title": "A Nice Cup of Tea \u2014 Lekcje angielskiego",
+    "description": "Nauczyciele z Oxfordu \u2014 native speakerzy. Lekcje angielskiego dla dzieci, doros\u0142ych i biznesu."
+  },
+  "adults": {
+    "meta": {
+      "title": "Angielski dla doros\u0142ych \u2014 A Nice Cup of Tea",
+      "description": "Bogatsze s\u0142ownictwo, lepsza wymowa i prawdziwa pewno\u015b\u0107 siebie. Lekcje angielskiego dla doros\u0142ych w Warszawie i online."
+    },
+    "hero": {
+      "label": "DORO\u015aLI",
+      "title": "Angielski dla",
+      "titleItalic": "doros\u0142ych",
+      "subtitle": "Nauczyciele z Oxfordu pomog\u0105 Ci znale\u017a\u0107 w\u0142a\u015bciwe s\u0142owo, w\u0142a\u015bciwy rytm i w\u0142a\u015bciwy g\u0142os. Warszawa i online."
+    },
+    "aboutBody": "\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0Wielu doros\u0142ych boi si\u0119 b\u0142\u0119du. Z\u0142e s\u0142owo. Z\u0142y czas. Z\u0142a konstrukcja. Klasa, w kt\u00f3rej ka\u017cdy b\u0142\u0105d by\u0142 publiczny. W NCT robimy odwrotnie. Zach\u0119camy do ekspresji. S\u0142uchamy Twojego prawdziwego g\u0142osu. Poprawiamy delikatnie, nie umniejszaj\u0105c. \u017badnego be\u017cowego pochlebstwa ChatGPT. Tylko bogatsze s\u0142ownictwo, lepsza wymowa i prawdziwa pewno\u015b\u0107 siebie.",
+    "meetTeachers": "Poznaj nauczycieli",
+    "bookConsultation": "Um\u00f3w si\u0119 na bezp\u0142atn\u0105 konsultacj\u0119",
+    "promiseLabel": "OBIETNICA",
+    "promiseQuote": "Niech\u0119tna wy\u017cszo\u015b\u0107 zdania, kt\u00f3re wie, dok\u0105d zmierza.",
+    "goalsLabel": "TWOJE CELE",
+    "goalsHeading": "Lekcje dopasowane do Ciebie.",
+    "goals": [
+      { "name": "Konwersacje", "desc": "M\u00f3w swobodnie i naturalnie w ka\u017cdej sytuacji" },
+      { "name": "Wymowa", "desc": "Brzmij pewnie i naturalnie" },
+      { "name": "Akcent", "desc": "Udoskonal swoj\u0105 angielszczyzn\u0119" },
+      { "name": "Kultura", "desc": "Zrozum \u015bwiat za s\u0142owami" },
+      { "name": "Pisanie", "desc": "Wyra\u017caj si\u0119 precyzyjnie na pi\u015bmie" },
+      { "name": "Pewno\u015b\u0107 siebie", "desc": "Znajd\u017a sw\u00f3j prawdziwy g\u0142os po angielsku" }
+    ]
+  },
+  "business": {
+    "meta": {
+      "title": "Business English \u2014 A Nice Cup of Tea",
+      "description": "Angielski na sale konferencyjne. Business English z jasno\u015bci\u0105, precyzj\u0105 i autorytetem. Warszawa i online."
+    },
+    "hero": {
+      "label": "BUSINESS ENGLISH",
+      "title": "Angielski na sal\u0119",
+      "titleItalic": "w kt\u00f3rej chcesz by\u0107.",
+      "subtitle": "Przygotowujemy Tw\u00f3j angielski na interview, sal\u0119 konferencyjn\u0105, kolacj\u0119 z inwestorami i mi\u0119dzynarodow\u0105 konferencj\u0119."
+    },
+    "aboutBody": "\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0W NCT przygotowujemy Tw\u00f3j angielski na moment, kiedy jest najbardziej potrzebny. Nauczysz si\u0119 m\u00f3wi\u0107 z jasno\u015bci\u0105, precyzj\u0105 i autorytetem. Nie z podr\u0119cznika napisanego dziesi\u0119\u0107 lat temu. Nie z be\u017cowej korporacyjnej nowomowy generowanej przez ChatGPT. Pewny angielski, m\u00f3wiony Twoim g\u0142osem.",
+    "meetTeachers": "Poznaj nauczycieli",
+    "bookConsultation": "Um\u00f3w si\u0119 na bezp\u0142atn\u0105 konsultacj\u0119",
+    "servicesLabel": "POMAGAMY PRZYGOTOWA\u0106 SI\u0118 DO",
+    "servicesHeading": "Realne sytuacje. Realna stawka.",
+    "services": [
+      { "name": "Spotkania z mi\u0119dzynarodowymi klientami", "desc": "M\u00f3w z autorytetem ponad granicami" },
+      { "name": "Prezentacje i pitche", "desc": "Przekonuj z jasno\u015bci\u0105 i pewno\u015bci\u0105" },
+      { "name": "Rozmowy kwalifikacyjne i awanse", "desc": "Brzmij gotowo na nast\u0119pny etap" },
+      { "name": "Negocjacje", "desc": "Znajd\u017a w\u0142a\u015bciwe s\u0142owo we w\u0142a\u015bciwym momencie" },
+      { "name": "Komunikacja prawnicza, finansowa i executive", "desc": "Precyzja tam, gdzie ma znaczenie" },
+      { "name": "CV, profile LinkedIn i dokumenty profesjonalne", "desc": "Pisemny angielski, kt\u00f3ry otwiera drzwi" }
+    ],
+    "credentialsLabel": "REFERENCJE",
+    "credentialsHeading": "W\u015br\u00f3d naszych uczni\u00f3w \u2014 profesjonali\u015bci z"
+  },
+  "children": {
+    "meta": {
+      "title": "Angielski dla dzieci \u2014 A Nice Cup of Tea",
+      "description": "W NCT dzieci nie tylko ucz\u0105 si\u0119 angielskiego. Odkrywaj\u0105 go. Lekcje dla dzieci od 5. roku \u017cycia w Warszawie i online."
+    },
+    "hero": {
+      "label": "DZIECI",
+      "title": "Lekcje dla",
+      "titleItalic": "dzieci",
+      "subtitle": "S\u0142owo mo\u017ce by\u0107 ma\u0142e. S\u0142owo mo\u017ce by\u0107 wielkie. S\u0142owo mo\u017ce zaprowadzi\u0107 do dalekiej krainy. Dla dzieci od 5. roku \u017cycia."
+    },
+    "aboutBody": "\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0W NCT dzieci nie tylko ucz\u0105 si\u0119 angielskiego. Odkrywaj\u0105 go. Opowie\u015bci. Pytania. Rymowanki. Rozmowy. Ksi\u0105\u017cki z dziwnymi drzwiami. Zdania ze skrzyd\u0142ami. Pomagamy dzieciom m\u00f3wi\u0107 wyra\u017anie, pisa\u0107 odwa\u017cnie i u\u017cywa\u0107 angielskiego z pewno\u015bci\u0105 siebie. Angielski to nie tylko przedmiot w szkole. To klucz, drabina i drzwi, przez kt\u00f3re si\u0119 przechodzi.",
+    "meetTeachers": "Poznaj nauczycieli",
+    "bookConsultation": "Um\u00f3w si\u0119 na bezp\u0142atn\u0105 konsultacj\u0119",
+    "examLabel": "DLA DZIECI OD 5. ROKU \u017bYCIA",
+    "examHeading": "Przygotowujemy dzieci do",
+    "examPrep": [
+      { "name": "Czytanie, pisanie, s\u0142uchanie i m\u00f3wienie", "desc": "Cztery fundamenty" },
+      { "name": "Egzamin \u00f3smoklasisty", "desc": "Przygotowanie do egzaminu" },
+      { "name": "Konkurs kuratoryjny", "desc": "Przygotowanie do konkursu" },
+      { "name": "Olimpiada J\u0119zyka Angielskiego Junior\u00f3w", "desc": "Wsparcie olimpijskie" }
+    ],
+    "quote": "Angielski to nie tylko przedmiot w szkole. To klucz, drabina i drzwi, przez kt\u00f3re si\u0119 przechodzi."
+  },
+  "maths": {
+    "meta": {
+      "title": "Matematyka po angielsku \u2014 A Nice Cup of Tea",
+      "description": "Pewno\u015b\u0107 na egzaminie dla uczni\u00f3w IB. Matematyka online z Dr Rishi Hand\u0105 \u2014 native speakerem z dyplomem UCL."
+    },
+    "hero": {
+      "label": "MATEMATYKA PO ANGIELSKU",
+      "title": "Matematyka po",
+      "titleItalic": "angielsku",
+      "subtitle": "Pewno\u015b\u0107 na egzaminie dla uczni\u00f3w IB. Lekcje online z Dr Rishi Hand\u0105, native speakerem z dyplomem z matematyki i fizyki teoretycznej z UCL."
+    },
+    "aboutBody": "\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0Dla uczni\u00f3w IB i szk\u00f3\u0142 mi\u0119dzynarodowych wyzwanie to nie tylko matematyka. To dok\u0142adne odczytanie pytania, u\u017cycie w\u0142a\u015bciwej terminologii i naturalne my\u015blenie w j\u0119zyku egzaminu. Dr\u00a0Handa uczy obu: matematyki i angielskiego\u00a0matematycznego.",
+    "seePricing": "Zobacz cennik",
+    "bookConsultation": "Um\u00f3w si\u0119 na bezp\u0142atn\u0105 konsultacj\u0119",
+    "servicesLabel": "W CZYM POMAGAMY",
+    "servicesHeading": "Od algebry do pewno\u015bci siebie.",
+    "services": [
+      { "name": "IB Maths: Analysis & Approaches", "desc": "Przygotowanie SL i HL" },
+      { "name": "IB Maths: Applications & Interpretation", "desc": "Przygotowanie SL i HL" },
+      { "name": "Matematyka w szkole mi\u0119dzynarodowej", "desc": "Programy brytyjskie, ameryka\u0144skie i IB" },
+      { "name": "Przygotowanie do egzamin\u00f3w i powt\u00f3rki", "desc": "\u0106wiczenia celowane i ustrukturyzowane" },
+      { "name": "Uczniowie, kt\u00f3rzy utkn\u0119li", "desc": "Jasno\u015b\u0107 z chaosu" },
+      { "name": "Ambitni uczniowie", "desc": "Wyzwania poza programem" }
+    ],
+    "teacherLabel": "TW\u00d3J NAUCZYCIEL",
+    "teacherName": "Dr Rishi Handa",
+    "teacherBio": "Nauczyciel w St\u00a0James Independent School w Londynie. Dyplom z matematyki i fizyki teoretycznej z UCL. Niezwyk\u0142e po\u0142\u0105czenie precyzji, wyobra\u017ani i cierpliwo\u015bci.",
+    "bookAConsultation": "Um\u00f3w si\u0119 na konsultacj\u0119"
+  },
+  "university": {
+    "meta": {
+      "title": "Aplikacje na studia \u2014 A Nice Cup of Tea",
+      "description": "Oxford. Stanford. Nasi uczniowie dostali si\u0119 na jedne z najbardziej wymagaj\u0105cych uczelni na \u015bwiecie. Wsparcie aplikacyjne w Warszawie i online."
+    },
+    "hero": {
+      "label": "APLIKACJE NA STUDIA",
+      "title": "Aplikuj na",
+      "titleItalic": "najlepsze.",
+      "subtitle": "Oxford. Stanford. School of Visual Arts w Nowym Jorku. Nasi uczniowie dostali si\u0119 na jedne z najbardziej wymagaj\u0105cych uczelni na \u015bwiecie."
+    },
+    "aboutBody": "\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0Silna aplikacja to nie tylko poprawny angielski. To struktura, g\u0142os, dowody i iskra. To umiej\u0119tno\u015b\u0107 uczynienia my\u015blenia widocznym. W NCT pomagamy uczniom przygotowywa\u0107 aplikacje, eseje i interview z jasno\u015bci\u0105 i powag\u0105. Nie uczymy przeprasza\u0107 za ambicj\u0119. Pomagamy brzmie\u0107 gotowo. Gotowo do studiowania. Gotowo do odpowiadania na trudne pytania. Gotowo do m\u00f3wienia z precyzj\u0105, ciekawo\u015bci\u0105 i pewno\u015bci\u0105 siebie.",
+    "meetTeachers": "Poznaj nauczycieli",
+    "bookConsultation": "Um\u00f3w si\u0119 na bezp\u0142atn\u0105 konsultacj\u0119",
+    "servicesLabel": "POMAGAMY Z",
+    "servicesHeading": "Od personal statement do podium.",
+    "services": [
+      { "name": "Aplikacje na uczelnie zagraniczne", "desc": "Wielka Brytania, USA i Europa" },
+      { "name": "UCAS personal statements", "desc": "Struktura, g\u0142os i iskra" },
+      { "name": "Przygotowanie do interview w stylu Oxbridge", "desc": "My\u015bl jasno pod presj\u0105" },
+      { "name": "Eseje rekrutacyjne", "desc": "Uczy\u0144 swoje my\u015blenie widocznym" },
+      { "name": "Aplikacje stypendialne", "desc": "Wyr\u00f3\u017cnij si\u0119 w konkurencyjnym polu" },
+      { "name": "Rozmowy akademickie", "desc": "M\u00f3w z precyzj\u0105 i ciekawo\u015bci\u0105" },
+      { "name": "IB Diploma: IAs, EEs i eseje TOK", "desc": "Rygor spotyka jasno\u015b\u0107" },
+      { "name": "Aplikacja MBA, GMAT i przygotowanie do interview", "desc": "Nast\u0119pny etap Twojej kariery" }
+    ],
+    "studentsLabel": "NASI UCZNIOWIE",
+    "studentsHeading": "Dok\u0105d si\u0119 dostali."
+  },
+  "languageSwitcher": {
+    "pl": "PL",
+    "en": "EN"
+  }
+}

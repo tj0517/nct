@@ -1,7 +1,10 @@
 import "server-only";
 
 const dictionaries = {
-  pl: () => import("./pl.json").then((m) => m.default),
+  // Polish copy was a word-for-word translation and looked bad, so the "pl"
+  // locale now serves the English dictionary too. The language switch stays
+  // visually interactive (see Header.tsx) but both options render English.
+  pl: () => import("./en.json").then((m) => m.default),
   en: () => import("./en.json").then((m) => m.default),
 };
 

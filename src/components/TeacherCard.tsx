@@ -10,14 +10,14 @@ interface TeacherCardProps {
 
 export default function TeacherCard({ name, credential, bio, image, hasVideo }: TeacherCardProps) {
   return (
-    <div data-teacher-card className="bg-main-bg rounded-bl-[30px] rounded-tr-[30px] md:rounded-bl-[40px] md:rounded-tr-[40px] p-5 md:p-7 flex flex-col gap-4 shadow-[4px_4px_0px_var(--cambridge-blue)] md:shadow-[6px_6px_0px_var(--cambridge-blue)]">
-      <div className="flex items-center gap-4">
-        <div className="relative size-20 md:size-24 rounded-full overflow-hidden shrink-0 bg-white">
+    <div data-teacher-card className="bg-main-bg rounded-bl-[30px] rounded-tr-[30px] md:rounded-bl-[40px] md:rounded-tr-[40px] p-5 md:p-7 flex flex-col gap-4 shadow-[4px_4px_0px_var(--main)] md:shadow-[6px_6px_0px_var(--main)]">
+      <div className="flex items-center gap-4 md:gap-5">
+        <div className="relative size-28 md:size-32 rounded-full overflow-hidden shrink-0 bg-white">
           <Image
             src={image}
             alt={name}
             fill
-            sizes="96px"
+            sizes="128px"
             className="object-cover object-top"
           />
         </div>
@@ -34,7 +34,7 @@ export default function TeacherCard({ name, credential, bio, image, hasVideo }: 
         {bio}
       </p>
       {hasVideo && (
-        <button className="flex items-center gap-2 group cursor-pointer self-start">
+        <button className="flex items-center gap-2 group cursor-pointer self-start mt-auto">
           <div className="size-9 rounded-full bg-main flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shrink-0">
             <svg width="10" height="12" viewBox="0 0 24 28" fill="none" className="ml-0.5">
               <path d="M24 14L0 28V0L24 14Z" fill="var(--main-bg)" />

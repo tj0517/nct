@@ -80,27 +80,27 @@ export default function BookingBanner({ dict }: { dict: ContactFormDict }) {
           </div>
 
           {/* Right: form */}
-          <div className="bg-cambridge-blue rounded-bl-[50px] rounded-tr-[50px] md:rounded-bl-[100px] md:rounded-tr-[100px] p-6 md:p-12 flex flex-col gap-4 md:gap-5">
+          <div className="bg-main-bg rounded-bl-[50px] rounded-tr-[50px] md:rounded-bl-[100px] md:rounded-tr-[100px] p-6 md:p-12 flex flex-col gap-4 md:gap-5">
             <input
               type="text"
               placeholder={dict.namePlaceholder}
-              className="bg-main-bg/90 rounded-bl-[25px] rounded-tr-[25px] px-5 md:px-6 py-3 md:py-4 font-inter text-base text-main placeholder:text-main/40 outline-none focus:bg-main-bg transition-colors"
+              className="bg-main/90 rounded-bl-[25px] rounded-tr-[25px] px-5 md:px-6 py-3 md:py-4 font-inter text-base text-main-bg placeholder:text-main-bg/40 outline-none focus:bg-main transition-colors"
             />
             <input
               type="email"
               placeholder={dict.emailPlaceholder}
-              className="bg-main-bg/90 rounded-bl-[25px] rounded-tr-[25px] px-5 md:px-6 py-3 md:py-4 font-inter text-base text-main placeholder:text-main/40 outline-none focus:bg-main-bg transition-colors"
+              className="bg-main/90 rounded-bl-[25px] rounded-tr-[25px] px-5 md:px-6 py-3 md:py-4 font-inter text-base text-main-bg placeholder:text-main-bg/40 outline-none focus:bg-main transition-colors"
             />
             <input
               type="tel"
               placeholder={dict.phonePlaceholder}
-              className="bg-main-bg/90 rounded-bl-[25px] rounded-tr-[25px] px-5 md:px-6 py-3 md:py-4 font-inter text-base text-main placeholder:text-main/40 outline-none focus:bg-main-bg transition-colors"
+              className="bg-main/90 rounded-bl-[25px] rounded-tr-[25px] px-5 md:px-6 py-3 md:py-4 font-inter text-base text-main-bg placeholder:text-main-bg/40 outline-none focus:bg-main transition-colors"
             />
 
             <textarea
               placeholder={dict.messagePlaceholder}
               rows={3}
-              className="bg-main-bg/90 rounded-bl-[25px] rounded-tr-[25px] px-5 md:px-6 py-3 md:py-4 font-inter text-base text-main placeholder:text-main/40 outline-none focus:bg-main-bg transition-colors resize-none"
+              className="bg-main/90 rounded-bl-[25px] rounded-tr-[25px] px-5 md:px-6 py-3 md:py-4 font-inter text-base text-main-bg placeholder:text-main-bg/40 outline-none focus:bg-main transition-colors resize-none"
             />
 
             <label className="flex items-start gap-3 cursor-pointer">
@@ -108,13 +108,13 @@ export default function BookingBanner({ dict }: { dict: ContactFormDict }) {
                 type="checkbox"
                 checked={consented}
                 onChange={(e) => setConsented(e.target.checked)}
-                className="accent-main-bg w-4 h-4 mt-0.5 shrink-0"
+                className="accent-accent w-4 h-4 mt-0.5 shrink-0"
               />
-              <span className="font-inter text-sm text-main-bg/80">{dict.consent}</span>
+              <span className="font-inter text-sm text-main/80">{dict.consent}</span>
             </label>
 
             <Button
-              variant="inverse"
+              variant="filled"
               className="!w-full !h-auto !py-4 !font-normal mt-2 disabled:opacity-50 disabled:cursor-not-allowed"
               disabled={!consented}
             >

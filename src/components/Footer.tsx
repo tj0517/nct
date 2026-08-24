@@ -19,7 +19,7 @@ export default function Footer({
   lang: Locale;
 }) {
   return (
-    <footer className="bg-cambridge-blue w-full pb-16">
+    <footer className="bg-white w-full pb-16">
       <div className="max-w-[1440px] mx-auto px-5 md:px-16 py-10 md:py-20 flex flex-col gap-10 md:gap-16">
         {/* Top: brand + nav */}
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">

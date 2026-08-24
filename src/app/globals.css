@@ -5,11 +5,7 @@
   --accent: #C8102E;
   --accent-text: #FFFFFF;
   --main-bg: #012169;
-  --second-bg: #A3C1AD;
-  /* Cambridge Blue — the brand's sparing fourth colour, kept separate from
-     --second-bg (which ThemeProvider drives as the dark secondary-navy
-     background used across Teachers/Pricing/FAQ/BookingBanner etc). */
-  --cambridge-blue: #A3C1AD;
+  --second-bg: #0A3080;
 }
 
 @theme inline {
@@ -18,7 +14,6 @@
   --color-accent-text: var(--accent-text);
   --color-main-bg: var(--main-bg);
   --color-second-bg: var(--second-bg);
-  --color-cambridge-blue: var(--cambridge-blue);
   --font-fraunces: var(--font-fraunces-var);
   --font-inter: var(--font-inter-var);
   --font-cormorant-garamond: var(--font-cormorant-garamond-var);
@@ -41,7 +36,6 @@ body {
   filter: brightness(0) invert(1);
   transition: filter 0.5s ease;
 }
-
 [data-theme="light"] [data-invert-on-dark] {
   transition: filter 0.5s ease;
 }

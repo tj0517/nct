@@ -48,12 +48,12 @@ export default function Pricing({ dict }: { dict: PricingDict }) {
           {/* Per-lesson price */}
           <div
             data-pricing-row
-            className="bg-cambridge-blue rounded-bl-[50px] rounded-tr-[50px] md:rounded-bl-[100px] md:rounded-tr-[100px] p-8 md:p-16 flex flex-col justify-center gap-4 shadow-[6px_6px_0px_var(--cambridge-blue)] md:shadow-[10px_10px_0px_var(--cambridge-blue)]"
+            className="bg-main-bg rounded-bl-[50px] rounded-tr-[50px] md:rounded-bl-[100px] md:rounded-tr-[100px] p-8 md:p-16 flex flex-col justify-center gap-4 shadow-[6px_6px_0px_var(--main)] md:shadow-[10px_10px_0px_var(--main)]"
           >
-            <p className="font-fraunces font-bold text-4xl md:text-[64px] text-main-bg leading-tight md:leading-normal">
+            <p className="font-fraunces font-bold text-4xl md:text-[64px] text-main leading-tight md:leading-normal">
               {dict.price}
             </p>
-            <p className="font-fraunces font-light text-xl md:text-2xl text-second-bg leading-normal">
+            <p className="font-fraunces font-light text-xl md:text-2xl text-main/70 leading-normal">
               {dict.priceDesc}
             </p>
           </div>

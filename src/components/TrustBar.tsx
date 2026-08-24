@@ -13,7 +13,7 @@ export default function TrustBar({ dict }: { dict: TrustBarDict }) {
       {/* BBC Radio 4 — embeds the interview, seeking to the relevant timestamp */}
       <div
         data-trust-item
-        className="bg-cambridge-blue rounded-2xl md:rounded-3xl px-8 py-8 md:px-14 md:py-10 flex flex-col lg:flex-row items-center gap-6 lg:gap-12 flex-1"
+        className="bg-second-bg rounded-2xl md:rounded-3xl px-8 py-8 md:px-14 md:py-10 flex flex-col lg:flex-row items-center gap-6 lg:gap-12 flex-1"
       >
         <div className="shrink-0">
           <Image
@@ -25,7 +25,7 @@ export default function TrustBar({ dict }: { dict: TrustBarDict }) {
           />
         </div>
         <div className="flex flex-col items-center lg:items-start gap-4 w-full">
-          <h3 className="font-fraunces font-bold text-xl md:text-2xl text-main-bg text-center lg:text-left">
+          <h3 className="font-fraunces font-bold text-xl md:text-2xl text-white text-center lg:text-left">
             {bbc.heading}
           </h3>
           <div className="w-full lg:max-w-[320px] flex justify-center lg:justify-start">
@@ -37,7 +37,7 @@ export default function TrustBar({ dict }: { dict: TrustBarDict }) {
       {/* Cambridge University Press — no outbound link, keeps visitors on site */}
       <div
         data-trust-item
-        className="bg-cambridge-blue rounded-2xl md:rounded-3xl px-8 py-8 md:px-14 md:py-10 flex flex-col lg:flex-row items-center gap-6 lg:gap-12 flex-1"
+        className="bg-second-bg rounded-2xl md:rounded-3xl px-8 py-8 md:px-14 md:py-10 flex flex-col lg:flex-row items-center gap-6 lg:gap-12 flex-1"
       >
         <div className="shrink-0">
           <Image
@@ -49,10 +49,10 @@ export default function TrustBar({ dict }: { dict: TrustBarDict }) {
           />
         </div>
         <div className="flex flex-col items-center lg:items-start gap-2">
-          <h3 className="font-fraunces font-bold text-xl md:text-2xl text-main-bg text-center lg:text-left">
+          <h3 className="font-fraunces font-bold text-xl md:text-2xl text-white text-center lg:text-left">
             {cambridge.heading}
           </h3>
-          <p className="font-inter text-sm text-main-bg/70 text-center lg:text-left">
+          <p className="font-inter text-sm text-white/75 text-center lg:text-left">
             {cambridge.description}
           </p>
         </div>

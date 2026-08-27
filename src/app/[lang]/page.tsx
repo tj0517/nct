@@ -17,7 +17,6 @@ import TeachersAnimated from "@/components/TeachersAnimated";
 import PricingAnimated from "@/components/PricingAnimated";
 import MapSection from "@/components/MapSection";
 import SectionBgReveal from "@/components/SectionBgReveal";
-import FAQ from "@/components/FAQ";
 
 export default async function Home({
   params,
@@ -71,11 +70,6 @@ export default async function Home({
         <div className="max-w-[1440px] mx-auto w-full mt-8 md:mt-16">
           <AnimatedSection direction="up">
             <MapSection dict={dict.map} />
-          </AnimatedSection>
-        </div>
-        <div id="faq" className="w-full mt-8 md:mt-16">
-          <AnimatedSection direction="up">
-            <FAQ dict={dict.faq} />
           </AnimatedSection>
         </div>
       </main>

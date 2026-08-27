@@ -9,8 +9,7 @@
       { "label": "Matematyka po angielsku", "href": "/maths" }
     ],
     "navLinks": [
-      { "label": "Kontakt", "href": "/#contact" },
-      { "label": "FAQ", "href": "/#faq" }
+      { "label": "Kontakt", "href": "/#contact" }
     ],
     "bookNow": "Zapisz si\u0119"
   },

@@ -9,8 +9,7 @@
       { "label": "Maths in English", "href": "/maths" }
     ],
     "navLinks": [
-      { "label": "Contact", "href": "/#contact" },
-      { "label": "FAQ", "href": "/#faq" }
+      { "label": "Contact", "href": "/#contact" }
     ],
     "bookNow": "Book now"
   },

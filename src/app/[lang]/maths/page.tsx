@@ -135,7 +135,7 @@ export default async function MathsPage({
         </AnimatedSection>
       </SectionBgReveal>
       <AnimatedSection direction="up" delay={0.1}>
-        <Footer dict={dict.footer} lang={locale} />
+        <Footer dict={dict.footer} />
       </AnimatedSection>
     </>
   );

@@ -17,6 +17,7 @@ import TeachersAnimated from "@/components/TeachersAnimated";
 import PricingAnimated from "@/components/PricingAnimated";
 import MapSection from "@/components/MapSection";
 import SectionBgReveal from "@/components/SectionBgReveal";
+import FAQ from "@/components/FAQ";
 
 export default async function Home({
   params,
@@ -31,7 +32,8 @@ export default async function Home({
   return (
     <>
       <main className="bg-main-bg flex flex-col items-center w-full">
-        <div className="lg:min-h-screen flex flex-col w-full">
+        {/* No forced full-screen height — the BBC trust bar should peek above the fold */}
+        <div className="flex flex-col w-full">
           <div className="max-w-[1440px] mx-auto w-full flex-1 flex flex-col">
             <Hero dict={dict.hero} />
           </div>
@@ -71,6 +73,11 @@ export default async function Home({
             <MapSection dict={dict.map} />
           </AnimatedSection>
         </div>
+        <div id="faq" className="w-full mt-8 md:mt-16">
+          <AnimatedSection direction="up">
+            <FAQ dict={dict.faq} />
+          </AnimatedSection>
+        </div>
       </main>
       <SectionBgReveal>
         <AnimatedSection direction="up">
@@ -78,7 +85,7 @@ export default async function Home({
         </AnimatedSection>
       </SectionBgReveal>
       <AnimatedSection direction="up" delay={0.1}>
-        <Footer dict={dict.footer} lang={lang as Locale} />
+        <Footer dict={dict.footer} />
       </AnimatedSection>
     </>
   );

@@ -1,4 +1,5 @@
 import Button from "./Button";
+import { BOOKING_URL } from "@/lib/booking";
 
 interface PricingDict {
   label: string;
@@ -27,9 +28,6 @@ export default function Pricing({ dict }: { dict: PricingDict }) {
             data-pricing-free
             className="relative bg-accent rounded-bl-[50px] rounded-tr-[50px] md:rounded-bl-[100px] md:rounded-tr-[100px] p-8 md:p-16 flex flex-col gap-4 border-2 border-main-bg shadow-[6px_6px_0px_var(--main-bg)] md:shadow-[10px_10px_0px_var(--main-bg)]"
           >
-            <span className="absolute top-6 right-6 md:top-10 md:right-10 font-inter text-xs md:text-sm font-bold tracking-wide text-white bg-main-bg rounded-full px-3 py-1">
-              START HERE
-            </span>
             <p className="font-fraunces font-bold text-4xl md:text-[64px] text-white leading-tight md:leading-normal">
               {dict.freePrice}
             </p>
@@ -37,7 +35,12 @@ export default function Pricing({ dict }: { dict: PricingDict }) {
               {dict.freeDesc}
             </p>
             <div className="pt-4 mt-auto">
-              <a href="#contact" className="block w-full">
+              <a
+                href={BOOKING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full"
+              >
                 <Button variant="inverse" className="!w-full !px-4">
                   {dict.freeCta}
                 </Button>

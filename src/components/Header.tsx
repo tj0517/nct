@@ -4,8 +4,7 @@ import { useState } from "react";
 import Button from "./Button";
 import type { Locale } from "@/dictionaries";
 import { localePath } from "@/lib/locale-path";
-
-const BOOKING_URL = "https://calendar.app.google/R3duMzzaJQBKy8Lc6";
+import { BOOKING_URL } from "@/lib/booking";
 
 interface HeaderDict {
   coursesLabel: string;
@@ -69,17 +68,25 @@ export default function Header({
   return (
     <>
       <header className="fixed top-0 left-0 right-0 z-40 bg-main-bg/70 backdrop-blur-md">
-        <div className="max-w-[1440px] mx-auto px-5 md:px-16 py-4 flex items-center justify-between">
+        <div className="max-w-[1440px] mx-auto px-3 min-[400px]:px-5 md:px-16 py-4 flex items-center justify-between gap-2">
           <a
             href={localePath("/", lang)}
-            className="font-cormorant-garamond font-semibold text-xl lg:text-2xl text-main tracking-tight"
+            className="font-cormorant-garamond font-semibold text-[15px] min-[400px]:text-base sm:text-xl lg:text-2xl text-main tracking-tight whitespace-nowrap shrink min-w-0 overflow-hidden text-ellipsis"
           >
-            <span className="lg:hidden">NCT</span>
-            <span className="hidden lg:inline">A Nice Cup of Tea</span>
+            A Nice Cup of Tea
           </a>
 
-          {/* Mobile: hamburger only — Book now moved into the menu content */}
-          <div className="flex items-center gap-3 lg:hidden ml-auto">
+          {/* Mobile: always-visible Book now CTA + hamburger */}
+          <div className="flex items-center gap-2 lg:hidden ml-auto shrink-0">
+            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
+              <Button
+                variant="filled"
+                size="small"
+                className="!px-3.5 !py-2 !text-[13px] min-[400px]:!text-sm"
+              >
+                {dict.bookNow}
+              </Button>
+            </a>
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label="Toggle menu"
@@ -151,36 +158,22 @@ export default function Header({
         {mobileOpen && (
           <div className="lg:hidden bg-main-bg/95 backdrop-blur-md border-t border-main/10">
             <nav className="flex flex-col px-5 py-6 gap-1">
-              {/* Courses section */}
-              <button
-                onClick={() => setCoursesOpen(!coursesOpen)}
-                className="font-inter text-[13px] uppercase tracking-[0.08em] text-main/70 py-3 flex items-center gap-1 cursor-pointer"
-              >
+              {/* Courses — links shown immediately, no extra tap to expand */}
+              <p className="font-inter text-[13px] uppercase tracking-[0.08em] text-main/40 py-2">
                 {dict.coursesLabel}
-                <svg
-                  width="10"
-                  height="6"
-                  viewBox="0 0 10 6"
-                  fill="none"
-                  className={`transition-transform duration-200 ${coursesOpen ? "rotate-180" : ""}`}
-                >
-                  <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </button>
-              {coursesOpen && (
-                <div className="flex flex-col pl-4 gap-1 pb-2">
-                  {dict.courseLinks.map((link) => (
-                    <a
-                      key={link.href}
-                      href={localePath(link.href, lang)}
-                      onClick={() => setMobileOpen(false)}
-                      className="font-inter text-[13px] text-main/70 py-2"
-                    >
-                      {link.label}
-                    </a>
-                  ))}
-                </div>
-              )}
+              </p>
+              <div className="flex flex-col pl-4 gap-1 pb-2">
+                {dict.courseLinks.map((link) => (
+                  <a
+                    key={link.href}
+                    href={localePath(link.href, lang)}
+                    onClick={() => setMobileOpen(false)}
+                    className="font-inter text-sm text-main/80 py-2"
+                  >
+                    {link.label}
+                  </a>
+                ))}
+              </div>
 
               {dict.navLinks.map((link) => (
                 <a
@@ -192,16 +185,6 @@ export default function Header({
                   {link.label}
                 </a>
               ))}
-
-              <a
-                href={BOOKING_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => setMobileOpen(false)}
-                className="pt-4"
-              >
-                <Button variant="filled" className="!w-full">{dict.bookNow}</Button>
-              </a>
 
               <div className="pt-4 border-t border-main/10 mt-2">
                 <LanguageSwitcher lang={lang} />

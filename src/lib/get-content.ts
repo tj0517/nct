@@ -81,7 +81,6 @@ export async function getContent(locale: Locale): Promise<Dictionary> {
         subtitle: l(hp.heroSubtitle, locale),
         ctaPrimary: l(hp.heroCtaPrimary, locale),
         ctaPrimaryShort: l(hp.heroCtaPrimaryShort, locale) || l(hp.heroCtaPrimary, locale),
-        ctaPhone: hp.heroCtaPhone ?? "",
       },
       trustBar: {
         badges: lArr(hp.trustBarBadges, locale, ["heading", "cta", "description"]) as unknown as Dictionary["trustBar"]["badges"],
@@ -155,8 +154,6 @@ export async function getContent(locale: Locale): Promise<Dictionary> {
         items: lArr(hp.faqItems, locale, ["question", "answer"]) as Dictionary["faq"]["items"],
       },
       footer: {
-        tagline: l(ft?.tagline, locale),
-        links: lArr(ft?.links, locale, ["label", "href"]) as Dictionary["footer"]["links"],
         phoneLabel: l(ft?.phoneLabel, locale),
         emailLabel: l(ft?.emailLabel, locale),
         socialLabel: l(ft?.socialLabel, locale),

@@ -6,8 +6,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useReducedMotion } from "./GsapProvider";
 import Button from "./Button";
-
-const BOOKING_URL = "https://calendar.app.google/R3duMzzaJQBKy8Lc6";
+import { BOOKING_URL } from "@/lib/booking";
 
 interface HeroDict {
   headlineLine1: string;
@@ -16,7 +15,6 @@ interface HeroDict {
   subtitle: string;
   ctaPrimary: string;
   ctaPrimaryShort: string;
-  ctaPhone: string;
 }
 
 export default function Hero({ dict }: { dict: HeroDict }) {
@@ -43,7 +41,7 @@ export default function Hero({ dict }: { dict: HeroDict }) {
   );
 
   return (
-    <section ref={ref} className="w-full flex-1 px-[6vw] md:px-16 pt-20 md:pt-24 pb-20 lg:py-24 flex items-start lg:items-center">
+    <section ref={ref} className="w-full flex-1 px-[6vw] md:px-16 pt-20 md:pt-24 pb-8 md:pb-10 lg:pb-12 flex items-start lg:items-center">
       <div className="relative flex flex-col gap-8 w-full">
         {/* Left: headline + subtitle + CTAs, stacked with normal spacing. Capped
             from md so the column never runs under the absolutely-positioned King;
@@ -95,27 +93,18 @@ export default function Hero({ dict }: { dict: HeroDict }) {
             data-hero-subtitle
             className="font-fraunces font-normal text-[4.2vw] sm:text-xl lg:text-2xl text-main max-w-[561px] leading-normal"
           >
+            {/* Each fact on its own line at every breakpoint — sentences never wrap mid-line */}
             {dict.subtitle.split("\n").map((line, i) => (
-              <span key={i}>
-                {i > 0 && " "}
-                {i > 0 && <br className="hidden md:inline" />}
+              <span key={i} className="block">
                 {line}
               </span>
             ))}
           </p>
 
-          {/* CTAs: stacked and capped on phones (max-w-[440px]); from md they can
-              sit inline and wrap if the column gets too narrow. flex-auto makes
-              any button that wraps onto its own row stretch to the full column
-              width, so stacked buttons are always the same size. The text sizes
-              are tuned so the pair fits inline in the lg column (text-lg) and only
-              grows to 2xl at xl where there's room — no wrap window in between. */}
-          <div data-hero-ctas className="flex flex-col md:flex-row md:flex-wrap gap-4 items-stretch w-full max-w-[440px] md:max-w-none">
-            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="w-full md:w-auto md:flex-auto">
+          {/* Single CTA: full-width on phones (capped), auto-width from md */}
+          <div data-hero-ctas className="flex w-full max-w-[440px] md:max-w-none">
+            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="w-full md:w-auto">
               <Button variant="filled" className="!w-full md:!text-lg xl:!text-2xl lg:!px-8">{dict.ctaPrimaryShort}</Button>
-            </a>
-            <a href={`tel:${dict.ctaPhone.replace(/\s/g, "")}`} className="w-full md:w-auto md:flex-auto">
-              <Button variant="outline" className="!w-full md:!text-lg xl:!text-2xl lg:!px-8">{dict.ctaPhone}</Button>
             </a>
           </div>
         </div>

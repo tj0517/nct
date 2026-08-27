@@ -34,13 +34,13 @@ function TestimonialCard({ t }: { t: (typeof testimonials)[number] }) {
         &ldquo;{t.text}&rdquo;
       </p>
       <div className="flex items-center gap-3">
-        <div className={`relative size-12 rounded-full overflow-hidden shrink-0 flex items-center justify-center ${t.image ? "bg-second-bg" : "bg-second-bg border-2 border-main/30"}`}>
+        <div className={`relative size-20 md:size-24 rounded-full overflow-hidden shrink-0 flex items-center justify-center ${t.image ? "bg-second-bg" : "bg-second-bg border-2 border-main/30"}`}>
           {t.image ? (
             <Image
               src={t.image}
               alt={t.author}
               fill
-              sizes="48px"
+              sizes="96px"
               className="object-cover grayscale"
             />
           ) : (

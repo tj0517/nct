@@ -18,10 +18,9 @@
     "headlineLine1": "Speak the",
     "headlineItalic": "King's",
     "headlineBold": " English",
-    "subtitle": "Native speakers of British English.\nAn Oxford graduate and two PhDs.\n1 to 1 lessons in Warsaw or online.",
+    "subtitle": "Native speakers of British English.\nAn Oxford graduate and two PhDs.\nFace-to-face lessons in Warsaw.",
     "ctaPrimary": "Book your free assessment with Anthony",
-    "ctaPrimaryShort": "Book your free assessment",
-    "ctaPhone": "+48 453 374 984"
+    "ctaPrimaryShort": "Book your free assessment"
   },
   "trustBar": {
     "badges": [
@@ -165,14 +164,6 @@
     ]
   },
   "footer": {
-    "tagline": "Oxford-educated native speakers. English lessons for children, adults, and business.",
-    "links": [
-      { "label": "About", "href": "/#about" },
-      { "label": "Teachers", "href": "/#teachers" },
-      { "label": "Pricing", "href": "/#pricing" },
-      { "label": "FAQ", "href": "/#faq" },
-      { "label": "Contact", "href": "/#contact" }
-    ],
     "phoneLabel": "Phone",
     "emailLabel": "Email",
     "socialLabel": "Social",

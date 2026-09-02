@@ -79,8 +79,7 @@ export default function FAQ({ dict }: { dict: FAQDict }) {
   );
 
   return (
-    <section className="bg-second-bg pt-10 md:pt-16 pb-16 md:pb-32 w-full flex flex-col gap-[10px] px-5 md:px-16">
-      <p className="font-inter text-base text-accent-text">{dict.label}</p>
+    <section className="bg-second-bg pt-28 md:pt-40 pb-16 md:pb-32 w-full flex flex-col gap-[10px] px-5 md:px-16">
       <h2 className="font-fraunces font-bold text-3xl md:text-[64px] text-main leading-tight md:leading-normal">
         {dict.heading}
       </h2>

@@ -1,5 +1,5 @@
 interface SectionLabelProps {
-  label: string;
+  label?: string;
   title: string;
   titleColor?: "accent" | "main" | "main-bg";
   labelColor?: "main" | "second-bg" | "accent-text";
@@ -13,7 +13,7 @@ export default function SectionLabel({
 }: SectionLabelProps) {
   return (
     <div className="flex flex-col items-start">
-      <p className={`font-inter text-base text-${labelColor}`}>{label}</p>
+      {label && <p className={`font-inter text-base text-${labelColor}`}>{label}</p>}
       <h2
         className={`font-fraunces font-bold text-3xl md:text-[64px] leading-tight md:leading-normal text-${titleColor}`}
       >

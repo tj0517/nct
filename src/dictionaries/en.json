@@ -9,6 +9,7 @@
       { "label": "Maths in English", "href": "/maths" }
     ],
     "navLinks": [
+      { "label": "FAQ", "href": "/faq" },
       { "label": "Contact", "href": "/#contact" }
     ],
     "bookNow": "Book now"
@@ -72,7 +73,7 @@
   },
   "teachers": {
     "label": "NATIVE SPEAKERS",
-    "heading": "Meet your teachers",
+    "heading": "Meet your native speakers",
     "list": [
       {
         "name": "Anthony Goltz",
@@ -135,6 +136,10 @@
   "faq": {
     "label": "FAQ",
     "heading": "Got questions? We've got answers.",
+    "meta": {
+      "title": "FAQ — A Nice Cup of Tea",
+      "description": "Answers to common questions about lessons, pricing, the free consultation, and online tuition at A Nice Cup of Tea."
+    },
     "items": [
       {
         "question": "What is A Nice Cup of Tea?",

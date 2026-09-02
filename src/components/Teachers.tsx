@@ -18,7 +18,7 @@ export default function Teachers({ dict }: { dict: TeachersDict }) {
     <section className="bg-second-bg pt-48 pb-16 w-full">
       <div className="max-w-[1440px] mx-auto">
         <div className="px-5 md:px-16">
-          <SectionLabel label={dict.label} title={dict.heading} labelColor="accent-text" />
+          <SectionLabel title={dict.heading} />
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-9 px-5 md:px-16 pt-8 md:pt-16 pb-4">
           {dict.list.map((teacher, i) => (

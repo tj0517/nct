@@ -151,6 +151,10 @@ export async function getContent(locale: Locale): Promise<Dictionary> {
       faq: {
         label: l(hp.faqLabel, locale),
         heading: l(hp.faqHeading, locale),
+        meta: {
+          title: l(hp.faqMetaTitle, locale) || l(hp.metaTitle, locale),
+          description: l(hp.faqMetaDescription, locale) || l(hp.metaDescription, locale),
+        },
         items: lArr(hp.faqItems, locale, ["question", "answer"]) as Dictionary["faq"]["items"],
       },
       footer: {

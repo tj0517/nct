@@ -64,7 +64,7 @@ export default function Testimonials({ dict }: { dict: TestimonialsDict }) {
   return (
     <section className="py-10 md:py-20 w-full bg-main-bg">
       <div className="max-w-[1440px] mx-auto px-5 md:px-16 flex flex-col gap-8 md:gap-12">
-        <SectionLabel label={dict.label} title={dict.heading} labelColor="main" titleColor="main" />
+        <SectionLabel title={dict.heading} titleColor="main" />
 
         {/* Desktop: 3 across, hovered card grows wider and the others yield */}
         <div className="hidden lg:flex gap-6">

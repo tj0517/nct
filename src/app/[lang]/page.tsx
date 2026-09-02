@@ -31,21 +31,22 @@ export default async function Home({
   return (
     <>
       <main className="bg-main-bg flex flex-col items-center w-full">
-        {/* No forced full-screen height — the BBC trust bar should peek above the fold */}
+        {/* Hero fills the viewport on phones (see Hero.tsx); the next section
+            (About) begins cleanly below the fold. */}
         <div className="flex flex-col w-full">
           <div className="max-w-[1440px] mx-auto w-full flex-1 flex flex-col">
             <Hero dict={dict.hero} />
           </div>
         </div>
-        <div className="max-w-[1440px] mx-auto w-full py-4 md:py-6 px-5 md:px-16">
-          <TrustBarAnimated>
-            <TrustBar dict={dict.trustBar} />
-          </TrustBarAnimated>
-        </div>
         <div id="about" className="max-w-[1440px] mx-auto w-full mt-8 md:mt-16">
           <AnimatedSection direction="up">
             <About dict={dict.about} />
           </AnimatedSection>
+        </div>
+        <div className="max-w-[1440px] mx-auto w-full py-4 md:py-6 px-5 md:px-16 mt-8 md:mt-16">
+          <TrustBarAnimated>
+            <TrustBar dict={dict.trustBar} />
+          </TrustBarAnimated>
         </div>
         <div className="w-full mt-8 md:mt-16">
           <WhoWeTeachAnimated>

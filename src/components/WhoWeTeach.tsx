@@ -19,7 +19,6 @@ export default function WhoWeTeach({
       <div className="max-w-[1440px] mx-auto px-5 md:px-16">
         <div className="bg-white rounded-bl-[50px] rounded-tr-[50px] md:rounded-bl-[150px] md:rounded-tr-[150px] p-6 md:p-16 flex flex-col gap-[10px]">
           <div data-wwt-heading>
-            <p className="font-inter text-base text-second-bg">{dict.label}</p>
             <h2 className="font-fraunces font-bold text-3xl md:text-[64px] text-main-bg leading-tight md:leading-normal">
               {dict.heading}
             </h2>

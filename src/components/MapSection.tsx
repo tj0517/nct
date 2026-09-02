@@ -10,7 +10,7 @@ export default function MapSection({ dict }: { dict: MapDict }) {
   return (
     <section className="flex flex-col gap-6 md:gap-8 py-10 md:py-20 px-5 md:px-16 w-full">
       <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
-        <SectionLabel label={dict.label} title={dict.heading} labelColor="accent-text" />
+        <SectionLabel title={dict.heading} />
         <p className="font-fraunces font-light text-base md:text-lg text-main/70 max-w-[480px]">
           {dict.description.split("\n").map((line, i) => (
             <span key={i}>

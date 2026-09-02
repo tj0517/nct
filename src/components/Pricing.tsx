@@ -16,7 +16,6 @@ export default function Pricing({ dict }: { dict: PricingDict }) {
     <section className="bg-second-bg py-10 md:py-16 w-full">
       <div className="max-w-[1440px] mx-auto px-5 md:px-16 flex flex-col gap-10 md:gap-16">
         <div className="flex flex-col items-start">
-          <p className="font-inter text-base text-accent-text">{dict.label}</p>
           <h2 className="font-fraunces font-bold text-3xl md:text-[64px] text-main leading-tight md:leading-normal">
             {dict.heading}
           </h2>

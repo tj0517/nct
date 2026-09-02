@@ -41,12 +41,17 @@ export default function Hero({ dict }: { dict: HeroDict }) {
   );
 
   return (
-    <section ref={ref} className="w-full flex-1 px-[6vw] md:px-16 pt-20 md:pt-24 pb-8 md:pb-10 lg:pb-12 flex items-start lg:items-center">
+    <section ref={ref} className="w-full min-h-[100svh] md:min-h-0 px-[6vw] md:px-16 pt-20 md:pt-24 pb-8 md:pb-10 lg:pb-12 flex items-stretch md:items-start lg:items-center">
       <div className="relative flex flex-col gap-8 w-full">
         {/* Left: headline + subtitle + CTAs, stacked with normal spacing. Capped
             from md so the column never runs under the absolutely-positioned King;
             slightly wider at lg where the CTAs need room to sit inline. */}
-        <div className="relative z-10 flex flex-1 min-w-0 flex-col gap-4 md:gap-8 items-start md:max-w-[55%] lg:max-w-[58%]">
+        <div className="relative z-10 flex flex-1 min-w-0 flex-col md:justify-start gap-0 md:gap-8 items-start md:max-w-[55%] lg:max-w-[58%]">
+          {/* Phone-only spacers, weighted 1 : 1 : 2. Free height splits a quarter
+              above the headline, a quarter between subtitle and CTA, and half
+              below — so the CTA sits where a centred block would put it while
+              the headline + subtitle ride higher. Hidden from md. */}
+          <div aria-hidden className="grow md:hidden" />
           <div className="relative w-full md:contents">
             <h1
               data-hero-headline
@@ -91,7 +96,7 @@ export default function Hero({ dict }: { dict: HeroDict }) {
 
           <p
             data-hero-subtitle
-            className="font-fraunces font-normal text-[4.2vw] sm:text-xl lg:text-2xl text-main max-w-[561px] leading-normal"
+            className="mt-9 md:mt-0 font-fraunces font-normal text-[5.4vw] sm:text-xl lg:text-2xl text-main max-w-[561px] leading-relaxed sm:leading-normal"
           >
             {/* Each fact on its own line at every breakpoint — sentences never wrap mid-line */}
             {dict.subtitle.split("\n").map((line, i) => (
@@ -101,12 +106,15 @@ export default function Hero({ dict }: { dict: HeroDict }) {
             ))}
           </p>
 
-          {/* Single CTA: full-width on phones (capped), auto-width from md */}
-          <div data-hero-ctas className="flex w-full max-w-[440px] md:max-w-none">
+          {/* Single CTA: full-width on phones (capped), auto-width from md.
+              On phones it sits after the middle spacer (see above). */}
+          <div aria-hidden className="grow md:hidden" />
+          <div data-hero-ctas className="mt-9 md:mt-0 flex w-full max-w-[440px] md:max-w-none">
             <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="w-full md:w-auto">
               <Button variant="filled" className="!w-full md:!text-lg xl:!text-2xl lg:!px-8">{dict.ctaPrimaryShort}</Button>
             </a>
           </div>
+          <div aria-hidden className="grow-[2] md:hidden" />
         </div>
 
         {/* King illustration — md and up (below md the inline King beside the

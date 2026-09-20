@@ -2,15 +2,36 @@
   "header": {
     "coursesLabel": "Courses",
     "courseLinks": [
-      { "label": "Children & Teens", "href": "/children" },
-      { "label": "Adults", "href": "/adults" },
-      { "label": "University Applications", "href": "/university" },
-      { "label": "Business English", "href": "/business" },
-      { "label": "Maths in English", "href": "/maths" }
+      {
+        "label": "Children & Teens",
+        "href": "/children"
+      },
+      {
+        "label": "Adults",
+        "href": "/adults"
+      },
+      {
+        "label": "University Applications",
+        "href": "/university"
+      },
+      {
+        "label": "Business English",
+        "href": "/business"
+      },
+      {
+        "label": "Maths in English",
+        "href": "/maths"
+      }
     ],
     "navLinks": [
-      { "label": "FAQ", "href": "/faq" },
-      { "label": "Contact", "href": "/#contact" }
+      {
+        "label": "FAQ",
+        "href": "/faq"
+      },
+      {
+        "label": "Contact",
+        "href": "/#contact"
+      }
     ],
     "bookNow": "Book now"
   },
@@ -109,7 +130,7 @@
     "label": "GET STARTED",
     "heading": "Book your free\n60-minute introduction",
     "body": "Level assessment, needs analysis, diagnostic teaching, and teacher recommendation. No obligation to continue.",
-    "locationNote": "We are always happy to welcome students at S\u0142upecka 4 in Warsaw, but online introductory sessions are also available.",
+    "locationNote": "We are always happy to welcome students at Słupecka 4 in Warsaw, but online introductory sessions are also available.",
     "namePlaceholder": "Name",
     "emailPlaceholder": "Email",
     "phonePlaceholder": "Phone",
@@ -130,7 +151,7 @@
   },
   "map": {
     "label": "VISIT US",
-    "heading": "S\u0142upecka 4/45",
+    "heading": "Słupecka 4/45",
     "description": "Lessons face to face at our Ochota location.\nLessons in Warsaw at your home or office by arrangement.\nOnline lessons also available."
   },
   "faq": {
@@ -151,11 +172,11 @@
       },
       {
         "question": "How much do lessons cost?",
-        "answer": "The first 60-minute consultation lesson is free. Children\u2019s lessons are 225 PLN per 60-minute lesson. Adults and Business English are 250 PLN per 60-minute lesson. Small groups start from 300 PLN per 60-minute session per group. University application programmes and Maths tuition are priced after consultation."
+        "answer": "The first 60-minute consultation lesson is free. Children’s lessons are 225 PLN per 60-minute lesson. Adults and Business English are 250 PLN per 60-minute lesson. Small groups start from 300 PLN per 60-minute session per group. University application programmes and Maths tuition are priced after consultation."
       },
       {
         "question": "How is NCT different from a normal language school?",
-        "answer": "NCT is smaller, more personal, and more tailored than a standard language school. Lessons are not based on a mechanical textbook march. Students work with experienced native-speaker teachers who correct carefully, adapt to the student\u2019s goals, and focus on real English for real situations."
+        "answer": "NCT is smaller, more personal, and more tailored than a standard language school. Lessons are not based on a mechanical textbook march. Students work with experienced native-speaker teachers who correct carefully, adapt to the student’s goals, and focus on real English for real situations."
       },
       {
         "question": "Do you offer online lessons?",
@@ -175,39 +196,52 @@
     "designedIn": "Designed in Warsaw"
   },
   "meta": {
-    "title": "A Nice Cup of Tea \u2014 English Lessons",
+    "title": "A Nice Cup of Tea — English Lessons",
     "description": "Oxford-educated native speakers. English lessons for children, adults, and business."
   },
   "adults": {
     "meta": {
-      "title": "English for Adults \u2014 A Nice Cup of Tea",
-      "description": "Richer vocabulary, clearer pronunciation, and true confidence when you speak. English lessons for adults in Warsaw and online."
+      "title": "English for Adults — A Nice Cup of Tea",
+      "description": "Our British native speakers will help you speak English with clarity and confidence. For adults from A1 to C2, face-to-face in Warsaw or online."
     },
     "hero": {
-      "label": "ADULTS",
-      "title": "English for",
-      "titleItalic": "Adults",
-      "subtitle": "Oxford-educated native speakers help you find the right word, the right rhythm, and the right voice. Warsaw and online."
+      "headline": [
+        {
+          "text": "English"
+        },
+        {
+          "text": "for",
+          "italic": true
+        },
+        {
+          "text": "Adults"
+        }
+      ],
+      "subtitle": "Our British native speakers will help you speak English with clarity and confidence.\nFor adults from A1 to C2, face-to-face in Warsaw or online.",
+      "cta": "Book your free 30-minute assessment",
+      "ctaShort": "Book your free assessment",
+      "illustrationAlt": "Illustration of a lion in a waistcoat and Union Jack trousers"
     },
-    "aboutBody": "\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0Many adults fear being wrong. The wrong word. The wrong tense. The wrong construction. The classroom where every mistake felt public. At NCT, we do the opposite. We encourage your expression. We listen for your real voice. We correct gently, without making you smaller. No beige ChatGPT flattery. Just richer vocabulary, clearer pronunciation, and true confidence when you speak.",
-    "meetTeachers": "Meet our teachers",
-    "bookConsultation": "Book your free consultation",
-    "promiseLabel": "THE PROMISE",
-    "promiseQuote": "The effortless superiority of a sentence that knows where it is going.",
-    "goalsLabel": "YOUR GOALS",
-    "goalsHeading": "Lessons shaped around you.",
-    "goals": [
-      { "name": "Conversation", "desc": "Speak freely and naturally in any situation" },
-      { "name": "Pronunciation", "desc": "Sound clear, confident, and at ease" },
-      { "name": "Accent", "desc": "Refine your spoken English" },
-      { "name": "Culture", "desc": "Understand the world behind the words" },
-      { "name": "Writing", "desc": "Express yourself with precision on the page" },
-      { "name": "Confidence", "desc": "Find your real voice in English" }
-    ]
+    "testimonial": {
+      "quote": "A Nice Cup of Tea are the best in their field. With Anthony's help, my work was published by Cambridge University Press.",
+      "author": "Dr Joachim Popek",
+      "role": "University of Rzeszów",
+      "image": "/images/testimonials/joachim-popek.jpg",
+      "imageAlt": "Dr Joachim Popek"
+    },
+    "help": {
+      "heading": "We can help you:",
+      "items": [
+        "Speak more fluently and confidently",
+        "Improve your pronunciation and accent",
+        "Write clearly for work or study",
+        "Prepare for Cambridge C1, C2, IELTS, TOEFL or GMAT"
+      ]
+    }
   },
   "business": {
     "meta": {
-      "title": "Business English \u2014 A Nice Cup of Tea",
+      "title": "Business English — A Nice Cup of Tea",
       "description": "English for the room you want to be in. Business English with clarity, precision, and authority. Warsaw and online."
     },
     "hero": {
@@ -216,25 +250,43 @@
       "titleItalic": "you want to be in.",
       "subtitle": "We prepare your English for the interview, the boardroom, the investor dinner, and the international conference."
     },
-    "aboutBody": "\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0At NCT, we prepare your English for the moment you need it most. You will learn to speak with clarity, precision, and authority. Not textbook language from a course written ten years ago. Not beige corporate speak churned out by ChatGPT. Confident English, spoken in your voice.",
+    "aboutBody": "                    At NCT, we prepare your English for the moment you need it most. You will learn to speak with clarity, precision, and authority. Not textbook language from a course written ten years ago. Not beige corporate speak churned out by ChatGPT. Confident English, spoken in your voice.",
     "meetTeachers": "Meet our teachers",
     "bookConsultation": "Book your free consultation",
     "servicesLabel": "WE HELP YOU PREPARE FOR",
     "servicesHeading": "Real situations. Real stakes.",
     "services": [
-      { "name": "Meetings with international clients", "desc": "Speak with authority across borders" },
-      { "name": "Presentations and pitches", "desc": "Persuade with clarity and confidence" },
-      { "name": "Interviews and promotions", "desc": "Sound ready for the next stage" },
-      { "name": "Negotiations", "desc": "Choose the right word at the right moment" },
-      { "name": "Legal, financial, and executive communication", "desc": "Precision where it matters most" },
-      { "name": "CVs, LinkedIn profiles, and professional documents", "desc": "Written English that opens doors" }
+      {
+        "name": "Meetings with international clients",
+        "desc": "Speak with authority across borders"
+      },
+      {
+        "name": "Presentations and pitches",
+        "desc": "Persuade with clarity and confidence"
+      },
+      {
+        "name": "Interviews and promotions",
+        "desc": "Sound ready for the next stage"
+      },
+      {
+        "name": "Negotiations",
+        "desc": "Choose the right word at the right moment"
+      },
+      {
+        "name": "Legal, financial, and executive communication",
+        "desc": "Precision where it matters most"
+      },
+      {
+        "name": "CVs, LinkedIn profiles, and professional documents",
+        "desc": "Written English that opens doors"
+      }
     ],
     "credentialsLabel": "CREDENTIALS",
     "credentialsHeading": "Our students have included senior professionals from"
   },
   "children": {
     "meta": {
-      "title": "English for Children \u2014 A Nice Cup of Tea",
+      "title": "English for Children — A Nice Cup of Tea",
       "description": "At NCT, children do not just learn English. They explore it. Lessons for children aged 5 and upwards in Warsaw and online."
     },
     "hero": {
@@ -243,22 +295,34 @@
       "titleItalic": "Children",
       "subtitle": "A word can be small. A word can be grand. A word can lead to a faraway land. For children aged 5 and upwards."
     },
-    "aboutBody": "\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0At NCT, children do not just learn English. They explore it. Stories. Questions. Rhymes. Conversations. Books with strange doors. Sentences with wings. We help children speak clearly, write boldly, and use English with confidence. English is not just a subject at school. It is a key, a ladder, and a door you pass through.",
+    "aboutBody": "                    At NCT, children do not just learn English. They explore it. Stories. Questions. Rhymes. Conversations. Books with strange doors. Sentences with wings. We help children speak clearly, write boldly, and use English with confidence. English is not just a subject at school. It is a key, a ladder, and a door you pass through.",
     "meetTeachers": "Meet our teachers",
     "bookConsultation": "Book your free consultation",
     "examLabel": "FOR CHILDREN AGED 5+",
     "examHeading": "We prepare children for",
     "examPrep": [
-      { "name": "Reading, writing, listening, and speaking", "desc": "The four foundations" },
-      { "name": "Egzamin \u00f3smoklasisty", "desc": "Year 8 exam preparation" },
-      { "name": "Konkurs kuratoryjny", "desc": "Regional competition prep" },
-      { "name": "Olimpiada J\u0119zyka Angielskiego Junior\u00f3w", "desc": "National olympiad support" }
+      {
+        "name": "Reading, writing, listening, and speaking",
+        "desc": "The four foundations"
+      },
+      {
+        "name": "Egzamin ósmoklasisty",
+        "desc": "Year 8 exam preparation"
+      },
+      {
+        "name": "Konkurs kuratoryjny",
+        "desc": "Regional competition prep"
+      },
+      {
+        "name": "Olimpiada Języka Angielskiego Juniorów",
+        "desc": "National olympiad support"
+      }
     ],
     "quote": "English is not just a subject at school. It is a key, a ladder, and a door you pass through."
   },
   "maths": {
     "meta": {
-      "title": "Maths in English \u2014 A Nice Cup of Tea",
+      "title": "Maths in English — A Nice Cup of Tea",
       "description": "Exam confidence for IB students. Maths taught online by Dr Rishi Handa, an English native speaker with a degree from UCL."
     },
     "hero": {
@@ -267,28 +331,46 @@
       "titleItalic": "English",
       "subtitle": "Exam confidence for IB students. Taught online by Dr Rishi Handa, an English native speaker with a degree in Mathematics with Theoretical Physics from UCL."
     },
-    "aboutBody": "\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0For IB and international school students, the challenge is not only the mathematics. It is reading the question precisely, using the right terminology, and thinking naturally in the language of the exam. Dr\u00a0Handa teaches both: the Maths, and the English of\u00a0Maths.",
+    "aboutBody": "                    For IB and international school students, the challenge is not only the mathematics. It is reading the question precisely, using the right terminology, and thinking naturally in the language of the exam. Dr Handa teaches both: the Maths, and the English of Maths.",
     "seePricing": "See pricing",
     "bookConsultation": "Book your free consultation",
     "servicesLabel": "WHAT WE HELP WITH",
     "servicesHeading": "From algebra to confidence.",
     "services": [
-      { "name": "IB Maths: Analysis & Approaches", "desc": "SL and HL preparation" },
-      { "name": "IB Maths: Applications & Interpretation", "desc": "SL and HL preparation" },
-      { "name": "International school Maths", "desc": "British, American, and IB curricula" },
-      { "name": "Exam preparation and revision", "desc": "Focused, structured practice" },
-      { "name": "Students who have hit a block", "desc": "Clarity from confusion" },
-      { "name": "High-achievers who need stretch", "desc": "Challenge beyond the syllabus" }
+      {
+        "name": "IB Maths: Analysis & Approaches",
+        "desc": "SL and HL preparation"
+      },
+      {
+        "name": "IB Maths: Applications & Interpretation",
+        "desc": "SL and HL preparation"
+      },
+      {
+        "name": "International school Maths",
+        "desc": "British, American, and IB curricula"
+      },
+      {
+        "name": "Exam preparation and revision",
+        "desc": "Focused, structured practice"
+      },
+      {
+        "name": "Students who have hit a block",
+        "desc": "Clarity from confusion"
+      },
+      {
+        "name": "High-achievers who need stretch",
+        "desc": "Challenge beyond the syllabus"
+      }
     ],
     "teacherLabel": "YOUR TEACHER",
     "teacherName": "Dr Rishi Handa",
-    "teacherBio": "Teacher at St\u00a0James Independent School in London. Degree in Mathematics with Theoretical Physics from UCL. An unusual blend of precision, imagination, and patience.",
+    "teacherBio": "Teacher at St James Independent School in London. Degree in Mathematics with Theoretical Physics from UCL. An unusual blend of precision, imagination, and patience.",
     "bookAConsultation": "Book a consultation"
   },
   "university": {
     "meta": {
-      "title": "University Applications \u2014 A Nice Cup of Tea",
-      "description": "Oxford. Stanford. Our students have won places at some of the world\u2019s most demanding universities. Application support in Warsaw and online."
+      "title": "University Applications — A Nice Cup of Tea",
+      "description": "Oxford. Stanford. Our students have won places at some of the world’s most demanding universities. Application support in Warsaw and online."
     },
     "hero": {
       "label": "UNIVERSITY APPLICATIONS",
@@ -296,20 +378,44 @@
       "titleItalic": "the best.",
       "subtitle": "Oxford. Stanford. New York's School of Visual Arts. Our students have won places at some of the world's most demanding universities."
     },
-    "aboutBody": "\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0A strong application is not just correct English. It is structure, voice, evidence, and spark. It is the ability to make your thinking visible. At NCT, we help students prepare applications, essays, and interviews with clarity and seriousness. We do not teach students to apologise for ambition. We help them sound ready. Ready to study the subject. Ready to answer difficult questions. Ready to speak with precision, curiosity, and confidence.",
+    "aboutBody": "                    A strong application is not just correct English. It is structure, voice, evidence, and spark. It is the ability to make your thinking visible. At NCT, we help students prepare applications, essays, and interviews with clarity and seriousness. We do not teach students to apologise for ambition. We help them sound ready. Ready to study the subject. Ready to answer difficult questions. Ready to speak with precision, curiosity, and confidence.",
     "meetTeachers": "Meet our teachers",
     "bookConsultation": "Book your free consultation",
     "servicesLabel": "WE HELP WITH",
     "servicesHeading": "From personal statement to podium.",
     "services": [
-      { "name": "International university applications", "desc": "UK, USA, and Europe" },
-      { "name": "UCAS personal statements", "desc": "Structure, voice, and spark" },
-      { "name": "Oxbridge-style interview preparation", "desc": "Think clearly under pressure" },
-      { "name": "Admissions essays", "desc": "Make your thinking visible" },
-      { "name": "Scholarship applications", "desc": "Stand out in a competitive field" },
-      { "name": "Academic interviews", "desc": "Speak with precision and curiosity" },
-      { "name": "IB Diploma: IAs, EEs, and TOK essays", "desc": "Rigour meets clarity" },
-      { "name": "MBA application, GMAT, and interview prep", "desc": "The next stage of your career" }
+      {
+        "name": "International university applications",
+        "desc": "UK, USA, and Europe"
+      },
+      {
+        "name": "UCAS personal statements",
+        "desc": "Structure, voice, and spark"
+      },
+      {
+        "name": "Oxbridge-style interview preparation",
+        "desc": "Think clearly under pressure"
+      },
+      {
+        "name": "Admissions essays",
+        "desc": "Make your thinking visible"
+      },
+      {
+        "name": "Scholarship applications",
+        "desc": "Stand out in a competitive field"
+      },
+      {
+        "name": "Academic interviews",
+        "desc": "Speak with precision and curiosity"
+      },
+      {
+        "name": "IB Diploma: IAs, EEs, and TOK essays",
+        "desc": "Rigour meets clarity"
+      },
+      {
+        "name": "MBA application, GMAT, and interview prep",
+        "desc": "The next stage of your career"
+      }
     ],
     "studentsLabel": "OUR STUDENTS",
     "studentsHeading": "Where they've been accepted."

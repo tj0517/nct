@@ -110,7 +110,7 @@ export default function Hero({ dict }: { dict: HeroDict }) {
               On phones it sits after the middle spacer (see above). */}
           <div aria-hidden className="grow md:hidden" />
           <div data-hero-ctas className="mt-9 md:mt-0 flex w-full max-w-[440px] md:max-w-none">
-            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="w-full md:w-auto">
+            <a href={BOOKING_URL} className="w-full md:w-auto">
               <Button variant="filled" className="!w-full md:!text-lg xl:!text-2xl lg:!px-8">{dict.ctaPrimaryShort}</Button>
             </a>
           </div>

@@ -36,8 +36,6 @@ export default function Pricing({ dict }: { dict: PricingDict }) {
             <div className="pt-4 mt-auto">
               <a
                 href={BOOKING_URL}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="block w-full"
               >
                 <Button variant="inverse" className="!w-full !px-4">

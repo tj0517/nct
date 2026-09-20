@@ -9,6 +9,7 @@ import { BookingModalProvider } from "@/components/BookingModalContext";
 import { getDictionary, hasLocale } from "@/dictionaries";
 import type { Locale } from "@/dictionaries";
 import { notFound } from "next/navigation";
+import { THEME_INIT_SCRIPT } from "@/lib/theme";
 
 const fraunces = Fraunces({
   variable: "--font-fraunces-var",
@@ -63,6 +64,11 @@ export default async function RootLayout({
       className={`${fraunces.variable} ${inter.variable} ${cormorantGaramond.variable} antialiased`}
       suppressHydrationWarning
     >
+      <head>
+        {/* Sets data-theme before first paint so light-theme routes never
+            flash navy. Runs synchronously during HTML parsing. */}
+        <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
+      </head>
       <body suppressHydrationWarning>
         <ThemeProvider>
           <BookingModalProvider bookingDict={dict.booking}>

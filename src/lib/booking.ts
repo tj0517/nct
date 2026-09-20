@@ -1,3 +1,5 @@
-// Google Calendar appointment schedule — 30-minute introduction with Anthony.
-// Every "Book now" CTA on the site links straight here.
-export const BOOKING_URL = "https://calendar.app.google/R3duMzzaJQBKy8Lc6";
+// Every "Book now" / "Book your free assessment" CTA on the site jumps to the
+// contact form (id="contact") at the bottom of the current page. The Google
+// Calendar appointment schedule is deliberately not linked for now — enquiries
+// should come through the form first.
+export const BOOKING_URL = "#contact";

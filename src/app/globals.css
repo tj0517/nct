@@ -1,11 +1,27 @@
 @import "tailwindcss";
 
 :root {
+  /* Fixed Union Jack brand colours — never flip with the theme */
+  --union-blue: #012169;
+  --union-crimson: #C8102E;
+  --union-white: #FFFFFF;
+
+  /* "blue" theme (homepage & default): navy ground, white text */
   --main: #FFFFFF;
   --accent: #C8102E;
   --accent-text: #FFFFFF;
   --main-bg: #012169;
   --second-bg: #0A3080;
+}
+
+/* "light" theme (course landing pages): white ground, Union Blue text,
+   crimson accents. Set on <html> by THEME_INIT_SCRIPT / ThemeProvider. */
+html[data-theme="light"] {
+  --main: #012169;
+  --accent: #C8102E;
+  --accent-text: #C8102E;
+  --main-bg: #FFFFFF;
+  --second-bg: #FFFFFF;
 }
 
 @theme inline {
@@ -14,6 +30,9 @@
   --color-accent-text: var(--accent-text);
   --color-main-bg: var(--main-bg);
   --color-second-bg: var(--second-bg);
+  --color-union-blue: var(--union-blue);
+  --color-union-crimson: var(--union-crimson);
+  --color-union-white: var(--union-white);
   --font-fraunces: var(--font-fraunces-var);
   --font-inter: var(--font-inter-var);
   --font-cormorant-garamond: var(--font-cormorant-garamond-var);

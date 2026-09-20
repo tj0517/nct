@@ -8,7 +8,6 @@ import {
   footerQuery,
   teachersQuery,
   testimonialsQuery,
-  adultsPageQuery,
   businessPageQuery,
   childrenPageQuery,
   mathsPageQuery,
@@ -50,14 +49,13 @@ type SanityDoc = Record<string, any>;
 
 export async function getContent(locale: Locale): Promise<Dictionary> {
   try {
-    const [hp, hd, ft, teachers, testimonials, adults, business, children, maths, university] =
+    const [hp, hd, ft, teachers, testimonials, business, children, maths, university] =
       await Promise.all([
         sanityFetch<SanityDoc | null>({ query: homepageQuery, tags: ["homepage"] }),
         sanityFetch<SanityDoc | null>({ query: headerQuery, tags: ["header"] }),
         sanityFetch<SanityDoc | null>({ query: footerQuery, tags: ["footer"] }),
         sanityFetch<SanityDoc[] | null>({ query: teachersQuery, tags: ["teacher"] }),
         sanityFetch<SanityDoc[] | null>({ query: testimonialsQuery, tags: ["testimonial"] }),
-        sanityFetch<SanityDoc | null>({ query: adultsPageQuery, tags: ["adultsPage"] }),
         sanityFetch<SanityDoc | null>({ query: businessPageQuery, tags: ["businessPage"] }),
         sanityFetch<SanityDoc | null>({ query: childrenPageQuery, tags: ["childrenPage"] }),
         sanityFetch<SanityDoc | null>({ query: mathsPageQuery, tags: ["mathsPage"] }),
@@ -66,6 +64,7 @@ export async function getContent(locale: Locale): Promise<Dictionary> {
 
     // If homepage is missing, Sanity hasn't been seeded yet — fall back
     if (!hp) return getDictionary(locale);
+    const staticDict = await getDictionary(locale);
 
     return {
       header: {
@@ -168,7 +167,9 @@ export async function getContent(locale: Locale): Promise<Dictionary> {
         title: l(hp.metaTitle, locale),
         description: l(hp.metaDescription, locale),
       },
-      adults: buildSubpage(adults, locale, "adults"),
+      // The Adults landing page was rebuilt (hero / testimonial / help list)
+      // and is not modelled in Sanity yet — serve the static copy.
+      adults: staticDict.adults,
       business: buildSubpage(business, locale, "business"),
       children: buildSubpage(children, locale, "children"),
       maths: buildSubpage(maths, locale, "maths"),
@@ -204,15 +205,6 @@ function buildSubpage(doc: SanityDoc | null, locale: Locale, type: string): Dict
   };
 
   switch (type) {
-    case "adults":
-      return {
-        ...base,
-        promiseLabel: l(doc.promiseLabel, locale),
-        promiseQuote: l(doc.promiseQuote, locale),
-        goalsLabel: l(doc.goalsLabel, locale),
-        goalsHeading: l(doc.goalsHeading, locale),
-        goals: lArr(doc.goals, locale, ["name", "desc"]) as { name: string; desc: string }[],
-      };
     case "business":
       return {
         ...base,

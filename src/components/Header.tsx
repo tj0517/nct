@@ -78,7 +78,7 @@ export default function Header({
 
           {/* Mobile: always-visible Book now CTA + hamburger */}
           <div className="flex items-center gap-2 lg:hidden ml-auto shrink-0">
-            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
+            <a href={BOOKING_URL}>
               <Button
                 variant="filled"
                 size="small"
@@ -148,7 +148,7 @@ export default function Header({
 
             <LanguageSwitcher lang={lang} />
 
-              <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
+              <a href={BOOKING_URL}>
                 <Button variant="filled" size="small">{dict.bookNow}</Button>
               </a>
           </nav>

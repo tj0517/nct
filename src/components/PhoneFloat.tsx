@@ -8,7 +8,7 @@ export default function PhoneFloat() {
   return (
     <div className="fixed bottom-6 right-5 md:bottom-20 md:right-8 z-50 flex flex-col items-end gap-3">
       {open && (
-        <div className="flex flex-col gap-2 bg-main-bg rounded-bl-[20px] rounded-tr-[20px] border border-main-bg/20 shadow-lg overflow-hidden">
+        <div className="flex flex-col gap-2 bg-main-bg rounded-bl-[20px] rounded-tr-[20px] border border-main/15 shadow-lg overflow-hidden">
           <a
             href="tel:+48453374984"
             className="flex items-center gap-3 px-5 py-3 font-inter text-sm text-main hover:bg-white/10 transition-colors whitespace-nowrap"

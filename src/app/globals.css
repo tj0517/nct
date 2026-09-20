@@ -48,7 +48,10 @@ body {
   color: var(--main);
   transition: background-color 0.5s ease, color 0.5s ease;
   cursor: auto;
-  overflow-x: hidden;
+  /* `clip`, not `hidden`: with overflow set on <html> as well, `hidden` would
+     turn <body> into its own nested scroll container (the page then shows a
+     second scrollbar and wheel input gets swallowed until it bottoms out). */
+  overflow-x: clip;
 }
 
 [data-theme="blue"] [data-invert-on-dark] {

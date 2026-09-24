@@ -12,8 +12,8 @@ export interface CourseTestimonialDict {
    "why trust us" beat of a course landing page. */
 export default function CourseTestimonial({ dict }: { dict: CourseTestimonialDict }) {
   return (
-    <section className="w-full px-5 md:px-16 py-16 md:py-28">
-      <div className="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-[minmax(0,0.8fr)_minmax(0,1.5fr)] gap-10 md:gap-20 items-center">
+    <section className="w-full pt-6 md:pt-8 pb-16 md:pb-28">
+      <div className="max-w-[1440px] mx-auto px-5 md:px-16 grid grid-cols-1 md:grid-cols-[minmax(0,0.8fr)_minmax(0,1.5fr)] gap-10 md:gap-20 items-center">
         {/* Portrait */}
         <div className="relative w-[62%] max-w-[300px] md:w-full md:max-w-none aspect-square rounded-bl-[50px] rounded-tr-[50px] md:rounded-bl-[80px] md:rounded-tr-[80px] overflow-hidden bg-main/5">
           <Image

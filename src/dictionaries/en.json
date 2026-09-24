@@ -219,7 +219,6 @@
       ],
       "subtitle": "Our British native speakers will help you speak English with clarity and confidence.\nFor adults from A1 to C2, face-to-face in Warsaw or online.",
       "cta": "Book your free 30-minute assessment",
-      "ctaShort": "Book your free assessment",
       "illustrationAlt": "Illustration of a lion in a waistcoat and Union Jack trousers"
     },
     "testimonial": {
@@ -323,49 +322,41 @@
   "maths": {
     "meta": {
       "title": "Maths in English — A Nice Cup of Tea",
-      "description": "Exam confidence for IB students. Maths taught online by Dr Rishi Handa, an English native speaker with a degree from UCL."
+      "description": "Learn Maths, and the English to explain it, with Dr Rishi Handa. For students aged 15–19 preparing for IB, matura and university applications."
     },
     "hero": {
-      "label": "MATHS IN ENGLISH",
-      "title": "Maths in",
-      "titleItalic": "English",
-      "subtitle": "Exam confidence for IB students. Taught online by Dr Rishi Handa, an English native speaker with a degree in Mathematics with Theoretical Physics from UCL."
+      "headline": [
+        {
+          "text": "Maths"
+        },
+        {
+          "text": "in",
+          "italic": true
+        },
+        {
+          "text": "English"
+        }
+      ],
+      "subtitle": "Learn Maths, and the English to explain it, with Dr Rishi Handa, who studied Mathematics with Theoretical Physics at UCL and holds a PhD from SOAS.\nFor students aged 15–19 preparing for IB, matura and university applications.",
+      "cta": "Book your free 30-minute assessment",
+      "illustrationAlt": "Illustration of Alice holding a flamingo, from Alice's Adventures in Wonderland"
     },
-    "aboutBody": "                    For IB and international school students, the challenge is not only the mathematics. It is reading the question precisely, using the right terminology, and thinking naturally in the language of the exam. Dr Handa teaches both: the Maths, and the English of Maths.",
-    "seePricing": "See pricing",
-    "bookConsultation": "Book your free consultation",
-    "servicesLabel": "WHAT WE HELP WITH",
-    "servicesHeading": "From algebra to confidence.",
-    "services": [
-      {
-        "name": "IB Maths: Analysis & Approaches",
-        "desc": "SL and HL preparation"
-      },
-      {
-        "name": "IB Maths: Applications & Interpretation",
-        "desc": "SL and HL preparation"
-      },
-      {
-        "name": "International school Maths",
-        "desc": "British, American, and IB curricula"
-      },
-      {
-        "name": "Exam preparation and revision",
-        "desc": "Focused, structured practice"
-      },
-      {
-        "name": "Students who have hit a block",
-        "desc": "Clarity from confusion"
-      },
-      {
-        "name": "High-achievers who need stretch",
-        "desc": "Challenge beyond the syllabus"
-      }
-    ],
-    "teacherLabel": "YOUR TEACHER",
-    "teacherName": "Dr Rishi Handa",
-    "teacherBio": "Teacher at St James Independent School in London. Degree in Mathematics with Theoretical Physics from UCL. An unusual blend of precision, imagination, and patience.",
-    "bookAConsultation": "Book a consultation"
+    "testimonial": {
+      "quote": "Dr Handa has the gift of making complex mathematics simple.",
+      "author": "Aleksandra Słowik",
+      "role": "International and European Law, University of Groningen",
+      "image": "/images/testimonials/aleksandra-slowik.jpg",
+      "imageAlt": "Aleksandra Słowik"
+    },
+    "help": {
+      "heading": "We can help you with:",
+      "items": [
+        "IB and matura Maths",
+        "Exam preparation and revision",
+        "Algebra, geometry, functions and calculus",
+        "Mathematical English and explaining your reasoning"
+      ]
+    }
   },
   "university": {
     "meta": {

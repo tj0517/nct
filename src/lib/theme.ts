@@ -1,7 +1,7 @@
 // Course sub-pages (Google Ads landing pages) use the light "Union Jack"
 // palette: white ground, Union Blue text, Union Crimson CTAs. Everything else
 // keeps the navy homepage palette. Paths are matched without the locale prefix.
-export const LIGHT_THEME_ROUTES = ["/adults"] as const;
+export const LIGHT_THEME_ROUTES = ["/adults", "/maths"] as const;
 
 export type SiteTheme = "blue" | "light";
 

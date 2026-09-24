@@ -68,11 +68,11 @@ export default function CourseHero({
   return (
     <section
       ref={ref}
-      className="w-full min-h-[100svh] md:min-h-0 px-[6vw] md:px-16 pt-24 md:pt-28 pb-8 md:pb-10 flex items-stretch md:items-start lg:items-center"
+      className="w-full min-h-[100svh] md:min-h-0 px-[6vw] md:px-16 pt-24 md:pt-24 pb-8 md:pb-4 flex items-stretch md:items-start lg:items-center"
     >
       <div className="relative flex flex-col w-full">
         {/* Text column. Capped from md so it never runs under the character. */}
-        <div className="relative z-10 flex flex-1 min-w-0 flex-col items-start gap-0 md:gap-5 md:max-w-[56%] lg:max-w-[58%]">
+        <div className="relative z-10 flex flex-1 min-w-0 flex-col items-start gap-0 md:gap-4 md:max-w-[56%] lg:max-w-[58%]">
           {/* Phone-only spacers (1 : 1 : 2) — headline block rides high, the CTA
               sits around the centre of the remaining space. Hidden from md. */}
           <div aria-hidden className="grow md:hidden" />
@@ -81,7 +81,7 @@ export default function CourseHero({
               stands beside them for the full height of the block. Both reserve
               room for him on the right. From md this wrapper dissolves. */}
           <div className="relative w-full md:contents">
-            <h1 className="pr-[38vw] md:pr-0 font-fraunces font-bold text-[min(12.5vw,88px)] md:text-[min(8.5vw,12.5vh)] xl:text-[min(124px,12.5vh)] leading-[0.95] tracking-tight text-main">
+            <h1 className="pr-[38vw] md:pr-0 font-fraunces font-bold text-[min(12.5vw,88px)] md:text-[min(8.5vw,12vh)] xl:text-[min(124px,12vh)] leading-[0.95] tracking-tight text-main">
               {dict.headline.map((line, i) => (
                 <span
                   key={i}
@@ -131,8 +131,12 @@ export default function CourseHero({
           <div aria-hidden className="grow md:hidden" />
           <div data-hero-ctas className="mt-9 md:mt-1 flex w-full md:w-auto">
             <a href={BOOKING_URL} className="w-full md:w-auto">
-              {/* Same sizing as the homepage hero; short label below md. */}
-              <Button variant="filled" className="!w-full md:!text-lg xl:!text-2xl lg:!px-8">
+              {/* Same sizing as the homepage hero. Below md the label scales
+                  with the viewport so the full sentence fits on narrow phones. */}
+              <Button
+                variant="filled"
+                className="!w-full !text-[clamp(14px,4.8vw,18px)] md:!text-lg xl:!text-2xl lg:!px-8"
+              >
                 <span className="md:hidden">{dict.ctaShort ?? dict.cta}</span>
                 <span className="hidden md:inline">{dict.cta}</span>
               </Button>

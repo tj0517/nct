@@ -241,47 +241,41 @@
   "business": {
     "meta": {
       "title": "Business English — A Nice Cup of Tea",
-      "description": "English for the room you want to be in. Business English with clarity, precision, and authority. Warsaw and online."
+      "description": "English for the room you need to be in. Meetings, presentations, negotiations and interviews. Clients have included senior professionals at PwC, Google and Facebook."
     },
     "hero": {
-      "label": "BUSINESS ENGLISH",
-      "title": "English for the room",
-      "titleItalic": "you want to be in.",
-      "subtitle": "We prepare your English for the interview, the boardroom, the investor dinner, and the international conference."
+      "headline": [
+        {
+          "text": "The pitch."
+        },
+        {
+          "text": "The interview."
+        },
+        {
+          "text": "The boardroom presentation."
+        }
+      ],
+      "subtitle": "English for the room you need to be in.\nClients have included senior professionals at PwC, Google and Facebook.",
+      "cta": "Book your free 30-minute assessment",
+      "illustrationAlt": "Illustration of the White Rabbit checking his pocket watch, from Alice's Adventures in Wonderland"
     },
-    "aboutBody": "                    At NCT, we prepare your English for the moment you need it most. You will learn to speak with clarity, precision, and authority. Not textbook language from a course written ten years ago. Not beige corporate speak churned out by ChatGPT. Confident English, spoken in your voice.",
-    "meetTeachers": "Meet our teachers",
-    "bookConsultation": "Book your free consultation",
-    "servicesLabel": "WE HELP YOU PREPARE FOR",
-    "servicesHeading": "Real situations. Real stakes.",
-    "services": [
-      {
-        "name": "Meetings with international clients",
-        "desc": "Speak with authority across borders"
-      },
-      {
-        "name": "Presentations and pitches",
-        "desc": "Persuade with clarity and confidence"
-      },
-      {
-        "name": "Interviews and promotions",
-        "desc": "Sound ready for the next stage"
-      },
-      {
-        "name": "Negotiations",
-        "desc": "Choose the right word at the right moment"
-      },
-      {
-        "name": "Legal, financial, and executive communication",
-        "desc": "Precision where it matters most"
-      },
-      {
-        "name": "CVs, LinkedIn profiles, and professional documents",
-        "desc": "Written English that opens doors"
-      }
-    ],
-    "credentialsLabel": "CREDENTIALS",
-    "credentialsHeading": "Our students have included senior professionals from"
+    "testimonial": {
+      "quote": "Classes are not only lessons; they are fascinating, comprehensively educational encounters … thanks to the unique personality of the founder of the school, Mr Anthony Goltz.",
+      "author": "Jan Kisielewski",
+      "role": "Marketing Strategy Director, Stratosfera by Deloitte",
+      "image": "/images/testimonials/deloitte.png",
+      "imageAlt": "Deloitte",
+      "imageKind": "logo"
+    },
+    "help": {
+      "heading": "We can help you with:",
+      "items": [
+        "Meetings, presentations and pitches",
+        "Negotiations and job interviews",
+        "Emails, reports and professional documents",
+        "Legal and financial English"
+      ]
+    }
   },
   "children": {
     "meta": {
@@ -361,55 +355,38 @@
   "university": {
     "meta": {
       "title": "University Applications — A Nice Cup of Tea",
-      "description": "Oxford. Stanford. Our students have won places at some of the world’s most demanding universities. Application support in Warsaw and online."
+      "description": "We help students apply to leading universities in Britain, Europe and the United States. Our students have gained places at Oxford, Stanford and New York’s School of Visual Arts."
     },
     "hero": {
-      "label": "UNIVERSITY APPLICATIONS",
-      "title": "Apply to",
-      "titleItalic": "the best.",
-      "subtitle": "Oxford. Stanford. New York's School of Visual Arts. Our students have won places at some of the world's most demanding universities."
+      "headline": [
+        {
+          "text": "University"
+        },
+        {
+          "text": "applications",
+          "italic": true
+        }
+      ],
+      "subtitle": "We help students apply to leading universities in Britain, Europe and the United States. From IB and matura to applications and interviews, we help you present your strengths with panache.\nOur students have gained places at Oxford, Stanford and New York’s School of Visual Arts.\nFor students aged 15–19 applying to leading universities.",
+      "cta": "Book your free 30-minute assessment",
+      "illustrationAlt": "Illustration of the White Rabbit as a herald with a trumpet and scroll, from Alice's Adventures in Wonderland"
     },
-    "aboutBody": "                    A strong application is not just correct English. It is structure, voice, evidence, and spark. It is the ability to make your thinking visible. At NCT, we help students prepare applications, essays, and interviews with clarity and seriousness. We do not teach students to apologise for ambition. We help them sound ready. Ready to study the subject. Ready to answer difficult questions. Ready to speak with precision, curiosity, and confidence.",
-    "meetTeachers": "Meet our teachers",
-    "bookConsultation": "Book your free consultation",
-    "servicesLabel": "WE HELP WITH",
-    "servicesHeading": "From personal statement to podium.",
-    "services": [
-      {
-        "name": "International university applications",
-        "desc": "UK, USA, and Europe"
-      },
-      {
-        "name": "UCAS personal statements",
-        "desc": "Structure, voice, and spark"
-      },
-      {
-        "name": "Oxbridge-style interview preparation",
-        "desc": "Think clearly under pressure"
-      },
-      {
-        "name": "Admissions essays",
-        "desc": "Make your thinking visible"
-      },
-      {
-        "name": "Scholarship applications",
-        "desc": "Stand out in a competitive field"
-      },
-      {
-        "name": "Academic interviews",
-        "desc": "Speak with precision and curiosity"
-      },
-      {
-        "name": "IB Diploma: IAs, EEs, and TOK essays",
-        "desc": "Rigour meets clarity"
-      },
-      {
-        "name": "MBA application, GMAT, and interview prep",
-        "desc": "The next stage of your career"
-      }
-    ],
-    "studentsLabel": "OUR STUDENTS",
-    "studentsHeading": "Where they've been accepted."
+    "testimonial": {
+      "quote": "Anthony helped me pass Cambridge C2 and successfully apply to the School of Visual Arts in New York. He changed my life.",
+      "author": "Karolina Majewska",
+      "role": "artist",
+      "image": "/images/testimonials/karolina-majewska.png",
+      "imageAlt": "Karolina Majewska"
+    },
+    "help": {
+      "heading": "We can help you with:",
+      "items": [
+        "IB and matura preparation",
+        "IAs, Extended Essays and TOK",
+        "Personal statements and application essays",
+        "University admissions interviews"
+      ]
+    }
   },
   "languageSwitcher": {
     "pl": "PL",

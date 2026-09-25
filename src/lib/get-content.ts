@@ -8,9 +8,7 @@ import {
   footerQuery,
   teachersQuery,
   testimonialsQuery,
-  businessPageQuery,
   childrenPageQuery,
-  universityPageQuery,
 } from "@/sanity/queries";
 
 /* ── helpers ── */
@@ -48,16 +46,14 @@ type SanityDoc = Record<string, any>;
 
 export async function getContent(locale: Locale): Promise<Dictionary> {
   try {
-    const [hp, hd, ft, teachers, testimonials, business, children, university] =
+    const [hp, hd, ft, teachers, testimonials, children] =
       await Promise.all([
         sanityFetch<SanityDoc | null>({ query: homepageQuery, tags: ["homepage"] }),
         sanityFetch<SanityDoc | null>({ query: headerQuery, tags: ["header"] }),
         sanityFetch<SanityDoc | null>({ query: footerQuery, tags: ["footer"] }),
         sanityFetch<SanityDoc[] | null>({ query: teachersQuery, tags: ["teacher"] }),
         sanityFetch<SanityDoc[] | null>({ query: testimonialsQuery, tags: ["testimonial"] }),
-        sanityFetch<SanityDoc | null>({ query: businessPageQuery, tags: ["businessPage"] }),
         sanityFetch<SanityDoc | null>({ query: childrenPageQuery, tags: ["childrenPage"] }),
-        sanityFetch<SanityDoc | null>({ query: universityPageQuery, tags: ["universityPage"] }),
       ]);
 
     // If homepage is missing, Sanity hasn't been seeded yet — fall back
@@ -165,13 +161,14 @@ export async function getContent(locale: Locale): Promise<Dictionary> {
         title: l(hp.metaTitle, locale),
         description: l(hp.metaDescription, locale),
       },
-      // The Adults and Maths landing pages were rebuilt (hero / testimonial /
-      // help list) and are not modelled in Sanity yet — serve the static copy.
+      // The course landing pages (Adults, Maths, University, Business) were
+      // rebuilt (hero / testimonial / help list) and are not modelled in
+      // Sanity yet — serve the static copy.
       adults: staticDict.adults,
-      business: buildSubpage(business, locale, "business"),
+      business: staticDict.business,
       children: buildSubpage(children, locale, "children"),
       maths: staticDict.maths,
-      university: buildSubpage(university, locale, "university"),
+      university: staticDict.university,
       languageSwitcher: { pl: "PL", en: "EN" },
     } as Dictionary;
   } catch {
@@ -203,15 +200,6 @@ function buildSubpage(doc: SanityDoc | null, locale: Locale, type: string): Dict
   };
 
   switch (type) {
-    case "business":
-      return {
-        ...base,
-        servicesLabel: l(doc.servicesLabel, locale),
-        servicesHeading: l(doc.servicesHeading, locale),
-        services: lArr(doc.services, locale, ["name", "desc"]) as { name: string; desc: string }[],
-        credentialsLabel: l(doc.credentialsLabel, locale),
-        credentialsHeading: l(doc.credentialsHeading, locale),
-      };
     case "children":
       return {
         ...base,
@@ -219,15 +207,6 @@ function buildSubpage(doc: SanityDoc | null, locale: Locale, type: string): Dict
         examHeading: l(doc.examHeading, locale),
         examPrep: lArr(doc.examPrep, locale, ["name", "desc"]) as { name: string; desc: string }[],
         quote: l(doc.quote, locale),
-      };
-    case "university":
-      return {
-        ...base,
-        servicesLabel: l(doc.servicesLabel, locale),
-        servicesHeading: l(doc.servicesHeading, locale),
-        services: lArr(doc.services, locale, ["name", "desc"]) as { name: string; desc: string }[],
-        studentsLabel: l(doc.studentsLabel, locale),
-        studentsHeading: l(doc.studentsHeading, locale),
       };
     default:
       return base as Dictionary[keyof Dictionary];

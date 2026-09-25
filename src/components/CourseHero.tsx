@@ -32,6 +32,24 @@ export interface CourseIllustration {
  * The illustration is out of flow and sized from the text it stands beside,
  * so it scales with the copy rather than pushing it around.
  */
+/* Headline scale, chosen from the longest line so every line stays unbroken
+   from md up (the text column is ~58% of the 1440px container). Fraunces
+   Bold runs ≈0.55em per character. Phones reserve room on the right for the
+   character; the "statement" tier drops that reserve and lets long lines wrap. */
+const HEADLINE_SCALE = {
+  /* ≤ 9 chars — "English / for / Adults" */
+  hero: "pr-[38vw] md:pr-0 text-[min(12.5vw,88px)] md:text-[min(8.5vw,12vh)] xl:text-[min(124px,12vh)]",
+  /* 10–13 chars — "University / applications" */
+  wide: "pr-[38vw] md:pr-0 text-[min(9.5vw,72px)] md:text-[min(6.8vw,10vh)] xl:text-[min(98px,10vh)]",
+  /* ≥ 14 chars — "The boardroom presentation." */
+  statement: "text-[min(8vw,44px)] md:text-[min(3.2vw,5.5vh)] xl:text-[min(50px,5.5vh)]",
+} as const;
+
+function headlineScale(lines: CourseHeroDict["headline"]) {
+  const longest = Math.max(...lines.map((l) => l.text.length));
+  return longest <= 9 ? "hero" : longest <= 13 ? "wide" : "statement";
+}
+
 export default function CourseHero({
   dict,
   illustration,
@@ -42,6 +60,8 @@ export default function CourseHero({
   const ref = useRef<HTMLElement>(null);
   const reduced = useReducedMotion();
   const aspect = `${illustration.width} / ${illustration.height}`;
+  const tier = headlineScale(dict.headline);
+  const scale = HEADLINE_SCALE[tier];
 
   useGSAP(
     () => {
@@ -70,7 +90,13 @@ export default function CourseHero({
       ref={ref}
       className="w-full min-h-[100svh] md:min-h-0 px-[6vw] md:px-16 pt-24 md:pt-24 pb-8 md:pb-4 flex items-stretch md:items-start lg:items-center"
     >
-      <div className="relative flex flex-col w-full">
+      {/* The character is pinned to this wrapper's height. A three-line
+          "statement" headline is short, so give him a floor to stand on. */}
+      <div
+        className={`relative flex flex-col w-full ${
+          tier === "statement" ? "md:min-h-[min(600px,62vh)]" : ""
+        }`}
+      >
         {/* Text column. Capped from md so it never runs under the character. */}
         <div className="relative z-10 flex flex-1 min-w-0 flex-col items-start gap-0 md:gap-4 md:max-w-[56%] lg:max-w-[58%]">
           {/* Phone-only spacers (1 : 1 : 2) — headline block rides high, the CTA
@@ -81,7 +107,9 @@ export default function CourseHero({
               stands beside them for the full height of the block. Both reserve
               room for him on the right. From md this wrapper dissolves. */}
           <div className="relative w-full md:contents">
-            <h1 className="pr-[38vw] md:pr-0 font-fraunces font-bold text-[min(12.5vw,88px)] md:text-[min(8.5vw,12vh)] xl:text-[min(124px,12vh)] leading-[0.95] tracking-tight text-main">
+            <h1
+              className={`${scale} font-fraunces font-bold leading-[0.95] tracking-tight text-main`}
+            >
               {dict.headline.map((line, i) => (
                 <span
                   key={i}

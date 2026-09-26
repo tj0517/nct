@@ -246,16 +246,14 @@
     "hero": {
       "headline": [
         {
-          "text": "The pitch."
+          "text": "Business"
         },
         {
-          "text": "The interview."
-        },
-        {
-          "text": "The boardroom presentation."
+          "text": "English",
+          "italic": true
         }
       ],
-      "subtitle": "English for the room you need to be in.\nClients have included senior professionals at PwC, Google and Facebook.",
+      "subtitle": "The pitch.\nThe interview.\nThe boardroom presentation.\nEnglish for the room you need to be in.\nClients have included senior professionals at PwC, Google and Facebook.",
       "cta": "Book your free 30-minute assessment",
       "illustrationAlt": "Illustration of the White Rabbit checking his pocket watch, from Alice's Adventures in Wonderland"
     },

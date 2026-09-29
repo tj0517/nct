@@ -1,0 +1,49 @@
+---
+id: NCT-3.04
+title: "Strona główna, nagłówek i stopka czytają treść z Sanity"
+status: todo
+difficulty: L
+model: opus
+model_approved: null
+effort: high
+branch: feat/sanity-home
+due: 2026-10-04
+depends_on: [NCT-3.03]
+blocked_by_questions: []
+touches_db: true
+touches_prod: false
+pr: null
+---
+
+## Cel
+Po zadaniu zmiana tekstu strony głównej, nagłówka lub stopki w Studio pojawia się na stronie w ciągu ok.
+60 s, bez programisty. Gdy Sanity jest niedostępne albo pole puste, strona pokazuje treść z `en.json`,
+więc awaria CMS nie psuje strony. Wygląd bez zmian.
+
+## Zakres
+- [ ] odczyt: `src/lib/get-content.ts`, `src/sanity/fetch.ts` (revalidate 60), `src/app/[lang]/page.tsx`, `layout.tsx`
+- [ ] warstwa pobierania z mapą na obecny kształt `Dictionary` (komponenty bez zmian)
+- [ ] pierwszeństwo: pole w języku strony → EN → `en.json`
+- [ ] obrazy z Sanity (nauczyciele, opinie) przez CDN Sanity z wymiarami jak dziś
+- [ ] SEO strony głównej z pól CMS
+
+## Gotowe, gdy
+- treść bez zmian — `for p in /en; do curl -s localhost:3000$p | sed 's/<[^>]*>//g' | tr -s ' \n'; done > after.txt` przed i po zmianie; `diff before.txt after.txt` puste (wklej wynik)
+- red proof zapasu: z `NEXT_PUBLIC_SANITY_PROJECT_ID` ustawionym na nieistniejący projekt strona renderuje się (200) z treścią z `en.json` — wklej
+- tj zmienia jedno pole w Studio → widoczne na `localhost:3000/en` w ≤ 60 s (tj potwierdza; agent daje instrukcję)
+- `npx tsc --noEmit`, `npm run lint` bez błędów
+- wygląd bez zmian — zrzuty Playwright przed/po (1440 i 390 px) w `.playwright-mcp/`, w raporcie ścieżki i jedno zdanie o różnicach (ma być: brak)
+
+## Poza zakresem
+- podstrony kursów i FAQ → NCT-3.05
+- webhook natychmiastowego odświeżania → deferred (60 s wystarcza)
+
+## Bramki STOP
+- jakikolwiek zapis do datasetu (także „na próbę”) — tylko tj w Studio
+- zmienne na Vercelu — tj
+
+## Kontekst
+- `src/lib/get-content.ts`, `src/sanity/`, `src/app/[lang]/page.tsx`, `src/app/[lang]/layout.tsx`
+- `docs/sanity-content-map.md`
+
+## Notatki z realizacji

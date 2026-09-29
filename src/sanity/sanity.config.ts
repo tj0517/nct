@@ -19,6 +19,9 @@ const singletonLabels: Record<string, string> = {
 export default defineConfig({
   name: "nct-english",
   title: "NCT English",
+  // Studio is mounted at /studio, not at the root — without this the router
+  // reads "studio" as a tool name and renders "Tool not found"
+  basePath: "/studio",
   projectId,
   dataset,
   plugins: [

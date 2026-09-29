@@ -1,7 +1,7 @@
 ---
 id: NCT-3.01
 title: "Sanity: podpięcie projektu i działające /studio"
-status: in_progress
+status: review
 difficulty: S
 model: sonnet
 model_approved: null
@@ -12,7 +12,7 @@ depends_on: []
 blocked_by_questions: []
 touches_db: false
 touches_prod: false
-pr: null
+pr: TBD
 ---
 
 ## Cel
@@ -52,3 +52,8 @@ działa. tj zakłada projekt na swoim koncie (O-03, przeniesienie do klienta prz
 - 2026-09-29 tj: brak zmiennej nie może psuć `next build` (Vercel nie ma jeszcze zmiennych) — dowód `npm run build` bez zmiennej.
 - 2026-09-29 tj: zrzut `/studio` po zalogowaniu — tj loguje się w oknie Playwright, agent robi zrzut.
 - 2026-09-29 tj: effort medium (zamiast low).
+- 2026-09-29 tj: odstępstwo tylko dla tego zadania — praca przy `kern.memorystatus_vm_pressure_level` = 2;
+  dev server i build uruchamiane pojedynczo (nigdy naraz), pomiar przed każdym uruchomieniem, stop przy 4.
+  Błąd builda z powodu pamięci raportować jako taki, nie „naprawiać" kodem.
+- 2026-09-29 agent: Studio wymagało `basePath: "/studio"` w `sanity.config.ts` — bez tego router Sanity
+  czytał segment `studio` jako nazwę narzędzia i pokazywał „Tool not found: studio" (wykryte po zalogowaniu).

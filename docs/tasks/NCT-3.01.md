@@ -1,7 +1,7 @@
 ---
 id: NCT-3.01
 title: "Sanity: podpięcie projektu i działające /studio"
-status: review
+status: done
 difficulty: S
 model: sonnet
 model_approved: null
@@ -57,3 +57,4 @@ działa. tj zakłada projekt na swoim koncie (O-03, przeniesienie do klienta prz
   Błąd builda z powodu pamięci raportować jako taki, nie „naprawiać" kodem.
 - 2026-09-29 agent: Studio wymagało `basePath: "/studio"` w `sanity.config.ts` — bez tego router Sanity
   czytał segment `studio` jako nazwę narzędzia i pokazywał „Tool not found: studio" (wykryte po zalogowaniu).
+- 2026-09-29 tj: odbiór PR #1 — wszystkie kryteria udowodnione (zrzuty Studio zalogowane/brak zmiennej, build bez zmiennej EXIT=0, 7× /en 200); hex #012169 w komunikacie Studio przyjęty jako wyjątek (layout /studio bez globals.css).

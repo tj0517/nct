@@ -7,3 +7,5 @@
 - Przeniesienie projektu Sanity do klienta i zaproszenie klienta jako właściciela — przy oddaniu (O-03)
 - Webhook Sanity → natychmiastowe odświeżenie strony (dziś do 60 s) — jeśli klient zgłosi potrzebę
 - CI — świadomie pominięte (security.accepted_risks w project.md)
+- `src/sanity/client.ts` — `createClient` rzuca przy pustym `projectId`; dziś nikt go nie importuje, więc build jest bezpieczny. Zabezpieczyć przy pierwszym realnym użyciu (z NCT-3.01 → NCT-3.04/3.05)
+- `src/proxy.ts` — `getPreferredLocale()` zdefiniowane, ale nigdy nie wywołane (istniejący warning lintera, sprzed NCT-3.01) → NCT-2.01

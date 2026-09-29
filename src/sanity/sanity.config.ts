@@ -2,7 +2,7 @@ import { defineConfig } from "sanity";
 import { structureTool } from "sanity/structure";
 import { visionTool } from "@sanity/vision";
 import { schemaTypes, singletonTypes } from "./schemaTypes";
-import { projectId, dataset } from "./env";
+import { projectId, dataset, apiVersion } from "./env";
 
 const singletonLabels: Record<string, string> = {
   siteSettings: "Site Settings",
@@ -19,6 +19,9 @@ const singletonLabels: Record<string, string> = {
 export default defineConfig({
   name: "nct-english",
   title: "NCT English",
+  // Studio is mounted at /studio, not at the root — without this the router
+  // reads "studio" as a tool name and renders "Tool not found"
+  basePath: "/studio",
   projectId,
   dataset,
   plugins: [
@@ -40,7 +43,10 @@ export default defineConfig({
             S.documentTypeListItem("testimonial").title("Testimonials"),
           ]),
     }),
-    visionTool({ defaultApiVersion: "2024-01-01" }),
+    // Vision (GROQ playground) is a development-only tool
+    ...(process.env.NODE_ENV === "development"
+      ? [visionTool({ defaultApiVersion: apiVersion })]
+      : []),
   ],
   schema: {
     types: schemaTypes,

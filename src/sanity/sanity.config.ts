@@ -2,7 +2,7 @@ import { defineConfig } from "sanity";
 import { structureTool } from "sanity/structure";
 import { visionTool } from "@sanity/vision";
 import { schemaTypes, singletonTypes } from "./schemaTypes";
-import { projectId, dataset } from "./env";
+import { projectId, dataset, apiVersion } from "./env";
 
 const singletonLabels: Record<string, string> = {
   siteSettings: "Site Settings",
@@ -40,7 +40,10 @@ export default defineConfig({
             S.documentTypeListItem("testimonial").title("Testimonials"),
           ]),
     }),
-    visionTool({ defaultApiVersion: "2024-01-01" }),
+    // Vision (GROQ playground) is a development-only tool
+    ...(process.env.NODE_ENV === "development"
+      ? [visionTool({ defaultApiVersion: apiVersion })]
+      : []),
   ],
   schema: {
     types: schemaTypes,

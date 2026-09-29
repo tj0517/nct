@@ -19,6 +19,9 @@ function getPreferredLocale(request: NextRequest): string {
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
+  // Sanity Studio is not localised — rewriting it to /pl/studio gives a 404
+  if (pathname === "/studio" || pathname.startsWith("/studio/")) return;
+
   // Check if path already has a locale prefix
   const pathnameHasLocale = locales.some(
     (locale) =>

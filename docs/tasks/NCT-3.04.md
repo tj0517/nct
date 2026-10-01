@@ -68,3 +68,17 @@ więc awaria CMS nie psuje strony. Wygląd bez zmian.
   Sanity — zostaje w kodzie, przycisk „Watch intro" nie jest edytowalny przez klienta
   (odnotowane w `docs/deferred-tasks.md`). NCT-3.05 dziedziczy zasadę „zapas = `en.json`"
   dla opinii na podstronach kursów.
+- **2026-10-01 (tj)** — kryterium „treść bez zmian" (decyzja D1a, zmiana decyzji A1 z tego
+  samego dnia): kryterium ocenia się na **widocznym tekście**, czyli wszystkim przed
+  `self.__next_r=` w zrzucie — ta część ma być bajtowo identyczna między `before.txt`
+  a `after.txt` (zmierzone: 2784 znaki po obu stronach, identyczne). Surowy i znormalizowany
+  diff całego zrzutu **nie muszą** być puste, bo ładunek RSC zawiera nazwy plików chunków
+  z hashem treści — zmieniają się przy każdej edycji źródeł. Tekst kryteriów w „Gotowe, gdy"
+  zostaje bez zmian; obowiązuje ta notatka. Dowody z raportu wystarczają, bez ponownego zrzutu.
+- **2026-10-01 (tj)** — wygląd (decyzja D2a): przekodowanie zdjęć nauczycieli i opinii przez
+  CDN Sanity jest **zaakceptowane** (33 850 pikseli różnicy, maks. 25/255 na kanał, wyłącznie
+  wewnątrz kółek ze zdjęciami, bez zmiany geometrii; reszta strony 0 pikseli). Jako baseline
+  dla 1440 px służy `.playwright-mcp/NCT-3.04-before-1440-warmcache.png` (pierwszy zrzut
+  `NCT-3.04-before-1440.png` powstał na zimnym cache optymalizatora obrazów Next i różni się
+  w obszarze ilustracji hero — nie jest to skutek tej zmiany: render zapasowy jest pikselowo
+  identyczny z `origin/main`).

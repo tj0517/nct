@@ -8,19 +8,12 @@ export const teacher = defineType({
     defineField({
       name: "name",
       title: "Name",
+      description: "A person's name — not translated.",
       type: "string",
       validation: (Rule) => Rule.required(),
     }),
-    defineField({
-      name: "credential",
-      title: "Credential",
-      type: "localizedString",
-    }),
-    defineField({
-      name: "bio",
-      title: "Bio",
-      type: "localizedText",
-    }),
+    defineField({ name: "credential", title: "University", type: "localizedString" }),
+    defineField({ name: "bio", title: "Subject / bio", type: "localizedText" }),
     defineField({
       name: "image",
       title: "Photo",
@@ -28,25 +21,20 @@ export const teacher = defineType({
       options: { hotspot: true },
     }),
     defineField({
-      name: "hasVideo",
-      title: "Has Video",
-      type: "boolean",
-      initialValue: false,
-    }),
-    defineField({
       name: "order",
-      title: "Sort Order",
+      title: "Position in the list",
+      description: "Lower numbers come first.",
       type: "number",
     }),
   ],
   orderings: [
     {
-      title: "Sort Order",
+      title: "Position in the list",
       name: "orderAsc",
       by: [{ field: "order", direction: "asc" }],
     },
   ],
   preview: {
-    select: { title: "name", media: "image" },
+    select: { title: "name", subtitle: "credential.en", media: "image" },
   },
 });

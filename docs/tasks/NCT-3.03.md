@@ -33,6 +33,7 @@ a import da się bezpiecznie powtórzyć.
 - red proof idempotencji: drugi import → te same liczby, zero nowych dokumentów — wklej
 - losowe 5 pól: wartość w Sanity = wartość w `en.json` — wklej porównanie
 - `git grep -n "sk[A-Za-z0-9]\{20,\}"` bez trafień w diffie (brak tokenu w repo)
+- po imporcie zrzut Studio pokazuje nazwy dokumentów zamiast „Untitled” (z NCT-3.02)
 
 ## Poza zakresem
 - odczyt treści przez stronę → NCT-3.04/3.05

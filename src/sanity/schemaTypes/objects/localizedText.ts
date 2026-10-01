@@ -1,21 +1,24 @@
-import { defineType } from "sanity";
+import { defineType, defineField } from "sanity";
 
+// Multi-line counterpart of localizedString. Line breaks are meaningful: the
+// site renders them as line breaks (e.g. the hero subtitle).
 export const localizedText = defineType({
   name: "localizedText",
-  title: "Localized Text",
+  title: "Long text",
   type: "object",
   fields: [
-    {
-      name: "pl",
-      title: "Polish",
-      type: "text",
-      validation: (Rule) => Rule.required(),
-    },
-    {
+    defineField({
       name: "en",
       title: "English",
       type: "text",
+      rows: 3,
       validation: (Rule) => Rule.required(),
-    },
+    }),
+    defineField({
+      name: "pl",
+      title: "Polski (optional)",
+      type: "text",
+      rows: 3,
+    }),
   ],
 });

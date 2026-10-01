@@ -1,20 +1,13 @@
 import { defineConfig } from "sanity";
 import { structureTool } from "sanity/structure";
 import { visionTool } from "@sanity/vision";
-import { schemaTypes, singletonTypes } from "./schemaTypes";
+import {
+  schemaTypes,
+  singletonTypes,
+  pageTypes,
+  siteWideTypes,
+} from "./schemaTypes";
 import { projectId, dataset, apiVersion } from "./env";
-
-const singletonLabels: Record<string, string> = {
-  siteSettings: "Site Settings",
-  homepage: "Homepage",
-  header: "Header",
-  footer: "Footer",
-  adultsPage: "Adults Page",
-  businessPage: "Business English Page",
-  childrenPage: "Children Page",
-  mathsPage: "Maths Page",
-  universityPage: "University Applications Page",
-};
 
 export default defineConfig({
   name: "nct-english",
@@ -26,21 +19,37 @@ export default defineConfig({
   dataset,
   plugins: [
     structureTool({
+      // Grouped so the client opens a page by its own name, the way it appears
+      // in the site navigation, rather than hunting through a flat list.
       structure: (S) =>
         S.list()
           .title("Content")
           .items([
-            // Singletons
-            ...Array.from(singletonTypes).map((type) =>
+            S.listItem()
+              .title("Pages")
+              .id("pages")
+              .child(
+                S.list()
+                  .title("Pages")
+                  .items(
+                    pageTypes.map(({ type, title }) =>
+                      S.listItem()
+                        .title(title)
+                        .id(type)
+                        .child(S.document().schemaType(type).documentId(type))
+                    )
+                  )
+              ),
+            S.divider(),
+            S.documentTypeListItem("teacher").title("Teachers"),
+            S.documentTypeListItem("testimonial").title("Testimonials"),
+            S.divider(),
+            ...siteWideTypes.map(({ type, title }) =>
               S.listItem()
-                .title(singletonLabels[type] || type)
+                .title(title)
                 .id(type)
                 .child(S.document().schemaType(type).documentId(type))
             ),
-            S.divider(),
-            // Collections
-            S.documentTypeListItem("teacher").title("Teachers"),
-            S.documentTypeListItem("testimonial").title("Testimonials"),
           ]),
     }),
     // Vision (GROQ playground) is a development-only tool

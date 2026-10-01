@@ -1,5 +1,8 @@
 import { defineType, defineField } from "sanity";
 
+// The quotes in the homepage carousel. These are still fixed in
+// Testimonials.tsx today; moving them here is NCT-3.03/3.04
+// (recorded in docs/deferred-tasks.md).
 export const testimonial = defineType({
   name: "testimonial",
   title: "Testimonial",
@@ -7,22 +10,13 @@ export const testimonial = defineType({
   fields: [
     defineField({
       name: "author",
-      title: "Author Name",
+      title: "Author",
+      description: "A person's name — not translated.",
       type: "string",
       validation: (Rule) => Rule.required(),
     }),
-    defineField({
-      name: "role",
-      title: "Role / Title",
-      type: "string",
-    }),
-    defineField({
-      name: "text",
-      title: "Quote (Polish)",
-      description: "Testimonials are kept in Polish only",
-      type: "text",
-      validation: (Rule) => Rule.required(),
-    }),
+    defineField({ name: "role", title: "Role / affiliation", type: "localizedString" }),
+    defineField({ name: "quote", title: "Quote", type: "localizedText" }),
     defineField({
       name: "image",
       title: "Photo",
@@ -31,18 +25,19 @@ export const testimonial = defineType({
     }),
     defineField({
       name: "order",
-      title: "Sort Order",
+      title: "Position in the carousel",
+      description: "Lower numbers come first.",
       type: "number",
     }),
   ],
   orderings: [
     {
-      title: "Sort Order",
+      title: "Position in the carousel",
       name: "orderAsc",
       by: [{ field: "order", direction: "asc" }],
     },
   ],
   preview: {
-    select: { title: "author", subtitle: "role", media: "image" },
+    select: { title: "author", subtitle: "role.en", media: "image" },
   },
 });

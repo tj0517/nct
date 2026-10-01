@@ -19,3 +19,11 @@
   - `src/components/ContactLinks.tsx`, `PhoneFloat.tsx`, `BookingModal.tsx:54`, `TeacherCard.tsx:44`, `SoundCloudEmbed.tsx:60`, `MapSection.tsx:33` — `aria-label`, `title` i etykiety przycisków
 - Komponenty bez importerów (martwy kod, w całości zaszyte teksty): `src/components/WhyUs.tsx`, `StickyPhoneBar.tsx`, a także bez tekstu `CustomCursor.tsx`, `MagneticButton.tsx` — decyzja o usunięciu: tj (z NCT-3.02)
 - Konto zalogowane w Sanity CLI nie ma dostępu do projektu NCT (`projects list` pokazuje tylko `y0kc7fj6 / hydra-arms`; zapytanie do projektu z `.env.local` zwraca `project user not found`). Odczyt datasetu trzeba dziś robić przez Vision w `/studio` na loginie tj — do rozważenia przy przekazaniu projektu (O-03) (z NCT-3.02)
+- Lint: `npm run lint` zwraca 1 błąd i 2 ostrzeżenia — kryterium „0 błędów" w NCT-3.02 **nie zostało spełnione**.
+  Przyjęte przez tj 2026-10-01 jako istniejący dług, bo wszystkie trzy pliki są bajtowo identyczne z `origin/main`
+  (sprawdzone `git diff --quiet origin/main -- <plik>`), więc żaden problem nie powstał w NCT-3.02:
+  - `src/components/GsapProvider.tsx:18` — błąd `react-hooks/set-state-in-effect` (`setState` w ciele efektu).
+    **Nie dotykać tego pliku** (decyzja tj 2026-10-01)
+  - `src/lib/get-content.ts:49` — ostrzeżenie: `testimonials` przypisane, nigdy nieużyte
+  - `src/proxy.ts:9` — ostrzeżenie: `getPreferredLocale` zdefiniowane, nigdy nieużyte (→ NCT-2.01)
+  (z NCT-3.02)

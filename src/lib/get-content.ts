@@ -8,7 +8,6 @@ import {
   footerQuery,
   teachersQuery,
   testimonialsQuery,
-  childrenPageQuery,
 } from "@/sanity/queries";
 
 /* ── helpers ── */
@@ -46,14 +45,13 @@ type SanityDoc = Record<string, any>;
 
 export async function getContent(locale: Locale): Promise<Dictionary> {
   try {
-    const [hp, hd, ft, teachers, testimonials, children] =
+    const [hp, hd, ft, teachers, testimonials] =
       await Promise.all([
         sanityFetch<SanityDoc | null>({ query: homepageQuery, tags: ["homepage"] }),
         sanityFetch<SanityDoc | null>({ query: headerQuery, tags: ["header"] }),
         sanityFetch<SanityDoc | null>({ query: footerQuery, tags: ["footer"] }),
         sanityFetch<SanityDoc[] | null>({ query: teachersQuery, tags: ["teacher"] }),
         sanityFetch<SanityDoc[] | null>({ query: testimonialsQuery, tags: ["testimonial"] }),
-        sanityFetch<SanityDoc | null>({ query: childrenPageQuery, tags: ["childrenPage"] }),
       ]);
 
     // If homepage is missing, Sanity hasn't been seeded yet — fall back
@@ -161,12 +159,12 @@ export async function getContent(locale: Locale): Promise<Dictionary> {
         title: l(hp.metaTitle, locale),
         description: l(hp.metaDescription, locale),
       },
-      // The course landing pages (Adults, Maths, University, Business) were
-      // rebuilt (hero / testimonial / help list) and are not modelled in
-      // Sanity yet — serve the static copy.
+      // Every course landing page (Children & Teens, Adults, University,
+      // Business, Maths) now shares the hero / testimonial / help-list shape
+      // and is not read from Sanity yet — serve the static copy.
       adults: staticDict.adults,
       business: staticDict.business,
-      children: buildSubpage(children, locale, "children"),
+      children: staticDict.children,
       maths: staticDict.maths,
       university: staticDict.university,
       languageSwitcher: { pl: "PL", en: "EN" },
@@ -174,41 +172,5 @@ export async function getContent(locale: Locale): Promise<Dictionary> {
   } catch {
     // Fallback to static JSON if Sanity is unreachable
     return getDictionary(locale);
-  }
-}
-
-function buildSubpage(doc: SanityDoc | null, locale: Locale, type: string): Dictionary[keyof Dictionary] {
-  if (!doc) {
-    // Will be filled by fallback dict when needed
-    return {} as Dictionary[keyof Dictionary];
-  }
-
-  const base = {
-    meta: {
-      title: l(doc.metaTitle, locale),
-      description: l(doc.metaDescription, locale),
-    },
-    hero: {
-      label: l(doc.heroLabel, locale),
-      title: l(doc.heroTitle, locale),
-      titleItalic: l(doc.heroTitleItalic, locale),
-      subtitle: l(doc.heroSubtitle, locale),
-    },
-    aboutBody: l(doc.aboutBody, locale),
-    meetTeachers: l(doc.meetTeachers, locale),
-    bookConsultation: l(doc.bookConsultation, locale),
-  };
-
-  switch (type) {
-    case "children":
-      return {
-        ...base,
-        examLabel: l(doc.examLabel, locale),
-        examHeading: l(doc.examHeading, locale),
-        examPrep: lArr(doc.examPrep, locale, ["name", "desc"]) as { name: string; desc: string }[],
-        quote: l(doc.quote, locale),
-      };
-    default:
-      return base as Dictionary[keyof Dictionary];
   }
 }

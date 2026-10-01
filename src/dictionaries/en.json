@@ -277,39 +277,42 @@
   },
   "children": {
     "meta": {
-      "title": "English for Children — A Nice Cup of Tea",
-      "description": "At NCT, children do not just learn English. They explore it. Lessons for children aged 5 and upwards in Warsaw and online."
+      "title": "English for Children & Teens — A Nice Cup of Tea",
+      "description": "Make learning English an adventure through fun-filled, imaginative lessons with a British native speaker. For children and teenagers aged 6–16, face-to-face in Warsaw or online."
     },
     "hero": {
-      "label": "CHILDREN",
-      "title": "Lessons for",
-      "titleItalic": "Children",
-      "subtitle": "A word can be small. A word can be grand. A word can lead to a faraway land. For children aged 5 and upwards."
+      "headline": [
+        {
+          "text": "English for"
+        },
+        {
+          "text": "children"
+        },
+        {
+          "text": "& teens",
+          "italic": true
+        }
+      ],
+      "subtitle": "Make learning English an adventure through fun-filled, imaginative lessons with a British native speaker.\nFor children and teenagers aged 6–16, from first words to advanced exams, face-to-face in Warsaw or online.",
+      "cta": "Book your child’s free 30-minute assessment",
+      "illustrationAlt": "Illustration of Alice drawing back a curtain to find a little door, from Alice's Adventures in Wonderland"
     },
-    "aboutBody": "                    At NCT, children do not just learn English. They explore it. Stories. Questions. Rhymes. Conversations. Books with strange doors. Sentences with wings. We help children speak clearly, write boldly, and use English with confidence. English is not just a subject at school. It is a key, a ladder, and a door you pass through.",
-    "meetTeachers": "Meet our teachers",
-    "bookConsultation": "Book your free consultation",
-    "examLabel": "FOR CHILDREN AGED 5+",
-    "examHeading": "We prepare children for",
-    "examPrep": [
-      {
-        "name": "Reading, writing, listening, and speaking",
-        "desc": "The four foundations"
-      },
-      {
-        "name": "Egzamin ósmoklasisty",
-        "desc": "Year 8 exam preparation"
-      },
-      {
-        "name": "Konkurs kuratoryjny",
-        "desc": "Regional competition prep"
-      },
-      {
-        "name": "Olimpiada Języka Angielskiego Juniorów",
-        "desc": "National olympiad support"
-      }
-    ],
-    "quote": "English is not just a subject at school. It is a key, a ladder, and a door you pass through."
+    "testimonial": {
+      "quote": "Anthony is a wonderful teacher who builds his lessons around a child’s interests and passions, helping them speak English with an authentic British accent.",
+      "author": "Karol Białobłocki",
+      "role": "parent",
+      "image": "/images/testimonials/karol-bialoblocki.jpg",
+      "imageAlt": "Karol Białobłocki with his son"
+    },
+    "help": {
+      "heading": "We can help your child with:",
+      "items": [
+        "Speak confidently and understand natural English",
+        "Read, write, listen and build vocabulary",
+        "Enjoy English through stories, games and conversation",
+        "Prepare for egzamin ósmoklasisty, konkurs kuratoryjny or OJAJ"
+      ]
+    }
   },
   "maths": {
     "meta": {

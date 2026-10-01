@@ -82,30 +82,21 @@ const RULES = [
   // ---- language switcher (tj D1) ----
   [/^languageSwitcher\.(pl|en)$/, "header", "languageSwitcher.$1", "string", "tj 2026-09-30 (D1): Header; not rendered yet, Header.tsx stays hard-coded"],
 
-  // ---- course subpages, shared shape: adults / business / maths / university ----
-  [/^(adults|business|maths|university)\.meta\.title$/, "$1Page", "seo.title", "localizedString", ""],
-  [/^(adults|business|maths|university)\.meta\.description$/, "$1Page", "seo.description", "localizedText", ""],
-  [/^(adults|business|maths|university)\.hero\.headline\[(\d+)]\.text$/, "$1Page", "hero.headline[$2].text", "localizedString", ""],
-  [/^(adults|business|maths|university)\.hero\.headline\[(\d+)]\.italic$/, "$1Page", "hero.headline[$2].italic", "boolean", "styling flag"],
-  [/^(adults|business|maths|university)\.hero\.subtitle$/, "$1Page", "hero.subtitle", "localizedText", "newlines = line breaks"],
-  [/^(adults|business|maths|university)\.hero\.(cta|illustrationAlt)$/, "$1Page", "hero.$2", "localizedString", ""],
-  [/^(adults|business|maths|university)\.testimonial\.quote$/, "$1Page", "testimonial.quote", "localizedText", ""],
-  [/^(adults|business|maths|university)\.testimonial\.author$/, "$1Page", "testimonial.author", "string", "proper noun, not translated"],
-  [/^(adults|business|maths|university)\.testimonial\.role$/, "$1Page", "testimonial.role", "localizedString", ""],
-  [/^(adults|business|maths|university)\.testimonial\.image$/, "$1Page", "testimonial.image", "image", "path today -> Sanity image asset"],
-  [/^(adults|business|maths|university)\.testimonial\.imageAlt$/, "$1Page", "testimonial.imageAlt", "localizedString", ""],
-  [/^(adults|business|maths|university)\.testimonial\.imageKind$/, "$1Page", "testimonial.imageKind", "string (list: photo|logo)", ""],
-  [/^(adults|business|maths|university)\.help\.heading$/, "$1Page", "help.heading", "localizedString", ""],
-  [/^(adults|business|maths|university)\.help\.items\[(\d+)]$/, "$1Page", "help.items[$2]", "localizedString", ""],
-
-  // ---- children page (different shape) ----
-  [/^children\.meta\.title$/, "childrenPage", "seo.title", "localizedString", ""],
-  [/^children\.meta\.description$/, "childrenPage", "seo.description", "localizedText", ""],
-  [/^children\.hero\.subtitle$/, "childrenPage", "hero.subtitle", "localizedText", ""],
-  [/^children\.hero\.(label|title|titleItalic)$/, "childrenPage", "hero.$1", "localizedString", ""],
-  [/^children\.(aboutBody|quote)$/, "childrenPage", "$1", "localizedText", ""],
-  [/^children\.(meetTeachers|bookConsultation|examLabel|examHeading)$/, "childrenPage", "$1", "localizedString", ""],
-  [/^children\.examPrep\[(\d+)]\.(name|desc)$/, "childrenPage", "examPrep[$1].$2", "localizedString", ""],
+  // ---- course subpages, shared shape: adults / business / children / maths / university ----
+  [/^(adults|business|children|maths|university)\.meta\.title$/, "$1Page", "seo.title", "localizedString", ""],
+  [/^(adults|business|children|maths|university)\.meta\.description$/, "$1Page", "seo.description", "localizedText", ""],
+  [/^(adults|business|children|maths|university)\.hero\.headline\[(\d+)]\.text$/, "$1Page", "hero.headline[$2].text", "localizedString", ""],
+  [/^(adults|business|children|maths|university)\.hero\.headline\[(\d+)]\.italic$/, "$1Page", "hero.headline[$2].italic", "boolean", "styling flag"],
+  [/^(adults|business|children|maths|university)\.hero\.subtitle$/, "$1Page", "hero.subtitle", "localizedText", "newlines = line breaks"],
+  [/^(adults|business|children|maths|university)\.hero\.(cta|illustrationAlt)$/, "$1Page", "hero.$2", "localizedString", ""],
+  [/^(adults|business|children|maths|university)\.testimonial\.quote$/, "$1Page", "testimonial.quote", "localizedText", ""],
+  [/^(adults|business|children|maths|university)\.testimonial\.author$/, "$1Page", "testimonial.author", "string", "proper noun, not translated"],
+  [/^(adults|business|children|maths|university)\.testimonial\.role$/, "$1Page", "testimonial.role", "localizedString", ""],
+  [/^(adults|business|children|maths|university)\.testimonial\.image$/, "$1Page", "testimonial.image", "image", "path today -> Sanity image asset"],
+  [/^(adults|business|children|maths|university)\.testimonial\.imageAlt$/, "$1Page", "testimonial.imageAlt", "localizedString", ""],
+  [/^(adults|business|children|maths|university)\.testimonial\.imageKind$/, "$1Page", "testimonial.imageKind", "string (list: photo|logo)", ""],
+  [/^(adults|business|children|maths|university)\.help\.heading$/, "$1Page", "help.heading", "localizedString", ""],
+  [/^(adults|business|children|maths|university)\.help\.items\[(\d+)]$/, "$1Page", "help.items[$2]", "localizedString", ""],
 ];
 
 const rows = [];

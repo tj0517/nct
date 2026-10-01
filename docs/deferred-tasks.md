@@ -17,6 +17,7 @@
   - `src/components/Hero.tsx:89,133` — `alt` ilustracji (zduplikowany)
   - `src/components/TrustBar.tsx:21,45` — `alt` logotypów BBC i Cambridge
   - `src/components/ContactLinks.tsx`, `PhoneFloat.tsx`, `BookingModal.tsx:54`, `TeacherCard.tsx:44`, `SoundCloudEmbed.tsx:60`, `MapSection.tsx:33` — `aria-label`, `title` i etykiety przycisków
+- `src/sanity/schemaTypes/objects/namedItem.ts` — stracił jedynego użytkownika, gdy `childrenPage` przeszedł na wspólny `coursePage` (stary układ miał listę `examPrep`). Typ nadal zarejestrowany w `schemaTypes/index.ts`; decyzja o usunięciu: tj (z NCT-1.03)
 - Komponenty bez importerów (martwy kod, w całości zaszyte teksty): `src/components/WhyUs.tsx`, `StickyPhoneBar.tsx`, a także bez tekstu `CustomCursor.tsx`, `MagneticButton.tsx` — decyzja o usunięciu: tj (z NCT-3.02)
 - Konto zalogowane w Sanity CLI nie ma dostępu do projektu NCT (`projects list` pokazuje tylko `y0kc7fj6 / hydra-arms`; zapytanie do projektu z `.env.local` zwraca `project user not found`). Odczyt datasetu trzeba dziś robić przez Vision w `/studio` na loginie tj — do rozważenia przy przekazaniu projektu (O-03) (z NCT-3.02)
 - Lint: `npm run lint` zwraca 1 błąd i 2 ostrzeżenia — kryterium „0 błędów" w NCT-3.02 **nie zostało spełnione**.

@@ -1,7 +1,7 @@
 ---
 id: NCT-3.03
 title: "Import obecnej treści z en.json do Sanity"
-status: todo
+status: review
 difficulty: M
 model: sonnet
 model_approved: null
@@ -48,3 +48,6 @@ a import da się bezpiecznie powtórzyć.
 - `src/sanity/client.ts`
 
 ## Notatki z realizacji
+
+- 2026-10-01, tj: zakres rozszerzony o 3 cytaty z homepage'owej karuzeli (`src/components/Testimonials.tsx`) — IN scope dla tego zadania (potwierdzone w promptcie zadania).
+- 2026-10-01, tj: `siteSettings.siteName` nie ma źródła w mapie treści (209 liści `en.json`) — bez tego pola dokument `siteSettings` wyświetlałby się w Studio jako „Untitled". Decyzja: ustawić na "A Nice Cup of Tea" (nazwa marki występująca w `en.json`: `meta.title`, `about.body`, `contactForm.consent`, zgodna z `initialValue` w schemacie).

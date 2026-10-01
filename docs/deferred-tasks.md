@@ -7,6 +7,7 @@
 - Przeniesienie projektu Sanity do klienta i zaproszenie klienta jako właściciela — przy oddaniu (O-03)
 - Webhook Sanity → natychmiastowe odświeżenie strony (dziś do 60 s) — jeśli klient zgłosi potrzebę
 - CI — świadomie pominięte (security.accepted_risks w project.md)
+- `siteSettings` pola kontaktowe (`phone`, `email`, `address`, `whatsapp`, `messenger`, `instagram`) — brak źródła w `en.json`/mapie treści, import (NCT-3.03) zostawia je puste. Do uzupełnienia ręcznie w Studio albo przy przekazaniu projektu klientowi (O-03) (z NCT-3.03)
 - `src/sanity/client.ts` — `createClient` rzuca przy pustym `projectId`; dziś nikt go nie importuje, więc build jest bezpieczny. Zabezpieczyć przy pierwszym realnym użyciu (z NCT-3.01 → NCT-3.04/3.05)
 - `src/proxy.ts` — `getPreferredLocale()` zdefiniowane, ale nigdy nie wywołane (istniejący warning lintera, sprzed NCT-3.01) → NCT-2.01
 - `src/dictionaries/pl.json` — rozjechany z `en.json`: 248 liści vs 209, brakuje 66 kluczy EN (m.in. całe `faq.meta`, `*.testimonial`, `*.help`, nowe hero podstron), a ma 105 kluczy nieistniejących już w EN (stara struktura `*.goals`, `*.services`, `footer.links`, `hero.ctaPhone`). PL nie jest dziś renderowane jako pełna wersja — do uporządkowania razem z tłumaczeniami po 7.10 (z NCT-3.02)

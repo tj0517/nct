@@ -2,16 +2,21 @@
 // teacher photos and the 3 homepage-carousel testimonials (hard-coded in
 // Testimonials.tsx) into the Sanity `production` dataset. NCT-3.03.
 //
-// Default mode is --dry-run: builds every document and prints its _id, type
-// and field count, writes nothing. --write performs the import.
+// Three modes:
+//  - --dry-run (default): builds every document and prints its _id, type and
+//    field count, writes nothing.
+//  - --write (default write mode): creates documents that don't exist yet
+//    (createIfNotExists) and leaves existing ones untouched — reported as
+//    "created" vs "skipped (exists)". Safe to re-run once the client has
+//    started editing content in Studio: it can never clobber their edits.
+//  - --write --overwrite: replaces EVERY document whole (createOrReplace),
+//    including any edits made in Studio since the last import. Use only to
+//    deliberately re-sync from en.json; never as the routine re-run.
 //
-// Idempotent by design:
-//  - every document uses a stable, deterministic _id and is written with
-//    createOrReplace (never a `drafts.` id), so a second run replaces rather
-//    than duplicates;
-//  - Sanity de-duplicates image asset uploads by content hash, so
-//    re-uploading the same file returns the existing asset instead of
-//    creating a new one.
+// Every document uses a stable, deterministic _id (never a `drafts.` id).
+// Image uploads are unaffected by the mode: Sanity de-duplicates uploads by
+// content hash, so re-uploading the same file returns the existing asset
+// instead of creating a new one.
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -365,12 +370,21 @@ async function uploadImage(client, relPath) {
 
 async function main() {
   const WRITE = process.argv.includes("--write");
+  const OVERWRITE = process.argv.includes("--overwrite");
 
   const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID ?? "";
   const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET || "production";
   const apiVersion = "2024-01-01";
 
-  console.log(`Target: project=${projectId || "(missing)"} dataset=${dataset} write=${WRITE}`);
+  console.log(
+    `Target: project=${projectId || "(missing)"} dataset=${dataset} write=${WRITE} overwrite=${OVERWRITE}`
+  );
+  if (WRITE && OVERWRITE) {
+    console.warn(
+      "\n⚠ --overwrite replaces EVERY document whole (createOrReplace), including any " +
+        "edits made in Studio since the last import. This is not the routine re-run mode.\n"
+    );
+  }
 
   let token;
   if (WRITE) {
@@ -435,11 +449,28 @@ async function main() {
     return;
   }
 
+  const existingIds = new Set(
+    await client.fetch("*[_id in $ids]._id", { ids: documents.map((d) => d._id) })
+  );
+
+  let created = 0;
+  let skipped = 0;
+  let overwritten = 0;
   for (const doc of documents) {
-    await client.createOrReplace(doc);
-    console.log(`wrote ${doc._id}`);
+    if (OVERWRITE) {
+      await client.createOrReplace(doc);
+      console.log(`overwrote ${doc._id}`);
+      overwritten++;
+    } else if (existingIds.has(doc._id)) {
+      console.log(`skipped (exists) ${doc._id}`);
+      skipped++;
+    } else {
+      await client.createIfNotExists(doc);
+      console.log(`created ${doc._id}`);
+      created++;
+    }
   }
-  console.log(`\nWrote ${documents.length} documents.`);
+  console.log(`\n${created} created, ${skipped} skipped (exists), ${overwritten} overwritten.`);
 }
 
 main().catch((err) => {

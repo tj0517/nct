@@ -1,7 +1,7 @@
 ---
 id: NCT-3.04
 title: "Strona główna, nagłówek i stopka czytają treść z Sanity"
-status: in_progress
+status: review
 difficulty: L
 model: opus
 model_approved: null

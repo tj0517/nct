@@ -1,7 +1,7 @@
 ---
 id: NCT-3.03
 title: "Import obecnej treści z en.json do Sanity"
-status: review
+status: done
 difficulty: M
 model: sonnet
 model_approved: null
@@ -52,3 +52,4 @@ a import da się bezpiecznie powtórzyć.
 - 2026-10-01, tj: zakres rozszerzony o 3 cytaty z homepage'owej karuzeli (`src/components/Testimonials.tsx`) — IN scope dla tego zadania (potwierdzone w promptcie zadania).
 - 2026-10-01, tj: `siteSettings.siteName` nie ma źródła w mapie treści (209 liści `en.json`) — bez tego pola dokument `siteSettings` wyświetlałby się w Studio jako „Untitled". Decyzja: ustawić na "A Nice Cup of Tea" (nazwa marki występująca w `en.json`: `meta.title`, `about.body`, `contactForm.consent`, zgodna z `initialValue` w schemacie).
 - 2026-10-01, tj: decyzja — zaakceptowane z uzupełnieniami. Dodano domyślny tryb `createIfNotExists` (dokumenty istniejące są pomijane, nie nadpisywane), żeby ponowne uruchomienie importu nie mogło nadpisać edycji klienta w Studio; pełne nadpisanie wymaga jawnej flagi `--overwrite`. Zależność `@sanity/client` (dziś tylko przechodnia przez `next-sanity`) odłożona — nie dodawać wprost do `package.json` w tym PR (zapisane w `docs/deferred-tasks.md`).
+- 2026-10-01, odbiór: PR #4, zaakceptowane z uzupełnieniami; udowodnione — 17 dokumentów i 10 assetów w production, idempotencja (3 przebiegi), domyślny createIfNotExists chroni edycje klienta; kryteria zakresu zmienione decyzjami tj (3 cytaty z karuzeli w zakresie, tytuły przez GROQ + zrzut Studio po stronie tj).

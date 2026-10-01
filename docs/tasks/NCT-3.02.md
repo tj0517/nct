@@ -1,7 +1,7 @@
 ---
 id: NCT-3.02
 title: "Schematy Sanity dopasowane do obecnej treści strony"
-status: in_progress
+status: review
 difficulty: L
 model: opus
 model_approved: null
@@ -12,7 +12,7 @@ depends_on: [NCT-3.01]
 blocked_by_questions: []
 touches_db: false
 touches_prod: false
-pr: null
+pr: 2
 ---
 
 ## Cel

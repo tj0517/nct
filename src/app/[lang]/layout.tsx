@@ -6,7 +6,8 @@ import GsapProvider from "@/components/GsapProvider";
 import PhoneFloat from "@/components/PhoneFloat";
 import ThemeProvider from "@/components/ThemeProvider";
 import { BookingModalProvider } from "@/components/BookingModalContext";
-import { getDictionary, hasLocale } from "@/dictionaries";
+import { hasLocale } from "@/dictionaries";
+import { getContent } from "@/lib/get-content";
 import type { Locale } from "@/dictionaries";
 import { notFound } from "next/navigation";
 import { THEME_INIT_SCRIPT } from "@/lib/theme";
@@ -39,7 +40,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { lang } = await params;
   if (!hasLocale(lang)) return {};
-  const dict = await getDictionary(lang as Locale);
+  const dict = await getContent(lang as Locale);
   return {
     title: dict.meta.title,
     description: dict.meta.description,
@@ -56,7 +57,7 @@ export default async function RootLayout({
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
 
-  const dict = await getDictionary(lang as Locale);
+  const dict = await getContent(lang as Locale);
 
   return (
     <html

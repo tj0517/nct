@@ -1,7 +1,7 @@
 ---
 id: NCT-3.04
 title: "Strona główna, nagłówek i stopka czytają treść z Sanity"
-status: todo
+status: in_progress
 difficulty: L
 model: opus
 model_approved: null
@@ -47,3 +47,24 @@ więc awaria CMS nie psuje strony. Wygląd bez zmian.
 - `docs/sanity-content-map.md`
 
 ## Notatki z realizacji
+
+- **2026-10-01 (tj)** — zgoda jednorazowa na `npm run dev` i przeglądarkę Playwright przy
+  `kern.memorystatus_vm_pressure_level` = 2 (zamiast wymaganego 1), tylko dla NCT-3.04.
+  Warunki: stop bez ponawiania przy poziomie 4 albo gdy serwer/przeglądarka zostaną ubite;
+  baseline przed jakąkolwiek zmianą; jeden serwer i jedna karta naraz, przeglądarka zamykana
+  między krokami dowodowymi; każdy zrzut na w pełni wyrenderowanej stronie; poziom 2
+  odnotowany w raporcie.
+- **2026-10-01 (tj)** — kryterium „pusty `diff before.txt after.txt`" (decyzja A1): komenda
+  zostaje bez zmian. Powód: zrzut zawiera losowy token `self.__next_r="…"` generowany przy
+  każdym żądaniu (dwa przebiegi na *niezmienionej* stronie już się różnią), więc dosłowny diff
+  nigdy nie będzie pusty. W raporcie mają być oba: surowy diff (tylko ten token) i diff po
+  wyzerowaniu `self.__next_r="…"` w obu plikach (musi być pusty). Ta sama normalizacja
+  obowiązuje w red proofie.
+- **2026-10-01 (tj)** — zapas dla opinii i zdjęć (decyzja B2): trzy cytaty opinii
+  (`author`, `role`, `quote`) oraz ścieżki zdjęć trafiają do `src/dictionaries/en.json`
+  (`testimonials.list`, `image` przy każdym `teachers.list`), żeby `en.json` był jedynym
+  źródłem zapasowym; komponenty stają się w pełni sterowane propsami, a wartości z Sanity
+  nadpisują pole po polu (język strony → EN → `en.json`). `hasVideo` nie istnieje w schemacie
+  Sanity — zostaje w kodzie, przycisk „Watch intro" nie jest edytowalny przez klienta
+  (odnotowane w `docs/deferred-tasks.md`). NCT-3.05 dziedziczy zasadę „zapas = `en.json`"
+  dla opinii na podstronach kursów.

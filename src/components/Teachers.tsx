@@ -1,16 +1,15 @@
 import SectionLabel from "./SectionLabel";
 import TeacherCard from "./TeacherCard";
 
-const teacherImages = [
-  { image: "/images/teachers/anthony-goltz.png", hasVideo: true },
-  { image: "/images/teachers/alan-bryson.png", hasVideo: true },
-  { image: "/images/teachers/rishi-handa.png", hasVideo: true },
-];
+// "Watch intro" is not editor-controlled: the Sanity `teacher` schema has no
+// `hasVideo` field, so this stays in code, positional like before
+// (docs/deferred-tasks.md, NCT-3.04). Photos now come from the dictionary.
+const teacherHasVideo = [true, true, true];
 
 interface TeachersDict {
   label: string;
   heading: string;
-  list: { name: string; credential: string; bio: string }[];
+  list: { name: string; credential: string; bio: string; image: string }[];
 }
 
 export default function Teachers({ dict }: { dict: TeachersDict }) {
@@ -27,8 +26,8 @@ export default function Teachers({ dict }: { dict: TeachersDict }) {
               name={teacher.name}
               credential={teacher.credential}
               bio={teacher.bio}
-              image={teacherImages[i]?.image ?? ""}
-              hasVideo={teacherImages[i]?.hasVideo}
+              image={teacher.image}
+              hasVideo={teacherHasVideo[i]}
             />
           ))}
         </div>

@@ -4,7 +4,7 @@
 Every leaf of `src/dictionaries/en.json` and the Sanity document + field that will hold it.
 `en.json` is the source of truth for structure (`pl.json` is stale — see `docs/deferred-tasks.md`).
 
-- **209 leaves mapped** (recounted from `en.json`, not from the task file).
+- **208 leaves mapped** (recounted from `en.json`, not from the task file).
 - Placement of `trustBar`, `pricing`, `map`, `booking`, `contactForm`, `meta` and
   `languageSwitcher` was decided by tj on 2026-09-30 (A1, B2, C1, D1).
 - `localizedString` / `localizedText` = `{ en (required), pl (optional) }`.
@@ -167,60 +167,59 @@ Verify with: `node scripts/check-content-map.mjs`
 | 150 | `business.help.items[3]` | `businessPage` | `help.items[3]` | localizedString |  |
 | 151 | `children.meta.title` | `childrenPage` | `seo.title` | localizedString |  |
 | 152 | `children.meta.description` | `childrenPage` | `seo.description` | localizedText |  |
-| 153 | `children.hero.label` | `childrenPage` | `hero.label` | localizedString |  |
-| 154 | `children.hero.title` | `childrenPage` | `hero.title` | localizedString |  |
-| 155 | `children.hero.titleItalic` | `childrenPage` | `hero.titleItalic` | localizedString |  |
-| 156 | `children.hero.subtitle` | `childrenPage` | `hero.subtitle` | localizedText |  |
-| 157 | `children.aboutBody` | `childrenPage` | `aboutBody` | localizedText |  |
-| 158 | `children.meetTeachers` | `childrenPage` | `meetTeachers` | localizedString |  |
-| 159 | `children.bookConsultation` | `childrenPage` | `bookConsultation` | localizedString |  |
-| 160 | `children.examLabel` | `childrenPage` | `examLabel` | localizedString |  |
-| 161 | `children.examHeading` | `childrenPage` | `examHeading` | localizedString |  |
-| 162 | `children.examPrep[0].name` | `childrenPage` | `examPrep[0].name` | localizedString |  |
-| 163 | `children.examPrep[0].desc` | `childrenPage` | `examPrep[0].desc` | localizedString |  |
-| 164 | `children.examPrep[1].name` | `childrenPage` | `examPrep[1].name` | localizedString |  |
-| 165 | `children.examPrep[1].desc` | `childrenPage` | `examPrep[1].desc` | localizedString |  |
-| 166 | `children.examPrep[2].name` | `childrenPage` | `examPrep[2].name` | localizedString |  |
-| 167 | `children.examPrep[2].desc` | `childrenPage` | `examPrep[2].desc` | localizedString |  |
-| 168 | `children.examPrep[3].name` | `childrenPage` | `examPrep[3].name` | localizedString |  |
-| 169 | `children.examPrep[3].desc` | `childrenPage` | `examPrep[3].desc` | localizedString |  |
-| 170 | `children.quote` | `childrenPage` | `quote` | localizedText |  |
-| 171 | `maths.meta.title` | `mathsPage` | `seo.title` | localizedString |  |
-| 172 | `maths.meta.description` | `mathsPage` | `seo.description` | localizedText |  |
-| 173 | `maths.hero.headline[0].text` | `mathsPage` | `hero.headline[0].text` | localizedString |  |
-| 174 | `maths.hero.headline[1].text` | `mathsPage` | `hero.headline[1].text` | localizedString |  |
-| 175 | `maths.hero.headline[1].italic` | `mathsPage` | `hero.headline[1].italic` | boolean | styling flag |
-| 176 | `maths.hero.headline[2].text` | `mathsPage` | `hero.headline[2].text` | localizedString |  |
-| 177 | `maths.hero.subtitle` | `mathsPage` | `hero.subtitle` | localizedText | newlines = line breaks |
-| 178 | `maths.hero.cta` | `mathsPage` | `hero.cta` | localizedString |  |
-| 179 | `maths.hero.illustrationAlt` | `mathsPage` | `hero.illustrationAlt` | localizedString |  |
-| 180 | `maths.testimonial.quote` | `mathsPage` | `testimonial.quote` | localizedText |  |
-| 181 | `maths.testimonial.author` | `mathsPage` | `testimonial.author` | string | proper noun, not translated |
-| 182 | `maths.testimonial.role` | `mathsPage` | `testimonial.role` | localizedString |  |
-| 183 | `maths.testimonial.image` | `mathsPage` | `testimonial.image` | image | path today -> Sanity image asset |
-| 184 | `maths.testimonial.imageAlt` | `mathsPage` | `testimonial.imageAlt` | localizedString |  |
-| 185 | `maths.help.heading` | `mathsPage` | `help.heading` | localizedString |  |
-| 186 | `maths.help.items[0]` | `mathsPage` | `help.items[0]` | localizedString |  |
-| 187 | `maths.help.items[1]` | `mathsPage` | `help.items[1]` | localizedString |  |
-| 188 | `maths.help.items[2]` | `mathsPage` | `help.items[2]` | localizedString |  |
-| 189 | `maths.help.items[3]` | `mathsPage` | `help.items[3]` | localizedString |  |
-| 190 | `university.meta.title` | `universityPage` | `seo.title` | localizedString |  |
-| 191 | `university.meta.description` | `universityPage` | `seo.description` | localizedText |  |
-| 192 | `university.hero.headline[0].text` | `universityPage` | `hero.headline[0].text` | localizedString |  |
-| 193 | `university.hero.headline[1].text` | `universityPage` | `hero.headline[1].text` | localizedString |  |
-| 194 | `university.hero.headline[1].italic` | `universityPage` | `hero.headline[1].italic` | boolean | styling flag |
-| 195 | `university.hero.subtitle` | `universityPage` | `hero.subtitle` | localizedText | newlines = line breaks |
-| 196 | `university.hero.cta` | `universityPage` | `hero.cta` | localizedString |  |
-| 197 | `university.hero.illustrationAlt` | `universityPage` | `hero.illustrationAlt` | localizedString |  |
-| 198 | `university.testimonial.quote` | `universityPage` | `testimonial.quote` | localizedText |  |
-| 199 | `university.testimonial.author` | `universityPage` | `testimonial.author` | string | proper noun, not translated |
-| 200 | `university.testimonial.role` | `universityPage` | `testimonial.role` | localizedString |  |
-| 201 | `university.testimonial.image` | `universityPage` | `testimonial.image` | image | path today -> Sanity image asset |
-| 202 | `university.testimonial.imageAlt` | `universityPage` | `testimonial.imageAlt` | localizedString |  |
-| 203 | `university.help.heading` | `universityPage` | `help.heading` | localizedString |  |
-| 204 | `university.help.items[0]` | `universityPage` | `help.items[0]` | localizedString |  |
-| 205 | `university.help.items[1]` | `universityPage` | `help.items[1]` | localizedString |  |
-| 206 | `university.help.items[2]` | `universityPage` | `help.items[2]` | localizedString |  |
-| 207 | `university.help.items[3]` | `universityPage` | `help.items[3]` | localizedString |  |
-| 208 | `languageSwitcher.pl` | `header` | `languageSwitcher.pl` | string | tj 2026-09-30 (D1): Header; not rendered yet, Header.tsx stays hard-coded |
-| 209 | `languageSwitcher.en` | `header` | `languageSwitcher.en` | string | tj 2026-09-30 (D1): Header; not rendered yet, Header.tsx stays hard-coded |
+| 153 | `children.hero.headline[0].text` | `childrenPage` | `hero.headline[0].text` | localizedString |  |
+| 154 | `children.hero.headline[1].text` | `childrenPage` | `hero.headline[1].text` | localizedString |  |
+| 155 | `children.hero.headline[2].text` | `childrenPage` | `hero.headline[2].text` | localizedString |  |
+| 156 | `children.hero.headline[2].italic` | `childrenPage` | `hero.headline[2].italic` | boolean | styling flag |
+| 157 | `children.hero.subtitle` | `childrenPage` | `hero.subtitle` | localizedText | newlines = line breaks |
+| 158 | `children.hero.cta` | `childrenPage` | `hero.cta` | localizedString |  |
+| 159 | `children.hero.illustrationAlt` | `childrenPage` | `hero.illustrationAlt` | localizedString |  |
+| 160 | `children.testimonial.quote` | `childrenPage` | `testimonial.quote` | localizedText |  |
+| 161 | `children.testimonial.author` | `childrenPage` | `testimonial.author` | string | proper noun, not translated |
+| 162 | `children.testimonial.role` | `childrenPage` | `testimonial.role` | localizedString |  |
+| 163 | `children.testimonial.image` | `childrenPage` | `testimonial.image` | image | path today -> Sanity image asset |
+| 164 | `children.testimonial.imageAlt` | `childrenPage` | `testimonial.imageAlt` | localizedString |  |
+| 165 | `children.help.heading` | `childrenPage` | `help.heading` | localizedString |  |
+| 166 | `children.help.items[0]` | `childrenPage` | `help.items[0]` | localizedString |  |
+| 167 | `children.help.items[1]` | `childrenPage` | `help.items[1]` | localizedString |  |
+| 168 | `children.help.items[2]` | `childrenPage` | `help.items[2]` | localizedString |  |
+| 169 | `children.help.items[3]` | `childrenPage` | `help.items[3]` | localizedString |  |
+| 170 | `maths.meta.title` | `mathsPage` | `seo.title` | localizedString |  |
+| 171 | `maths.meta.description` | `mathsPage` | `seo.description` | localizedText |  |
+| 172 | `maths.hero.headline[0].text` | `mathsPage` | `hero.headline[0].text` | localizedString |  |
+| 173 | `maths.hero.headline[1].text` | `mathsPage` | `hero.headline[1].text` | localizedString |  |
+| 174 | `maths.hero.headline[1].italic` | `mathsPage` | `hero.headline[1].italic` | boolean | styling flag |
+| 175 | `maths.hero.headline[2].text` | `mathsPage` | `hero.headline[2].text` | localizedString |  |
+| 176 | `maths.hero.subtitle` | `mathsPage` | `hero.subtitle` | localizedText | newlines = line breaks |
+| 177 | `maths.hero.cta` | `mathsPage` | `hero.cta` | localizedString |  |
+| 178 | `maths.hero.illustrationAlt` | `mathsPage` | `hero.illustrationAlt` | localizedString |  |
+| 179 | `maths.testimonial.quote` | `mathsPage` | `testimonial.quote` | localizedText |  |
+| 180 | `maths.testimonial.author` | `mathsPage` | `testimonial.author` | string | proper noun, not translated |
+| 181 | `maths.testimonial.role` | `mathsPage` | `testimonial.role` | localizedString |  |
+| 182 | `maths.testimonial.image` | `mathsPage` | `testimonial.image` | image | path today -> Sanity image asset |
+| 183 | `maths.testimonial.imageAlt` | `mathsPage` | `testimonial.imageAlt` | localizedString |  |
+| 184 | `maths.help.heading` | `mathsPage` | `help.heading` | localizedString |  |
+| 185 | `maths.help.items[0]` | `mathsPage` | `help.items[0]` | localizedString |  |
+| 186 | `maths.help.items[1]` | `mathsPage` | `help.items[1]` | localizedString |  |
+| 187 | `maths.help.items[2]` | `mathsPage` | `help.items[2]` | localizedString |  |
+| 188 | `maths.help.items[3]` | `mathsPage` | `help.items[3]` | localizedString |  |
+| 189 | `university.meta.title` | `universityPage` | `seo.title` | localizedString |  |
+| 190 | `university.meta.description` | `universityPage` | `seo.description` | localizedText |  |
+| 191 | `university.hero.headline[0].text` | `universityPage` | `hero.headline[0].text` | localizedString |  |
+| 192 | `university.hero.headline[1].text` | `universityPage` | `hero.headline[1].text` | localizedString |  |
+| 193 | `university.hero.headline[1].italic` | `universityPage` | `hero.headline[1].italic` | boolean | styling flag |
+| 194 | `university.hero.subtitle` | `universityPage` | `hero.subtitle` | localizedText | newlines = line breaks |
+| 195 | `university.hero.cta` | `universityPage` | `hero.cta` | localizedString |  |
+| 196 | `university.hero.illustrationAlt` | `universityPage` | `hero.illustrationAlt` | localizedString |  |
+| 197 | `university.testimonial.quote` | `universityPage` | `testimonial.quote` | localizedText |  |
+| 198 | `university.testimonial.author` | `universityPage` | `testimonial.author` | string | proper noun, not translated |
+| 199 | `university.testimonial.role` | `universityPage` | `testimonial.role` | localizedString |  |
+| 200 | `university.testimonial.image` | `universityPage` | `testimonial.image` | image | path today -> Sanity image asset |
+| 201 | `university.testimonial.imageAlt` | `universityPage` | `testimonial.imageAlt` | localizedString |  |
+| 202 | `university.help.heading` | `universityPage` | `help.heading` | localizedString |  |
+| 203 | `university.help.items[0]` | `universityPage` | `help.items[0]` | localizedString |  |
+| 204 | `university.help.items[1]` | `universityPage` | `help.items[1]` | localizedString |  |
+| 205 | `university.help.items[2]` | `universityPage` | `help.items[2]` | localizedString |  |
+| 206 | `university.help.items[3]` | `universityPage` | `help.items[3]` | localizedString |  |
+| 207 | `languageSwitcher.pl` | `header` | `languageSwitcher.pl` | string | tj 2026-09-30 (D1): Header; not rendered yet, Header.tsx stays hard-coded |
+| 208 | `languageSwitcher.en` | `header` | `languageSwitcher.en` | string | tj 2026-09-30 (D1): Header; not rendered yet, Header.tsx stays hard-coded |

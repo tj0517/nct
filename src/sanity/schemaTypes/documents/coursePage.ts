@@ -1,8 +1,7 @@
 import { defineType, defineField } from "sanity";
 
-// Adults, Business, Maths and University share one shape: SEO, a hero built
-// from headline parts, one testimonial, and a "we can help you with" list.
-// Children is different and has its own file.
+// Every course page shares one shape: SEO, a hero built from headline parts,
+// one testimonial, and a "we can help you with" list.
 export function coursePage(name: string, title: string) {
   return defineType({
     name,

@@ -45,6 +45,17 @@ const HEADLINE_SCALE = {
   statement: "text-[min(8vw,44px)] md:text-[min(3.2vw,5.5vh)] xl:text-[min(50px,5.5vh)]",
 } as const;
 
+/* Phone CTA size. The button's hover sweep clips its label to a single line,
+   so a longer sentence has to be set smaller rather than wrap. The label runs
+   ≈20.2px wide per px of font size, against a button of 88vw — "long" keeps
+   Anthony's full wording on a 320px phone. From md the label has room. */
+const CTA_SCALE = {
+  /* ≤ 38 chars — "Book your free 30-minute assessment" */
+  default: "!text-[clamp(14px,4.8vw,18px)]",
+  /* longer — "Book your child's free 30-minute assessment" */
+  long: "!text-[clamp(12.5px,4.15vw,18px)]",
+} as const;
+
 function headlineScale(lines: CourseHeroDict["headline"]) {
   const longest = Math.max(...lines.map((l) => l.text.length));
   return longest <= 9 ? "hero" : longest <= 13 ? "wide" : "statement";
@@ -62,6 +73,7 @@ export default function CourseHero({
   const aspect = `${illustration.width} / ${illustration.height}`;
   const tier = headlineScale(dict.headline);
   const scale = HEADLINE_SCALE[tier];
+  const ctaScale = CTA_SCALE[dict.cta.length <= 38 ? "default" : "long"];
 
   useGSAP(
     () => {
@@ -163,7 +175,7 @@ export default function CourseHero({
                   with the viewport so the full sentence fits on narrow phones. */}
               <Button
                 variant="filled"
-                className="!w-full !text-[clamp(14px,4.8vw,18px)] md:!text-lg xl:!text-2xl lg:!px-8"
+                className={`!w-full ${ctaScale} md:!text-lg xl:!text-2xl lg:!px-8`}
               >
                 <span className="md:hidden">{dict.ctaShort ?? dict.cta}</span>
                 <span className="hidden md:inline">{dict.cta}</span>

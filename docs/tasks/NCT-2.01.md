@@ -1,7 +1,7 @@
 ---
 id: NCT-2.01
 title: "Jedna wersja każdej strony dla Google (język, canonical)"
-status: in_progress
+status: review
 difficulty: M
 model: sonnet
 model_approved: null
@@ -12,7 +12,7 @@ depends_on: []
 blocked_by_questions: []
 touches_db: false
 touches_prod: false
-pr: null
+pr: 8
 ---
 
 ## Cel

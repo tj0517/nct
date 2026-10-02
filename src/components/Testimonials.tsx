@@ -1,37 +1,24 @@
 import Image from "next/image";
 import SectionLabel from "./SectionLabel";
 
-const testimonials = [
-  {
-    text: "Probably the best language school in Poland.",
-    author: "Katarzyna Bonda",
-    role: "Author",
-    image: "/images/testimonials/katarzyna-bonda.png",
-  },
-  {
-    text: "Anthony is the teacher you remember years later because you didn’t wish to disillusion them.",
-    author: "Marek Tejchman",
-    role: "News Anchor",
-    image: "/images/testimonials/marek-tejchman.png",
-  },
-  {
-    text: "British humour included; there’s no other place like it in Poland.",
-    author: "Anna Gielewska",
-    role: "VSquare Editor-in-Chief and Stanford Fellow",
-    image: "/images/testimonials/anna-gielewska.png",
-  },
-];
+interface Testimonial {
+  quote: string;
+  author: string;
+  role: string;
+  image: string;
+}
 
 interface TestimonialsDict {
   label: string;
   heading: string;
+  list: Testimonial[];
 }
 
-function TestimonialCard({ t }: { t: (typeof testimonials)[number] }) {
+function TestimonialCard({ t }: { t: Testimonial }) {
   return (
     <div className="bg-second-bg border border-main/75 rounded-bl-[30px] rounded-tr-[30px] p-6 md:p-8 flex flex-col gap-5 h-full">
       <p className="font-fraunces font-normal text-base md:text-lg text-main leading-relaxed flex-1">
-        &ldquo;{t.text}&rdquo;
+        &ldquo;{t.quote}&rdquo;
       </p>
       <div className="flex items-center gap-3">
         <div className={`relative size-20 md:size-24 rounded-full overflow-hidden shrink-0 flex items-center justify-center ${t.image ? "bg-second-bg" : "bg-second-bg border-2 border-main/30"}`}>
@@ -68,7 +55,7 @@ export default function Testimonials({ dict }: { dict: TestimonialsDict }) {
 
         {/* Desktop: 3 across, hovered card grows wider and the others yield */}
         <div className="hidden lg:flex gap-6">
-          {testimonials.map((t) => (
+          {dict.list.map((t) => (
             <div
               key={t.author}
               className="min-w-0 flex-1 hover:flex-[1.4] transition-[flex-grow] duration-500 ease-out"
@@ -80,7 +67,7 @@ export default function Testimonials({ dict }: { dict: TestimonialsDict }) {
 
         {/* Mobile/tablet: stacked vertically */}
         <div className="lg:hidden flex flex-col gap-6">
-          {testimonials.map((t) => (
+          {dict.list.map((t) => (
             <TestimonialCard key={t.author} t={t} />
           ))}
         </div>

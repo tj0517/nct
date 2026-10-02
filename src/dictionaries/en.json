@@ -99,23 +99,46 @@
       {
         "name": "Anthony Goltz",
         "credential": "Balliol College, Oxford",
-        "bio": "History"
+        "bio": "History",
+        "image": "/images/teachers/anthony-goltz.png"
       },
       {
         "name": "Dr Alan Bryson",
         "credential": "University of St Andrews",
-        "bio": "History"
+        "bio": "History",
+        "image": "/images/teachers/alan-bryson.png"
       },
       {
         "name": "Dr Rishi Handa",
         "credential": "University College London (UCL)",
-        "bio": "Maths & Theoretical Physics"
+        "bio": "Maths & Theoretical Physics",
+        "image": "/images/teachers/rishi-handa.png"
       }
     ]
   },
   "testimonials": {
     "label": "TESTIMONIALS",
-    "heading": "In their words"
+    "heading": "In their words",
+    "list": [
+      {
+        "quote": "Probably the best language school in Poland.",
+        "author": "Katarzyna Bonda",
+        "role": "Author",
+        "image": "/images/testimonials/katarzyna-bonda.png"
+      },
+      {
+        "quote": "Anthony is the teacher you remember years later because you didn’t wish to disillusion them.",
+        "author": "Marek Tejchman",
+        "role": "News Anchor",
+        "image": "/images/testimonials/marek-tejchman.png"
+      },
+      {
+        "quote": "British humour included; there’s no other place like it in Poland.",
+        "author": "Anna Gielewska",
+        "role": "VSquare Editor-in-Chief and Stanford Fellow",
+        "image": "/images/testimonials/anna-gielewska.png"
+      }
+    ]
   },
   "pricing": {
     "label": "PRICING",

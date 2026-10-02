@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
-import { getDictionary, hasLocale } from "@/dictionaries";
+import { hasLocale } from "@/dictionaries";
+import { getContent } from "@/lib/get-content";
 import type { Locale } from "@/dictionaries";
 import Hero from "@/components/Hero";
 import TrustBar from "@/components/TrustBar";
@@ -26,7 +27,7 @@ export default async function Home({
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
 
-  const dict = await getDictionary(lang as Locale);
+  const dict = await getContent(lang as Locale);
 
   return (
     <>

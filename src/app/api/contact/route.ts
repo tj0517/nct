@@ -10,10 +10,10 @@ const HONEYPOT_FIELD = "company";
 const MIN_FILL_MS = 1500;
 
 const ContactSchema = z.object({
-  name: z.string().trim().min(1),
-  email: z.email(),
-  phone: z.string().trim().optional().default(""),
-  message: z.string().trim().min(1),
+  name: z.string().trim().min(1).max(100),
+  email: z.email().max(254),
+  phone: z.string().trim().max(30).optional().default(""),
+  message: z.string().trim().min(1).max(5000),
   consent: z.literal(true),
 });
 

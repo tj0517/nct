@@ -71,13 +71,14 @@ export default function ContactForm({ dict }: { dict: ContactFormDict }) {
         <input type="text" id="company" name="company" tabIndex={-1} autoComplete="off" />
       </div>
 
-      <input type="text" name="name" required placeholder={dict.namePlaceholder} className={inputClasses} />
-      <input type="email" name="email" required placeholder={dict.emailPlaceholder} className={inputClasses} />
-      <input type="tel" name="phone" placeholder={dict.phonePlaceholder} className={inputClasses} />
+      <input type="text" name="name" required maxLength={100} placeholder={dict.namePlaceholder} className={inputClasses} />
+      <input type="email" name="email" required maxLength={254} placeholder={dict.emailPlaceholder} className={inputClasses} />
+      <input type="tel" name="phone" maxLength={30} placeholder={dict.phonePlaceholder} className={inputClasses} />
 
       <textarea
         name="message"
         required
+        maxLength={5000}
         placeholder={dict.messagePlaceholder}
         rows={3}
         className={`${inputClasses} resize-none`}

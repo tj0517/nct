@@ -12,6 +12,7 @@
   `node scripts/build-content-map.mjs` (z NCT-3.05)
 
 - **Przed startem produkcji:** konto Resend, `RESEND_API_KEY` i `CONTACT_TO_EMAIL` na Vercelu + testowa wysyłka — tj (bramka STOP; O-01)
+- **Przed startem produkcji:** formularz kontaktowy wysyła dziś z adresu sandboxowego Resend `onboarding@resend.dev` (domena szkoły niezweryfikowana, patrz niżej). Wg dokumentacji Resend „You can only send testing emails to your own email address" (https://resend.com/docs/knowledge-base/403-error-resend-dev-domain) — ten adres dostarcza wyłącznie na adres właściciela konta Resend. Realny test wysyłki przy starcie (O-01) wymaga albo `CONTACT_TO_EMAIL` = ten sam adres właściciela konta Resend, albo zweryfikowanej domeny szkoły w Resend (z NCT-1.01)
 - Nadawca maili z domeny szkoły + weryfikacja domeny w Resend — po podpięciu oficjalnej domeny (z NCT-1.01)
 - Podpięcie oficjalnej domeny na Vercelu, Google Search Console, zgłoszenie sitemap — tj (bramka STOP)
 - Polska wersja treści (tłumaczenia od klienta), włączenie `hreflang` — po 7.10 (O-02)

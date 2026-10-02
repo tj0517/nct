@@ -54,6 +54,13 @@ Po zadaniu cała strona jest edytowalna w Studio, a wygląd i treść są identy
   wewnątrz kółka ze zdjęciem, bez zmiany geometrii. Większe niż w D2a (NCT-3.04: 33 850 px, maks.
   25/255), ale ta sama przyczyna; pozostałe cztery zdjęcia opinii wyszły pikselowo identyczne.
 - **2026-10-02 (tj)** — `docs/cms-guide.md` po angielsku.
+- **2026-10-02 (tj)** — `src/dictionaries/en.json`: dodano `"imageKind": "photo"` pod
+  `testimonial` na stronach adults/children/maths/university (business miał je już wcześniej).
+  Cztery klucze czysto dodane, żadna istniejąca wartość nie zmieniona. Powód: wspólna funkcja
+  mapująca (`mapCoursePage` w `src/lib/get-content.ts`) potrzebuje jednego typu TS dla
+  wszystkich pięciu stron kursowych, a bez tego pola `Dictionary["adults"]` i `Dictionary["business"]`
+  różniły się kształtem. Nie wpływa na widoczny tekst (pole steruje tylko wyborem
+  kadru/kółko vs logo w `CourseTestimonial.tsx`, nieużywane poza `=== "logo"`).
 - **2026-10-02 (tj)** — live-edit potwierdzony: (1) zmiana `hero.subtitle` w Studio na
   `mathsPage` widoczna na `/en/maths` w ≤ 60 s; (2) zmiana `footer.visitLabel` widoczna w
   stopce na `/en/maths`. Oba pola przywrócone i ponownie opublikowane. To tylko live-edit

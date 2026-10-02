@@ -11,6 +11,8 @@ import { getContent } from "@/lib/get-content";
 import type { Locale } from "@/dictionaries";
 import { notFound } from "next/navigation";
 import { THEME_INIT_SCRIPT } from "@/lib/theme";
+import { servedLocale } from "@/lib/locale-content";
+import { localeMetadata } from "@/lib/seo-locale";
 
 const fraunces = Fraunces({
   variable: "--font-fraunces-var",
@@ -42,8 +44,16 @@ export async function generateMetadata({
   if (!hasLocale(lang)) return {};
   const dict = await getContent(lang as Locale);
   return {
+    // Vercel provides this automatically — no env var or Vercel setting
+    // added here. Full domain setup (OG, sitemap, robots) is NCT-2.02.
+    metadataBase: new URL(
+      process.env.VERCEL_PROJECT_PRODUCTION_URL
+        ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+        : "http://localhost:3000"
+    ),
     title: dict.meta.title,
     description: dict.meta.description,
+    ...localeMetadata(lang as Locale, ""),
   };
 }
 
@@ -61,7 +71,7 @@ export default async function RootLayout({
 
   return (
     <html
-      lang={lang}
+      lang={servedLocale(lang)}
       className={`${fraunces.variable} ${inter.variable} ${cormorantGaramond.variable} antialiased`}
       suppressHydrationWarning
     >

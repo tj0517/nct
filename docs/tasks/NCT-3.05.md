@@ -1,7 +1,7 @@
 ---
 id: NCT-3.05
 title: "Podstrony kursów i FAQ czytają treść z Sanity; odbiór CMS"
-status: review
+status: done
 difficulty: M
 model: sonnet
 model_approved: null
@@ -75,3 +75,9 @@ Po zadaniu cała strona jest edytowalna w Studio, a wygląd i treść są identy
   przywrócono prawdziwy `projectId`, restart, `/en/maths` 200 z treścią z Sanity (zdjęcie
   opinii znów z `cdn.sanity.io/images/w7vc4ijx/...`); serwer dev zatrzymany po zakończeniu.
   Brak niestabilności przy poziomie 2 — serwer i curl odpowiadały normalnie przez cały czas.
+- **2026-10-02 (tj)** — accepted by tj (PR #6). Proven: visible text of all six pages
+  identical to baseline; 12 before/after screenshot pairs (adults-1440 photo CDN re-encoding
+  accepted by tj; children-390 1/255 timing noise); live edit of a subpage field and a footer
+  field confirmed by tj; fallback red proof for `/en/maths` (HTTP 200, text identical,
+  screenshot pixel-identical to the real-Sanity render); `tsc` clean and lint with no new
+  problems versus baseline.

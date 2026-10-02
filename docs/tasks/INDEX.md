@@ -15,6 +15,6 @@ Deadline projektu: **2026-10-07** (strona + Sanity).
 | [NCT-3.02](NCT-3.02.md) | Schematy Sanity dopasowane do obecnej treści strony | done | L | NCT-3.01 | [#2](https://github.com/tj0517/nct/pull/2) | 2026-10-01 |
 | [NCT-3.03](NCT-3.03.md) | Import obecnej treści z en.json do Sanity | done | M | NCT-3.02 | [#4](https://github.com/tj0517/nct/pull/4) | 2026-10-02 |
 | [NCT-3.04](NCT-3.04.md) | Strona główna, nagłówek i stopka czytają treść z Sanity | done | L | NCT-3.03 | [#5](https://github.com/tj0517/nct/pull/5) | 2026-10-04 |
-| [NCT-3.05](NCT-3.05.md) | Podstrony kursów i FAQ czytają treść z Sanity; odbiór CMS | review | M | NCT-3.04 | [#6](https://github.com/tj0517/nct/pull/6) | 2026-10-06 |
+| [NCT-3.05](NCT-3.05.md) | Podstrony kursów i FAQ czytają treść z Sanity; odbiór CMS | done | M | NCT-3.04 | [#6](https://github.com/tj0517/nct/pull/6) | 2026-10-06 |
 
 Ścieżka krytyczna: NCT-3.01 → 3.02 → 3.03 → 3.04 → 3.05 (5 zadań na 8 dni).

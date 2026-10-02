@@ -1,5 +1,7 @@
 # Odłożone (noticed, not touched) — NCT
 
+- `package.json` — `@formatjs/intl-localematcher`, `negotiator` i `@types/negotiator` były używane wyłącznie przez `getPreferredLocale()` w `src/proxy.ts`, usuniętą w NCT-2.01 (była martwa — nigdy nie wywoływana, patrz istniejący warning lintera sprzed NCT-3.01). Po tym PR-ze żaden plik w repo ich nie importuje (sprawdzone grepem). Do usunięcia z `package.json`, jeśli nic innego ich nie zacznie używać (z NCT-2.01)
+
 - `node scripts/build-content-map.mjs` dziś odmawia zapisu `docs/sanity-content-map.md` (exit 1):
   15 liści `en.json` bez reguły mapowania — `teachers.list[*].image` i cały
   `testimonials.list[*].{quote,author,role,image}` (zdjęcia nauczycieli/opinii i trzy cytaty
@@ -27,7 +29,6 @@
 - Podstrony kursów i FAQ nadal czytają `getDictionary` (en.json), więc ich stopka i formularz kontaktowy biorą tekst z `en.json`, a strona główna z Sanity. Tekst jest dziś identyczny, więc nic nie widać → domknąć w NCT-3.05 (z NCT-3.04)
 - `next.config.ts` → `images.remotePatterns` dopuszcza `cdn.sanity.io/images/**`. Można zawęzić do `/images/<projectId>/<dataset>/**`, ale wtedy konfiguracja zaczyna zależeć od zmiennych środowiskowych — świadomie zostawione szerzej (z NCT-3.04)
 - `src/components/GsapProvider.tsx` — `reduced` startuje jako `false` i dopiero efekt ustawia `true`, więc przy `prefers-reduced-motion: reduce` animacje hero/sekcji **i tak odpalają na pierwszej klatce** i dopiero potem są cofane. To ta sama przyczyna co zaakceptowany błąd lintera w tym pliku; pliku nie ruszam (decyzja tj 2026-10-01) (z NCT-3.04)
-- `src/proxy.ts` — `getPreferredLocale()` zdefiniowane, ale nigdy nie wywołane (istniejący warning lintera, sprzed NCT-3.01) → NCT-2.01
 - `src/dictionaries/pl.json` — rozjechany z `en.json`: 248 liści vs 209, brakuje 66 kluczy EN (m.in. całe `faq.meta`, `*.testimonial`, `*.help`, nowe hero podstron), a ma 105 kluczy nieistniejących już w EN (stara struktura `*.goals`, `*.services`, `footer.links`, `hero.ctaPhone`). PL nie jest dziś renderowane jako pełna wersja — do uporządkowania razem z tłumaczeniami po 7.10 (z NCT-3.02)
 - Teksty zaszyte w komponentach, poza `en.json` i poza CMS-em — do przeniesienia przy okazji NCT-3.04/3.05 (z NCT-3.02):
   - `src/components/Testimonials.tsx:6-20` — trzy cytaty opinii (Katarzyna Bonda, Marek Tejchman, Anna Gielewska) + `aria-label` L47; słownik daje tylko `label`/`heading`

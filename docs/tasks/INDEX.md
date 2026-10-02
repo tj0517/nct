@@ -5,7 +5,7 @@ Deadline projektu: **2026-10-07** (strona + Sanity).
 
 | id | tytuł | status | trudność | zależności | pytania | due |
 |---|---|---|---|---|---|---|
-| [NCT-1.01](NCT-1.01.md) | Formularz kontaktowy wysyła zapytanie mailem | review | M | – | – | 2026-10-01 |
+| [NCT-1.01](NCT-1.01.md) | Formularz kontaktowy wysyła zapytanie mailem | review | M | – | [#7](https://github.com/tj0517/nct/pull/7) | 2026-10-01 |
 | [NCT-1.02](NCT-1.02.md) | Aktualizacja CLAUDE.md do stanu repo | todo | S | – | – | 2026-09-30 |
 | [NCT-1.03](NCT-1.03.md) | Podstrona Children & Teens na szablonie kursowym | review | M | – | [#3](https://github.com/tj0517/nct/pull/3) | 2026-10-01 |
 | [NCT-2.01](NCT-2.01.md) | Jedna wersja każdej strony dla Google (język, canonical) | todo | M | – | – | 2026-10-02 |

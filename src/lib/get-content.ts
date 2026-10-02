@@ -12,12 +12,18 @@ import {
   formsAndBookingQuery,
   teachersQuery,
   testimonialsQuery,
+  adultsPageQuery,
+  businessPageQuery,
+  childrenPageQuery,
+  mathsPageQuery,
+  universityPageQuery,
+  faqPageQuery,
 } from "@/sanity/queries";
 
 /**
- * Reads the homepage, header and footer from Sanity and maps them onto the
- * shape the components already consume (`Dictionary`), so no component needs
- * to know where its text came from.
+ * Reads the homepage, header, footer, the five course pages and the FAQ from
+ * Sanity and maps them onto the shape the components already consume
+ * (`Dictionary`), so no component needs to know where its text came from.
  *
  * Precedence is per field: the page language, then English, then `en.json`.
  * An absent document, an absent field or an empty string all fall through to
@@ -107,7 +113,82 @@ type SiteSettingsDoc = {
 type TeacherDoc = { name?: string; credential?: Localized; bio?: Localized; image?: Img };
 type TestimonialDoc = { author?: string; role?: Localized; quote?: Localized; image?: Img };
 
+// Shared shape of the five course documents (adultsPage, businessPage,
+// childrenPage, mathsPage, universityPage) — see `coursePage()` in
+// `src/sanity/schemaTypes/documents/coursePage.ts`.
+type CoursePageDoc = {
+  hero?: {
+    headline?: { text?: Localized; italic?: boolean }[];
+    subtitle?: Localized;
+    cta?: Localized;
+    illustrationAlt?: Localized;
+  };
+  testimonial?: {
+    quote?: Localized;
+    author?: string;
+    role?: Localized;
+    image?: Img;
+    imageAlt?: Localized;
+    imageKind?: string;
+  };
+  help?: { heading?: Localized; items?: Localized[] };
+  seo?: { title?: Localized; description?: Localized };
+};
+
+type FaqPageDoc = {
+  label?: Localized;
+  heading?: Localized;
+  items?: { question?: Localized; answer?: Localized }[];
+  seo?: { title?: Localized; description?: Localized };
+};
+
 type Badge = Dictionary["trustBar"]["badges"][number];
+type CourseDict = Dictionary["adults"];
+
+/* The width requested from the Sanity CDN for a course page's pull-quote
+   portrait or company logo. The rendered box differs by viewport (see
+   `CourseTestimonial.tsx`); these are roughly 2x the largest rendered size,
+   as with the homepage's teacher/testimonial images above. */
+const COURSE_TESTIMONIAL_PHOTO_WIDTH = 900;
+const COURSE_TESTIMONIAL_LOGO_WIDTH = 1200;
+
+function mapCoursePage(
+  doc: CoursePageDoc | null | undefined,
+  locale: Locale,
+  fb: CourseDict
+): CourseDict {
+  const imageKind = s(doc?.testimonial?.imageKind, fb.testimonial.imageKind ?? "");
+  const width =
+    imageKind === "logo" ? COURSE_TESTIMONIAL_LOGO_WIDTH : COURSE_TESTIMONIAL_PHOTO_WIDTH;
+
+  return {
+    meta: {
+      title: t(doc?.seo?.title, locale, fb.meta.title),
+      description: t(doc?.seo?.description, locale, fb.meta.description),
+    },
+    hero: {
+      headline: list(doc?.hero?.headline, fb.hero.headline, (segment, f) => ({
+        text: t(segment?.text, locale, f?.text ?? ""),
+        italic: typeof segment?.italic === "boolean" ? segment.italic : f?.italic,
+      })),
+      subtitle: t(doc?.hero?.subtitle, locale, fb.hero.subtitle),
+      cta: t(doc?.hero?.cta, locale, fb.hero.cta),
+      illustrationAlt: t(doc?.hero?.illustrationAlt, locale, fb.hero.illustrationAlt),
+    },
+    testimonial: {
+      quote: t(doc?.testimonial?.quote, locale, fb.testimonial.quote),
+      author: s(doc?.testimonial?.author, fb.testimonial.author),
+      role: t(doc?.testimonial?.role, locale, fb.testimonial.role),
+      image: imageUrl(doc?.testimonial?.image, width) ?? fb.testimonial.image,
+      imageAlt: t(doc?.testimonial?.imageAlt, locale, fb.testimonial.imageAlt),
+      imageKind,
+    },
+    help: {
+      heading: t(doc?.help?.heading, locale, fb.help.heading),
+      items: list(doc?.help?.items, fb.help.items, (item, f) => t(item, locale, f ?? "")),
+    },
+  };
+}
 
 /* The width requested from the Sanity CDN. The rendered box is fixed in CSS
    (`size-28 md:size-32` / `size-20 md:size-24`), so this only controls source
@@ -120,7 +201,21 @@ const TESTIMONIAL_IMAGE_WIDTH = 192;
 export async function getContent(locale: Locale): Promise<Dictionary> {
   const fb = await getDictionary(locale);
 
-  const [home, head, foot, forms, site, teachers, testimonials] = await Promise.all([
+  const [
+    home,
+    head,
+    foot,
+    forms,
+    site,
+    teachers,
+    testimonials,
+    adultsDoc,
+    businessDoc,
+    childrenDoc,
+    mathsDoc,
+    universityDoc,
+    faqDoc,
+  ] = await Promise.all([
     sanityFetch<HomepageDoc>({ query: homepageQuery, tags: ["homepage"] }),
     sanityFetch<HeaderDoc>({ query: headerQuery, tags: ["header"] }),
     sanityFetch<FooterDoc>({ query: footerQuery, tags: ["footer"] }),
@@ -128,6 +223,12 @@ export async function getContent(locale: Locale): Promise<Dictionary> {
     sanityFetch<SiteSettingsDoc>({ query: siteSettingsQuery, tags: ["siteSettings"] }),
     sanityFetch<TeacherDoc[]>({ query: teachersQuery, tags: ["teacher"] }),
     sanityFetch<TestimonialDoc[]>({ query: testimonialsQuery, tags: ["testimonial"] }),
+    sanityFetch<CoursePageDoc>({ query: adultsPageQuery, tags: ["adultsPage"] }),
+    sanityFetch<CoursePageDoc>({ query: businessPageQuery, tags: ["businessPage"] }),
+    sanityFetch<CoursePageDoc>({ query: childrenPageQuery, tags: ["childrenPage"] }),
+    sanityFetch<CoursePageDoc>({ query: mathsPageQuery, tags: ["mathsPage"] }),
+    sanityFetch<CoursePageDoc>({ query: universityPageQuery, tags: ["universityPage"] }),
+    sanityFetch<FaqPageDoc>({ query: faqPageQuery, tags: ["faqPage"] }),
   ]);
 
   const hero = home?.hero;
@@ -274,6 +375,25 @@ export async function getContent(locale: Locale): Promise<Dictionary> {
     meta: {
       title: t(seo?.title, locale, fb.meta.title),
       description: t(seo?.description, locale, fb.meta.description),
+    },
+
+    adults: mapCoursePage(adultsDoc, locale, fb.adults),
+    business: mapCoursePage(businessDoc, locale, fb.business),
+    children: mapCoursePage(childrenDoc, locale, fb.children),
+    maths: mapCoursePage(mathsDoc, locale, fb.maths),
+    university: mapCoursePage(universityDoc, locale, fb.university),
+
+    faq: {
+      label: t(faqDoc?.label, locale, fb.faq.label),
+      heading: t(faqDoc?.heading, locale, fb.faq.heading),
+      meta: {
+        title: t(faqDoc?.seo?.title, locale, fb.faq.meta.title),
+        description: t(faqDoc?.seo?.description, locale, fb.faq.meta.description),
+      },
+      items: list(faqDoc?.items, fb.faq.items, (item, f) => ({
+        question: t(item?.question, locale, f?.question ?? ""),
+        answer: t(item?.answer, locale, f?.answer ?? ""),
+      })),
     },
   };
 }

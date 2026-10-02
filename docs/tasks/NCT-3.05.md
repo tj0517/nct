@@ -1,7 +1,7 @@
 ---
 id: NCT-3.05
 title: "Podstrony kursów i FAQ czytają treść z Sanity; odbiór CMS"
-status: todo
+status: done
 difficulty: M
 model: sonnet
 model_approved: null
@@ -12,7 +12,7 @@ depends_on: [NCT-3.04]
 blocked_by_questions: []
 touches_db: true
 touches_prod: false
-pr: null
+pr: 6
 ---
 
 ## Cel
@@ -43,3 +43,41 @@ Po zadaniu cała strona jest edytowalna w Studio, a wygląd i treść są identy
 - stan po NCT-3.04, `docs/sanity-content-map.md`
 
 ## Notatki z realizacji
+
+- **2026-10-02 (tj)** — `childrenPage` w Sanity miał stare pole `hero.subtitle` i `seo.title`/`seo.description`
+  sprzed przebudowy na wspólnym szablonie (NCT-1.03): import (NCT-3.03) używa `createIfNotExists`,
+  więc pominął ten dokument, bo już istniał. tj poprawia te trzy pola ręcznie w Studio
+  (Hero → Subtitle; SEO → Page title, Meta description) na treść z `en.json`; agent czeka i
+  potwierdzi odczytem przed domknięciem zadania.
+- **2026-10-02 (tj)** — przekodowanie zdjęcia opinii na `/en/adults` (Dr Joachim Popek) przez CDN
+  Sanity zaakceptowane: 120 284 z 4 880 625 pikseli (2,5%), maks. 25/255→62/255 na kanał, wyłącznie
+  wewnątrz kółka ze zdjęciem, bez zmiany geometrii. Większe niż w D2a (NCT-3.04: 33 850 px, maks.
+  25/255), ale ta sama przyczyna; pozostałe cztery zdjęcia opinii wyszły pikselowo identyczne.
+- **2026-10-02 (tj)** — `docs/cms-guide.md` po angielsku.
+- **2026-10-02 (tj)** — `src/dictionaries/en.json`: dodano `"imageKind": "photo"` pod
+  `testimonial` na stronach adults/children/maths/university (business miał je już wcześniej).
+  Cztery klucze czysto dodane, żadna istniejąca wartość nie zmieniona. Powód: wspólna funkcja
+  mapująca (`mapCoursePage` w `src/lib/get-content.ts`) potrzebuje jednego typu TS dla
+  wszystkich pięciu stron kursowych, a bez tego pola `Dictionary["adults"]` i `Dictionary["business"]`
+  różniły się kształtem. Nie wpływa na widoczny tekst (pole steruje tylko wyborem
+  kadru/kółko vs logo w `CourseTestimonial.tsx`, nieużywane poza `=== "logo"`).
+- **2026-10-02 (tj)** — live-edit potwierdzony: (1) zmiana `hero.subtitle` w Studio na
+  `mathsPage` widoczna na `/en/maths` w ≤ 60 s; (2) zmiana `footer.visitLabel` widoczna w
+  stopce na `/en/maths`. Oba pola przywrócone i ponownie opublikowane. To tylko live-edit
+  check, nie odbiór całego zadania — status zostaje `review`, nie `done`.
+- **2026-10-02 (tj)** — zgoda jednorazowa (opcja B) na uruchomienie live red proof zapasu dla
+  `/en/maths` przy `kern.memorystatus_vm_pressure_level` = 2 (zamiast wymaganego 1), wyłącznie
+  dla punktu 1 pierwszej rundy review PR #6. Wykonano: restart dev servera z
+  `NEXT_PUBLIC_SANITY_PROJECT_ID=nonexistent000` → `/en/maths` 200, treść widoczna identyczna
+  z `before-3.05-maths.txt` (porównanie po `<body>`, bo pod błędnym `projectId` `<title>`
+  trafia do streamu HTML *po* pierwszym `self.__next_r=` — ten sam efekt co w pierwszym red
+  proofie tego zadania); zrzut `.playwright-mcp/NCT-3.05-fallback-maths-1440.png`;
+  przywrócono prawdziwy `projectId`, restart, `/en/maths` 200 z treścią z Sanity (zdjęcie
+  opinii znów z `cdn.sanity.io/images/w7vc4ijx/...`); serwer dev zatrzymany po zakończeniu.
+  Brak niestabilności przy poziomie 2 — serwer i curl odpowiadały normalnie przez cały czas.
+- **2026-10-02 (tj)** — accepted by tj (PR #6). Proven: visible text of all six pages
+  identical to baseline; 12 before/after screenshot pairs (adults-1440 photo CDN re-encoding
+  accepted by tj; children-390 1/255 timing noise); live edit of a subpage field and a footer
+  field confirmed by tj; fallback red proof for `/en/maths` (HTTP 200, text identical,
+  screenshot pixel-identical to the real-Sanity render); `tsc` clean and lint with no new
+  problems versus baseline.

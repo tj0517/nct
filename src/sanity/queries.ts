@@ -25,3 +25,4 @@ export const businessPageQuery = `*[_type == "businessPage" && _id == "businessP
 export const childrenPageQuery = `*[_type == "childrenPage" && _id == "childrenPage"][0]`;
 export const mathsPageQuery = `*[_type == "mathsPage" && _id == "mathsPage"][0]`;
 export const universityPageQuery = `*[_type == "universityPage" && _id == "universityPage"][0]`;
+export const faqPageQuery = `*[_type == "faqPage" && _id == "faqPage"][0]`;

@@ -249,7 +249,8 @@
       "author": "Dr Joachim Popek",
       "role": "University of Rzeszów",
       "image": "/images/testimonials/joachim-popek.jpg",
-      "imageAlt": "Dr Joachim Popek"
+      "imageAlt": "Dr Joachim Popek",
+      "imageKind": "photo"
     },
     "help": {
       "heading": "We can help you:",
@@ -325,7 +326,8 @@
       "author": "Karol Białobłocki",
       "role": "parent",
       "image": "/images/testimonials/karol-bialoblocki.jpg",
-      "imageAlt": "Karol Białobłocki with his son"
+      "imageAlt": "Karol Białobłocki with his son",
+      "imageKind": "photo"
     },
     "help": {
       "heading": "We can help your child with:",
@@ -364,7 +366,8 @@
       "author": "Aleksandra Słowik",
       "role": "International and European Law, University of Groningen",
       "image": "/images/testimonials/aleksandra-slowik.jpg",
-      "imageAlt": "Aleksandra Słowik"
+      "imageAlt": "Aleksandra Słowik",
+      "imageKind": "photo"
     },
     "help": {
       "heading": "We can help you with:",
@@ -400,7 +403,8 @@
       "author": "Karolina Majewska",
       "role": "artist",
       "image": "/images/testimonials/karolina-majewska.png",
-      "imageAlt": "Karolina Majewska"
+      "imageAlt": "Karolina Majewska",
+      "imageKind": "photo"
     },
     "help": {
       "heading": "We can help you with:",

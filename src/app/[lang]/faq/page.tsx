@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getDictionary, hasLocale } from "@/dictionaries";
+import { hasLocale } from "@/dictionaries";
+import { getContent } from "@/lib/get-content";
 import type { Locale } from "@/dictionaries";
 import FAQ from "@/components/FAQ";
 import BookingBanner from "@/components/BookingBanner";
@@ -15,7 +16,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { lang } = await params;
   if (!hasLocale(lang)) return {};
-  const dict = await getDictionary(lang as Locale);
+  const dict = await getContent(lang as Locale);
   return {
     title: dict.faq.meta.title,
     description: dict.faq.meta.description,
@@ -30,7 +31,7 @@ export default async function FAQPage({
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
 
-  const dict = await getDictionary(lang as Locale);
+  const dict = await getContent(lang as Locale);
 
   return (
     <>

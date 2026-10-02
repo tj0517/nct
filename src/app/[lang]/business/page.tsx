@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getDictionary, hasLocale } from "@/dictionaries";
+import { hasLocale } from "@/dictionaries";
+import { getContent } from "@/lib/get-content";
 import type { Locale } from "@/dictionaries";
 import CourseHero from "@/components/CourseHero";
 import CourseTestimonial from "@/components/CourseTestimonial";
@@ -19,7 +20,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { lang } = await params;
   if (!hasLocale(lang)) return {};
-  const dict = await getDictionary(lang as Locale);
+  const dict = await getContent(lang as Locale);
   return {
     title: dict.business.meta.title,
     description: dict.business.meta.description,
@@ -35,7 +36,7 @@ export default async function BusinessPage({
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
 
-  const dict = await getDictionary(lang as Locale);
+  const dict = await getContent(lang as Locale);
   const d = dict.business;
 
   return (

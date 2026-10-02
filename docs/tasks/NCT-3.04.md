@@ -1,7 +1,7 @@
 ---
 id: NCT-3.04
 title: "Strona główna, nagłówek i stopka czytają treść z Sanity"
-status: review
+status: done
 difficulty: L
 model: opus
 model_approved: null
@@ -82,3 +82,4 @@ więc awaria CMS nie psuje strony. Wygląd bez zmian.
   `NCT-3.04-before-1440.png` powstał na zimnym cache optymalizatora obrazów Next i różni się
   w obszarze ilustracji hero — nie jest to skutek tej zmiany: render zapasowy jest pikselowo
   identyczny z `origin/main`).
+- **2026-10-02 (tj)** — accepted by tj after the live-edit check, 2026-10-02.

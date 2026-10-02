@@ -1,7 +1,7 @@
 ---
 id: NCT-3.05
 title: "Podstrony kursów i FAQ czytają treść z Sanity; odbiór CMS"
-status: todo
+status: in_progress
 difficulty: M
 model: sonnet
 model_approved: null

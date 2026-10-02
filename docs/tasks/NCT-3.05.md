@@ -65,3 +65,13 @@ Po zadaniu cała strona jest edytowalna w Studio, a wygląd i treść są identy
   `mathsPage` widoczna na `/en/maths` w ≤ 60 s; (2) zmiana `footer.visitLabel` widoczna w
   stopce na `/en/maths`. Oba pola przywrócone i ponownie opublikowane. To tylko live-edit
   check, nie odbiór całego zadania — status zostaje `review`, nie `done`.
+- **2026-10-02 (tj)** — zgoda jednorazowa (opcja B) na uruchomienie live red proof zapasu dla
+  `/en/maths` przy `kern.memorystatus_vm_pressure_level` = 2 (zamiast wymaganego 1), wyłącznie
+  dla punktu 1 pierwszej rundy review PR #6. Wykonano: restart dev servera z
+  `NEXT_PUBLIC_SANITY_PROJECT_ID=nonexistent000` → `/en/maths` 200, treść widoczna identyczna
+  z `before-3.05-maths.txt` (porównanie po `<body>`, bo pod błędnym `projectId` `<title>`
+  trafia do streamu HTML *po* pierwszym `self.__next_r=` — ten sam efekt co w pierwszym red
+  proofie tego zadania); zrzut `.playwright-mcp/NCT-3.05-fallback-maths-1440.png`;
+  przywrócono prawdziwy `projectId`, restart, `/en/maths` 200 z treścią z Sanity (zdjęcie
+  opinii znów z `cdn.sanity.io/images/w7vc4ijx/...`); serwer dev zatrzymany po zakończeniu.
+  Brak niestabilności przy poziomie 2 — serwer i curl odpowiadały normalnie przez cały czas.

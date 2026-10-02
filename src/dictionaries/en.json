@@ -170,7 +170,10 @@
     "phonePlaceholder": "Phone number (optional)",
     "messagePlaceholder": "How can we help you? (optional)",
     "consent": "I agree to be contacted by A Nice Cup of Tea.",
-    "submitCta": "Send form"
+    "submitCta": "Send form",
+    "sendingCta": "Sending...",
+    "successMessage": "Thanks! We've received your message and will be in touch soon.",
+    "errorMessage": "Something went wrong. Please try again, or reach us directly at +48 453 374 984 or hello@anicecupoftea.pl."
   },
   "map": {
     "label": "VISIT US",

@@ -354,6 +354,9 @@ export async function getContent(locale: Locale): Promise<Dictionary> {
       messagePlaceholder: t(contact?.messagePlaceholder, locale, fb.contactForm.messagePlaceholder),
       consent: t(contact?.consent, locale, fb.contactForm.consent),
       submitCta: t(contact?.submitCta, locale, fb.contactForm.submitCta),
+      sendingCta: t(contact?.sendingCta, locale, fb.contactForm.sendingCta),
+      successMessage: t(contact?.successMessage, locale, fb.contactForm.successMessage),
+      errorMessage: t(contact?.errorMessage, locale, fb.contactForm.errorMessage),
     },
 
     map: {

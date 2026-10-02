@@ -1,7 +1,7 @@
 ---
 id: NCT-1.01
 title: "Formularz kontaktowy wysyła zapytanie mailem"
-status: review
+status: done
 difficulty: M
 model: sonnet
 model_approved: null
@@ -58,3 +58,4 @@ użytkownik widzi potwierdzenie albo czytelny błąd, a boty nie przechodzą. Mi
 - 2026-09-29 tj (O-01): kod teraz, klucz API i adres odbiorcy podpinane dopiero przy starcie produkcji. Do tego czasu tryb dry-run lokalnie; na produkcji bez klucza — jawny błąd, nigdy fałszywy sukces.
 - 2026-10-02 tj: zatwierdzono dodanie zależności `resend` i `zod` (zamiast samego `resend` z ręczną walidacją).
 - 2026-10-02 tj: zatwierdzono uruchomienie `npm run dev` / `npm run build` / `npm run start` przy `kern.memorystatus_vm_pressure_level` = 2 (nie 1/normal), wbrew domyślnej bramce z promptu zadania — jednorazowy override na potrzeby weryfikacji tego zadania.
+- 2026-10-02 tj: accepted PR #7 — criteria 1, 2, 4, 5, 6, 7, 8 proven with pasted evidence (round 2: lint/tsc/build/grep tails, curl red proofs incl. over-long message → 400, like-for-like 390 px screenshots identical); criterion 3 (send with a key) unproven until the live test at production launch (O-01), see deferred-tasks.md for the Resend sandbox sender limitation.

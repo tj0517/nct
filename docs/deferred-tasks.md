@@ -1,5 +1,16 @@
 # Odłożone (noticed, not touched) — NCT
 
+- `node scripts/build-content-map.mjs` dziś odmawia zapisu `docs/sanity-content-map.md` (exit 1):
+  15 liści `en.json` bez reguły mapowania — `teachers.list[*].image` i cały
+  `testimonials.list[*].{quote,author,role,image}` (zdjęcia nauczycieli/opinii i trzy cytaty
+  przeniesione do `en.json` w NCT-3.04, decyzja B2, ale nigdy nie dodane do `RULES` w tym
+  skrypcie). Dokument w repo jest więc nieaktualny od NCT-3.04 i pozostaje nieaktualny po
+  NCT-3.05: nowe pole `*.testimonial.imageKind` na stronach adults/children/maths/university
+  (dodane w tym zadaniu, żeby zrównać typ TS ze schematem — patrz Notatki) ma już regułę w
+  skrypcie i zmapowałoby się czysto, gdyby 15 starszych liści też miało reguły. Do zrobienia:
+  dopisać reguły dla `teachers.list[$1].image` i `testimonials.list[$1].*`, potem
+  `node scripts/build-content-map.mjs` (z NCT-3.05)
+
 - **Przed startem produkcji:** konto Resend, `RESEND_API_KEY` i `CONTACT_TO_EMAIL` na Vercelu + testowa wysyłka — tj (bramka STOP; O-01)
 - Nadawca maili z domeny szkoły + weryfikacja domeny w Resend — po podpięciu oficjalnej domeny (z NCT-1.01)
 - Podpięcie oficjalnej domeny na Vercelu, Google Search Console, zgłoszenie sitemap — tj (bramka STOP)

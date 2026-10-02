@@ -43,3 +43,14 @@ Po zadaniu cała strona jest edytowalna w Studio, a wygląd i treść są identy
 - stan po NCT-3.04, `docs/sanity-content-map.md`
 
 ## Notatki z realizacji
+
+- **2026-10-02 (tj)** — `childrenPage` w Sanity miał stare pole `hero.subtitle` i `seo.title`/`seo.description`
+  sprzed przebudowy na wspólnym szablonie (NCT-1.03): import (NCT-3.03) używa `createIfNotExists`,
+  więc pominął ten dokument, bo już istniał. tj poprawia te trzy pola ręcznie w Studio
+  (Hero → Subtitle; SEO → Page title, Meta description) na treść z `en.json`; agent czeka i
+  potwierdzi odczytem przed domknięciem zadania.
+- **2026-10-02 (tj)** — przekodowanie zdjęcia opinii na `/en/adults` (Dr Joachim Popek) przez CDN
+  Sanity zaakceptowane: 120 284 z 4 880 625 pikseli (2,5%), maks. 25/255→62/255 na kanał, wyłącznie
+  wewnątrz kółka ze zdjęciem, bez zmiany geometrii. Większe niż w D2a (NCT-3.04: 33 850 px, maks.
+  25/255), ale ta sama przyczyna; pozostałe cztery zdjęcia opinii wyszły pikselowo identyczne.
+- **2026-10-02 (tj)** — `docs/cms-guide.md` po angielsku.

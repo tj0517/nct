@@ -1,7 +1,7 @@
 ---
 id: NCT-2.02
 title: "SEO techniczne: sitemap, robots, canonical, Open Graph"
-status: review
+status: done
 difficulty: M
 model: sonnet
 model_approved: null
@@ -56,3 +56,9 @@ bazowy adres strony i podglądy linków. Adres bazowy bierzemy z tego, co Vercel
   report. Extracted `metadataBase`'s URL expression into `src/lib/site-url.ts` (reused by
   `sitemap.ts`/`robots.ts`) — same value, not a behaviour change.
 - 2026-10-03 tj: OG tagline made lighter for legibility (option B); text stays hard-coded in opengraph-image.tsx
+- 2026-10-03 tj accepted PR #9 — criteria 1–6 proven (sitemap, robots, og/twitter tags with exactly
+  one image on /en and /en/maths, /studio noindex, 7 unique titles, red proofs, lint/tsc at
+  baseline; screenshot differences on /en confined to the Hero CTA entrance animation, reproduced
+  on origin/main alone); OG tagline made lighter (option B, commit 3028d4f, small-size render
+  checked). Open check for tj after deploy: sitemap, canonical and og:image must show the Vercel
+  production address, not localhost (VERCEL_PROJECT_PRODUCTION_URL).

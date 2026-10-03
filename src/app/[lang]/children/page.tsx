@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { hasLocale } from "@/dictionaries";
 import { getContent } from "@/lib/get-content";
 import type { Locale } from "@/dictionaries";
-import { localeMetadata } from "@/lib/seo-locale";
+import { localeMetadata, socialMetadata } from "@/lib/seo-locale";
 import CourseHero from "@/components/CourseHero";
 import CourseTestimonial from "@/components/CourseTestimonial";
 import CourseHelp from "@/components/CourseHelp";
@@ -26,6 +26,7 @@ export async function generateMetadata({
     title: dict.children.meta.title,
     description: dict.children.meta.description,
     ...localeMetadata(lang as Locale, "/children"),
+    ...socialMetadata(lang as Locale, dict.children.meta.title, dict.children.meta.description),
   };
 }
 

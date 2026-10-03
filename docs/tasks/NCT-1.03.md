@@ -1,7 +1,7 @@
 ---
 id: NCT-1.03
 title: "Podstrona Children & Teens na szablonie kursowym"
-status: review
+status: done
 difficulty: M
 model: opus
 model_approved: null
@@ -63,3 +63,9 @@ Po zadaniu `/children` jest zbudowana na tym samym szablonie co Adults, Maths, U
 - 2026-10-01: **do potwierdzenia u Anthony'ego** — nagłówek listy „We can help your child with:"
   z punktami zaczynającymi się od czasownika („Speak confidently…") czyta się niegramatycznie.
   Treść zostawiona 1:1 wg maila; propozycja: „We can help your child:".
+- 2026-10-03, tj: odbiór po fakcie (PR #3 zmergowany 2026-10-01). Zakres zgodny z diffem;
+  Adults/Maths/Business/University bez zmian wizualnych (z kodu: CTA ≤ 38 znaków → ta sama
+  klasa). Build, tsc, lint, check-content-map i zrzuty 1.03 były tylko zadeklarowane;
+  potwierdzone pośrednio przez NCT-2.x/3.05 (`/children` w zrzutach 3.05, lint i tsc na bazie
+  w #9/#10). Zmiana schematu childrenPage → coursePage poszła bez bramki STOP (luka w pliku
+  zadania; skutek znany z retro 3.04–3.05).

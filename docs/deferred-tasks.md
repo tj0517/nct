@@ -62,3 +62,10 @@
   - `src/lib/get-content.ts:49` — ostrzeżenie: `testimonials` przypisane, nigdy nieużyte
   - `src/proxy.ts:9` — ostrzeżenie: `getPreferredLocale` zdefiniowane, nigdy nieużyte (→ NCT-2.01)
   (z NCT-3.02)
+
+- Adres szkoły rozjeżdża się między dwoma miejscami w kodzie: `en.json` `map.heading` mówi
+  "Słupecka 4/45", a `src/components/Footer.tsx:77` mówi "Słupecka 4". JSON-LD szkoły (layout)
+  użył formy z `map.heading` ("Słupecka 4/45"), bo to wartość z treści CMS/`en.json`, a nie
+  zaszyta w komponencie — ale rozjazd sam w sobie nie jest naprawiony. Ujednolicenie telefonu/
+  e-maila/adresu do jednego źródła (dziś zaszyte w `Footer.tsx`/`ContactLinks.tsx`, poza
+  `en.json` i Sanity) odłożone do decyzji tj — patrz wpis o `Footer.tsx` wyżej (z NCT-2.03)

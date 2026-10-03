@@ -36,8 +36,28 @@ export default async function FAQPage({
 
   const dict = await getContent(lang as Locale);
 
+  // Same questions/answers FAQ.tsx renders below, as a FAQPage (NCT-2.03).
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: dict.faq.items.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqJsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
       <main className="bg-main-bg flex flex-col items-center w-full">
         <div className="w-full">
           <FAQ dict={dict.faq} />

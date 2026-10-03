@@ -1,7 +1,7 @@
 ---
 id: NCT-1.02
 title: "Aktualizacja CLAUDE.md do stanu repo"
-status: todo
+status: done
 difficulty: S
 model: sonnet
 model_approved: null
@@ -12,7 +12,7 @@ depends_on: []
 blocked_by_questions: []
 touches_db: false
 touches_prod: false
-pr: null
+pr: 11
 ---
 
 ## Cel
@@ -42,3 +42,4 @@ pr: null
 - `CLAUDE.md`, `AGENTS.md`
 
 ## Notatki z realizacji
+2026-10-03, tj: accepted PR #11; criteria 1-5 re-verified by reading origin/chore/claude-md; color-system section corrected (data-theme blue/light); package.json name "web" left in deferred

@@ -2,6 +2,8 @@
 
 - `package.json` — `@formatjs/intl-localematcher`, `negotiator` i `@types/negotiator` były używane wyłącznie przez `getPreferredLocale()` w `src/proxy.ts`, usuniętą w NCT-2.01 (była martwa — nigdy nie wywoływana, patrz istniejący warning lintera sprzed NCT-3.01). Po tym PR-ze żaden plik w repo ich nie importuje (sprawdzone grepem). Do usunięcia z `package.json`, jeśli nic innego ich nie zacznie używać (z NCT-2.01)
 
+- `package.json` `name` to wciąż `"web"` — ślad po katalogu `web/`, który już nie istnieje (CLAUDE.md to naprawił w NCT-1.02, ale `package.json` jest poza zakresem tego zadania). Do zmiany przy następnej okazji edycji `package.json` (z NCT-1.02)
+
 - `node scripts/build-content-map.mjs` dziś odmawia zapisu `docs/sanity-content-map.md` (exit 1):
   15 liści `en.json` bez reguły mapowania — `teachers.list[*].image` i cały
   `testimonials.list[*].{quote,author,role,image}` (zdjęcia nauczycieli/opinii i trzy cytaty

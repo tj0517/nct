@@ -1,7 +1,7 @@
 ---
 id: NCT-1.02
 title: "Aktualizacja CLAUDE.md do stanu repo"
-status: in_progress
+status: review
 difficulty: S
 model: sonnet
 model_approved: null
@@ -12,7 +12,7 @@ depends_on: []
 blocked_by_questions: []
 touches_db: false
 touches_prod: false
-pr: null
+pr: 11
 ---
 
 ## Cel

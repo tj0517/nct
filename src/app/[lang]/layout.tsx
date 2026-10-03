@@ -68,10 +68,11 @@ export default async function RootLayout({
   const dict = await getContent(lang as Locale);
 
   // Describes the school for Google (name, contact, address) — same values
-  // the page already shows (NCT-2.03). Contact details and social links are
-  // hard-coded here to match Footer.tsx/ContactLinks.tsx, which are
+  // the page already shows (NCT-2.03). Contact details and the Instagram
+  // link are hard-coded here to match Footer.tsx/ContactLinks.tsx, which are
   // themselves hard-coded rather than sourced from content (see
-  // docs/deferred-tasks.md).
+  // docs/deferred-tasks.md). Messenger is a chat link, not a profile page,
+  // so it is excluded from `sameAs`.
   const schoolJsonLd = {
     "@context": "https://schema.org",
     "@type": ["EducationalOrganization", "LocalBusiness"],
@@ -85,7 +86,7 @@ export default async function RootLayout({
       streetAddress: dict.map.heading,
       addressLocality: "Warsaw",
     },
-    sameAs: ["https://m.me/anicecupoftea", "https://instagram.com/anicecupoftea.pl"],
+    sameAs: ["https://instagram.com/anicecupoftea.pl"],
   };
 
   return (

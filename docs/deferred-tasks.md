@@ -50,6 +50,10 @@
   cache'owaniu (z NCT-2.02)
 - `og:locale`/`og:locale:alternate` nieustawione — nieistotne dopóki `pl` nie ma własnej treści
   (patrz wpis o hreflang wyżej); dodać razem z uruchomieniem polskiej wersji (z NCT-2.02)
+- Tekst podtytułu obrazu OG „English Lessons in Warsaw" (`src/app/[lang]/opengraph-image.tsx`)
+  jest zaszyty na stałe, poza `en.json` i poza Sanity — decyzja tj 2026-10-03 (opcja B: zostaje
+  tak). Przenieść do pola w CMS, jeśli klient zechce go edytować albo przy starcie polskiej
+  wersji (z NCT-2.02)
 - Lint: `npm run lint` zwraca 1 błąd i 2 ostrzeżenia — kryterium „0 błędów" w NCT-3.02 **nie zostało spełnione**.
   Przyjęte przez tj 2026-10-01 jako istniejący dług, bo wszystkie trzy pliki są bajtowo identyczne z `origin/main`
   (sprawdzone `git diff --quiet origin/main -- <plik>`), więc żaden problem nie powstał w NCT-3.02:

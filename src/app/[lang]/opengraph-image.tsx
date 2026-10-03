@@ -15,6 +15,10 @@ export const contentType = "image/png";
 const NAVY = "#012169";
 const CRIMSON = "#C8102E";
 const WHITE = "#FFFFFF";
+// --second-bg's light ("muted text on dark sections") value per CLAUDE.md's
+// colour-system table — used here for the tagline instead of CRIMSON, which
+// read poorly against NAVY. tj decision 2026-10-03.
+const MUTED_LIGHT = "#E8ECF2";
 
 export default function Image() {
   return new ImageResponse(
@@ -47,7 +51,7 @@ export default function Image() {
           style={{
             marginTop: 24,
             fontSize: 32,
-            color: CRIMSON,
+            color: MUTED_LIGHT,
             textAlign: "center",
           }}
         >

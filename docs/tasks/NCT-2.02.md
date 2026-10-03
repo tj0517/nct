@@ -55,3 +55,4 @@ bazowy adres strony i podglądy linków. Adres bazowy bierzemy z tego, co Vercel
   illustration — pre-delegated choice per task file, rationale and rejected alternative in the PR
   report. Extracted `metadataBase`'s URL expression into `src/lib/site-url.ts` (reused by
   `sitemap.ts`/`robots.ts`) — same value, not a behaviour change.
+- 2026-10-03 tj: OG tagline made lighter for legibility (option B); text stays hard-coded in opengraph-image.tsx

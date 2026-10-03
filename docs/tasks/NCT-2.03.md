@@ -1,7 +1,7 @@
 ---
 id: NCT-2.03
 title: "Dane strukturalne dla Google (szkoła, FAQ)"
-status: review
+status: done
 difficulty: S
 model: sonnet
 model_approved: null
@@ -43,3 +43,4 @@ bogatsze wyniki wyszukiwania i wyniki lokalne. Dane biorą się z tych samych te
 ## Notatki z realizacji
 - 2026-10-03, tj: wartości tylko z treści widocznej na stronie; brak offers/cen; kryteria 1-4 doprecyzowane w promptcie zadania (nie w tym pliku).
 - 2026-10-03, tj: typ schematu szkoły — oba naraz: `["EducationalOrganization", "LocalBusiness"]`.
+- 2026-10-03, tj: accepted PR #10 with supplements; school and FAQ JSON-LD proven (criteria 1-7 with pasted output); m.me removed from sameAs; address mismatch Słupecka 4/45 vs 4 left in deferred.

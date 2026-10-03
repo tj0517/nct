@@ -10,7 +10,7 @@ Deadline projektu: **2026-10-07** (strona + Sanity).
 | [NCT-1.03](NCT-1.03.md) | Podstrona Children & Teens na szablonie kursowym | review | M | – | [#3](https://github.com/tj0517/nct/pull/3) | 2026-10-01 |
 | [NCT-2.01](NCT-2.01.md) | Jedna wersja każdej strony dla Google (język, canonical) | done | M | – | [#8](https://github.com/tj0517/nct/pull/8) | 2026-10-02 |
 | [NCT-2.02](NCT-2.02.md) | SEO techniczne: sitemap, robots, canonical, Open Graph | done | M | NCT-2.01 | [#9](https://github.com/tj0517/nct/pull/9) | 2026-10-03 |
-| [NCT-2.03](NCT-2.03.md) | Dane strukturalne dla Google (szkoła, FAQ) | todo | S | NCT-2.02 | – | 2026-10-04 |
+| [NCT-2.03](NCT-2.03.md) | Dane strukturalne dla Google (szkoła, FAQ) | in_progress | S | NCT-2.02 | – | 2026-10-04 |
 | [NCT-3.01](NCT-3.01.md) | Sanity: podpięcie projektu i działające /studio | done | S | – | – | 2026-09-30 |
 | [NCT-3.02](NCT-3.02.md) | Schematy Sanity dopasowane do obecnej treści strony | done | L | NCT-3.01 | [#2](https://github.com/tj0517/nct/pull/2) | 2026-10-01 |
 | [NCT-3.03](NCT-3.03.md) | Import obecnej treści z en.json do Sanity | done | M | NCT-3.02 | [#4](https://github.com/tj0517/nct/pull/4) | 2026-10-02 |

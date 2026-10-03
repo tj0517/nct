@@ -49,3 +49,4 @@ bazowy adres strony i podglądy linków. Adres bazowy bierzemy z tego, co Vercel
 - `node_modules/next/dist/docs/` — `sitemap`, `robots`, `metadataBase` w Next 16
 
 ## Notatki z realizacji
+- 2026-10-02 tj: metadataBase already added in NCT-2.01 (tj 2026-10-02), source: VERCEL_PROJECT_PRODUCTION_URL, fallback http://localhost:3000; skip that scope item here.

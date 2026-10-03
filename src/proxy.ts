@@ -1,20 +1,8 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
-import { match } from "@formatjs/intl-localematcher";
-import Negotiator from "negotiator";
+import { hasOwnContent } from "@/lib/locale-content";
 
 const locales = ["pl", "en"];
-const defaultLocale = "pl";
-
-function getPreferredLocale(request: NextRequest): string {
-  const headers: Record<string, string> = {};
-  request.headers.forEach((value, key) => {
-    headers[key] = value;
-  });
-
-  const languages = new Negotiator({ headers }).languages();
-  return match(languages, locales, defaultLocale);
-}
 
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
@@ -29,18 +17,16 @@ export function proxy(request: NextRequest) {
   );
   if (pathnameHasLocale) return;
 
-  // Check for explicit locale cookie
-  const cookieLocale = request.cookies.get("NEXT_LOCALE")?.value;
-
-  // If user has explicitly chosen English, redirect to /en/...
-  if (cookieLocale === "en") {
-    request.nextUrl.pathname = `/en${pathname}`;
-    return NextResponse.redirect(request.nextUrl);
+  // Once "pl" has its own content, serve it at the unprefixed path as before.
+  if (hasOwnContent("pl")) {
+    request.nextUrl.pathname = `/pl${pathname}`;
+    return NextResponse.rewrite(request.nextUrl);
   }
 
-  // Default: rewrite to /pl/... (Polish served at / without prefix)
-  request.nextUrl.pathname = `/pl${pathname}`;
-  return NextResponse.rewrite(request.nextUrl);
+  // Until then, the unprefixed path has nothing of its own to rewrite to —
+  // send it to the English address with a temporary (307) redirect.
+  request.nextUrl.pathname = `/en${pathname}`;
+  return NextResponse.redirect(request.nextUrl, 307);
 }
 
 export const config = {

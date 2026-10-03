@@ -1,7 +1,7 @@
 ---
 id: NCT-2.01
 title: "Jedna wersja każdej strony dla Google (język, canonical)"
-status: todo
+status: done
 difficulty: M
 model: sonnet
 model_approved: null
@@ -12,7 +12,7 @@ depends_on: []
 blocked_by_questions: []
 touches_db: false
 touches_prod: false
-pr: null
+pr: 8
 ---
 
 ## Cel
@@ -49,3 +49,6 @@ struktura `/pl` zostaje gotowa na przyszłą polską treść.
 
 ## Notatki z realizacji
 - 2026-09-29 tj: O-02 → EN teraz, PL później (pola PL/EN w CMS).
+- 2026-10-02 tj: unprefixed addresses (/, /adults, …) redirect temporarily (307) to /en/... while pl has no own content; /pl/... get canonical to /en + noindex; acceptance criteria 1 and 6 changed accordingly (curl -L; 21 paths) and criteria 2 and 7 added.
+- 2026-10-02 tj: metadataBase set in NCT-2.01 (Option A) — `https://${VERCEL_PROJECT_PRODUCTION_URL}` with `http://localhost:3000` fallback, no env var or Vercel setting added; NCT-2.02 skips that scope item (see its notes).
+- 2026-10-03 tj accepted PR #8 — all criteria proven (round 2: lang on 4 URLs, single-hop 307 to /en and /en/adults, 21-path table, red proof of the one-place switch with revert, lint/tsc/eslint at baseline; 390/1440 px screenshots differ by at most 1/255); open check for tj after deploy: canonical must show the Vercel production address, not localhost (VERCEL_PROJECT_PRODUCTION_URL available only if system env vars are exposed in the Vercel project).

@@ -67,6 +67,28 @@ export default async function RootLayout({
 
   const dict = await getContent(lang as Locale);
 
+  // Describes the school for Google (name, contact, address) — same values
+  // the page already shows (NCT-2.03). Contact details and the Instagram
+  // link are hard-coded here to match Footer.tsx/ContactLinks.tsx, which are
+  // themselves hard-coded rather than sourced from content (see
+  // docs/deferred-tasks.md). Messenger is a chat link, not a profile page,
+  // so it is excluded from `sameAs`.
+  const schoolJsonLd = {
+    "@context": "https://schema.org",
+    "@type": ["EducationalOrganization", "LocalBusiness"],
+    name: "A Nice Cup of Tea",
+    description: dict.meta.description,
+    url: `${siteUrl}/${servedLocale(lang)}`,
+    telephone: "+48 453 374 984",
+    email: "hello@anicecupoftea.pl",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: dict.map.heading,
+      addressLocality: "Warsaw",
+    },
+    sameAs: ["https://instagram.com/anicecupoftea.pl"],
+  };
+
   return (
     <html
       lang={servedLocale(lang)}
@@ -77,6 +99,12 @@ export default async function RootLayout({
         {/* Sets data-theme before first paint so light-theme routes never
             flash navy. Runs synchronously during HTML parsing. */}
         <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(schoolJsonLd).replace(/</g, "\\u003c"),
+          }}
+        />
       </head>
       <body suppressHydrationWarning>
         <ThemeProvider>

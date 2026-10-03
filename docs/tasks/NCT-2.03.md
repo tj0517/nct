@@ -1,7 +1,7 @@
 ---
 id: NCT-2.03
 title: "Dane strukturalne dla Google (szkoła, FAQ)"
-status: todo
+status: done
 difficulty: S
 model: sonnet
 model_approved: null
@@ -12,7 +12,7 @@ depends_on: [NCT-2.02]
 blocked_by_questions: []
 touches_db: false
 touches_prod: false
-pr: null
+pr: 10
 ---
 
 ## Cel
@@ -41,3 +41,6 @@ bogatsze wyniki wyszukiwania i wyniki lokalne. Dane biorą się z tych samych te
 - `src/dictionaries/en.json` — `footer`, `map`, `faq`, `pricing`
 
 ## Notatki z realizacji
+- 2026-10-03, tj: wartości tylko z treści widocznej na stronie; brak offers/cen; kryteria 1-4 doprecyzowane w promptcie zadania (nie w tym pliku).
+- 2026-10-03, tj: typ schematu szkoły — oba naraz: `["EducationalOrganization", "LocalBusiness"]`.
+- 2026-10-03, tj: accepted PR #10 with supplements; school and FAQ JSON-LD proven (criteria 1-7 with pasted output); m.me removed from sameAs; address mismatch Słupecka 4/45 vs 4 left in deferred.

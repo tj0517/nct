@@ -71,3 +71,7 @@
   zaszyta w komponencie — ale rozjazd sam w sobie nie jest naprawiony. Ujednolicenie telefonu/
   e-maila/adresu do jednego źródła (dziś zaszyte w `Footer.tsx`/`ContactLinks.tsx`, poza
   `en.json` i Sanity) odłożone do decyzji tj — patrz wpis o `Footer.tsx` wyżej (z NCT-2.03)
+
+- Treść do potwierdzenia u Anthony'ego: nagłówek listy `children.help` „We can help your child with:”
+  przy punktach zaczynających się od czasownika („Speak confidently…”) czyta się niegramatycznie;
+  propozycja: „We can help your child:”. Dziś w `en.json` jest wersja 1:1 z maila (z NCT-1.03)

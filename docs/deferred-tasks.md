@@ -40,6 +40,20 @@
 - `src/sanity/schemaTypes/objects/namedItem.ts` — stracił jedynego użytkownika, gdy `childrenPage` przeszedł na wspólny `coursePage` (stary układ miał listę `examPrep`). Typ nadal zarejestrowany w `schemaTypes/index.ts`; decyzja o usunięciu: tj (z NCT-1.03)
 - Komponenty bez importerów (martwy kod, w całości zaszyte teksty): `src/components/WhyUs.tsx`, `StickyPhoneBar.tsx`, a także bez tekstu `CustomCursor.tsx`, `MagneticButton.tsx` — decyzja o usunięciu: tj (z NCT-3.02)
 - Konto zalogowane w Sanity CLI nie ma dostępu do projektu NCT (`projects list` pokazuje tylko `y0kc7fj6 / hydra-arms`; zapytanie do projektu z `.env.local` zwraca `project user not found`). Odczyt datasetu trzeba dziś robić przez Vision w `/studio` na loginie tj — do rozważenia przy przekazaniu projektu (O-03) (z NCT-3.02)
+- `og:image` dla `/en` (strona główna, metadata tylko w layoucie) dostaje URL z hashem
+  cache-bustingowym z konwencji plikowej Next (`/en/opengraph-image?<hash>`), a dla podstron,
+  które ustawiają własny `openGraph` (np. `/en/maths`), URL jest bez hasha
+  (`/en/opengraph-image`) — Next dokleja wygenerowany obraz z pliku tylko tam, gdzie żaden
+  głębszy segment nie nadpisuje całego obiektu `openGraph` (patrz komentarz przy
+  `socialMetadata()` w `src/lib/seo-locale.ts`). Oba URL-e wskazują na ten sam poprawny PNG
+  1200×630, różnica wyłącznie w cache-bustingu. Do ujednolicenia, jeśli kiedyś przeszkodzi w
+  cache'owaniu (z NCT-2.02)
+- `og:locale`/`og:locale:alternate` nieustawione — nieistotne dopóki `pl` nie ma własnej treści
+  (patrz wpis o hreflang wyżej); dodać razem z uruchomieniem polskiej wersji (z NCT-2.02)
+- Tekst podtytułu obrazu OG „English Lessons in Warsaw" (`src/app/[lang]/opengraph-image.tsx`)
+  jest zaszyty na stałe, poza `en.json` i poza Sanity — decyzja tj 2026-10-03 (opcja B: zostaje
+  tak). Przenieść do pola w CMS, jeśli klient zechce go edytować albo przy starcie polskiej
+  wersji (z NCT-2.02)
 - Lint: `npm run lint` zwraca 1 błąd i 2 ostrzeżenia — kryterium „0 błędów" w NCT-3.02 **nie zostało spełnione**.
   Przyjęte przez tj 2026-10-01 jako istniejący dług, bo wszystkie trzy pliki są bajtowo identyczne z `origin/main`
   (sprawdzone `git diff --quiet origin/main -- <plik>`), więc żaden problem nie powstał w NCT-3.02:

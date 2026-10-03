@@ -1,5 +1,8 @@
-export const metadata = {
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
   title: "NCT Studio",
+  robots: { index: false },
 };
 
 export default function StudioLayout({

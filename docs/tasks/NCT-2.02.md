@@ -1,7 +1,7 @@
 ---
 id: NCT-2.02
 title: "SEO techniczne: sitemap, robots, canonical, Open Graph"
-status: todo
+status: done
 difficulty: M
 model: sonnet
 model_approved: null
@@ -12,7 +12,7 @@ depends_on: [NCT-2.01]
 blocked_by_questions: []
 touches_db: false
 touches_prod: false
-pr: null
+pr: 9
 ---
 
 ## Cel
@@ -50,3 +50,15 @@ bazowy adres strony i podglądy linków. Adres bazowy bierzemy z tego, co Vercel
 
 ## Notatki z realizacji
 - 2026-10-02 tj: metadataBase already added in NCT-2.01 (tj 2026-10-02), source: VERCEL_PROJECT_PRODUCTION_URL, fallback http://localhost:3000; skip that scope item here.
+- 2026-10-03: OG image = generated brand card (`src/app/[lang]/opengraph-image.tsx`, `next/og`
+  `ImageResponse`, 1200×630, navy/crimson from globals.css), not an existing `public/images/*`
+  illustration — pre-delegated choice per task file, rationale and rejected alternative in the PR
+  report. Extracted `metadataBase`'s URL expression into `src/lib/site-url.ts` (reused by
+  `sitemap.ts`/`robots.ts`) — same value, not a behaviour change.
+- 2026-10-03 tj: OG tagline made lighter for legibility (option B); text stays hard-coded in opengraph-image.tsx
+- 2026-10-03 tj accepted PR #9 — criteria 1–6 proven (sitemap, robots, og/twitter tags with exactly
+  one image on /en and /en/maths, /studio noindex, 7 unique titles, red proofs, lint/tsc at
+  baseline; screenshot differences on /en confined to the Hero CTA entrance animation, reproduced
+  on origin/main alone); OG tagline made lighter (option B, commit 3028d4f, small-size render
+  checked). Open check for tj after deploy: sitemap, canonical and og:image must show the Vercel
+  production address, not localhost (VERCEL_PROJECT_PRODUCTION_URL).

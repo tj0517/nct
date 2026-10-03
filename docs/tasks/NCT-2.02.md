@@ -1,7 +1,7 @@
 ---
 id: NCT-2.02
 title: "SEO techniczne: sitemap, robots, canonical, Open Graph"
-status: todo
+status: review
 difficulty: M
 model: sonnet
 model_approved: null
@@ -50,3 +50,8 @@ bazowy adres strony i podglądy linków. Adres bazowy bierzemy z tego, co Vercel
 
 ## Notatki z realizacji
 - 2026-10-02 tj: metadataBase already added in NCT-2.01 (tj 2026-10-02), source: VERCEL_PROJECT_PRODUCTION_URL, fallback http://localhost:3000; skip that scope item here.
+- 2026-10-03: OG image = generated brand card (`src/app/[lang]/opengraph-image.tsx`, `next/og`
+  `ImageResponse`, 1200×630, navy/crimson from globals.css), not an existing `public/images/*`
+  illustration — pre-delegated choice per task file, rationale and rejected alternative in the PR
+  report. Extracted `metadataBase`'s URL expression into `src/lib/site-url.ts` (reused by
+  `sitemap.ts`/`robots.ts`) — same value, not a behaviour change.

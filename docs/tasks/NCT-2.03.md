@@ -1,7 +1,7 @@
 ---
 id: NCT-2.03
 title: "Dane strukturalne dla Google (szkoła, FAQ)"
-status: in_progress
+status: review
 difficulty: S
 model: sonnet
 model_approved: null
@@ -12,7 +12,7 @@ depends_on: [NCT-2.02]
 blocked_by_questions: []
 touches_db: false
 touches_prod: false
-pr: null
+pr: 10
 ---
 
 ## Cel

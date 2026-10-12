@@ -1,5 +1,5 @@
 import Button from "./Button";
-import { BOOKING_URL } from "@/lib/booking";
+import { BOOKING_URL, bookingLinkProps } from "@/lib/booking";
 
 interface PricingDict {
   label: string;
@@ -36,6 +36,7 @@ export default function Pricing({ dict }: { dict: PricingDict }) {
             <div className="pt-4 mt-auto">
               <a
                 href={BOOKING_URL}
+                {...bookingLinkProps}
                 className="block w-full"
               >
                 <Button variant="inverse" className="!w-full !px-4">

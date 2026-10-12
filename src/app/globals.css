@@ -71,3 +71,9 @@ body {
   0% { transform: translateX(-50%); }
   100% { transform: translateX(0); }
 }
+
+/* Video overlay fade — see VideoLightbox.tsx, skipped under reduced motion. */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

@@ -46,3 +46,12 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Oryginały grafik od Anthony'ego — źródła, z których generujemy zasoby
+# w public/images. Nie są serwowane i nie muszą jechać w repo.
+/artwork/
+
+# Filmy nauczycieli — hostowane w Sanity (scripts/upload-teacher-videos.mjs),
+# nie w repo: 15 MB zostałoby w historii gita na zawsze. Lokalne kopie służą
+# tylko do wgrania; oryginały sprzed przekodowania są w artwork/videos/.
+/public/videos/

@@ -12,7 +12,7 @@ import AnimatedSection from "@/components/AnimatedSection";
 import Footer from "@/components/Footer";
 
 // Trimmed transparent cut-out; the ratio drives the hero's aspect box.
-const LION = { src: "/images/lion-hero.png", width: 829, height: 1522 };
+const LION = { src: "/images/heroes/lion-hero.png", width: 829, height: 1522 };
 
 export async function generateMetadata({
   params,
@@ -62,12 +62,12 @@ export default async function AdultsPage({
         </AnimatedSection>
 
         <AnimatedSection direction="up" className="w-full">
-          <CourseContact dict={dict.contactForm} />
+          <CourseContact dict={dict.contactForm} site={dict.site} />
         </AnimatedSection>
       </main>
 
       <AnimatedSection direction="up" delay={0.1}>
-        <Footer dict={dict.footer} />
+        <Footer dict={dict.footer} site={dict.site} />
       </AnimatedSection>
     </>
   );

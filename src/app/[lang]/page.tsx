@@ -77,11 +77,11 @@ export default async function Home({
       </main>
       <SectionBgReveal>
         <AnimatedSection direction="up">
-          <BookingBanner dict={dict.contactForm} />
+          <BookingBanner dict={dict.contactForm} site={dict.site} />
         </AnimatedSection>
       </SectionBgReveal>
       <AnimatedSection direction="up" delay={0.1}>
-        <Footer dict={dict.footer} />
+        <Footer dict={dict.footer} site={dict.site} />
       </AnimatedSection>
     </>
   );

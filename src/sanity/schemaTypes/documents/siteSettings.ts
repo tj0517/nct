@@ -22,6 +22,21 @@ export const siteSettings = defineType({
     defineField({ name: "whatsapp", title: "WhatsApp link", type: "url", group: "contact" }),
     defineField({ name: "messenger", title: "Messenger link", type: "url", group: "contact" }),
     defineField({ name: "instagram", title: "Instagram", type: "string", group: "contact" }),
+    defineField({ name: "facebook", title: "Facebook page", type: "url", group: "contact" }),
+    defineField({
+      name: "nip",
+      title: "NIP",
+      description: "Polish tax identification number, shown in the footer.",
+      type: "string",
+      group: "contact",
+    }),
+    defineField({
+      name: "bankAccount",
+      title: "PLN bank account",
+      description: "Shown in the footer. Anthony 2026-10-07.",
+      type: "string",
+      group: "contact",
+    }),
     defineField({
       name: "defaultSeo",
       title: "Default SEO",

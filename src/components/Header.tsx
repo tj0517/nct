@@ -4,13 +4,38 @@ import { useState } from "react";
 import Button from "./Button";
 import type { Locale } from "@/dictionaries";
 import { localePath } from "@/lib/locale-path";
-import { BOOKING_URL } from "@/lib/booking";
+import { BOOKING_URL, bookingLinkProps } from "@/lib/booking";
 
 interface HeaderDict {
   coursesLabel: string;
   courseLinks: { label: string; href: string }[];
   navLinks: { label: string; href: string }[];
   bookNow: string;
+}
+
+/* Flags are drawn inline: the repo has no icon package and these are the only
+   two it needs. Both sit in the same 3:2 box so the toggle stays symmetrical —
+   the Union Flag's true ratio is 1:2, and its diagonals are drawn without the
+   counterchange; neither reads at 22px. */
+function FlagPL({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 60 40" width="22" height="15" className={className} aria-hidden>
+      <rect width="60" height="20" fill="#ffffff" />
+      <rect y="20" width="60" height="20" fill="#DC143C" />
+    </svg>
+  );
+}
+
+function FlagGB({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 60 40" width="22" height="15" className={className} aria-hidden>
+      <rect width="60" height="40" fill="#012169" />
+      <path d="M0 0L60 40M60 0L0 40" stroke="#ffffff" strokeWidth="8" />
+      <path d="M0 0L60 40M60 0L0 40" stroke="#C8102E" strokeWidth="3.2" />
+      <path d="M30 0v40M0 20h60" stroke="#ffffff" strokeWidth="13.3" />
+      <path d="M30 0v40M0 20h60" stroke="#C8102E" strokeWidth="8" />
+    </svg>
+  );
 }
 
 function LanguageSwitcher({ lang }: { lang: Locale }) {
@@ -25,8 +50,11 @@ function LanguageSwitcher({ lang }: { lang: Locale }) {
   const isEn = (pending ?? lang) === "en";
 
   return (
-    <div className="flex items-center gap-2 font-inter text-[11px] font-bold tracking-[0.08em]">
-      <span className={`transition-colors duration-300 ${!isEn ? "text-main" : "text-main/40"}`}>PL</span>
+    <div className="flex items-center gap-2">
+      <span className={`flex transition-opacity duration-300 ${!isEn ? "opacity-100" : "opacity-75"}`}>
+        <FlagPL className="rounded-[2px] ring-1 ring-main/25" />
+        <span className="sr-only">Polski</span>
+      </span>
 
       <button
         type="button"
@@ -50,7 +78,10 @@ function LanguageSwitcher({ lang }: { lang: Locale }) {
         />
       </button>
 
-      <span className={`transition-colors duration-300 ${isEn ? "text-main" : "text-main/40"}`}>EN</span>
+      <span className={`flex transition-opacity duration-300 ${isEn ? "opacity-100" : "opacity-75"}`}>
+        <FlagGB className="rounded-[2px] ring-1 ring-main/25" />
+        <span className="sr-only">English</span>
+      </span>
     </div>
   );
 }
@@ -78,7 +109,7 @@ export default function Header({
 
           {/* Mobile: always-visible Book now CTA + hamburger */}
           <div className="flex items-center gap-2 lg:hidden ml-auto shrink-0">
-            <a href={BOOKING_URL}>
+            <a href={BOOKING_URL} {...bookingLinkProps}>
               <Button
                 variant="filled"
                 size="small"
@@ -148,7 +179,7 @@ export default function Header({
 
             <LanguageSwitcher lang={lang} />
 
-              <a href={BOOKING_URL}>
+              <a href={BOOKING_URL} {...bookingLinkProps}>
                 <Button variant="filled" size="small">{dict.bookNow}</Button>
               </a>
           </nav>

@@ -10,5 +10,10 @@ import { hasOwnContent } from "@/lib/locale-content";
  */
 export function localePath(path: string, locale: Locale): string {
   if (locale === "pl" && hasOwnContent("pl")) return path;
+  /* A bare fragment must not keep the slash: "/en/#contact" is a different URL
+     from "/en", so the browser reloads the document instead of scrolling to the
+     section, and the hash restore then races hydration and lands at the top.
+     "/en#contact" is the same document, so the jump is native and instant. */
+  if (path.startsWith("/#")) return `/en${path.slice(1)}`;
   return `/en${path}`;
 }

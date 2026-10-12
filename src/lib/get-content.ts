@@ -78,7 +78,14 @@ type Img = SanityImageSource | null | undefined;
 
 type HomepageDoc = {
   hero?: Record<string, Localized>;
-  about?: Record<string, Localized>;
+  about?: {
+    heading?: Localized;
+    body?: Localized;
+    cta?: Localized;
+    imageAlt?: Localized;
+    /** Plain URL, not translated. */
+    videoUrl?: string;
+  };
   trustBar?: { badges?: { heading?: Localized; cta?: Localized; description?: Localized }[] };
   whoWeTeach?: {
     label?: Localized;
@@ -107,10 +114,24 @@ type FormsDoc = {
 };
 
 type SiteSettingsDoc = {
+  phone?: string;
+  email?: string;
+  address?: string;
+  nip?: string;
+  bankAccount?: string;
+  facebook?: string;
+  messenger?: string;
+  instagram?: string;
   defaultSeo?: { title?: Localized; description?: Localized };
 };
 
-type TeacherDoc = { name?: string; credential?: Localized; bio?: Localized; image?: Img };
+type TeacherDoc = {
+  name?: string;
+  credential?: Localized;
+  bio?: Localized;
+  image?: Img;
+  videoUrl?: string;
+};
 type TestimonialDoc = { author?: string; role?: Localized; quote?: Localized; image?: Img };
 
 // Shared shape of the five course documents (adultsPage, businessPage,
@@ -206,7 +227,7 @@ export async function getContent(locale: Locale): Promise<Dictionary> {
     head,
     foot,
     forms,
-    site,
+    settings,
     teachers,
     testimonials,
     adultsDoc,
@@ -236,7 +257,7 @@ export async function getContent(locale: Locale): Promise<Dictionary> {
   const pricing = home?.pricing;
   const booking = forms?.bookingModal;
   const contact = forms?.contactForm;
-  const seo = site?.defaultSeo;
+  const seo = settings?.defaultSeo;
 
   return {
     ...fb,
@@ -281,6 +302,7 @@ export async function getContent(locale: Locale): Promise<Dictionary> {
       body: t(about?.body, locale, fb.about.body),
       cta: t(about?.cta, locale, fb.about.cta),
       imageAlt: t(about?.imageAlt, locale, fb.about.imageAlt),
+      videoUrl: s(about?.videoUrl, fb.about.videoUrl),
     },
 
     whoWeTeach: {
@@ -306,6 +328,7 @@ export async function getContent(locale: Locale): Promise<Dictionary> {
         bio: t(teacher?.bio, locale, f?.bio ?? ""),
         image:
           imageUrl(teacher?.image, TEACHER_IMAGE_WIDTH) ?? f?.image ?? "",
+        videoUrl: s(teacher?.videoUrl, f?.videoUrl ?? ""),
       })),
     },
 
@@ -365,13 +388,28 @@ export async function getContent(locale: Locale): Promise<Dictionary> {
       description: t(home?.mapSection?.description, locale, fb.map.description),
     },
 
-    // Only the column headings. The phone number, e-mail, address, brand name
-    // and social labels are still fixed in Footer.tsx (docs/deferred-tasks.md).
+    // The school's own contact details — one source for the footer, the icon
+    // row beside the contact form and the JSON-LD in `[lang]/layout.tsx`.
+    // Untranslated by nature: addresses, numbers and profile URLs.
+    site: {
+      phone: s(settings?.phone, fb.site.phone),
+      email: s(settings?.email, fb.site.email),
+      address: s(settings?.address, fb.site.address),
+      nip: s(settings?.nip, fb.site.nip),
+      bankAccount: s(settings?.bankAccount, fb.site.bankAccount),
+      facebook: s(settings?.facebook, fb.site.facebook),
+      messenger: s(settings?.messenger, fb.site.messenger),
+      instagram: s(settings?.instagram, fb.site.instagram),
+    },
+
+    // Column headings only — the values themselves live in `site` above.
     footer: {
       phoneLabel: t(foot?.phoneLabel, locale, fb.footer.phoneLabel),
       emailLabel: t(foot?.emailLabel, locale, fb.footer.emailLabel),
       socialLabel: t(foot?.socialLabel, locale, fb.footer.socialLabel),
       visitLabel: t(foot?.visitLabel, locale, fb.footer.visitLabel),
+      nipLabel: t(foot?.nipLabel, locale, fb.footer.nipLabel),
+      bankLabel: t(foot?.bankLabel, locale, fb.footer.bankLabel),
       designedIn: t(foot?.designedIn, locale, fb.footer.designedIn),
     },
 

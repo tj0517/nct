@@ -186,7 +186,7 @@
   },
   "faq": {
     "label": "FAQ",
-    "heading": "Got questions? We've got answers.",
+      "heading": "FAQ",
     "meta": {
       "title": "FAQ — A Nice Cup of Tea",
       "description": "Answers to common questions about lessons, pricing, the free consultation, and online tuition at A Nice Cup of Tea."
@@ -194,27 +194,171 @@
     "items": [
       {
         "question": "What is A Nice Cup of Tea?",
-        "answer": "A Nice Cup of Tea, or NCT, is a premium English tutoring school based in Warsaw and online. We offer English lessons with native-speaker teachers for adults, children, teenagers, business professionals, students applying to universities abroad, and students who need Maths support in English."
+        "answer": "A Nice Cup of Tea is an English school founded in Warsaw in 2012 by Anthony Goltz, who studied History at Balliol College, Oxford. We teach children, teenagers and adults, offer Business English and university-application guidance, and provide Maths in English. Lessons are available in Warsaw and online."
       },
       {
-        "question": "What happens during the free consultation?",
-        "answer": "The free consultation is a full 60-minute lesson with Anthony Goltz, the founder of NCT. It includes a level assessment, needs analysis, diagnostic teaching, and a recommendation about the best teacher and lesson plan. It can take place online or face-to-face. It is always free and there is no obligation to continue."
+        "question": "Where in Warsaw is A Nice Cup of Tea located?",
+        "answer": "You can find us at Słupecka 4/45 in Warsaw’s Ochota district. We can also arrange lessons at your home or office elsewhere in Warsaw, or online."
       },
       {
-        "question": "How much do lessons cost?",
-        "answer": "The first 60-minute consultation lesson is free. Children’s lessons are 225 PLN per 60-minute lesson. Adults and Business English are 250 PLN per 60-minute lesson. Small groups start from 300 PLN per 60-minute session per group. University application programmes and Maths tuition are priced after consultation."
+        "question": "Are your English teachers British native speakers?",
+        "answer": "Yes. Our English teachers include founder Anthony Goltz and Dr Alan Bryson, both British native speakers. Dr Rishi Handa, who teaches Maths in English, is also a British native speaker."
       },
       {
-        "question": "How is NCT different from a normal language school?",
-        "answer": "NCT is smaller, more personal, and more tailored than a standard language school. Lessons are not based on a mechanical textbook march. Students work with experienced native-speaker teachers who correct carefully, adapt to the student’s goals, and focus on real English for real situations."
+        "question": "Who founded the school, and what is his background?",
+        "answer": "Anthony Goltz founded A Nice Cup of Tea in Warsaw in 2012. He read History at Balliol College, Oxford, and began teaching English to Tibetan monks in Darjeeling, India. His academic background, international experience and enthusiasm for language and literature have helped shape the school."
       },
       {
-        "question": "Do you offer online lessons?",
-        "answer": "Yes. NCT offers online English lessons across Poland and internationally. Lessons can take place on Zoom, Google Meet, Microsoft Teams, WhatsApp video, or another platform preferred by the student."
+        "question": "What makes NCT different from a large language-school chain?",
+        "answer": "A Nice Cup of Tea combines the personal attention of an independent school with unusually strong academic credentials. Our founder, Anthony Goltz, studied History at Balliol College, Oxford, while our teaching team also includes Dr Alan Bryson and Dr Rishi Handa. We tailor lessons to each student’s needs, interests and ambitions rather than following a standardised course."
       },
       {
-        "question": "How can I book a free consultation?",
-        "answer": "You can book your free consultation by WhatsApp, phone, or the contact form. You can write in Polish or English. The Polish phone number is +48 453 374 984."
+        "question": "How do I enquire about lessons or a free assessment?",
+        "answer": "Complete our enquiry form to request a free 30-minute assessment with Anthony. We’ll get in touch to discuss what you or your child would like to achieve and arrange the next step. You can also email us at anthony@anicecupoftea.pl."
+      },
+      {
+        "question": "How much does an English lesson cost?",
+        "answer": "Our advertised rate for a 60-minute English lesson is 250 PLN, and the initial 30-minute assessment is free. Rates for specialist programmes or other teaching arrangements may differ. Please ask us to confirm the price for your particular lessons before booking."
+      },
+      {
+        "question": "Can I study online rather than travel to Ochota?",
+        "answer": "Yes. We offer online English lessons as well as face-to-face teaching in Warsaw."
+      },
+      {
+        "question": "Do you offer one-to-one English lessons in Warsaw?",
+        "answer": "Yes. We offer individual English lessons tailored to your level, interests and goals. You can study at our location in Ochota, elsewhere in Warsaw by arrangement, or online. We’ll discuss the most suitable teacher and arrangements when you enquire."
+      },
+      {
+        "question": "What ages do you teach in Children & Teens?",
+        "answer": "We teach children and teenagers aged 6–16, from those taking their first steps in English to pupils preparing for demanding examinations. Lessons are available in Warsaw and online, with activities adapted to each learner’s age, level and interests."
+      },
+      {
+        "question": "Can my child learn English with a British native speaker in Warsaw?",
+        "answer": "Yes. We offer English lessons for children and teenagers with British native-speaker teachers, in person in Warsaw or online. Alongside conversation, we develop vocabulary, listening, reading and writing through work suited to your child’s age and interests."
+      },
+      {
+        "question": "How do you keep a young child interested in English?",
+        "answer": "We use stories, games and conversation to make English engaging and give children opportunities to use it naturally. We take their interests seriously: a favourite book, game or hobby can become the starting point for a lively, purposeful lesson."
+      },
+      {
+        "question": "Can NCT prepare my child for the egzamin ósmoklasisty?",
+        "answer": "Yes. We prepare pupils for the egzamin ósmoklasisty by combining exam-style practice with work on reading, listening, writing and language accuracy. We can identify areas that need attention and plan lessons around your child’s examination date."
+      },
+      {
+        "question": "Do you prepare students for the konkurs kuratoryjny or OJAJ?",
+        "answer": "Yes. We help pupils prepare for the konkurs kuratoryjny and the Olimpiada Języka Angielskiego Juniorów (OJAJ). These competitions can demand wide vocabulary, strong language accuracy and independent thinking. Tell us which competition and stage your child is preparing for so we can discuss a suitable plan."
+      },
+      {
+        "question": "Can you help a shy child become more confident speaking English?",
+        "answer": "Yes. We aim to make speaking English feel less intimidating through lively conversation, stories and activities linked to your child’s interests. If your child is shy, tell us what makes speaking difficult; we can adapt the pace and approach accordingly."
+      },
+      {
+        "question": "Will lessons help with school English as well as conversation?",
+        "answer": "Yes. We can support schoolwork and examinations while helping your child use English confidently beyond the classroom. Depending on their needs, lessons may focus on vocabulary, grammar, reading, writing, listening or conversation."
+      },
+      {
+        "question": "Do you teach adult beginners as well as fluent speakers?",
+        "answer": "Yes. We teach adults from A1 (beginner) to C2 (proficient). Whether you are returning to English after a long break or already use it confidently and want greater precision, we tailor lessons to your current level and goals."
+      },
+      {
+        "question": "Can I improve my spoken English and confidence?",
+        "answer": "Yes. We can help you speak English more fluently, naturally and confidently. Lessons focus on situations that matter to you—perhaps social conversation, travel, professional meetings or everyday life—alongside the pronunciation, grammar and vocabulary needed to express yourself clearly."
+      },
+      {
+        "question": "Can you help me improve my British pronunciation and accent?",
+        "answer": "Yes. Our British native-speaker teachers can help with pronunciation, rhythm, intonation and accent. The aim is to speak clearly and naturally, with greater confidence, rather than to imitate any one person’s voice."
+      },
+      {
+        "question": "Do you prepare adults for IELTS and Cambridge C1 or C2?",
+        "answer": "Yes. We offer preparation for IELTS and Cambridge C1 Advanced and C2 Proficiency. We’ll discuss your current level, target result and exam date, then identify the skills that most need attention."
+      },
+      {
+        "question": "Can you help me write better English for work or university?",
+        "answer": "Yes. We help adults write clearly and persuasively for work and study. Lessons can focus on structure, tone, accurate grammar and precise vocabulary. Bring an email, report, essay or another example of your writing if you would like targeted feedback."
+      },
+      {
+        "question": "Can you help me prepare for a job interview in English?",
+        "answer": "Yes. If you have a job interview in English, we can help you present your experience, answer demanding questions and speak more confidently. Our Business English programme may be especially suitable for professional or senior roles. Tell us the position and interview date when you enquire."
+      },
+      {
+        "question": "Can NCT help me apply to universities in Britain, Europe and the United States?",
+        "answer": "Yes. We help students aged 15–19 prepare applications to universities in Britain, Europe and the United States. Our support can include application essays, personal statements, interviews and the academic English needed to present ideas clearly. We adapt the work to the requirements of your chosen institutions."
+      },
+      {
+        "question": "Have NCT students been admitted to Oxford or Stanford?",
+        "answer": "Yes. Former NCT students have gained places at Oxford, Stanford and the School of Visual Arts in New York. Each applicant’s circumstances are different, and admission decisions rest with the universities themselves."
+      },
+      {
+        "question": "Can you help me write a personal statement or application essay?",
+        "answer": "Yes. We help applicants develop clear, compelling personal statements and application essays that reflect their own achievements, interests and ambitions. We can work with you on ideas, organisation and expression while ensuring the final application remains authentically yours."
+      },
+      {
+        "question": "Do you prepare students for university admissions interviews?",
+        "answer": "Yes. We offer university interview preparation, helping students communicate their ideas and reasoning clearly and confidently. Interviews vary considerably between institutions and subjects, so tell us which course and universities you are applying to; we’ll confirm the most appropriate support."
+      },
+      {
+        "question": "Can you support students doing the IB Diploma Programme?",
+        "answer": "Yes. We support IB students with academic English and written work, including Internal Assessments (IAs), the Extended Essay and Theory of Knowledge (TOK). Our role is to help you develop, organise and express your own ideas; submitted coursework must remain your own."
+      },
+      {
+        "question": "Do you also work with Polish matura students?",
+        "answer": "Yes. We support students taking the Polish matura, including those who are also applying to universities abroad. Tell us your subjects, examination dates and prospective universities so we can identify the most useful language and application support."
+      },
+      {
+        "question": "What age group is University Applications intended for?",
+        "answer": "Our University Applications programme is intended for students aged 15–19, particularly those working towards IB or matura examinations and applications abroad. If you are outside that age range, please get in touch to discuss your situation."
+      },
+      {
+        "question": "What kind of professionals is NCT Business English for?",
+        "answer": "Our Business English lessons are for professionals who need to communicate clearly and confidently in demanding situations: meetings, presentations, negotiations, interviews and pitches. We have worked with professionals from organisations including PwC, Google and Facebook, and can tailor lessons to your role and industry."
+      },
+      {
+        "question": "Can you help me prepare for presentations and pitches in English?",
+        "answer": "Yes. We can help you structure a presentation, choose precise and persuasive language, and practise delivering it confidently. If you have an upcoming pitch or talk, tell us your audience, topic and deadline so we can focus on what matters most."
+      },
+      {
+        "question": "Can NCT help with meetings and negotiations?",
+        "answer": "Yes. We work on the language of meetings and negotiations, including explaining a position, asking effective questions, responding tactfully and handling disagreement. Lessons can be shaped around the discussions you lead or take part in at work."
+      },
+      {
+        "question": "Do you offer interview coaching for senior jobs?",
+        "answer": "Yes. We prepare professionals for job interviews in English, including senior positions. We can work on explaining achievements, answering challenging questions and presenting your experience clearly. Tell us about the role and interview date so the preparation is relevant."
+      },
+      {
+        "question": "Can you help me write professional emails and reports?",
+        "answer": "Yes. We help professionals write clear, concise emails, reports and other workplace documents. Lessons can cover structure, tone, vocabulary and grammar, using examples relevant to your industry and daily work."
+      },
+      {
+        "question": "Can you help with legal or financial English?",
+        "answer": "Yes. Our Business English teaching includes legal and financial English. We can help you develop the vocabulary and confidence to discuss specialist topics and write effectively for professional audiences. Tell us about your industry and the kinds of communication you deal with."
+      },
+      {
+        "question": "Can business lessons take place at our office in Warsaw?",
+        "answer": "Lessons at a Warsaw office can be arranged, subject to location and teacher availability. Tell us where your office is, how many people would attend and your preferred timetable. We’ll confirm whether we can accommodate your needs and provide the relevant price."
+      },
+      {
+        "question": "Who teaches Maths in English at NCT?",
+        "answer": "Maths in English is taught by Dr Rishi Handa, who studied Mathematics with Theoretical Physics at University College London (UCL) and holds a PhD from SOAS. He brings a strong academic background to teaching mathematical concepts and problem-solving."
+      },
+      {
+        "question": "Can Dr Handa help with IB Mathematics?",
+        "answer": "Yes. Dr Handa offers IB Maths preparation, helping students tackle challenging concepts, practise problem-solving and prepare for examinations. As IB Maths courses differ, please tell us whether you study Analysis and Approaches (AA) or Applications and Interpretation (AI), at Standard or Higher Level, so we can confirm suitable support."
+      },
+      {
+        "question": "Can Dr Handa help with Polish matura mathematics?",
+        "answer": "Yes. Dr Handa helps students prepare for the Polish matura in mathematics. Lessons can focus on difficult topics, examination-style problems and a clear approach to solving them. Tell us whether you are taking the basic or extended examination and when you plan to sit it."
+      },
+      {
+        "question": "Which mathematical topics does Dr Handa teach?",
+        "answer": "We cover algebra, geometry, functions and calculus, as well as revision and examination preparation. Lessons are shaped around your syllabus and the topics where you need the most help. A recent test or sample problem can help us identify a suitable starting point."
+      },
+      {
+        "question": "What does ‘Maths in English’ mean?",
+        "answer": "It means learning mathematics while developing the English needed to discuss it. Students work through concepts and problems, then practise explaining their methods, reasoning and solutions clearly in English. This can be especially useful for students studying mathematics through English or preparing to do so at university."
+      },
+      {
+        "question": "What age group is Maths in English intended for?",
+        "answer": "Our Maths in English programme is designed for students aged 15–19, including those preparing for IB or Polish matura examinations or for university study. If you are outside that age range, please enquire so we can discuss whether suitable lessons are available."
       }
     ]
   },

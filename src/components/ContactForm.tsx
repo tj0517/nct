@@ -77,7 +77,6 @@ export default function ContactForm({ dict }: { dict: ContactFormDict }) {
 
       <textarea
         name="message"
-        required
         maxLength={5000}
         placeholder={dict.messagePlaceholder}
         rows={3}

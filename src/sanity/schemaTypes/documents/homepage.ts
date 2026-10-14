@@ -58,6 +58,21 @@ export const homepage = defineType({
         defineField({ name: "body", title: "Body", type: "localizedText" }),
         defineField({ name: "cta", title: "Button text", type: "localizedString" }),
         defineField({ name: "imageAlt", title: "Photo description", type: "localizedString" }),
+        defineField({
+          name: "video",
+          title: "Film (upload)",
+          description:
+            "Upload the MP4 here. The button appears as soon as either this or the link " +
+            "below is filled; the upload wins.",
+          type: "file",
+          options: { accept: "video/*" },
+        }),
+        defineField({
+          name: "videoUrl",
+          title: "Film (YouTube or Vimeo link)",
+          description: "Use instead of an upload if the film is already on YouTube or Vimeo.",
+          type: "url",
+        }),
       ],
     }),
     defineField({

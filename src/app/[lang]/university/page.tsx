@@ -11,8 +11,14 @@ import CourseContact from "@/components/CourseContact";
 import AnimatedSection from "@/components/AnimatedSection";
 import Footer from "@/components/Footer";
 
-// Trimmed transparent cut-out; the ratio drives the hero's aspect box.
-const HERALD = { src: "/images/rabbit-herald-hero.png", width: 481, height: 639 };
+// Anthony's re-cut artwork, 2026-10-11: used at the canvas he supplied, with
+// only the white paper keyed out. The ratio drives the hero's aspect box.
+const HERALD = {
+  src: "/images/heroes/rabbit-herald-hero.png",
+  width: 1037,
+  height: 1517,
+  fit: "tall",
+} as const;
 
 export async function generateMetadata({
   params,
@@ -58,12 +64,12 @@ export default async function UniversityPage({
         </AnimatedSection>
 
         <AnimatedSection direction="up" className="w-full">
-          <CourseContact dict={dict.contactForm} />
+          <CourseContact dict={dict.contactForm} site={dict.site} />
         </AnimatedSection>
       </main>
 
       <AnimatedSection direction="up" delay={0.1}>
-        <Footer dict={dict.footer} />
+        <Footer dict={dict.footer} site={dict.site} />
       </AnimatedSection>
     </>
   );

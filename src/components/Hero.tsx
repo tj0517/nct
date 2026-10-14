@@ -6,7 +6,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useReducedMotion } from "./GsapProvider";
 import Button from "./Button";
-import { BOOKING_URL } from "@/lib/booking";
+import { BOOKING_URL, bookingLinkProps } from "@/lib/booking";
 
 interface HeroDict {
   headlineLine1: string;
@@ -85,7 +85,7 @@ export default function Hero({ dict }: { dict: HeroDict }) {
               className="pointer-events-none absolute top-0 right-0 h-full aspect-874/1101 md:hidden"
             >
               <Image
-                src="/images/king-hero.png"
+                src="/images/heroes/king-hero.png"
                 alt="Illustration of the King of Hearts reading a letter"
                 fill
                 className="object-cover object-top"
@@ -110,7 +110,7 @@ export default function Hero({ dict }: { dict: HeroDict }) {
               On phones it sits after the middle spacer (see above). */}
           <div aria-hidden className="grow md:hidden" />
           <div data-hero-ctas className="mt-9 md:mt-0 flex w-full max-w-[440px] md:max-w-none">
-            <a href={BOOKING_URL} className="w-full md:w-auto">
+            <a href={BOOKING_URL} {...bookingLinkProps} className="w-full md:w-auto">
               <Button variant="filled" className="!w-full md:!text-lg xl:!text-2xl lg:!px-8">{dict.ctaPrimaryShort}</Button>
             </a>
           </div>
@@ -129,7 +129,7 @@ export default function Hero({ dict }: { dict: HeroDict }) {
           className="pointer-events-none absolute inset-y-0 right-0 hidden md:block aspect-874/1101 max-w-[42%]"
         >
           <Image
-            src="/images/king-hero.png"
+            src="/images/heroes/king-hero.png"
             alt="Illustration of the King of Hearts reading a letter"
             fill
             sizes="42vw"

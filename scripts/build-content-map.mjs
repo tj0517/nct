@@ -35,6 +35,7 @@ const RULES = [
   // ---- homepage: about ----
   [/^about\.body$/, "homepage", "about.body", "localizedText", ""],
   [/^about\.(heading|cta|imageAlt)$/, "homepage", "about.$1", "localizedString", ""],
+  [/^about\.videoUrl$/, "homepage", "about.videoUrl", "url", "empty -> the CTA is not rendered (Anthony 2026-10-07)"],
 
   // ---- homepage: who we teach ----
   [/^whoWeTeach\.(label|heading)$/, "homepage", "whoWeTeach.$1", "localizedString", ""],
@@ -49,6 +50,14 @@ const RULES = [
   [/^teachers\.list\[(\d+)]\.name$/, "teacher", "[doc $1].name", "string", "proper noun, not translated"],
   [/^teachers\.list\[(\d+)]\.credential$/, "teacher", "[doc $1].credential", "localizedString", ""],
   [/^teachers\.list\[(\d+)]\.bio$/, "teacher", "[doc $1].bio", "localizedText", ""],
+  [/^teachers\.list\[(\d+)]\.image$/, "teacher", "[doc $1].image", "image", "path today -> Sanity image asset (NCT-3.04, B2)"],
+  [/^teachers\.list\[(\d+)]\.videoUrl$/, "teacher", "[doc $1].videoUrl", "url", "empty -> no \u201cWatch intro\u201d on that card"],
+
+  // ---- testimonial collection (tj B2; moved out of Testimonials.tsx in NCT-3.04) ----
+  [/^testimonials\.list\[(\d+)]\.quote$/, "testimonial", "[doc $1].quote", "localizedText", ""],
+  [/^testimonials\.list\[(\d+)]\.author$/, "testimonial", "[doc $1].author", "string", "proper noun, not translated"],
+  [/^testimonials\.list\[(\d+)]\.role$/, "testimonial", "[doc $1].role", "localizedString", ""],
+  [/^testimonials\.list\[(\d+)]\.image$/, "testimonial", "[doc $1].image", "image", "path today -> Sanity image asset"],
 
   // ---- homepage: pricing (tj A1) ----
   [/^pricing\.(label|heading|freePrice|freeDesc|freeCta|price|priceDesc)$/, "homepage", "pricing.$1", "localizedString", "tj 2026-09-30 (A1): Homepage tab"],
@@ -74,6 +83,9 @@ const RULES = [
 
   // ---- footer ----
   [/^footer\.(.+)$/, "footer", "$1", "localizedString", ""],
+
+  // ---- the school's own contact details (Anthony 2026-10-07) ----
+  [/^site\.(phone|email|address|nip|bankAccount|facebook|messenger|instagram)$/, "siteSettings", "$1", "string", "not translated; footer + contact row + JSON-LD"],
 
   // ---- site default SEO (tj C1) ----
   [/^meta\.title$/, "siteSettings", "defaultSeo.title", "localizedString", "tj 2026-09-30 (C1): Site settings default SEO"],

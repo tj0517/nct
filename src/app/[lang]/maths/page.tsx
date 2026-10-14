@@ -11,8 +11,17 @@ import CourseContact from "@/components/CourseContact";
 import AnimatedSection from "@/components/AnimatedSection";
 import Footer from "@/components/Footer";
 
-// Trimmed transparent cut-out; the ratio drives the hero's aspect box.
-const ALICE = { src: "/images/alice-hero.png", width: 892, height: 1240 };
+// Anthony's re-cut artwork, 2026-10-11: used at the canvas he supplied, with
+// only the white paper keyed out. The ratio drives the hero's aspect box.
+const ALICE = {
+  src: "/images/heroes/alice-hero.png",
+  width: 1038,
+  height: 1515,
+  fit: "tall",
+  // Only two paragraphs here, so the lane's default of two would reserve the
+  // whole block and change nothing — the closing line alone stands beside her.
+  besideParagraphs: 1,
+} as const;
 
 export async function generateMetadata({
   params,
@@ -58,12 +67,12 @@ export default async function MathsPage({
         </AnimatedSection>
 
         <AnimatedSection direction="up" className="w-full">
-          <CourseContact dict={dict.contactForm} />
+          <CourseContact dict={dict.contactForm} site={dict.site} />
         </AnimatedSection>
       </main>
 
       <AnimatedSection direction="up" delay={0.1}>
-        <Footer dict={dict.footer} />
+        <Footer dict={dict.footer} site={dict.site} />
       </AnimatedSection>
     </>
   );

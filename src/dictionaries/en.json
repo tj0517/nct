@@ -39,7 +39,7 @@
     "headlineLine1": "Speak the",
     "headlineItalic": "King's",
     "headlineBold": " English",
-    "subtitle": "Native speakers of British English.\nAn Oxford graduate and two PhDs.\nFace-to-face lessons in Warsaw.",
+    "subtitle": "Native speakers of British English.\nAn Oxford graduate and two PhDs.\nFace to face in Warsaw or online.",
     "ctaPrimary": "Book your free assessment with Anthony",
     "ctaPrimaryShort": "Book your free assessment"
   },
@@ -59,7 +59,8 @@
     "heading": "About Us",
     "body": "Anthony began teaching English to Tibetan monks in Darjeeling, India. After reading History at Balliol College, Oxford, he moved to Warsaw. In 2012, he founded A Nice Cup of Tea. He drinks Lapsang Souchong.",
     "cta": "Meet Anthony",
-    "imageAlt": "Anthony — Founder of A Nice Cup of Tea"
+    "imageAlt": "Anthony — Founder of A Nice Cup of Tea",
+    "videoUrl": ""
   },
   "whoWeTeach": {
     "label": "WHO WE TEACH",
@@ -100,19 +101,22 @@
         "name": "Anthony Goltz",
         "credential": "Balliol College, Oxford",
         "bio": "History",
-        "image": "/images/teachers/anthony-goltz.png"
+        "image": "/images/teachers/anthony-goltz.png",
+        "videoUrl": ""
       },
       {
         "name": "Dr Alan Bryson",
         "credential": "University of St Andrews",
         "bio": "History",
-        "image": "/images/teachers/alan-bryson.png"
+        "image": "/images/teachers/alan-bryson.png",
+        "videoUrl": ""
       },
       {
         "name": "Dr Rishi Handa",
         "credential": "University College London (UCL)",
         "bio": "Maths & Theoretical Physics",
-        "image": "/images/teachers/rishi-handa.png"
+        "image": "/images/teachers/rishi-handa.png",
+        "videoUrl": ""
       }
     ]
   },
@@ -173,7 +177,7 @@
     "submitCta": "Send form",
     "sendingCta": "Sending...",
     "successMessage": "Thanks! We've received your message and will be in touch soon.",
-    "errorMessage": "Something went wrong. Please try again, or reach us directly at +48 453 374 984 or hello@anicecupoftea.pl."
+    "errorMessage": "Something went wrong. Please try again, or reach us directly at +48 453 374 984 or anthony@anicecupoftea.pl."
   },
   "map": {
     "label": "VISIT US",
@@ -214,11 +218,23 @@
       }
     ]
   },
+  "site": {
+    "phone": "+48 453 374 984",
+    "email": "anthony@anicecupoftea.pl",
+    "address": "S\u0142upecka 4/45, Warsaw, 02-309",
+    "nip": "7010235783",
+    "bankAccount": "36 1050 1025 1000 0090 7677 6575",
+    "facebook": "https://www.facebook.com/NCTGoltz",
+    "messenger": "https://m.me/NCTGoltz",
+    "instagram": "https://instagram.com/anicecupoftea.pl"
+  },
   "footer": {
     "phoneLabel": "Phone",
     "emailLabel": "Email",
     "socialLabel": "Social",
     "visitLabel": "Visit us",
+    "nipLabel": "NIP",
+    "bankLabel": "PLN bank account",
     "designedIn": "Designed in Warsaw"
   },
   "meta": {

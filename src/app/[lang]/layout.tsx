@@ -8,6 +8,7 @@ import ThemeProvider from "@/components/ThemeProvider";
 import { BookingModalProvider } from "@/components/BookingModalContext";
 import { hasLocale } from "@/dictionaries";
 import { getContent } from "@/lib/get-content";
+import { parseAddress } from "@/lib/site";
 import type { Locale } from "@/dictionaries";
 import { notFound } from "next/navigation";
 import { THEME_INIT_SCRIPT } from "@/lib/theme";
@@ -67,26 +68,27 @@ export default async function RootLayout({
 
   const dict = await getContent(lang as Locale);
 
-  // Describes the school for Google (name, contact, address) — same values
-  // the page already shows (NCT-2.03). Contact details and the Instagram
-  // link are hard-coded here to match Footer.tsx/ContactLinks.tsx, which are
-  // themselves hard-coded rather than sourced from content (see
-  // docs/deferred-tasks.md). Messenger is a chat link, not a profile page,
-  // so it is excluded from `sameAs`.
+  // Describes the school for Google (name, contact, address) — the same values
+  // the page itself shows (NCT-2.03), now read from `dict.site` so the footer,
+  // the contact row and this block can never drift apart. Messenger is a chat
+  // link, not a profile page, so it is excluded from `sameAs`.
+  const { street, locality, postalCode } = parseAddress(dict.site.address);
   const schoolJsonLd = {
     "@context": "https://schema.org",
     "@type": ["EducationalOrganization", "LocalBusiness"],
     name: "A Nice Cup of Tea",
     description: dict.meta.description,
     url: `${siteUrl}/${servedLocale(lang)}`,
-    telephone: "+48 453 374 984",
-    email: "hello@anicecupoftea.pl",
+    telephone: dict.site.phone,
+    email: dict.site.email,
     address: {
       "@type": "PostalAddress",
-      streetAddress: dict.map.heading,
-      addressLocality: "Warsaw",
+      streetAddress: street,
+      addressLocality: locality || "Warsaw",
+      ...(postalCode ? { postalCode } : {}),
+      addressCountry: "PL",
     },
-    sameAs: ["https://instagram.com/anicecupoftea.pl"],
+    sameAs: [dict.site.facebook, dict.site.instagram].filter(Boolean),
   };
 
   return (

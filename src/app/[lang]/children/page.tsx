@@ -11,8 +11,16 @@ import CourseContact from "@/components/CourseContact";
 import AnimatedSection from "@/components/AnimatedSection";
 import Footer from "@/components/Footer";
 
-// Trimmed transparent cut-out; the ratio drives the hero's aspect box.
-const ALICE = { src: "/images/alice-door-hero.png", width: 413, height: 527 };
+// The whole Tenniel scene — Alice drawing back the curtain on the little door,
+// as the alt text has always described and as Anthony's 2026-10-07 mock-up
+// shows. Near-square, so the hero gives her the "wide" lane. The ratio drives
+// the hero's aspect box.
+const ALICE = {
+  src: "/images/heroes/alice-curtain-hero.png",
+  width: 1124,
+  height: 1134,
+  fit: "wide",
+} as const;
 
 export async function generateMetadata({
   params,
@@ -58,12 +66,12 @@ export default async function ChildrenPage({
         </AnimatedSection>
 
         <AnimatedSection direction="up" className="w-full">
-          <CourseContact dict={dict.contactForm} />
+          <CourseContact dict={dict.contactForm} site={dict.site} />
         </AnimatedSection>
       </main>
 
       <AnimatedSection direction="up" delay={0.1}>
-        <Footer dict={dict.footer} />
+        <Footer dict={dict.footer} site={dict.site} />
       </AnimatedSection>
     </>
   );

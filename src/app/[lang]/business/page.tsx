@@ -11,8 +11,10 @@ import CourseContact from "@/components/CourseContact";
 import AnimatedSection from "@/components/AnimatedSection";
 import Footer from "@/components/Footer";
 
-// Trimmed transparent cut-out; the ratio drives the hero's aspect box.
-const RABBIT = { src: "/images/rabbit-business-hero.png", width: 327, height: 700 };
+// Anthony's re-cut artwork, 2026-10-12: used at the canvas he supplied, with
+// only the white paper keyed out. Wider than the old cut-out because this one
+// keeps the cane. The ratio drives the hero's aspect box.
+const RABBIT = { src: "/images/heroes/rabbit-business-hero.png", width: 1014, height: 1551 };
 
 export async function generateMetadata({
   params,
@@ -58,12 +60,12 @@ export default async function BusinessPage({
         </AnimatedSection>
 
         <AnimatedSection direction="up" className="w-full">
-          <CourseContact dict={dict.contactForm} />
+          <CourseContact dict={dict.contactForm} site={dict.site} />
         </AnimatedSection>
       </main>
 
       <AnimatedSection direction="up" delay={0.1}>
-        <Footer dict={dict.footer} />
+        <Footer dict={dict.footer} site={dict.site} />
       </AnimatedSection>
     </>
   );

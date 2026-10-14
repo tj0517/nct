@@ -1,8 +1,8 @@
 import { defineType, defineField } from "sanity";
 
-// Only the column headings live here. The phone number, email and address
-// themselves come from Site settings; the brand name and social labels are
-// still fixed in Footer.tsx (recorded in docs/deferred-tasks.md).
+// Only the column headings live here. The phone number, email, address, NIP,
+// bank account and social links themselves come from Site settings; the brand
+// name and the social link labels are still fixed in Footer.tsx.
 export const footer = defineType({
   name: "footer",
   title: "Footer",
@@ -12,6 +12,8 @@ export const footer = defineType({
     defineField({ name: "emailLabel", title: "Email heading", type: "localizedString" }),
     defineField({ name: "socialLabel", title: "Social heading", type: "localizedString" }),
     defineField({ name: "visitLabel", title: "Visit us heading", type: "localizedString" }),
+    defineField({ name: "nipLabel", title: "NIP heading", type: "localizedString" }),
+    defineField({ name: "bankLabel", title: "Bank account heading", type: "localizedString" }),
     defineField({ name: "designedIn", title: "Bottom line", type: "localizedString" }),
   ],
   preview: {

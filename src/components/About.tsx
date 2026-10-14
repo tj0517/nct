@@ -1,11 +1,13 @@
 import Image from "next/image";
-import Button from "./Button";
+import VideoLightbox from "./VideoLightbox";
 
 interface AboutDict {
   heading: string;
   body: string;
   cta: string;
   imageAlt: string;
+  /** Anthony's film. Empty means the CTA is not rendered at all. */
+  videoUrl: string;
 }
 
 /* Official YouTube play badge — red rounded rectangle, white triangle */
@@ -40,25 +42,31 @@ export default function About({ dict }: { dict: AboutDict }) {
       </div>
 
       {/* Text content */}
-      <div className="flex flex-col justify-between gap-6 md:w-1/2 self-stretch">
+      {/* With a film to open, the CTA anchors the bottom of the column; without
+          one the copy centres against the photo instead of leaving its hole. */}
+      <div
+        className={`flex flex-col gap-6 md:w-1/2 self-stretch ${
+          dict.videoUrl ? "justify-between" : "justify-center"
+        }`}
+      >
         <h2 className="font-fraunces font-bold text-3xl md:text-[48px] text-main leading-tight">
           {dict.heading}
         </h2>
         <p className="font-fraunces font-light text-lg md:text-2xl text-main leading-relaxed">
           {dict.body}
         </p>
-        <div>
-          {/* Video affordance — YouTube badge signals a film will open here.
-              Target video not wired up yet. */}
-          <a href="#founder-video">
-            <Button variant="outline">
+        {dict.videoUrl && (
+          <div>
+            {/* The YouTube badge promises a film, so the CTA only exists once
+                there is one to open (set in Sanity, Anthony 2026-10-07). */}
+            <VideoLightbox url={dict.videoUrl} title={dict.cta} as="cta">
               <span className="inline-flex items-center gap-3">
                 <YouTubeIcon />
                 {dict.cta}
               </span>
-            </Button>
-          </a>
-        </div>
+            </VideoLightbox>
+          </div>
+        )}
       </div>
     </section>
   );

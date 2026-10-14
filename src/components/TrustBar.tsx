@@ -17,7 +17,7 @@ export default function TrustBar({ dict }: { dict: TrustBarDict }) {
       >
         <div className="shrink-0">
           <Image
-            src="/images/logo-bbc-radio-4.svg"
+            src="/images/logos/logo-bbc-radio-4.svg"
             alt="BBC Radio 4 logo"
             width={140}
             height={60}
@@ -41,7 +41,7 @@ export default function TrustBar({ dict }: { dict: TrustBarDict }) {
       >
         <div className="shrink-0">
           <Image
-            src="/images/logo-cambridge.png"
+            src="/images/logos/logo-cambridge.png"
             alt="University of Cambridge logo"
             width={160}
             height={34}

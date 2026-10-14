@@ -31,7 +31,10 @@ export function proxy(request: NextRequest) {
 
 export const config = {
   matcher: [
-    // Skip internal paths, static files, images, and common assets
-    "/((?!api|_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt|images/).*)",
+    // Skip internal paths, static files, images, and common assets.
+    // Anything served straight out of `public/` must be listed here, or it is
+    // redirected into the locale prefix and 404s — `videos/` was added when
+    // the teacher intro films landed (Anthony 2026-10-11).
+    "/((?!api|_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt|images/|videos/).*)",
   ],
 };

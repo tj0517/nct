@@ -174,14 +174,12 @@
 
 ## 2026-10-12
 
-- **CTA prowadzą teraz do kalendarza Google** (`https://calendar.app.google/R3duMzzaJQBKy8Lc6`,
-  Anthony 2026-10-12) — odwraca decyzję z 20.09 („zapytania przez formularz"). Wszystkie sześć
-  przycisków czyta `BOOKING_URL`; link „Contact" w nagłówku dalej prowadzi do `#contact`, więc
-  formularz zostaje osiągalny. **Do sprawdzenia przez tj:** czy harmonogram nie wymaga od gościa
-  logowania na konto Google — to realna strata konwersji i był to powód pierwotnej decyzji.
-- **Sekcje `#contact` nie mają już wejścia z CTA.** Pięć podstron kursowych nadal renderuje pełny
-  formularz, do którego nic nie prowadzi poza nagłówkiem i stopką. Zostawione (design zatwierdzony),
-  ale warto przy okazji rozstrzygnąć, czy mają zostać.
+- **CTA wróciły do formularza** (Anthony 2026-10-14). Kalendarz Google był podpięty przez dwa dni
+  (12–14.10) i został cofnięty: woli dostać zapytanie i sam uzgodnić termin, niż wpuszczać gości
+  do swojego kalendarza. Wróci do tematu po 2–3 miesiącach, jeśli konwersja z formularza zawiedzie.
+  Przy okazji potwierdziło się, że jego harmonogram i tak nie działał dla niezalogowanych
+  („Meeting not found") — więc wdrożenie tego byłoby awarią. **Nie podpinać kalendarza ponownie
+  bez jego wyraźnej prośby.**
 - **Nowa grafika Business jest o ~24% szersza niż rysunek** (marginesy boczne L101/R137 przy 1014 px
   szerokości, bo kadr mieści laskę). Przy stałym limicie `max-w-[36vw]` figura schodzi na telefonie
   z 140×300 px do **107×210 px** — zmierzone. Na desktopie bez zmian (wiąże wysokość). Użyte

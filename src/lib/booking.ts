@@ -1,14 +1,16 @@
 // Where every "Book now" / "Book your free assessment" CTA on the site points:
-// the school's Google Calendar appointment schedule (Anthony 2026-10-12).
+// the contact form (id="contact") at the foot of whichever page the visitor
+// is on — homepage and all five course pages, phone and desktop alike.
 //
-// This supersedes the 2026-09-20 decision to route enquiries through the
-// contact form first. All six CTAs read this constant and spread
-// `bookingLinkProps` (Header x2, Hero, Pricing, CourseHero on the five course
-// pages), so pointing them elsewhere is a one-line change.
+// Anthony settled this twice. It was the original decision (2026-09-20), was
+// briefly pointed at his Google Calendar appointment schedule (2026-10-12),
+// and he reverted it on 2026-10-14: he would rather receive the enquiry and
+// agree a time himself than let visitors book straight into his calendar. He
+// will review conversion after two or three months.
 //
-// The "Contact" link in the header is deliberately separate and still goes to
-// the form (Anthony 2026-10-07), so the form stays reachable.
-export const BOOKING_URL = "https://calendar.app.google/R3duMzzaJQBKy8Lc6";
+// All six CTAs read this constant and spread `bookingLinkProps`, so moving
+// them is a one-line change — but it is a decision, not a detail.
+export const BOOKING_URL = "#contact";
 
 /** True while the CTAs jump within the page rather than off to a scheduler. */
 export const isInPageBooking = BOOKING_URL.startsWith("#");

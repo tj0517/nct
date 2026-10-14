@@ -13,7 +13,8 @@ const ContactSchema = z.object({
   name: z.string().trim().min(1).max(100),
   email: z.email().max(254),
   phone: z.string().trim().max(30).optional().default(""),
-  message: z.string().trim().min(1).max(5000),
+  // Optional, and labelled as such in the form — Anthony 2026-10-14.
+  message: z.string().trim().max(5000).optional().default(""),
   consent: z.literal(true),
 });
 
@@ -29,7 +30,7 @@ function buildBody(data: { name: string; email: string; phone: string; message: 
     `Phone: ${data.phone || "-"}`,
     "",
     "Message:",
-    data.message,
+    data.message || "(none)",
   ].join("\n");
 }
 

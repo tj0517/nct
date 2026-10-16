@@ -91,6 +91,8 @@ export default function FAQ({ dict }: { dict: FAQDict }) {
             <div key={i} className="border-b border-main">
               <button
                 onClick={() => toggle(i)}
+                aria-expanded={isOpen}
+                aria-controls={`faq-answer-${i}`}
                 className="flex items-center gap-2 md:gap-[10px] p-3 md:p-4 w-full cursor-pointer group transition-colors duration-300 hover:bg-main/5 rounded-lg"
               >
                 {/* Number circle */}
@@ -144,11 +146,16 @@ export default function FAQ({ dict }: { dict: FAQDict }) {
                 ref={(el) => {
                   answerRefs.current[i] = el;
                 }}
+                id={`faq-answer-${i}`}
                 className="overflow-hidden"
                 style={{ height: 0 }}
               >
-                <div className="pb-6">
-                  <p className="font-fraunces font-light text-base md:text-lg text-main leading-relaxed px-4 pl-14 pr-14 md:pl-[90px] md:pr-[90px]">
+                {/* Phones had the answer at 16px between two 56px indents —
+                    238px of measure, about 29 characters a line. Smaller type,
+                    tighter leading and a much shallower indent (Anthony,
+                    2026-10-14). Desktop is unchanged. */}
+                <div className="pb-4 md:pb-6">
+                  <p className="font-fraunces font-light text-[15px] md:text-lg text-main leading-[1.55] md:leading-relaxed pl-6 pr-5 md:pl-[90px] md:pr-[90px]">
                     {faq.answer}
                   </p>
                 </div>

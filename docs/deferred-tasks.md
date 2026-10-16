@@ -215,3 +215,18 @@
   i czekać na niego, nie na własny skrót.
 - **Film Alana trwa 7,9 s** przy 26 s i 73 s pozostałych — wygląda na ucięty eksport.
   Do potwierdzenia przez Anthony'ego.
+
+## FAQ — treść Anthony'ego z 12.10 (2026-10-14)
+
+- **42 pytania zamiast 6**, nagłówek skrócony do „FAQ". Źródłem jest jego CSV → `en.json` →
+  `scripts/patch-faq.mjs` wgrywa to samo do Sanity, więc fallback i CMS nie mogą się rozjechać.
+  `faq.label`, `faq.meta` i `seo` na dokumencie nietknięte.
+- **Widoczność dla robotów była już w porządku** — odpowiedzi renderują się serwerowo i siedzą
+  w DOM przy `height:0`, a `FAQPage` w JSON-LD budowane jest z tej samej tablicy. Po podmianie:
+  42/42 pytań i 42/42 odpowiedzi w surowym HTML, 42 w danych strukturalnych. Nic nie trzeba było
+  zmieniać, tylko udowodnić.
+- **Cache Sanity potrafi trafić w inny węzeł CDN niż `curl`.** Czwarty raz w tym zadaniu build
+  wkompilował starą treść mimo że `apicdn` z mojego adresu oddawał już nową — i to przy
+  identycznym query i `apiVersion`. Jedyna pewna weryfikacja to **sprawdzenie zbudowanego
+  artefaktu** (`.next/server/app/<trasa>.html`), nie odpowiedzi API. Na produkcji nieistotne:
+  ISR odświeża stronę w ciągu 60 s.

@@ -18,9 +18,7 @@ const ContactSchema = z.object({
   consent: z.literal(true),
 });
 
-/* Resend's shared sandbox sender — the school's own domain isn't verified in
-   Resend yet (deferred, see docs/deferred-tasks.md). */
-const FROM_ADDRESS = "A Nice Cup of Tea <onboarding@resend.dev>";
+const FROM_ADDRESS = "A Nice Cup of Tea <contact@anicecupoftea.pl>";
 const SUBJECT = "New enquiry — anicecupoftea.pl contact form";
 
 function buildBody(data: { name: string; email: string; phone: string; message: string }) {

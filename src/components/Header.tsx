@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import Button from "./Button";
 import type { Locale } from "@/dictionaries";
 import { localePath } from "@/lib/locale-path";
@@ -14,8 +15,8 @@ interface HeaderDict {
 }
 
 /* Flags are drawn inline: the repo has no icon package and these are the only
-   two it needs. Both sit in the same 3:2 box so the toggle stays symmetrical —
-   the Union Flag's true ratio is 1:2, and its diagonals are drawn without the
+   two it needs. Both sit in the same 3:2 box so swapping one for the other
+   never shifts the bar — the Union Flag's true ratio is 1:2, and its diagonals are drawn without the
    counterchange; neither reads at 22px. */
 function FlagPL({ className = "" }: { className?: string }) {
   return (
@@ -38,60 +39,57 @@ function FlagGB({ className = "" }: { className?: string }) {
   );
 }
 
-function LanguageSwitcher({ lang }: { lang: Locale }) {
-  const [pending, setPending] = useState<Locale | null>(null);
+/* One flag, pointing at the other language: the Polish flag on the English
+   site, the Union Flag on the Polish one (Anthony 2026-10-28 — it replaced the
+   PL/EN slider). Links to the same page in that language.
 
-  function switchLocale(targetLocale: Locale) {
-    // Polish copy isn't ready yet — the toggle stays interactive/animated,
-    // but doesn't actually navigate or change the site's language.
-    setPending(targetLocale);
-  }
+   Both the server (which renders the rewritten /pl/... path) and the browser
+   (which shows the unprefixed one) strip the locale before building the href,
+   so the two always agree and hydration never mismatches.
 
-  const isEn = (pending ?? lang) === "en";
+   While the Polish version is switched off in Sanity there is nothing to
+   switch to, so the Polish flag is not shown at all. */
+function LocaleFlag({ lang, polishLive }: { lang: Locale; polishLive: boolean }) {
+  const pathname = usePathname() ?? "/";
+  const target: Locale = lang === "en" ? "pl" : "en";
+  if (target === "pl" && !polishLive) return null;
+  // "/", "/pl" and "/en" all reduce to "" — the homepage is "/en", not "/en/".
+  const page = pathname.replace(/^\/(pl|en)(?=\/|$)/, "").replace(/\/$/, "");
+  const href = localePath(page, target, polishLive) || "/";
+  const Flag = target === "pl" ? FlagPL : FlagGB;
 
   return (
-    <div className="flex items-center gap-2">
-      <span className={`flex transition-opacity duration-300 ${!isEn ? "opacity-100" : "opacity-75"}`}>
-        <FlagPL className="rounded-[2px] ring-1 ring-main/25" />
-        <span className="sr-only">Polski</span>
-      </span>
-
-      <button
-        type="button"
-        role="switch"
-        aria-checked={isEn}
-        aria-label={isEn ? "Przełącz na polski" : "Switch to English"}
-        onClick={() => switchLocale(isEn ? "pl" : "en")}
-        className={`relative w-16 h-8 shrink-0 border-2 border-main-bg/70 shadow-[0_6px_12px_rgba(1,33,105,0.25)] cursor-pointer transition-[border-radius,background-color] duration-700 ease-[cubic-bezier(.19,1,.22,1)] ${
-          isEn
-            ? "bg-accent rounded-tl-[32px] rounded-tr-[32px] rounded-br-[10px] rounded-bl-[32px]"
-            : "bg-main rounded-tl-[10px] rounded-tr-[32px] rounded-br-[32px] rounded-bl-[32px]"
-        }`}
-      >
-        <span
-          aria-hidden
-          className={`absolute top-1/2 -translate-y-1/2 size-[22px] border-2 border-main-bg/70 transition-[left,border-radius,background-color] duration-700 ease-[cubic-bezier(.19,1,.22,1)] ${
-            isEn
-              ? "left-[calc(100%-26px)] bg-main rounded-tl-[32px] rounded-tr-[32px] rounded-br-[8px] rounded-bl-[32px]"
-              : "left-1 bg-accent rounded-tl-[8px] rounded-tr-[32px] rounded-br-[32px] rounded-bl-[32px]"
-          }`}
-        />
-      </button>
-
-      <span className={`flex transition-opacity duration-300 ${isEn ? "opacity-100" : "opacity-75"}`}>
-        <FlagGB className="rounded-[2px] ring-1 ring-main/25" />
-        <span className="sr-only">English</span>
-      </span>
-    </div>
+    <a
+      href={href}
+      hrefLang={target}
+      lang={target}
+      aria-label={target === "pl" ? "Wersja polska" : "English version"}
+      className="flex shrink-0 opacity-90 hover:opacity-100 transition-opacity"
+    >
+      <Flag className="rounded-[2px] ring-1 ring-main/25" />
+    </a>
   );
 }
+
+/* The contact form sits at the foot of every page and "Book now" already goes
+   there, so the desktop bar drops Contact (Anthony 2026-10-28). The mobile menu
+   keeps it, pointed — like "Book now" — at the form on the page being read
+   rather than the homepage's, so it never waits on a second page load. Both
+   handled here because the link list itself comes from Sanity ("/#contact"). */
+const isContactLink = (href: string) => href.endsWith("#contact");
 
 export default function Header({
   dict,
   lang,
+  phone,
+  polishLive,
 }: {
   dict: HeaderDict;
   lang: Locale;
+  /** Shown as plain, selectable text in the desktop bar — not a tel: link. */
+  phone: string;
+  /** Sanity's "Polish version live" switch — see locale-content.ts. */
+  polishLive: boolean;
 }) {
   const [coursesOpen, setCoursesOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -101,7 +99,7 @@ export default function Header({
       <header className="fixed top-0 left-0 right-0 z-40 bg-main-bg/70 backdrop-blur-md">
         <div className="max-w-[1440px] mx-auto px-3 min-[400px]:px-5 md:px-16 py-4 flex items-center justify-between gap-2">
           <a
-            href={localePath("/", lang)}
+            href={localePath("/", lang, polishLive)}
             className="font-cormorant-garamond font-semibold text-[15px] min-[400px]:text-base sm:text-xl lg:text-2xl text-main tracking-tight whitespace-nowrap shrink min-w-0 overflow-hidden text-ellipsis"
           >
             A Nice Cup of Tea
@@ -131,6 +129,8 @@ export default function Header({
 
           {/* Desktop nav */}
           <nav className="hidden lg:flex items-center gap-10">
+            <LocaleFlag lang={lang} polishLive={polishLive} />
+
             {/* Courses dropdown */}
             <div
               className="relative"
@@ -156,7 +156,7 @@ export default function Header({
                     {dict.courseLinks.map((link) => (
                       <a
                         key={link.href}
-                        href={localePath(link.href, lang)}
+                        href={localePath(link.href, lang, polishLive)}
                         className="block px-4 py-2.5 font-inter text-[13px] text-main/70 hover:text-accent-text hover:bg-accent-text/5 rounded-lg transition-colors"
                       >
                         {link.label}
@@ -167,21 +167,25 @@ export default function Header({
               )}
             </div>
 
-            {dict.navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={localePath(link.href, lang)}
-                className="font-inter text-[13px] uppercase tracking-[0.08em] text-main/70 hover:text-accent-text transition-colors"
-              >
-                {link.label}
-              </a>
-            ))}
+            {dict.navLinks
+              .filter((link) => !isContactLink(link.href))
+              .map((link) => (
+                <a
+                  key={link.href}
+                  href={localePath(link.href, lang, polishLive)}
+                  className="font-inter text-[13px] uppercase tracking-[0.08em] text-main/70 hover:text-accent-text transition-colors"
+                >
+                  {link.label}
+                </a>
+              ))}
 
-            <LanguageSwitcher lang={lang} />
+            <span className="font-inter text-[13px] tracking-[0.08em] text-main/70 whitespace-nowrap">
+              {phone}
+            </span>
 
-              <a href={BOOKING_URL} {...bookingLinkProps}>
-                <Button variant="filled" size="small">{dict.bookNow}</Button>
-              </a>
+            <a href={BOOKING_URL} {...bookingLinkProps}>
+              <Button variant="filled" size="small">{dict.bookNow}</Button>
+            </a>
           </nav>
         </div>
 
@@ -197,7 +201,7 @@ export default function Header({
                 {dict.courseLinks.map((link) => (
                   <a
                     key={link.href}
-                    href={localePath(link.href, lang)}
+                    href={localePath(link.href, lang, polishLive)}
                     onClick={() => setMobileOpen(false)}
                     className="font-inter text-sm text-main/80 py-2"
                   >
@@ -209,7 +213,7 @@ export default function Header({
               {dict.navLinks.map((link) => (
                 <a
                   key={link.href}
-                  href={localePath(link.href, lang)}
+                  href={isContactLink(link.href) ? "#contact" : localePath(link.href, lang, polishLive)}
                   onClick={() => setMobileOpen(false)}
                   className="font-inter text-[13px] uppercase tracking-[0.08em] text-main/70 py-3"
                 >
@@ -218,7 +222,7 @@ export default function Header({
               ))}
 
               <div className="pt-4 border-t border-main/10 mt-2">
-                <LanguageSwitcher lang={lang} />
+                <LocaleFlag lang={lang} polishLive={polishLive} />
               </div>
             </nav>
           </div>

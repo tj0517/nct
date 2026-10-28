@@ -21,7 +21,7 @@ export async function generateMetadata({
   return {
     title: dict.faq.meta.title,
     description: dict.faq.meta.description,
-    ...localeMetadata(lang as Locale, "/faq"),
+    ...(await localeMetadata(lang as Locale, "/faq")),
     ...socialMetadata(lang as Locale, dict.faq.meta.title, dict.faq.meta.description),
   };
 }

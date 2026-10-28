@@ -2,11 +2,13 @@
 
 import { useState } from "react";
 
+/* Phones and tablets only: on a desktop a tel:/sms: link does nothing, and the
+   number is in the header bar instead (Anthony 2026-10-28). */
 export default function PhoneFloat() {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="fixed bottom-6 right-5 md:bottom-20 md:right-8 z-50 flex flex-col items-end gap-3">
+    <div className="fixed bottom-6 right-5 md:bottom-20 md:right-8 z-50 flex flex-col items-end gap-3 lg:hidden">
       {open && (
         <div className="flex flex-col gap-2 bg-main-bg rounded-bl-[20px] rounded-tr-[20px] border border-main/15 shadow-lg overflow-hidden">
           <a

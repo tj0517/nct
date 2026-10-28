@@ -7,6 +7,7 @@ export const homepageQuery = `*[_type == "homepage" && _id == "homepage"][0]{
 export const headerQuery = `*[_type == "header" && _id == "header"][0]`;
 export const footerQuery = `*[_type == "footer" && _id == "footer"][0]`;
 export const siteSettingsQuery = `*[_type == "siteSettings" && _id == "siteSettings"][0]`;
+export const polishLiveQuery = `*[_type == "siteSettings" && _id == "siteSettings"][0].polishLive`;
 export const formsAndBookingQuery = `*[_type == "formsAndBooking" && _id == "formsAndBooking"][0]`;
 
 // `videoUrl` drives the "Watch intro" button: empty means no button at all, so

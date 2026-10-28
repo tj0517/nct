@@ -27,7 +27,7 @@ export async function generateMetadata({
   return {
     title: dict.business.meta.title,
     description: dict.business.meta.description,
-    ...localeMetadata(lang as Locale, "/business"),
+    ...(await localeMetadata(lang as Locale, "/business")),
     ...socialMetadata(lang as Locale, dict.business.meta.title, dict.business.meta.description),
   };
 }

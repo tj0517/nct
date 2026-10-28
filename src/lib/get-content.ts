@@ -282,6 +282,8 @@ export async function getContent(locale: Locale): Promise<Dictionary> {
       subtitle: t(hero?.subtitle, locale, fb.hero.subtitle),
       ctaPrimary: t(hero?.ctaPrimary, locale, fb.hero.ctaPrimary),
       ctaPrimaryShort: t(hero?.ctaPrimaryShort, locale, fb.hero.ctaPrimaryShort),
+      // No Sanity field: the artwork is chosen per locale in the dictionary.
+      illustration: fb.hero.illustration,
     },
 
     // The two badges have different shapes in `en.json` (one has a link, the

@@ -102,7 +102,24 @@ export default function ContactForm({ dict }: { dict: ContactFormDict }) {
       </Button>
 
       {status === "success" && (
-        <p className="font-inter text-sm text-union-white/90">{dict.successMessage}</p>
+        <p role="status" className="flex items-start gap-3 font-inter text-sm text-union-white/90">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden
+            className="text-success shrink-0"
+          >
+            <circle cx="12" cy="12" r="10" />
+            <path d="m8 12.5 2.5 2.5L16 9.5" />
+          </svg>
+          {dict.successMessage}
+        </p>
       )}
       {status === "error" && (
         <p className="font-inter text-sm text-union-white/90">{dict.errorMessage}</p>

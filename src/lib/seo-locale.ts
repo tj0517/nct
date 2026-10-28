@@ -1,21 +1,22 @@
 import type { Metadata } from "next";
 import { servedLocale } from "@/lib/locale-content";
+import { getPolishLive } from "@/lib/polish-live";
 import type { Locale } from "@/dictionaries";
 
 /**
  * `alternates.canonical` + `robots` for a page, driven entirely by the
- * locale-content switch in locale-content.ts:
+ * "Polish version live" switch in Sanity (see locale-content.ts):
  * - the locale actually serving the content → canonical to itself, indexable
- * - any other locale (today: "pl") → canonical to the serving locale's
+ * - any other locale ("pl" while the switch is off) → canonical to the serving locale's
  *   address, `noindex` so Google doesn't treat it as a duplicate
  *
  * `path` is the unprefixed page path, e.g. "" for the home page or "/adults".
  */
-export function localeMetadata(
+export async function localeMetadata(
   locale: Locale,
   path: string
-): Pick<Metadata, "alternates" | "robots"> {
-  const canonicalLocale = servedLocale(locale);
+): Promise<Pick<Metadata, "alternates" | "robots">> {
+  const canonicalLocale = servedLocale(locale, await getPolishLive());
   const metadata: Pick<Metadata, "alternates" | "robots"> = {
     alternates: { canonical: `/${canonicalLocale}${path}` },
   };

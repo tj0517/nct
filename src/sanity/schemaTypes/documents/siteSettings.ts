@@ -7,8 +7,21 @@ export const siteSettings = defineType({
   groups: [
     { name: "contact", title: "Contact details", default: true },
     { name: "seo", title: "Default SEO" },
+    { name: "language", title: "Polish version" },
   ],
   fields: [
+    defineField({
+      name: "polishLive",
+      title: "Polish version live",
+      description:
+        "On: the Polish site is the homepage at anicecupoftea.pl, with a flag to switch " +
+        "to English. Any text without a Polish version shows in English. Off: visitors " +
+        "only see the English site. Changes take a minute or two to appear. " +
+        "Anthony 2026-10-28.",
+      type: "boolean",
+      initialValue: false,
+      group: "language",
+    }),
     defineField({
       name: "siteName",
       title: "School name",

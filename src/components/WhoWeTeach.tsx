@@ -10,9 +10,11 @@ interface WhoWeTeachDict {
 export default function WhoWeTeach({
   dict,
   lang,
+  polishLive,
 }: {
   dict: WhoWeTeachDict;
   lang: Locale;
+  polishLive: boolean;
 }) {
   return (
     <section className="w-full relative z-10 -mb-32">
@@ -28,7 +30,7 @@ export default function WhoWeTeach({
             {dict.categories.map((cat, i) => (
               <a
                 key={i}
-                href={localePath(cat.href, lang)}
+                href={localePath(cat.href, lang, polishLive)}
                 data-wwt-row
                 className={`flex flex-row items-center gap-4 md:gap-[10px] py-4 border-second-bg overflow-hidden ${
                   i === 0 ? "border-t border-b" : "border-b"

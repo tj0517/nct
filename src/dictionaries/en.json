@@ -41,7 +41,13 @@
     "headlineBold": " English",
     "subtitle": "Native speakers of British English.\nAn Oxford graduate and two PhDs.\nFace to face in Warsaw or online.",
     "ctaPrimary": "Book your free assessment with Anthony",
-    "ctaPrimaryShort": "Book your free assessment"
+    "ctaPrimaryShort": "Book your free assessment",
+    "illustration": {
+      "src": "/images/heroes/king-hero.png",
+      "width": 874,
+      "height": 1101,
+      "alt": "Illustration of the King of Hearts reading a letter"
+    }
   },
   "trustBar": {
     "badges": [

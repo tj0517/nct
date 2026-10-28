@@ -13,6 +13,7 @@ import type { Locale } from "@/dictionaries";
 import { notFound } from "next/navigation";
 import { THEME_INIT_SCRIPT } from "@/lib/theme";
 import { servedLocale } from "@/lib/locale-content";
+import { getPolishLive } from "@/lib/polish-live";
 import { localeMetadata, socialMetadata } from "@/lib/seo-locale";
 import { siteUrl } from "@/lib/site-url";
 
@@ -51,7 +52,7 @@ export async function generateMetadata({
     metadataBase: new URL(siteUrl),
     title: dict.meta.title,
     description: dict.meta.description,
-    ...localeMetadata(lang as Locale, ""),
+    ...(await localeMetadata(lang as Locale, "")),
     ...socialMetadata(lang as Locale, dict.meta.title, dict.meta.description),
   };
 }
@@ -67,6 +68,7 @@ export default async function RootLayout({
   if (!hasLocale(lang)) notFound();
 
   const dict = await getContent(lang as Locale);
+  const polishLive = await getPolishLive();
 
   // Describes the school for Google (name, contact, address) — the same values
   // the page itself shows (NCT-2.03), now read from `dict.site` so the footer,
@@ -78,7 +80,7 @@ export default async function RootLayout({
     "@type": ["EducationalOrganization", "LocalBusiness"],
     name: "A Nice Cup of Tea",
     description: dict.meta.description,
-    url: `${siteUrl}/${servedLocale(lang)}`,
+    url: `${siteUrl}/${servedLocale(lang, polishLive)}`,
     telephone: dict.site.phone,
     email: dict.site.email,
     address: {
@@ -93,7 +95,7 @@ export default async function RootLayout({
 
   return (
     <html
-      lang={servedLocale(lang)}
+      lang={servedLocale(lang, polishLive)}
       className={`${fraunces.variable} ${inter.variable} ${cormorantGaramond.variable} antialiased`}
       suppressHydrationWarning
     >
@@ -112,7 +114,12 @@ export default async function RootLayout({
         <ThemeProvider>
           <BookingModalProvider bookingDict={dict.booking}>
             <GsapProvider>
-              <Header dict={dict.header} lang={lang as Locale} />
+              <Header
+                dict={dict.header}
+                lang={lang as Locale}
+                phone={dict.site.phone}
+                polishLive={polishLive}
+              />
               {children}
               <PhoneFloat />
             </GsapProvider>

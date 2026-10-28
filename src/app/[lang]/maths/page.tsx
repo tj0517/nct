@@ -34,7 +34,7 @@ export async function generateMetadata({
   return {
     title: dict.maths.meta.title,
     description: dict.maths.meta.description,
-    ...localeMetadata(lang as Locale, "/maths"),
+    ...(await localeMetadata(lang as Locale, "/maths")),
     ...socialMetadata(lang as Locale, dict.maths.meta.title, dict.maths.meta.description),
   };
 }

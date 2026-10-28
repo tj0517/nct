@@ -33,7 +33,7 @@ export async function generateMetadata({
   return {
     title: dict.children.meta.title,
     description: dict.children.meta.description,
-    ...localeMetadata(lang as Locale, "/children"),
+    ...(await localeMetadata(lang as Locale, "/children")),
     ...socialMetadata(lang as Locale, dict.children.meta.title, dict.children.meta.description),
   };
 }

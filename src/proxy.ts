@@ -1,10 +1,33 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import { hasOwnContent } from "@/lib/locale-content";
+import { getClient } from "@/sanity/client";
+import { polishLiveQuery } from "@/sanity/queries";
 
 const locales = ["pl", "en"];
 
-export function proxy(request: NextRequest) {
+/* The "Polish version live" switch from Sanity (see polish-live.ts, which
+   pages use). The proxy runs on every page request, so the answer is kept in
+   memory for a minute — the same window the pages' own fetch uses. Any
+   failure counts as off: the English site is the safe default. */
+const POLISH_LIVE_TTL_MS = 60_000;
+let polishLiveMemo: { value: boolean; at: number } | null = null;
+
+async function polishLive(): Promise<boolean> {
+  if (polishLiveMemo && Date.now() - polishLiveMemo.at < POLISH_LIVE_TTL_MS) {
+    return polishLiveMemo.value;
+  }
+  let value = false;
+  try {
+    value = (await getClient()?.fetch<boolean | null>(polishLiveQuery)) === true;
+  } catch {
+    value = polishLiveMemo?.value ?? false;
+  }
+  polishLiveMemo = { value, at: Date.now() };
+  return value;
+}
+
+export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   // Sanity Studio is not localised — rewriting it to /pl/studio gives a 404
@@ -18,7 +41,7 @@ export function proxy(request: NextRequest) {
   if (pathnameHasLocale) return;
 
   // Once "pl" has its own content, serve it at the unprefixed path as before.
-  if (hasOwnContent("pl")) {
+  if (hasOwnContent("pl", await polishLive())) {
     request.nextUrl.pathname = `/pl${pathname}`;
     return NextResponse.rewrite(request.nextUrl);
   }

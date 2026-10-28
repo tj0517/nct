@@ -27,6 +27,7 @@ const RULES = [
   // ---- homepage: hero ----
   [/^hero\.(headlineLine1|headlineItalic|headlineBold|ctaPrimary|ctaPrimaryShort)$/, "homepage", "hero.$1", "localizedString", ""],
   [/^hero\.subtitle$/, "homepage", "hero.subtitle", "localizedText", "newlines = line breaks"],
+  [/^hero\.illustration\.(src|width|height|alt)$/, "—", "—", "code only", "per-locale artwork, src/dictionaries (pl: pl-overrides.ts); not in Sanity (Anthony 2026-10-28)"],
 
   // ---- homepage: trust bar (tj A1) ----
   [/^trustBar\.badges\[(\d+)]\.heading$/, "homepage", "trustBar.badges[$1].heading", "localizedString", "tj 2026-09-30 (A1): Homepage tab"],

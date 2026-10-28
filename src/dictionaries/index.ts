@@ -1,10 +1,16 @@
 import "server-only";
 
+import { plOverrides } from "./pl-overrides";
+
 const dictionaries = {
-  // Polish copy was a word-for-word translation and looked bad, so the "pl"
-  // locale now serves the English dictionary too. The language switch stays
-  // visually interactive (see Header.tsx) but both options render English.
-  pl: () => import("./en.json").then((m) => m.default),
+  // The old pl.json was a word-for-word translation and looked bad, so "pl"
+  // is the English dictionary with the Polish copy written so far laid over
+  // it, section by section (see pl-overrides.ts).
+  pl: () =>
+    import("./en.json").then(({ default: en }) => ({
+      ...en,
+      hero: { ...en.hero, ...plOverrides.hero },
+    })),
   en: () => import("./en.json").then((m) => m.default),
 };
 

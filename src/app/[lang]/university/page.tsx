@@ -31,7 +31,7 @@ export async function generateMetadata({
   return {
     title: dict.university.meta.title,
     description: dict.university.meta.description,
-    ...localeMetadata(lang as Locale, "/university"),
+    ...(await localeMetadata(lang as Locale, "/university")),
     ...socialMetadata(lang as Locale, dict.university.meta.title, dict.university.meta.description),
   };
 }

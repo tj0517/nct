@@ -15,11 +15,16 @@ interface HeroDict {
   subtitle: string;
   ctaPrimary: string;
   ctaPrimaryShort: string;
+  /** Per locale: the King on the English homepage, Alice in her crown on the
+      Polish one. Width/height set the box's aspect ratio. */
+  illustration: { src: string; width: number; height: number; alt: string };
 }
 
 export default function Hero({ dict }: { dict: HeroDict }) {
   const ref = useRef<HTMLElement>(null);
   const reduced = useReducedMotion();
+  const art = dict.illustration;
+  const artRatio = { aspectRatio: `${art.width} / ${art.height}` };
 
   useGSAP(
     () => {
@@ -74,7 +79,7 @@ export default function Hero({ dict }: { dict: HeroDict }) {
               </span>
             </h1>
 
-            {/* King illustration — phones only (below md). Absolutely positioned
+            {/* Illustration (King / Alice, see dict) — phones only (below md). Absolutely positioned
                 top-right beside the headline (out of flow, so he never stretches
                 this row or pushes the subtitle down); he scales with the headline
                 height, so he stays proportionally large across the whole range.
@@ -82,11 +87,12 @@ export default function Hero({ dict }: { dict: HeroDict }) {
                 the content-height King takes over. */}
             <div
               data-hero-image
-              className="pointer-events-none absolute top-0 right-0 h-full aspect-874/1101 md:hidden"
+              className="pointer-events-none absolute top-0 right-0 h-full md:hidden"
+              style={artRatio}
             >
               <Image
-                src="/images/heroes/king-hero.png"
-                alt="Illustration of the King of Hearts reading a letter"
+                src={art.src}
+                alt={art.alt}
                 fill
                 className="object-cover object-top"
                 priority
@@ -117,7 +123,7 @@ export default function Hero({ dict }: { dict: HeroDict }) {
           <div aria-hidden className="grow-[2] md:hidden" />
         </div>
 
-        {/* King illustration — md and up (below md the inline King beside the
+        {/* Illustration (King / Alice, see dict) — md and up (below md the inline King beside the
             headline is shown instead, so he's never hidden at any breakpoint).
             inset-y-0 pins him to the exact height of the text column — crown level
             with the headline, base level with the CTAs — and aspect-ratio derives
@@ -126,11 +132,12 @@ export default function Hero({ dict }: { dict: HeroDict }) {
             stays top-anchored, crown level with the headline. */}
         <div
           data-hero-image
-          className="pointer-events-none absolute inset-y-0 right-0 hidden md:block aspect-874/1101 max-w-[42%]"
+          className="pointer-events-none absolute inset-y-0 right-0 hidden md:block max-w-[42%]"
+          style={artRatio}
         >
           <Image
-            src="/images/heroes/king-hero.png"
-            alt="Illustration of the King of Hearts reading a letter"
+            src={art.src}
+            alt={art.alt}
             fill
             sizes="42vw"
             className="object-contain object-bottom"

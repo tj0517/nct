@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { hasLocale } from "@/dictionaries";
 import { getContent } from "@/lib/get-content";
+import { getPolishLive } from "@/lib/polish-live";
 import type { Locale } from "@/dictionaries";
 import Hero from "@/components/Hero";
 import TrustBar from "@/components/TrustBar";
@@ -28,6 +29,7 @@ export default async function Home({
   if (!hasLocale(lang)) notFound();
 
   const dict = await getContent(lang as Locale);
+  const polishLive = await getPolishLive();
 
   return (
     <>
@@ -51,7 +53,7 @@ export default async function Home({
         </div>
         <div className="w-full mt-8 md:mt-16">
           <WhoWeTeachAnimated>
-            <WhoWeTeach dict={dict.whoWeTeach} lang={lang as Locale} />
+            <WhoWeTeach dict={dict.whoWeTeach} lang={lang as Locale} polishLive={polishLive} />
           </WhoWeTeachAnimated>
         </div>
         <SectionBgReveal className="w-full">

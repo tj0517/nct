@@ -5,6 +5,9 @@
   --union-blue: #012169;
   --union-crimson: #C8102E;
   --union-white: #FFFFFF;
+  /* Form confirmation tick only (Anthony 2026-10-28). Sits on the Union Blue
+     form card in both themes, so it is not switched per theme. */
+  --success: #4CC38A;
 
   /* "blue" theme (homepage & default): navy ground, white text */
   --main: #FFFFFF;
@@ -33,6 +36,7 @@ html[data-theme="light"] {
   --color-union-blue: var(--union-blue);
   --color-union-crimson: var(--union-crimson);
   --color-union-white: var(--union-white);
+  --color-success: var(--success);
   --font-fraunces: var(--font-fraunces-var);
   --font-inter: var(--font-inter-var);
   --font-cormorant-garamond: var(--font-cormorant-garamond-var);

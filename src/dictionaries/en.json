@@ -182,7 +182,7 @@
     "consent": "I agree to be contacted by A Nice Cup of Tea.",
     "submitCta": "Send form",
     "sendingCta": "Sending...",
-    "successMessage": "Thanks! We've received your message and will be in touch soon.",
+    "successMessage": "Thanks! We've received your message and will be in touch within 24 hours.",
     "errorMessage": "Something went wrong. Please try again, or reach us directly at +48 453 374 984 or anthony@anicecupoftea.pl."
   },
   "map": {
@@ -499,7 +499,7 @@
       "imageKind": "photo"
     },
     "help": {
-      "heading": "We can help your child with:",
+      "heading": "We can help your child:",
       "items": [
         "Speak confidently and understand natural English",
         "Read, write, listen and build vocabulary",

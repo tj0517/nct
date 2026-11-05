@@ -61,10 +61,10 @@ export default function Hero({ dict }: { dict: HeroDict }) {
               below — so the CTA sits where a centred block would put it while
               the headline + subtitle ride higher. Hidden from md. */}
           <div aria-hidden className="grow md:hidden" />
-          <div className="relative w-full md:contents">
+          <div className={`relative w-full md:contents ${swap ? "flex items-center gap-[3vw]" : ""}`}>
             <h1
               data-hero-headline
-              className="pr-[min(40vw,300px)] md:pr-0 font-fraunces font-bold text-[min(12vw,84px)] md:text-[8vw] leading-none text-main"
+              className={`${swap ? "shrink-0" : "pr-[min(40vw,300px)]"} md:pr-0 font-fraunces font-bold text-[min(12vw,84px)] md:text-[8vw] leading-none text-main`}
             >
               {/* Phones: every word owns its own line (block) with the King beside
                   it. From md the words flow inline again ("Speak the" / "King's
@@ -92,12 +92,15 @@ export default function Hero({ dict }: { dict: HeroDict }) {
                 this row or pushes the subtitle down); he scales with the headline
                 height, so he stays proportionally large across the whole range.
                 The headline reserves space for him via its right padding. From md
-                the content-height King takes over. Alice (swap) is drawn larger than
-                the headline and centred on it, so the two share a vertical middle. */}
+                the content-height King takes over. Alice (swap) instead sits in flow
+                beside the headline, filling the width it leaves free (capped a little
+                taller than the headline), vertically centred on it. */}
             <div
               data-hero-image
-              className={`pointer-events-none absolute md:hidden ${
-                swap ? "top-1/2 -translate-y-1/2 -right-[2vw] h-[130%]" : "top-0 right-0 h-full"
+              className={`pointer-events-none md:hidden ${
+                swap
+                  ? "relative flex-1 min-w-0 max-w-[min(32vw,224px)] ml-auto"
+                  : "absolute top-0 right-0 h-full"
               }`}
               style={artRatio}
             >

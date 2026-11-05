@@ -279,6 +279,8 @@ export async function getContent(locale: Locale): Promise<Dictionary> {
       headlineLine1: t(hero?.headlineLine1, locale, fb.hero.headlineLine1),
       headlineItalic: t(hero?.headlineItalic, locale, fb.hero.headlineItalic),
       headlineBold: t(hero?.headlineBold, locale, fb.hero.headlineBold),
+      // Layout flag, not copy: no Sanity field.
+      italicLast: fb.hero.italicLast,
       subtitle: t(hero?.subtitle, locale, fb.hero.subtitle),
       ctaPrimary: t(hero?.ctaPrimary, locale, fb.hero.ctaPrimary),
       ctaPrimaryShort: t(hero?.ctaPrimaryShort, locale, fb.hero.ctaPrimaryShort),

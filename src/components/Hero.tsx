@@ -12,6 +12,9 @@ interface HeroDict {
   headlineLine1: string;
   headlineItalic: string;
   headlineBold: string;
+  /** The last word is the italic one instead of the middle one (Polish:
+      "Angielski godny *korony*"). On phones it also centres the art on the headline. */
+  italicLast?: boolean;
   subtitle: string;
   ctaPrimary: string;
   ctaPrimaryShort: string;
@@ -25,6 +28,7 @@ export default function Hero({ dict }: { dict: HeroDict }) {
   const reduced = useReducedMotion();
   const art = dict.illustration;
   const artRatio = { aspectRatio: `${art.width} / ${art.height}` };
+  const swap = dict.italicLast;
 
   useGSAP(
     () => {
@@ -57,10 +61,10 @@ export default function Hero({ dict }: { dict: HeroDict }) {
               below — so the CTA sits where a centred block would put it while
               the headline + subtitle ride higher. Hidden from md. */}
           <div aria-hidden className="grow md:hidden" />
-          <div className="relative w-full md:contents">
+          <div className={`relative w-full md:contents ${swap ? "flex items-center gap-[3vw]" : ""}`}>
             <h1
               data-hero-headline
-              className="pr-[min(40vw,300px)] md:pr-0 font-fraunces font-bold text-[min(12vw,84px)] md:text-[8vw] leading-none text-main"
+              className={`${swap ? "shrink-0" : "pr-[min(40vw,300px)]"} md:pr-0 font-fraunces font-bold text-[min(12vw,84px)] md:text-[8vw] leading-none text-main`}
             >
               {/* Phones: every word owns its own line (block) with the King beside
                   it. From md the words flow inline again ("Speak the" / "King's
@@ -74,8 +78,12 @@ export default function Hero({ dict }: { dict: HeroDict }) {
                 ))}
               </span>
               <span className="block">
-                <span className="block md:inline font-normal italic">{dict.headlineItalic}</span>
-                <span className="block md:inline font-bold">{dict.headlineBold}</span>
+                <span className={`block md:inline ${swap ? "font-bold" : "font-normal italic"}`}>
+                  {dict.headlineItalic}
+                </span>
+                <span className={`block md:inline ${swap ? "font-normal italic" : "font-bold"}`}>
+                  {dict.headlineBold}
+                </span>
               </span>
             </h1>
 
@@ -84,10 +92,16 @@ export default function Hero({ dict }: { dict: HeroDict }) {
                 this row or pushes the subtitle down); he scales with the headline
                 height, so he stays proportionally large across the whole range.
                 The headline reserves space for him via its right padding. From md
-                the content-height King takes over. */}
+                the content-height King takes over. Alice (swap) instead sits in flow
+                beside the headline, filling the width it leaves free (capped a little
+                taller than the headline), vertically centred on it. */}
             <div
               data-hero-image
-              className="pointer-events-none absolute top-0 right-0 h-full md:hidden"
+              className={`pointer-events-none md:hidden ${
+                swap
+                  ? "relative flex-1 min-w-0 max-w-[min(32vw,224px)] ml-auto"
+                  : "absolute top-0 right-0 h-full"
+              }`}
               style={artRatio}
             >
               <Image

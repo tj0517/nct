@@ -11,7 +11,12 @@ const dictionaries = {
       ...en,
       hero: { ...en.hero, ...plOverrides.hero },
     })),
-  en: () => import("./en.json").then((m) => m.default),
+  // italicLast is a Polish-only layout flag (see pl-overrides.ts).
+  en: () =>
+    import("./en.json").then(({ default: en }) => ({
+      ...en,
+      hero: { ...en.hero, italicLast: false },
+    })),
 };
 
 export type Locale = keyof typeof dictionaries;

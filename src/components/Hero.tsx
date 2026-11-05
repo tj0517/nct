@@ -12,6 +12,9 @@ interface HeroDict {
   headlineLine1: string;
   headlineItalic: string;
   headlineBold: string;
+  /** The last word is the italic one instead of the middle one (Polish:
+      "Angielski godny *korony*"). On phones it also centres the art on the headline. */
+  italicLast?: boolean;
   subtitle: string;
   ctaPrimary: string;
   ctaPrimaryShort: string;
@@ -25,6 +28,7 @@ export default function Hero({ dict }: { dict: HeroDict }) {
   const reduced = useReducedMotion();
   const art = dict.illustration;
   const artRatio = { aspectRatio: `${art.width} / ${art.height}` };
+  const swap = dict.italicLast;
 
   useGSAP(
     () => {
@@ -74,8 +78,12 @@ export default function Hero({ dict }: { dict: HeroDict }) {
                 ))}
               </span>
               <span className="block">
-                <span className="block md:inline font-normal italic">{dict.headlineItalic}</span>
-                <span className="block md:inline font-bold">{dict.headlineBold}</span>
+                <span className={`block md:inline ${swap ? "font-bold" : "font-normal italic"}`}>
+                  {dict.headlineItalic}
+                </span>
+                <span className={`block md:inline ${swap ? "font-normal italic" : "font-bold"}`}>
+                  {dict.headlineBold}
+                </span>
               </span>
             </h1>
 
@@ -84,10 +92,13 @@ export default function Hero({ dict }: { dict: HeroDict }) {
                 this row or pushes the subtitle down); he scales with the headline
                 height, so he stays proportionally large across the whole range.
                 The headline reserves space for him via its right padding. From md
-                the content-height King takes over. */}
+                the content-height King takes over. Alice (swap) is drawn larger than
+                the headline and centred on it, so the two share a vertical middle. */}
             <div
               data-hero-image
-              className="pointer-events-none absolute top-0 right-0 h-full md:hidden"
+              className={`pointer-events-none absolute md:hidden ${
+                swap ? "top-1/2 -translate-y-1/2 -right-[2vw] h-[130%]" : "top-0 right-0 h-full"
+              }`}
               style={artRatio}
             >
               <Image

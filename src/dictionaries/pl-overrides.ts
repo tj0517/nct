@@ -9,15 +9,18 @@
 //
 // Anthony 2026-10-28: the Polish homepage is Alice in her crown with
 // "Angielski godny korony" instead of the King and "Speak the King's English".
+// Anthony 2026-11-03: the tighter crop of Alice, "korony" (not "godny") is the
+// italic word at every size, and on phones Alice is centred on the headline.
 export const plOverrides = {
   hero: {
     headlineLine1: "Angielski",
     headlineItalic: "godny",
     headlineBold: " korony",
+    italicLast: true,
     illustration: {
-      src: "/images/heroes/alice-crown-hero.png",
-      width: 988,
-      height: 1527,
+      src: "/images/heroes/alice-crown-crop-hero.png",
+      width: 807,
+      height: 1048,
       alt: "Ilustracja: Alicja poprawiająca koronę na głowie",
     },
   },

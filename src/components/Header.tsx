@@ -12,6 +12,7 @@ interface HeaderDict {
   courseLinks: { label: string; href: string }[];
   navLinks: { label: string; href: string }[];
   bookNow: string;
+  toggleMenu: string;
 }
 
 /* Flags are drawn inline: the repo has no icon package and these are the only
@@ -118,7 +119,7 @@ export default function Header({
             </a>
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              aria-label="Toggle menu"
+              aria-label={dict.toggleMenu}
               className="flex flex-col gap-[5px] cursor-pointer p-2.5 rounded-lg bg-main/10"
             >
               <span className={`block w-6 h-[2px] bg-main transition-all duration-300 ${mobileOpen ? "rotate-45 translate-y-[7px]" : ""}`} />

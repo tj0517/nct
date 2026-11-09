@@ -8,9 +8,19 @@ interface TeacherCardProps {
   image: string;
   /** Intro film. Empty means the card shows no "Watch intro" button at all. */
   videoUrl?: string;
+  watchIntro: string;
+  closeVideo: string;
 }
 
-export default function TeacherCard({ name, credential, bio, image, videoUrl }: TeacherCardProps) {
+export default function TeacherCard({
+  name,
+  credential,
+  bio,
+  image,
+  videoUrl,
+  watchIntro,
+  closeVideo,
+}: TeacherCardProps) {
   return (
     <div data-teacher-card className="bg-main-bg rounded-bl-[30px] rounded-tr-[30px] md:rounded-bl-[40px] md:rounded-tr-[40px] p-5 md:p-7 flex flex-col gap-4 shadow-[4px_4px_0px_var(--main)] md:shadow-[6px_6px_0px_var(--main)]">
       <div className="flex items-center gap-4 md:gap-5">
@@ -39,6 +49,7 @@ export default function TeacherCard({ name, credential, bio, image, videoUrl }: 
         <VideoLightbox
           url={videoUrl}
           title={`${name} — intro`}
+          closeLabel={closeVideo}
           className="flex items-center gap-2 group cursor-pointer self-start mt-auto"
         >
           <div className="size-9 rounded-full bg-main flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shrink-0">
@@ -47,7 +58,7 @@ export default function TeacherCard({ name, credential, bio, image, videoUrl }: 
             </svg>
           </div>
           <span className="font-inter text-xs uppercase tracking-wider text-main/50 group-hover:text-main transition-colors">
-            Watch intro
+            {watchIntro}
           </span>
         </VideoLightbox>
       )}

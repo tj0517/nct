@@ -53,6 +53,8 @@ interface VideoLightboxProps {
   /** "cta" renders the site Button; "button" a bare button the caller styles. */
   as?: "button" | "cta";
   className?: string;
+  /** Accessible name of the close button. */
+  closeLabel?: string;
 }
 
 /**
@@ -66,6 +68,7 @@ export default function VideoLightbox({
   children,
   as = "button",
   className = "",
+  closeLabel = "Close video",
 }: VideoLightboxProps) {
   // The hero and section wrappers are GSAP-animated, so an ancestor nearly
   // always carries a transform — which would make a `fixed` overlay position
@@ -160,7 +163,7 @@ export default function VideoLightbox({
               ref={closeRef}
               type="button"
               onClick={close}
-              aria-label="Close video"
+              aria-label={closeLabel}
               className="absolute top-4 right-4 md:top-6 md:right-6 size-11 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-white/20 transition-colors cursor-pointer"
             >
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">

@@ -19,7 +19,7 @@ export default function BookingBanner({
             <h2 className="font-fraunces font-bold text-3xl md:text-[64px] text-main leading-tight">
               {dict.heading}
             </h2>
-            <ContactLinks site={site} className="pt-2" />
+            <ContactLinks site={site} labels={dict} className="pt-2" />
           </div>
 
           {/* Right: form */}

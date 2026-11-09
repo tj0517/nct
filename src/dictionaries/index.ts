@@ -9,7 +9,13 @@ const dictionaries = {
   pl: () =>
     import("./en.json").then(({ default: en }) => ({
       ...en,
+      header: { ...en.header, ...plOverrides.header },
       hero: { ...en.hero, ...plOverrides.hero },
+      about: { ...en.about, ...plOverrides.about },
+      teachers: { ...en.teachers, ...plOverrides.teachers },
+      contactForm: { ...en.contactForm, ...plOverrides.contactForm },
+      footer: { ...en.footer, ...plOverrides.footer },
+      phoneFloat: { ...en.phoneFloat, ...plOverrides.phoneFloat },
     })),
   // italicLast is a Polish-only layout flag (see pl-overrides.ts).
   en: () =>

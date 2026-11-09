@@ -18,7 +18,7 @@ export default function CourseContact({
           <h2 className="font-fraunces font-bold text-[clamp(36px,5vw,72px)] leading-[1.05] tracking-tight text-main">
             {dict.heading}
           </h2>
-          <ContactLinks site={site} className="pt-2" />
+          <ContactLinks site={site} labels={dict} className="pt-2" />
         </div>
         <ContactForm dict={dict} />
       </div>

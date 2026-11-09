@@ -8,6 +8,7 @@ interface AboutDict {
   imageAlt: string;
   /** Anthony's film. Empty means the CTA is not rendered at all. */
   videoUrl: string;
+  closeVideo: string;
 }
 
 /* Official YouTube play badge — red rounded rectangle, white triangle */
@@ -59,7 +60,7 @@ export default function About({ dict }: { dict: AboutDict }) {
           <div>
             {/* The YouTube badge promises a film, so the CTA only exists once
                 there is one to open (set in Sanity, Anthony 2026-10-07). */}
-            <VideoLightbox url={dict.videoUrl} title={dict.cta} as="cta">
+            <VideoLightbox url={dict.videoUrl} title={dict.cta} closeLabel={dict.closeVideo} as="cta">
               <span className="inline-flex items-center gap-3">
                 <YouTubeIcon />
                 {dict.cta}

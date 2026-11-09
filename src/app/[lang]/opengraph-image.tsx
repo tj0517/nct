@@ -1,5 +1,6 @@
 import { ImageResponse } from "next/og";
-import { OG_IMAGE_ALT } from "@/lib/seo-locale";
+import { hasLocale } from "@/dictionaries";
+import { OG_IMAGE_ALT, OG_TAGLINE } from "@/lib/seo-locale";
 
 // Shared across every page under [lang] (home + all 7 indexable pages) —
 // none of the course-page illustrations in public/images/ are landscape or
@@ -20,7 +21,10 @@ const WHITE = "#FFFFFF";
 // read poorly against NAVY. tj decision 2026-10-03.
 const MUTED_LIGHT = "#E8ECF2";
 
-export default function Image() {
+export default async function Image({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params;
+  const tagline = OG_TAGLINE[hasLocale(lang) ? lang : "en"];
+
   return new ImageResponse(
     (
       <div
@@ -55,7 +59,7 @@ export default function Image() {
             textAlign: "center",
           }}
         >
-          English Lessons in Warsaw
+          {tagline}
         </div>
       </div>
     ),

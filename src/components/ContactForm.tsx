@@ -14,6 +14,9 @@ export interface ContactFormDict {
   sendingCta: string;
   successMessage: string;
   errorMessage: string;
+  /** Screen-reader names of the phone and e-mail icons in `ContactLinks`. */
+  phoneLabel: string;
+  emailLabel: string;
 }
 
 type Status = "idle" | "sending" | "success" | "error";

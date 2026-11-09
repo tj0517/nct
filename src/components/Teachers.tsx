@@ -4,6 +4,8 @@ import TeacherCard from "./TeacherCard";
 interface TeachersDict {
   label: string;
   heading: string;
+  watchIntro: string;
+  closeVideo: string;
   list: {
     name: string;
     credential: string;
@@ -30,6 +32,8 @@ export default function Teachers({ dict }: { dict: TeachersDict }) {
               bio={teacher.bio}
               image={teacher.image}
               videoUrl={teacher.videoUrl}
+              watchIntro={dict.watchIntro}
+              closeVideo={dict.closeVideo}
             />
           ))}
         </div>

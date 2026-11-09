@@ -59,6 +59,14 @@ function s(value: unknown, fallback: string): string {
 }
 
 /**
+ * A person's name. Names are one untranslated field, but Polish writes the
+ * title in lower case: "Dr Rishi Handa" on /en, "dr Rishi Handa" on /pl.
+ */
+function personName(name: string, locale: Locale): string {
+  return locale === "pl" ? name.replace(/^Dr\b/, "dr") : name;
+}
+
+/**
  * Maps a Sanity array onto the matching `en.json` array. An absent or empty
  * array falls back wholesale; otherwise each item is mapped, with the
  * same-position `en.json` item as its per-field fallback.
@@ -198,7 +206,7 @@ function mapCoursePage(
     },
     testimonial: {
       quote: t(doc?.testimonial?.quote, locale, fb.testimonial.quote),
-      author: s(doc?.testimonial?.author, fb.testimonial.author),
+      author: personName(s(doc?.testimonial?.author, fb.testimonial.author), locale),
       role: t(doc?.testimonial?.role, locale, fb.testimonial.role),
       image: imageUrl(doc?.testimonial?.image, width) ?? fb.testimonial.image,
       imageAlt: t(doc?.testimonial?.imageAlt, locale, fb.testimonial.imageAlt),
@@ -273,6 +281,8 @@ export async function getContent(locale: Locale): Promise<Dictionary> {
         href: s(link?.href, f?.href ?? ""),
       })),
       bookNow: t(head?.bookNow, locale, fb.header.bookNow),
+      // Interface text with no Sanity field.
+      toggleMenu: fb.header.toggleMenu,
     },
 
     hero: {
@@ -291,6 +301,10 @@ export async function getContent(locale: Locale): Promise<Dictionary> {
     // The two badges have different shapes in `en.json` (one has a link, the
     // other a description); each keeps the shape of its fallback.
     trustBar: {
+      // Accessible names with no Sanity field.
+      bbcLogoAlt: fb.trustBar.bbcLogoAlt,
+      cambridgeLogoAlt: fb.trustBar.cambridgeLogoAlt,
+      audioTitle: fb.trustBar.audioTitle,
       badges: list(home?.trustBar?.badges, fb.trustBar.badges, (badge, f): Badge => {
         const heading = t(badge?.heading, locale, f?.heading ?? "");
         if (f?.cta !== undefined) return { heading, cta: t(badge?.cta, locale, f.cta) };
@@ -307,6 +321,7 @@ export async function getContent(locale: Locale): Promise<Dictionary> {
       cta: t(about?.cta, locale, fb.about.cta),
       imageAlt: t(about?.imageAlt, locale, fb.about.imageAlt),
       videoUrl: s(about?.videoUrl, fb.about.videoUrl),
+      closeVideo: fb.about.closeVideo,
     },
 
     whoWeTeach: {
@@ -326,8 +341,10 @@ export async function getContent(locale: Locale): Promise<Dictionary> {
     teachers: {
       label: t(home?.teachersSection?.label, locale, fb.teachers.label),
       heading: t(home?.teachersSection?.heading, locale, fb.teachers.heading),
+      watchIntro: fb.teachers.watchIntro,
+      closeVideo: fb.teachers.closeVideo,
       list: list(teachers, fb.teachers.list, (teacher, f) => ({
-        name: s(teacher?.name, f?.name ?? ""),
+        name: personName(s(teacher?.name, f?.name ?? ""), locale),
         credential: t(teacher?.credential, locale, f?.credential ?? ""),
         bio: t(teacher?.bio, locale, f?.bio ?? ""),
         image:
@@ -341,7 +358,7 @@ export async function getContent(locale: Locale): Promise<Dictionary> {
       heading: t(home?.testimonialsSection?.heading, locale, fb.testimonials.heading),
       list: list(testimonials, fb.testimonials.list, (testimonial, f) => ({
         quote: t(testimonial?.quote, locale, f?.quote ?? ""),
-        author: s(testimonial?.author, f?.author ?? ""),
+        author: personName(s(testimonial?.author, f?.author ?? ""), locale),
         role: t(testimonial?.role, locale, f?.role ?? ""),
         image:
           imageUrl(testimonial?.image, TESTIMONIAL_IMAGE_WIDTH) ?? f?.image ?? "",
@@ -384,12 +401,15 @@ export async function getContent(locale: Locale): Promise<Dictionary> {
       sendingCta: t(contact?.sendingCta, locale, fb.contactForm.sendingCta),
       successMessage: t(contact?.successMessage, locale, fb.contactForm.successMessage),
       errorMessage: t(contact?.errorMessage, locale, fb.contactForm.errorMessage),
+      phoneLabel: fb.contactForm.phoneLabel,
+      emailLabel: fb.contactForm.emailLabel,
     },
 
     map: {
       label: t(home?.mapSection?.label, locale, fb.map.label),
       heading: t(home?.mapSection?.heading, locale, fb.map.heading),
       description: t(home?.mapSection?.description, locale, fb.map.description),
+      mapTitle: fb.map.mapTitle,
     },
 
     // The school's own contact details — one source for the footer, the icon
@@ -415,6 +435,7 @@ export async function getContent(locale: Locale): Promise<Dictionary> {
       nipLabel: t(foot?.nipLabel, locale, fb.footer.nipLabel),
       bankLabel: t(foot?.bankLabel, locale, fb.footer.bankLabel),
       designedIn: t(foot?.designedIn, locale, fb.footer.designedIn),
+      city: fb.footer.city,
     },
 
     meta: {

@@ -8,10 +8,15 @@ interface FooterDict {
   nipLabel: string;
   bankLabel: string;
   designedIn: string;
+  /** Set (Polish only) to write the second line post code first: "02-309 Warszawa". */
+  city: string;
 }
 
 export default function Footer({ dict, site }: { dict: FooterDict; site: SiteDict }) {
-  const { street, rest } = parseAddress(site.address);
+  const address = parseAddress(site.address);
+  const { street } = address;
+  const rest =
+    dict.city && address.postalCode ? `${address.postalCode} ${dict.city}` : address.rest;
 
   return (
     <footer className="bg-union-white w-full pb-16">

@@ -121,7 +121,7 @@ export default async function RootLayout({
                 polishLive={polishLive}
               />
               {children}
-              <PhoneFloat />
+              <PhoneFloat dict={dict.phoneFloat} />
             </GsapProvider>
           </BookingModalProvider>
         </ThemeProvider>

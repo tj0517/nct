@@ -31,6 +31,14 @@ export async function localeMetadata(
 // image is referenced, independent of which page links to it.
 export const OG_IMAGE_ALT = "A Nice Cup of Tea — English Lessons";
 
+// The tagline drawn on that image, per locale; the alt text follows it.
+export const OG_TAGLINE: Record<Locale, string> = {
+  en: "English Lessons in Warsaw",
+  pl: "Lekcje angielskiego w Warszawie",
+};
+const ogImageAlt = (locale: Locale) =>
+  locale === "pl" ? "A Nice Cup of Tea — lekcje angielskiego" : OG_IMAGE_ALT;
+
 /**
  * Open Graph + Twitter Card metadata for a page. Next.js replaces a
  * segment's entire `openGraph`/`twitter` object when that segment sets it at
@@ -57,7 +65,7 @@ export function socialMetadata(
           url: `/${locale}/opengraph-image`,
           width: 1200,
           height: 630,
-          alt: OG_IMAGE_ALT,
+          alt: ogImageAlt(locale),
           type: "image/png",
         },
       ],
@@ -71,7 +79,7 @@ export function socialMetadata(
           url: `/${locale}/twitter-image`,
           width: 1200,
           height: 630,
-          alt: OG_IMAGE_ALT,
+          alt: ogImageAlt(locale),
           type: "image/png",
         },
       ],

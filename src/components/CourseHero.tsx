@@ -122,13 +122,14 @@ const IMAGE_FIT = {
 
 /* Phone CTA size. The button's hover sweep clips its label to a single line,
    so a longer sentence has to be set smaller rather than wrap. The label runs
-   ≈20.2px wide per px of font size, against a button of 88vw — "long" keeps
-   Anthony's full wording on a 320px phone. From md the label has room. */
+   ≈20.2px wide per px of font size (the Polish "Umów bezpłatną rozmowę z
+   Anthonym (30 min)" ≈21.9px), against a button of 87.5vw — "long" keeps the
+   full wording on a 320px phone. From md the label has room. */
 const CTA_SCALE = {
   /* ≤ 38 chars — "Book your free 30-minute assessment" */
   default: "!text-[clamp(14px,4.8vw,18px)]",
   /* longer — "Book your child's free 30-minute assessment" */
-  long: "!text-[clamp(12.5px,4.15vw,18px)]",
+  long: "!text-[clamp(12px,3.85vw,18px)]",
 } as const;
 
 function headlineScale(lines: CourseHeroDict["headline"]) {

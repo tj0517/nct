@@ -33,7 +33,8 @@
         "href": "/#contact"
       }
     ],
-    "bookNow": "Book now"
+    "bookNow": "Book now",
+    "toggleMenu": "Toggle menu"
   },
   "hero": {
     "headlineLine1": "Speak the",
@@ -50,6 +51,9 @@
     }
   },
   "trustBar": {
+    "bbcLogoAlt": "BBC Radio 4 logo",
+    "cambridgeLogoAlt": "University of Cambridge logo",
+    "audioTitle": "Anthony on BBC Radio 4 — Brits Abroad",
     "badges": [
       {
         "heading": "Anthony on BBC Radio 4",
@@ -66,6 +70,7 @@
     "body": "Anthony began teaching English to Tibetan monks in Darjeeling, India. After reading History at Balliol College, Oxford, he moved to Warsaw. In 2012, he founded A Nice Cup of Tea. He drinks Lapsang Souchong.",
     "cta": "Meet Anthony",
     "imageAlt": "Anthony — Founder of A Nice Cup of Tea",
+    "closeVideo": "Close video",
     "videoUrl": ""
   },
   "whoWeTeach": {
@@ -102,6 +107,8 @@
   "teachers": {
     "label": "NATIVE SPEAKERS",
     "heading": "Meet your native speakers",
+    "watchIntro": "Watch intro",
+    "closeVideo": "Close video",
     "list": [
       {
         "name": "Anthony Goltz",
@@ -183,11 +190,14 @@
     "submitCta": "Send form",
     "sendingCta": "Sending...",
     "successMessage": "Thanks! We've received your message and will be in touch within 24 hours.",
-    "errorMessage": "Something went wrong. Please try again, or reach us directly at +48 453 374 984 or anthony@anicecupoftea.pl."
+    "errorMessage": "Something went wrong. Please try again, or reach us directly at +48 453 374 984 or anthony@anicecupoftea.pl.",
+    "phoneLabel": "Phone",
+    "emailLabel": "Email"
   },
   "map": {
     "label": "VISIT US",
     "heading": "Słupecka 4/45",
+    "mapTitle": "A Nice Cup of Tea — Słupecka 4, Warsaw",
     "description": "Lessons face to face at our Ochota location.\nLessons in Warsaw at your home or office by arrangement.\nOnline lessons also available."
   },
   "faq": {
@@ -385,7 +395,8 @@
     "visitLabel": "Visit us",
     "nipLabel": "NIP",
     "bankLabel": "PLN bank account",
-    "designedIn": "Designed in Warsaw"
+    "designedIn": "Designed in Warsaw",
+    "city": ""
   },
   "meta": {
     "title": "A Nice Cup of Tea — English Lessons",
@@ -584,6 +595,11 @@
         "University admissions interviews"
       ]
     }
+  },
+  "phoneFloat": {
+    "label": "Call or text us",
+    "call": "Call",
+    "sms": "SMS"
   },
   "languageSwitcher": {
     "pl": "PL",

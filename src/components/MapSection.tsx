@@ -4,6 +4,7 @@ interface MapDict {
   label: string;
   heading: string;
   description: string;
+  mapTitle: string;
 }
 
 export default function MapSection({ dict }: { dict: MapDict }) {
@@ -30,7 +31,7 @@ export default function MapSection({ dict }: { dict: MapDict }) {
           allowFullScreen
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
-          title="A Nice Cup of Tea — Słupecka 4, Warsaw"
+          title={dict.mapTitle}
         />
       </div>
     </section>

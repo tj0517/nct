@@ -11,6 +11,8 @@ const dictionaries = {
       ...en,
       header: { ...en.header, ...plOverrides.header },
       hero: { ...en.hero, ...plOverrides.hero },
+      trustBar: { ...en.trustBar, ...plOverrides.trustBar },
+      map: { ...en.map, ...plOverrides.map },
       about: { ...en.about, ...plOverrides.about },
       teachers: { ...en.teachers, ...plOverrides.teachers },
       contactForm: { ...en.contactForm, ...plOverrides.contactForm },

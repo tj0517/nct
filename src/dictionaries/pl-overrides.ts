@@ -19,6 +19,14 @@ export const plOverrides = {
   header: {
     toggleMenu: "Otwórz menu",
   },
+  trustBar: {
+    bbcLogoAlt: "Logo BBC Radio 4",
+    cambridgeLogoAlt: "Logo University of Cambridge",
+    audioTitle: "Anthony w BBC Radio 4 — Brits Abroad",
+  },
+  map: {
+    mapTitle: "A Nice Cup of Tea — Słupecka 4, Warszawa",
+  },
   about: {
     closeVideo: "Zamknij wideo",
   },

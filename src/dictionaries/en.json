@@ -51,6 +51,9 @@
     }
   },
   "trustBar": {
+    "bbcLogoAlt": "BBC Radio 4 logo",
+    "cambridgeLogoAlt": "University of Cambridge logo",
+    "audioTitle": "Anthony on BBC Radio 4 — Brits Abroad",
     "badges": [
       {
         "heading": "Anthony on BBC Radio 4",
@@ -194,6 +197,7 @@
   "map": {
     "label": "VISIT US",
     "heading": "Słupecka 4/45",
+    "mapTitle": "A Nice Cup of Tea — Słupecka 4, Warsaw",
     "description": "Lessons face to face at our Ochota location.\nLessons in Warsaw at your home or office by arrangement.\nOnline lessons also available."
   },
   "faq": {

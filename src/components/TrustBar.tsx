@@ -2,6 +2,9 @@ import Image from "next/image";
 import SoundCloudEmbed from "./SoundCloudEmbed";
 
 interface TrustBarDict {
+  bbcLogoAlt: string;
+  cambridgeLogoAlt: string;
+  audioTitle: string;
   badges: { heading: string; cta?: string; description?: string }[];
 }
 
@@ -18,7 +21,7 @@ export default function TrustBar({ dict }: { dict: TrustBarDict }) {
         <div className="shrink-0">
           <Image
             src="/images/logos/logo-bbc-radio-4.svg"
-            alt="BBC Radio 4 logo"
+            alt={dict.bbcLogoAlt}
             width={140}
             height={60}
             className="h-10 md:h-12 w-auto"
@@ -29,7 +32,7 @@ export default function TrustBar({ dict }: { dict: TrustBarDict }) {
             {bbc.heading}
           </h3>
           <div className="w-full lg:max-w-[320px] flex justify-center lg:justify-start">
-            <SoundCloudEmbed ctaLabel={bbc.cta ?? ""} />
+            <SoundCloudEmbed ctaLabel={bbc.cta ?? ""} title={dict.audioTitle} />
           </div>
         </div>
       </div>
@@ -42,7 +45,7 @@ export default function TrustBar({ dict }: { dict: TrustBarDict }) {
         <div className="shrink-0">
           <Image
             src="/images/logos/logo-cambridge.png"
-            alt="University of Cambridge logo"
+            alt={dict.cambridgeLogoAlt}
             width={160}
             height={34}
             className="h-10 md:h-12 w-auto"

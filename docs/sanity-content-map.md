@@ -4,7 +4,7 @@
 Every leaf of `src/dictionaries/en.json` and the Sanity document + field that will hold it.
 `en.json` is the source of truth for structure (`pl.json` is stale — see `docs/deferred-tasks.md`).
 
-- **330 leaves mapped** (recounted from `en.json`, not from the task file).
+- **334 leaves mapped** (recounted from `en.json`, not from the task file).
 - Placement of `trustBar`, `pricing`, `map`, `booking`, `contactForm`, `meta` and
   `languageSwitcher` was decided by tj on 2026-09-30 (A1, B2, C1, D1).
 - `localizedString` / `localizedText` = `{ en (required), pl (optional) }`.
@@ -42,306 +42,310 @@ Verify with: `node scripts/check-content-map.mjs`
 | 25 | `hero.illustration.width` | `—` | `—` | code only | per-locale artwork, src/dictionaries (pl: pl-overrides.ts); not in Sanity (Anthony 2026-10-28) |
 | 26 | `hero.illustration.height` | `—` | `—` | code only | per-locale artwork, src/dictionaries (pl: pl-overrides.ts); not in Sanity (Anthony 2026-10-28) |
 | 27 | `hero.illustration.alt` | `—` | `—` | code only | per-locale artwork, src/dictionaries (pl: pl-overrides.ts); not in Sanity (Anthony 2026-10-28) |
-| 28 | `trustBar.badges[0].heading` | `homepage` | `trustBar.badges[0].heading` | localizedString | tj 2026-09-30 (A1): Homepage tab |
-| 29 | `trustBar.badges[0].cta` | `homepage` | `trustBar.badges[0].cta` | localizedString | tj 2026-09-30 (A1): Homepage tab |
-| 30 | `trustBar.badges[1].heading` | `homepage` | `trustBar.badges[1].heading` | localizedString | tj 2026-09-30 (A1): Homepage tab |
-| 31 | `trustBar.badges[1].description` | `homepage` | `trustBar.badges[1].description` | localizedString | tj 2026-09-30 (A1): Homepage tab |
-| 32 | `about.heading` | `homepage` | `about.heading` | localizedString |  |
-| 33 | `about.body` | `homepage` | `about.body` | localizedText |  |
-| 34 | `about.cta` | `homepage` | `about.cta` | localizedString |  |
-| 35 | `about.imageAlt` | `homepage` | `about.imageAlt` | localizedString |  |
-| 36 | `about.closeVideo` | `—` | `—` | code only | interface text, src/dictionaries (pl: pl-overrides.ts); not in Sanity (2026-11-09) |
-| 37 | `about.videoUrl` | `homepage` | `about.videoUrl` | url | empty -> the CTA is not rendered (Anthony 2026-10-07) |
-| 38 | `whoWeTeach.label` | `homepage` | `whoWeTeach.label` | localizedString |  |
-| 39 | `whoWeTeach.heading` | `homepage` | `whoWeTeach.heading` | localizedString |  |
-| 40 | `whoWeTeach.categories[0].name` | `homepage` | `whoWeTeach.categories[0].name` | localizedString |  |
-| 41 | `whoWeTeach.categories[0].href` | `homepage` | `whoWeTeach.categories[0].href` | string | route, not translated |
-| 42 | `whoWeTeach.categories[0].description` | `homepage` | `whoWeTeach.categories[0].description` | localizedString |  |
-| 43 | `whoWeTeach.categories[1].name` | `homepage` | `whoWeTeach.categories[1].name` | localizedString |  |
-| 44 | `whoWeTeach.categories[1].href` | `homepage` | `whoWeTeach.categories[1].href` | string | route, not translated |
-| 45 | `whoWeTeach.categories[1].description` | `homepage` | `whoWeTeach.categories[1].description` | localizedString |  |
-| 46 | `whoWeTeach.categories[2].name` | `homepage` | `whoWeTeach.categories[2].name` | localizedString |  |
-| 47 | `whoWeTeach.categories[2].href` | `homepage` | `whoWeTeach.categories[2].href` | string | route, not translated |
-| 48 | `whoWeTeach.categories[2].description` | `homepage` | `whoWeTeach.categories[2].description` | localizedString |  |
-| 49 | `whoWeTeach.categories[3].name` | `homepage` | `whoWeTeach.categories[3].name` | localizedString |  |
-| 50 | `whoWeTeach.categories[3].href` | `homepage` | `whoWeTeach.categories[3].href` | string | route, not translated |
-| 51 | `whoWeTeach.categories[3].description` | `homepage` | `whoWeTeach.categories[3].description` | localizedString |  |
-| 52 | `whoWeTeach.categories[4].name` | `homepage` | `whoWeTeach.categories[4].name` | localizedString |  |
-| 53 | `whoWeTeach.categories[4].href` | `homepage` | `whoWeTeach.categories[4].href` | string | route, not translated |
-| 54 | `whoWeTeach.categories[4].description` | `homepage` | `whoWeTeach.categories[4].description` | localizedString |  |
-| 55 | `teachers.label` | `homepage` | `teachersSection.label` | localizedString | section heading; people live in `teacher` docs |
-| 56 | `teachers.heading` | `homepage` | `teachersSection.heading` | localizedString | section heading; people live in `teacher` docs |
-| 57 | `teachers.watchIntro` | `—` | `—` | code only | interface text, src/dictionaries (pl: pl-overrides.ts); not in Sanity (2026-11-09) |
-| 58 | `teachers.closeVideo` | `—` | `—` | code only | interface text, src/dictionaries (pl: pl-overrides.ts); not in Sanity (2026-11-09) |
-| 59 | `teachers.list[0].name` | `teacher` | `[doc 0].name` | string | proper noun, not translated |
-| 60 | `teachers.list[0].credential` | `teacher` | `[doc 0].credential` | localizedString |  |
-| 61 | `teachers.list[0].bio` | `teacher` | `[doc 0].bio` | localizedText |  |
-| 62 | `teachers.list[0].image` | `teacher` | `[doc 0].image` | image | path today -> Sanity image asset (NCT-3.04, B2) |
-| 63 | `teachers.list[0].videoUrl` | `teacher` | `[doc 0].videoUrl` | url | empty -> no “Watch intro” on that card |
-| 64 | `teachers.list[1].name` | `teacher` | `[doc 1].name` | string | proper noun, not translated |
-| 65 | `teachers.list[1].credential` | `teacher` | `[doc 1].credential` | localizedString |  |
-| 66 | `teachers.list[1].bio` | `teacher` | `[doc 1].bio` | localizedText |  |
-| 67 | `teachers.list[1].image` | `teacher` | `[doc 1].image` | image | path today -> Sanity image asset (NCT-3.04, B2) |
-| 68 | `teachers.list[1].videoUrl` | `teacher` | `[doc 1].videoUrl` | url | empty -> no “Watch intro” on that card |
-| 69 | `teachers.list[2].name` | `teacher` | `[doc 2].name` | string | proper noun, not translated |
-| 70 | `teachers.list[2].credential` | `teacher` | `[doc 2].credential` | localizedString |  |
-| 71 | `teachers.list[2].bio` | `teacher` | `[doc 2].bio` | localizedText |  |
-| 72 | `teachers.list[2].image` | `teacher` | `[doc 2].image` | image | path today -> Sanity image asset (NCT-3.04, B2) |
-| 73 | `teachers.list[2].videoUrl` | `teacher` | `[doc 2].videoUrl` | url | empty -> no “Watch intro” on that card |
-| 74 | `testimonials.label` | `homepage` | `testimonialsSection.label` | localizedString | section heading; quotes are hard-coded -> deferred |
-| 75 | `testimonials.heading` | `homepage` | `testimonialsSection.heading` | localizedString | section heading; quotes are hard-coded -> deferred |
-| 76 | `testimonials.list[0].quote` | `testimonial` | `[doc 0].quote` | localizedText |  |
-| 77 | `testimonials.list[0].author` | `testimonial` | `[doc 0].author` | string | proper noun, not translated |
-| 78 | `testimonials.list[0].role` | `testimonial` | `[doc 0].role` | localizedString |  |
-| 79 | `testimonials.list[0].image` | `testimonial` | `[doc 0].image` | image | path today -> Sanity image asset |
-| 80 | `testimonials.list[1].quote` | `testimonial` | `[doc 1].quote` | localizedText |  |
-| 81 | `testimonials.list[1].author` | `testimonial` | `[doc 1].author` | string | proper noun, not translated |
-| 82 | `testimonials.list[1].role` | `testimonial` | `[doc 1].role` | localizedString |  |
-| 83 | `testimonials.list[1].image` | `testimonial` | `[doc 1].image` | image | path today -> Sanity image asset |
-| 84 | `testimonials.list[2].quote` | `testimonial` | `[doc 2].quote` | localizedText |  |
-| 85 | `testimonials.list[2].author` | `testimonial` | `[doc 2].author` | string | proper noun, not translated |
-| 86 | `testimonials.list[2].role` | `testimonial` | `[doc 2].role` | localizedString |  |
-| 87 | `testimonials.list[2].image` | `testimonial` | `[doc 2].image` | image | path today -> Sanity image asset |
-| 88 | `pricing.label` | `homepage` | `pricing.label` | localizedString | tj 2026-09-30 (A1): Homepage tab |
-| 89 | `pricing.heading` | `homepage` | `pricing.heading` | localizedString | tj 2026-09-30 (A1): Homepage tab |
-| 90 | `pricing.freePrice` | `homepage` | `pricing.freePrice` | localizedString | tj 2026-09-30 (A1): Homepage tab |
-| 91 | `pricing.freeDesc` | `homepage` | `pricing.freeDesc` | localizedString | tj 2026-09-30 (A1): Homepage tab |
-| 92 | `pricing.freeCta` | `homepage` | `pricing.freeCta` | localizedString | tj 2026-09-30 (A1): Homepage tab |
-| 93 | `pricing.price` | `homepage` | `pricing.price` | localizedString | tj 2026-09-30 (A1): Homepage tab |
-| 94 | `pricing.priceDesc` | `homepage` | `pricing.priceDesc` | localizedString | tj 2026-09-30 (A1): Homepage tab |
-| 95 | `booking.label` | `formsAndBooking` | `bookingModal.label` | localizedString | tj 2026-09-30 (B2): Forms & booking; global modal |
-| 96 | `booking.heading` | `formsAndBooking` | `bookingModal.heading` | localizedText | tj 2026-09-30 (B2): Forms & booking; global modal |
-| 97 | `booking.body` | `formsAndBooking` | `bookingModal.body` | localizedText | tj 2026-09-30 (B2): Forms & booking; global modal |
-| 98 | `booking.locationNote` | `formsAndBooking` | `bookingModal.locationNote` | localizedText | tj 2026-09-30 (B2): Forms & booking; global modal |
-| 99 | `booking.namePlaceholder` | `formsAndBooking` | `bookingModal.namePlaceholder` | localizedString | tj 2026-09-30 (B2): Forms & booking; global modal |
-| 100 | `booking.emailPlaceholder` | `formsAndBooking` | `bookingModal.emailPlaceholder` | localizedString | tj 2026-09-30 (B2): Forms & booking; global modal |
-| 101 | `booking.phonePlaceholder` | `formsAndBooking` | `bookingModal.phonePlaceholder` | localizedString | tj 2026-09-30 (B2): Forms & booking; global modal |
-| 102 | `booking.inPerson` | `formsAndBooking` | `bookingModal.inPerson` | localizedString | tj 2026-09-30 (B2): Forms & booking; global modal |
-| 103 | `booking.online` | `formsAndBooking` | `bookingModal.online` | localizedString | tj 2026-09-30 (B2): Forms & booking; global modal |
-| 104 | `booking.messagePlaceholder` | `formsAndBooking` | `bookingModal.messagePlaceholder` | localizedString | tj 2026-09-30 (B2): Forms & booking; global modal |
-| 105 | `booking.submitCta` | `formsAndBooking` | `bookingModal.submitCta` | localizedString | tj 2026-09-30 (B2): Forms & booking; global modal |
-| 106 | `booking.modalHeading` | `formsAndBooking` | `bookingModal.modalHeading` | localizedString | tj 2026-09-30 (B2): Forms & booking; global modal |
-| 107 | `contactForm.heading` | `formsAndBooking` | `contactForm.heading` | localizedString | tj 2026-09-30 (B2): Forms & booking; all 7 pages |
-| 108 | `contactForm.namePlaceholder` | `formsAndBooking` | `contactForm.namePlaceholder` | localizedString | tj 2026-09-30 (B2): Forms & booking; all 7 pages |
-| 109 | `contactForm.emailPlaceholder` | `formsAndBooking` | `contactForm.emailPlaceholder` | localizedString | tj 2026-09-30 (B2): Forms & booking; all 7 pages |
-| 110 | `contactForm.phonePlaceholder` | `formsAndBooking` | `contactForm.phonePlaceholder` | localizedString | tj 2026-09-30 (B2): Forms & booking; all 7 pages |
-| 111 | `contactForm.messagePlaceholder` | `formsAndBooking` | `contactForm.messagePlaceholder` | localizedString | tj 2026-09-30 (B2): Forms & booking; all 7 pages |
-| 112 | `contactForm.consent` | `formsAndBooking` | `contactForm.consent` | localizedText | tj 2026-09-30 (B2): Forms & booking; all 7 pages |
-| 113 | `contactForm.submitCta` | `formsAndBooking` | `contactForm.submitCta` | localizedString | tj 2026-09-30 (B2): Forms & booking; all 7 pages |
-| 114 | `contactForm.sendingCta` | `formsAndBooking` | `contactForm.sendingCta` | localizedString | tj 2026-09-30 (B2): Forms & booking; all 7 pages |
-| 115 | `contactForm.successMessage` | `formsAndBooking` | `contactForm.successMessage` | localizedString | tj 2026-09-30 (B2): Forms & booking; all 7 pages |
-| 116 | `contactForm.errorMessage` | `formsAndBooking` | `contactForm.errorMessage` | localizedString | tj 2026-09-30 (B2): Forms & booking; all 7 pages |
-| 117 | `contactForm.phoneLabel` | `—` | `—` | code only | interface text, src/dictionaries (pl: pl-overrides.ts); not in Sanity (2026-11-09) |
-| 118 | `contactForm.emailLabel` | `—` | `—` | code only | interface text, src/dictionaries (pl: pl-overrides.ts); not in Sanity (2026-11-09) |
-| 119 | `map.label` | `homepage` | `mapSection.label` | localizedString | tj 2026-09-30 (A1): Homepage tab |
-| 120 | `map.heading` | `homepage` | `mapSection.heading` | localizedString | tj 2026-09-30 (A1): Homepage tab |
-| 121 | `map.description` | `homepage` | `mapSection.description` | localizedText | tj 2026-09-30 (A1): Homepage tab |
-| 122 | `faq.label` | `faqPage` | `label` | localizedString |  |
-| 123 | `faq.heading` | `faqPage` | `heading` | localizedString |  |
-| 124 | `faq.meta.title` | `faqPage` | `seo.title` | localizedString |  |
-| 125 | `faq.meta.description` | `faqPage` | `seo.description` | localizedText |  |
-| 126 | `faq.items[0].question` | `faqPage` | `items[0].question` | localizedString |  |
-| 127 | `faq.items[0].answer` | `faqPage` | `items[0].answer` | localizedText |  |
-| 128 | `faq.items[1].question` | `faqPage` | `items[1].question` | localizedString |  |
-| 129 | `faq.items[1].answer` | `faqPage` | `items[1].answer` | localizedText |  |
-| 130 | `faq.items[2].question` | `faqPage` | `items[2].question` | localizedString |  |
-| 131 | `faq.items[2].answer` | `faqPage` | `items[2].answer` | localizedText |  |
-| 132 | `faq.items[3].question` | `faqPage` | `items[3].question` | localizedString |  |
-| 133 | `faq.items[3].answer` | `faqPage` | `items[3].answer` | localizedText |  |
-| 134 | `faq.items[4].question` | `faqPage` | `items[4].question` | localizedString |  |
-| 135 | `faq.items[4].answer` | `faqPage` | `items[4].answer` | localizedText |  |
-| 136 | `faq.items[5].question` | `faqPage` | `items[5].question` | localizedString |  |
-| 137 | `faq.items[5].answer` | `faqPage` | `items[5].answer` | localizedText |  |
-| 138 | `faq.items[6].question` | `faqPage` | `items[6].question` | localizedString |  |
-| 139 | `faq.items[6].answer` | `faqPage` | `items[6].answer` | localizedText |  |
-| 140 | `faq.items[7].question` | `faqPage` | `items[7].question` | localizedString |  |
-| 141 | `faq.items[7].answer` | `faqPage` | `items[7].answer` | localizedText |  |
-| 142 | `faq.items[8].question` | `faqPage` | `items[8].question` | localizedString |  |
-| 143 | `faq.items[8].answer` | `faqPage` | `items[8].answer` | localizedText |  |
-| 144 | `faq.items[9].question` | `faqPage` | `items[9].question` | localizedString |  |
-| 145 | `faq.items[9].answer` | `faqPage` | `items[9].answer` | localizedText |  |
-| 146 | `faq.items[10].question` | `faqPage` | `items[10].question` | localizedString |  |
-| 147 | `faq.items[10].answer` | `faqPage` | `items[10].answer` | localizedText |  |
-| 148 | `faq.items[11].question` | `faqPage` | `items[11].question` | localizedString |  |
-| 149 | `faq.items[11].answer` | `faqPage` | `items[11].answer` | localizedText |  |
-| 150 | `faq.items[12].question` | `faqPage` | `items[12].question` | localizedString |  |
-| 151 | `faq.items[12].answer` | `faqPage` | `items[12].answer` | localizedText |  |
-| 152 | `faq.items[13].question` | `faqPage` | `items[13].question` | localizedString |  |
-| 153 | `faq.items[13].answer` | `faqPage` | `items[13].answer` | localizedText |  |
-| 154 | `faq.items[14].question` | `faqPage` | `items[14].question` | localizedString |  |
-| 155 | `faq.items[14].answer` | `faqPage` | `items[14].answer` | localizedText |  |
-| 156 | `faq.items[15].question` | `faqPage` | `items[15].question` | localizedString |  |
-| 157 | `faq.items[15].answer` | `faqPage` | `items[15].answer` | localizedText |  |
-| 158 | `faq.items[16].question` | `faqPage` | `items[16].question` | localizedString |  |
-| 159 | `faq.items[16].answer` | `faqPage` | `items[16].answer` | localizedText |  |
-| 160 | `faq.items[17].question` | `faqPage` | `items[17].question` | localizedString |  |
-| 161 | `faq.items[17].answer` | `faqPage` | `items[17].answer` | localizedText |  |
-| 162 | `faq.items[18].question` | `faqPage` | `items[18].question` | localizedString |  |
-| 163 | `faq.items[18].answer` | `faqPage` | `items[18].answer` | localizedText |  |
-| 164 | `faq.items[19].question` | `faqPage` | `items[19].question` | localizedString |  |
-| 165 | `faq.items[19].answer` | `faqPage` | `items[19].answer` | localizedText |  |
-| 166 | `faq.items[20].question` | `faqPage` | `items[20].question` | localizedString |  |
-| 167 | `faq.items[20].answer` | `faqPage` | `items[20].answer` | localizedText |  |
-| 168 | `faq.items[21].question` | `faqPage` | `items[21].question` | localizedString |  |
-| 169 | `faq.items[21].answer` | `faqPage` | `items[21].answer` | localizedText |  |
-| 170 | `faq.items[22].question` | `faqPage` | `items[22].question` | localizedString |  |
-| 171 | `faq.items[22].answer` | `faqPage` | `items[22].answer` | localizedText |  |
-| 172 | `faq.items[23].question` | `faqPage` | `items[23].question` | localizedString |  |
-| 173 | `faq.items[23].answer` | `faqPage` | `items[23].answer` | localizedText |  |
-| 174 | `faq.items[24].question` | `faqPage` | `items[24].question` | localizedString |  |
-| 175 | `faq.items[24].answer` | `faqPage` | `items[24].answer` | localizedText |  |
-| 176 | `faq.items[25].question` | `faqPage` | `items[25].question` | localizedString |  |
-| 177 | `faq.items[25].answer` | `faqPage` | `items[25].answer` | localizedText |  |
-| 178 | `faq.items[26].question` | `faqPage` | `items[26].question` | localizedString |  |
-| 179 | `faq.items[26].answer` | `faqPage` | `items[26].answer` | localizedText |  |
-| 180 | `faq.items[27].question` | `faqPage` | `items[27].question` | localizedString |  |
-| 181 | `faq.items[27].answer` | `faqPage` | `items[27].answer` | localizedText |  |
-| 182 | `faq.items[28].question` | `faqPage` | `items[28].question` | localizedString |  |
-| 183 | `faq.items[28].answer` | `faqPage` | `items[28].answer` | localizedText |  |
-| 184 | `faq.items[29].question` | `faqPage` | `items[29].question` | localizedString |  |
-| 185 | `faq.items[29].answer` | `faqPage` | `items[29].answer` | localizedText |  |
-| 186 | `faq.items[30].question` | `faqPage` | `items[30].question` | localizedString |  |
-| 187 | `faq.items[30].answer` | `faqPage` | `items[30].answer` | localizedText |  |
-| 188 | `faq.items[31].question` | `faqPage` | `items[31].question` | localizedString |  |
-| 189 | `faq.items[31].answer` | `faqPage` | `items[31].answer` | localizedText |  |
-| 190 | `faq.items[32].question` | `faqPage` | `items[32].question` | localizedString |  |
-| 191 | `faq.items[32].answer` | `faqPage` | `items[32].answer` | localizedText |  |
-| 192 | `faq.items[33].question` | `faqPage` | `items[33].question` | localizedString |  |
-| 193 | `faq.items[33].answer` | `faqPage` | `items[33].answer` | localizedText |  |
-| 194 | `faq.items[34].question` | `faqPage` | `items[34].question` | localizedString |  |
-| 195 | `faq.items[34].answer` | `faqPage` | `items[34].answer` | localizedText |  |
-| 196 | `faq.items[35].question` | `faqPage` | `items[35].question` | localizedString |  |
-| 197 | `faq.items[35].answer` | `faqPage` | `items[35].answer` | localizedText |  |
-| 198 | `faq.items[36].question` | `faqPage` | `items[36].question` | localizedString |  |
-| 199 | `faq.items[36].answer` | `faqPage` | `items[36].answer` | localizedText |  |
-| 200 | `faq.items[37].question` | `faqPage` | `items[37].question` | localizedString |  |
-| 201 | `faq.items[37].answer` | `faqPage` | `items[37].answer` | localizedText |  |
-| 202 | `faq.items[38].question` | `faqPage` | `items[38].question` | localizedString |  |
-| 203 | `faq.items[38].answer` | `faqPage` | `items[38].answer` | localizedText |  |
-| 204 | `faq.items[39].question` | `faqPage` | `items[39].question` | localizedString |  |
-| 205 | `faq.items[39].answer` | `faqPage` | `items[39].answer` | localizedText |  |
-| 206 | `faq.items[40].question` | `faqPage` | `items[40].question` | localizedString |  |
-| 207 | `faq.items[40].answer` | `faqPage` | `items[40].answer` | localizedText |  |
-| 208 | `faq.items[41].question` | `faqPage` | `items[41].question` | localizedString |  |
-| 209 | `faq.items[41].answer` | `faqPage` | `items[41].answer` | localizedText |  |
-| 210 | `site.phone` | `siteSettings` | `phone` | string | not translated; footer + contact row + JSON-LD |
-| 211 | `site.email` | `siteSettings` | `email` | string | not translated; footer + contact row + JSON-LD |
-| 212 | `site.address` | `siteSettings` | `address` | string | not translated; footer + contact row + JSON-LD |
-| 213 | `site.nip` | `siteSettings` | `nip` | string | not translated; footer + contact row + JSON-LD |
-| 214 | `site.bankAccount` | `siteSettings` | `bankAccount` | string | not translated; footer + contact row + JSON-LD |
-| 215 | `site.facebook` | `siteSettings` | `facebook` | string | not translated; footer + contact row + JSON-LD |
-| 216 | `site.messenger` | `siteSettings` | `messenger` | string | not translated; footer + contact row + JSON-LD |
-| 217 | `site.instagram` | `siteSettings` | `instagram` | string | not translated; footer + contact row + JSON-LD |
-| 218 | `footer.phoneLabel` | `footer` | `phoneLabel` | localizedString |  |
-| 219 | `footer.emailLabel` | `footer` | `emailLabel` | localizedString |  |
-| 220 | `footer.socialLabel` | `footer` | `socialLabel` | localizedString |  |
-| 221 | `footer.visitLabel` | `footer` | `visitLabel` | localizedString |  |
-| 222 | `footer.nipLabel` | `footer` | `nipLabel` | localizedString |  |
-| 223 | `footer.bankLabel` | `footer` | `bankLabel` | localizedString |  |
-| 224 | `footer.designedIn` | `footer` | `designedIn` | localizedString |  |
-| 225 | `footer.city` | `—` | `—` | code only | interface text, src/dictionaries (pl: pl-overrides.ts); not in Sanity (2026-11-09) |
-| 226 | `meta.title` | `siteSettings` | `defaultSeo.title` | localizedString | tj 2026-09-30 (C1): Site settings default SEO |
-| 227 | `meta.description` | `siteSettings` | `defaultSeo.description` | localizedText | tj 2026-09-30 (C1): Site settings default SEO |
-| 228 | `adults.meta.title` | `adultsPage` | `seo.title` | localizedString |  |
-| 229 | `adults.meta.description` | `adultsPage` | `seo.description` | localizedText |  |
-| 230 | `adults.hero.headline[0].text` | `adultsPage` | `hero.headline[0].text` | localizedString |  |
-| 231 | `adults.hero.headline[1].text` | `adultsPage` | `hero.headline[1].text` | localizedString |  |
-| 232 | `adults.hero.headline[1].italic` | `adultsPage` | `hero.headline[1].italic` | boolean | styling flag |
-| 233 | `adults.hero.headline[2].text` | `adultsPage` | `hero.headline[2].text` | localizedString |  |
-| 234 | `adults.hero.subtitle` | `adultsPage` | `hero.subtitle` | localizedText | newlines = line breaks |
-| 235 | `adults.hero.cta` | `adultsPage` | `hero.cta` | localizedString |  |
-| 236 | `adults.hero.illustrationAlt` | `adultsPage` | `hero.illustrationAlt` | localizedString |  |
-| 237 | `adults.testimonial.quote` | `adultsPage` | `testimonial.quote` | localizedText |  |
-| 238 | `adults.testimonial.author` | `adultsPage` | `testimonial.author` | string | proper noun, not translated |
-| 239 | `adults.testimonial.role` | `adultsPage` | `testimonial.role` | localizedString |  |
-| 240 | `adults.testimonial.image` | `adultsPage` | `testimonial.image` | image | path today -> Sanity image asset |
-| 241 | `adults.testimonial.imageAlt` | `adultsPage` | `testimonial.imageAlt` | localizedString |  |
-| 242 | `adults.testimonial.imageKind` | `adultsPage` | `testimonial.imageKind` | string (list: photo|logo) |  |
-| 243 | `adults.help.heading` | `adultsPage` | `help.heading` | localizedString |  |
-| 244 | `adults.help.items[0]` | `adultsPage` | `help.items[0]` | localizedString |  |
-| 245 | `adults.help.items[1]` | `adultsPage` | `help.items[1]` | localizedString |  |
-| 246 | `adults.help.items[2]` | `adultsPage` | `help.items[2]` | localizedString |  |
-| 247 | `adults.help.items[3]` | `adultsPage` | `help.items[3]` | localizedString |  |
-| 248 | `business.meta.title` | `businessPage` | `seo.title` | localizedString |  |
-| 249 | `business.meta.description` | `businessPage` | `seo.description` | localizedText |  |
-| 250 | `business.hero.headline[0].text` | `businessPage` | `hero.headline[0].text` | localizedString |  |
-| 251 | `business.hero.headline[1].text` | `businessPage` | `hero.headline[1].text` | localizedString |  |
-| 252 | `business.hero.headline[1].italic` | `businessPage` | `hero.headline[1].italic` | boolean | styling flag |
-| 253 | `business.hero.subtitle` | `businessPage` | `hero.subtitle` | localizedText | newlines = line breaks |
-| 254 | `business.hero.cta` | `businessPage` | `hero.cta` | localizedString |  |
-| 255 | `business.hero.illustrationAlt` | `businessPage` | `hero.illustrationAlt` | localizedString |  |
-| 256 | `business.testimonial.quote` | `businessPage` | `testimonial.quote` | localizedText |  |
-| 257 | `business.testimonial.author` | `businessPage` | `testimonial.author` | string | proper noun, not translated |
-| 258 | `business.testimonial.role` | `businessPage` | `testimonial.role` | localizedString |  |
-| 259 | `business.testimonial.image` | `businessPage` | `testimonial.image` | image | path today -> Sanity image asset |
-| 260 | `business.testimonial.imageAlt` | `businessPage` | `testimonial.imageAlt` | localizedString |  |
-| 261 | `business.testimonial.imageKind` | `businessPage` | `testimonial.imageKind` | string (list: photo|logo) |  |
-| 262 | `business.help.heading` | `businessPage` | `help.heading` | localizedString |  |
-| 263 | `business.help.items[0]` | `businessPage` | `help.items[0]` | localizedString |  |
-| 264 | `business.help.items[1]` | `businessPage` | `help.items[1]` | localizedString |  |
-| 265 | `business.help.items[2]` | `businessPage` | `help.items[2]` | localizedString |  |
-| 266 | `business.help.items[3]` | `businessPage` | `help.items[3]` | localizedString |  |
-| 267 | `children.meta.title` | `childrenPage` | `seo.title` | localizedString |  |
-| 268 | `children.meta.description` | `childrenPage` | `seo.description` | localizedText |  |
-| 269 | `children.hero.headline[0].text` | `childrenPage` | `hero.headline[0].text` | localizedString |  |
-| 270 | `children.hero.headline[1].text` | `childrenPage` | `hero.headline[1].text` | localizedString |  |
-| 271 | `children.hero.headline[2].text` | `childrenPage` | `hero.headline[2].text` | localizedString |  |
-| 272 | `children.hero.headline[2].italic` | `childrenPage` | `hero.headline[2].italic` | boolean | styling flag |
-| 273 | `children.hero.subtitle` | `childrenPage` | `hero.subtitle` | localizedText | newlines = line breaks |
-| 274 | `children.hero.cta` | `childrenPage` | `hero.cta` | localizedString |  |
-| 275 | `children.hero.illustrationAlt` | `childrenPage` | `hero.illustrationAlt` | localizedString |  |
-| 276 | `children.testimonial.quote` | `childrenPage` | `testimonial.quote` | localizedText |  |
-| 277 | `children.testimonial.author` | `childrenPage` | `testimonial.author` | string | proper noun, not translated |
-| 278 | `children.testimonial.role` | `childrenPage` | `testimonial.role` | localizedString |  |
-| 279 | `children.testimonial.image` | `childrenPage` | `testimonial.image` | image | path today -> Sanity image asset |
-| 280 | `children.testimonial.imageAlt` | `childrenPage` | `testimonial.imageAlt` | localizedString |  |
-| 281 | `children.testimonial.imageKind` | `childrenPage` | `testimonial.imageKind` | string (list: photo|logo) |  |
-| 282 | `children.help.heading` | `childrenPage` | `help.heading` | localizedString |  |
-| 283 | `children.help.items[0]` | `childrenPage` | `help.items[0]` | localizedString |  |
-| 284 | `children.help.items[1]` | `childrenPage` | `help.items[1]` | localizedString |  |
-| 285 | `children.help.items[2]` | `childrenPage` | `help.items[2]` | localizedString |  |
-| 286 | `children.help.items[3]` | `childrenPage` | `help.items[3]` | localizedString |  |
-| 287 | `maths.meta.title` | `mathsPage` | `seo.title` | localizedString |  |
-| 288 | `maths.meta.description` | `mathsPage` | `seo.description` | localizedText |  |
-| 289 | `maths.hero.headline[0].text` | `mathsPage` | `hero.headline[0].text` | localizedString |  |
-| 290 | `maths.hero.headline[1].text` | `mathsPage` | `hero.headline[1].text` | localizedString |  |
-| 291 | `maths.hero.headline[1].italic` | `mathsPage` | `hero.headline[1].italic` | boolean | styling flag |
-| 292 | `maths.hero.headline[2].text` | `mathsPage` | `hero.headline[2].text` | localizedString |  |
-| 293 | `maths.hero.subtitle` | `mathsPage` | `hero.subtitle` | localizedText | newlines = line breaks |
-| 294 | `maths.hero.cta` | `mathsPage` | `hero.cta` | localizedString |  |
-| 295 | `maths.hero.illustrationAlt` | `mathsPage` | `hero.illustrationAlt` | localizedString |  |
-| 296 | `maths.testimonial.quote` | `mathsPage` | `testimonial.quote` | localizedText |  |
-| 297 | `maths.testimonial.author` | `mathsPage` | `testimonial.author` | string | proper noun, not translated |
-| 298 | `maths.testimonial.role` | `mathsPage` | `testimonial.role` | localizedString |  |
-| 299 | `maths.testimonial.image` | `mathsPage` | `testimonial.image` | image | path today -> Sanity image asset |
-| 300 | `maths.testimonial.imageAlt` | `mathsPage` | `testimonial.imageAlt` | localizedString |  |
-| 301 | `maths.testimonial.imageKind` | `mathsPage` | `testimonial.imageKind` | string (list: photo|logo) |  |
-| 302 | `maths.help.heading` | `mathsPage` | `help.heading` | localizedString |  |
-| 303 | `maths.help.items[0]` | `mathsPage` | `help.items[0]` | localizedString |  |
-| 304 | `maths.help.items[1]` | `mathsPage` | `help.items[1]` | localizedString |  |
-| 305 | `maths.help.items[2]` | `mathsPage` | `help.items[2]` | localizedString |  |
-| 306 | `maths.help.items[3]` | `mathsPage` | `help.items[3]` | localizedString |  |
-| 307 | `university.meta.title` | `universityPage` | `seo.title` | localizedString |  |
-| 308 | `university.meta.description` | `universityPage` | `seo.description` | localizedText |  |
-| 309 | `university.hero.headline[0].text` | `universityPage` | `hero.headline[0].text` | localizedString |  |
-| 310 | `university.hero.headline[1].text` | `universityPage` | `hero.headline[1].text` | localizedString |  |
-| 311 | `university.hero.headline[1].italic` | `universityPage` | `hero.headline[1].italic` | boolean | styling flag |
-| 312 | `university.hero.subtitle` | `universityPage` | `hero.subtitle` | localizedText | newlines = line breaks |
-| 313 | `university.hero.cta` | `universityPage` | `hero.cta` | localizedString |  |
-| 314 | `university.hero.illustrationAlt` | `universityPage` | `hero.illustrationAlt` | localizedString |  |
-| 315 | `university.testimonial.quote` | `universityPage` | `testimonial.quote` | localizedText |  |
-| 316 | `university.testimonial.author` | `universityPage` | `testimonial.author` | string | proper noun, not translated |
-| 317 | `university.testimonial.role` | `universityPage` | `testimonial.role` | localizedString |  |
-| 318 | `university.testimonial.image` | `universityPage` | `testimonial.image` | image | path today -> Sanity image asset |
-| 319 | `university.testimonial.imageAlt` | `universityPage` | `testimonial.imageAlt` | localizedString |  |
-| 320 | `university.testimonial.imageKind` | `universityPage` | `testimonial.imageKind` | string (list: photo|logo) |  |
-| 321 | `university.help.heading` | `universityPage` | `help.heading` | localizedString |  |
-| 322 | `university.help.items[0]` | `universityPage` | `help.items[0]` | localizedString |  |
-| 323 | `university.help.items[1]` | `universityPage` | `help.items[1]` | localizedString |  |
-| 324 | `university.help.items[2]` | `universityPage` | `help.items[2]` | localizedString |  |
-| 325 | `university.help.items[3]` | `universityPage` | `help.items[3]` | localizedString |  |
-| 326 | `phoneFloat.label` | `—` | `—` | code only | interface text, src/dictionaries (pl: pl-overrides.ts); not in Sanity (2026-11-09) |
-| 327 | `phoneFloat.call` | `—` | `—` | code only | interface text, src/dictionaries (pl: pl-overrides.ts); not in Sanity (2026-11-09) |
-| 328 | `phoneFloat.sms` | `—` | `—` | code only | interface text, src/dictionaries (pl: pl-overrides.ts); not in Sanity (2026-11-09) |
-| 329 | `languageSwitcher.pl` | `header` | `languageSwitcher.pl` | string | tj 2026-09-30 (D1): Header; not rendered yet, Header.tsx stays hard-coded |
-| 330 | `languageSwitcher.en` | `header` | `languageSwitcher.en` | string | tj 2026-09-30 (D1): Header; not rendered yet, Header.tsx stays hard-coded |
+| 28 | `trustBar.bbcLogoAlt` | `—` | `—` | code only | interface text, src/dictionaries (pl: pl-overrides.ts); not in Sanity (2026-11-09) |
+| 29 | `trustBar.cambridgeLogoAlt` | `—` | `—` | code only | interface text, src/dictionaries (pl: pl-overrides.ts); not in Sanity (2026-11-09) |
+| 30 | `trustBar.audioTitle` | `—` | `—` | code only | interface text, src/dictionaries (pl: pl-overrides.ts); not in Sanity (2026-11-09) |
+| 31 | `trustBar.badges[0].heading` | `homepage` | `trustBar.badges[0].heading` | localizedString | tj 2026-09-30 (A1): Homepage tab |
+| 32 | `trustBar.badges[0].cta` | `homepage` | `trustBar.badges[0].cta` | localizedString | tj 2026-09-30 (A1): Homepage tab |
+| 33 | `trustBar.badges[1].heading` | `homepage` | `trustBar.badges[1].heading` | localizedString | tj 2026-09-30 (A1): Homepage tab |
+| 34 | `trustBar.badges[1].description` | `homepage` | `trustBar.badges[1].description` | localizedString | tj 2026-09-30 (A1): Homepage tab |
+| 35 | `about.heading` | `homepage` | `about.heading` | localizedString |  |
+| 36 | `about.body` | `homepage` | `about.body` | localizedText |  |
+| 37 | `about.cta` | `homepage` | `about.cta` | localizedString |  |
+| 38 | `about.imageAlt` | `homepage` | `about.imageAlt` | localizedString |  |
+| 39 | `about.closeVideo` | `—` | `—` | code only | interface text, src/dictionaries (pl: pl-overrides.ts); not in Sanity (2026-11-09) |
+| 40 | `about.videoUrl` | `homepage` | `about.videoUrl` | url | empty -> the CTA is not rendered (Anthony 2026-10-07) |
+| 41 | `whoWeTeach.label` | `homepage` | `whoWeTeach.label` | localizedString |  |
+| 42 | `whoWeTeach.heading` | `homepage` | `whoWeTeach.heading` | localizedString |  |
+| 43 | `whoWeTeach.categories[0].name` | `homepage` | `whoWeTeach.categories[0].name` | localizedString |  |
+| 44 | `whoWeTeach.categories[0].href` | `homepage` | `whoWeTeach.categories[0].href` | string | route, not translated |
+| 45 | `whoWeTeach.categories[0].description` | `homepage` | `whoWeTeach.categories[0].description` | localizedString |  |
+| 46 | `whoWeTeach.categories[1].name` | `homepage` | `whoWeTeach.categories[1].name` | localizedString |  |
+| 47 | `whoWeTeach.categories[1].href` | `homepage` | `whoWeTeach.categories[1].href` | string | route, not translated |
+| 48 | `whoWeTeach.categories[1].description` | `homepage` | `whoWeTeach.categories[1].description` | localizedString |  |
+| 49 | `whoWeTeach.categories[2].name` | `homepage` | `whoWeTeach.categories[2].name` | localizedString |  |
+| 50 | `whoWeTeach.categories[2].href` | `homepage` | `whoWeTeach.categories[2].href` | string | route, not translated |
+| 51 | `whoWeTeach.categories[2].description` | `homepage` | `whoWeTeach.categories[2].description` | localizedString |  |
+| 52 | `whoWeTeach.categories[3].name` | `homepage` | `whoWeTeach.categories[3].name` | localizedString |  |
+| 53 | `whoWeTeach.categories[3].href` | `homepage` | `whoWeTeach.categories[3].href` | string | route, not translated |
+| 54 | `whoWeTeach.categories[3].description` | `homepage` | `whoWeTeach.categories[3].description` | localizedString |  |
+| 55 | `whoWeTeach.categories[4].name` | `homepage` | `whoWeTeach.categories[4].name` | localizedString |  |
+| 56 | `whoWeTeach.categories[4].href` | `homepage` | `whoWeTeach.categories[4].href` | string | route, not translated |
+| 57 | `whoWeTeach.categories[4].description` | `homepage` | `whoWeTeach.categories[4].description` | localizedString |  |
+| 58 | `teachers.label` | `homepage` | `teachersSection.label` | localizedString | section heading; people live in `teacher` docs |
+| 59 | `teachers.heading` | `homepage` | `teachersSection.heading` | localizedString | section heading; people live in `teacher` docs |
+| 60 | `teachers.watchIntro` | `—` | `—` | code only | interface text, src/dictionaries (pl: pl-overrides.ts); not in Sanity (2026-11-09) |
+| 61 | `teachers.closeVideo` | `—` | `—` | code only | interface text, src/dictionaries (pl: pl-overrides.ts); not in Sanity (2026-11-09) |
+| 62 | `teachers.list[0].name` | `teacher` | `[doc 0].name` | string | proper noun, not translated |
+| 63 | `teachers.list[0].credential` | `teacher` | `[doc 0].credential` | localizedString |  |
+| 64 | `teachers.list[0].bio` | `teacher` | `[doc 0].bio` | localizedText |  |
+| 65 | `teachers.list[0].image` | `teacher` | `[doc 0].image` | image | path today -> Sanity image asset (NCT-3.04, B2) |
+| 66 | `teachers.list[0].videoUrl` | `teacher` | `[doc 0].videoUrl` | url | empty -> no “Watch intro” on that card |
+| 67 | `teachers.list[1].name` | `teacher` | `[doc 1].name` | string | proper noun, not translated |
+| 68 | `teachers.list[1].credential` | `teacher` | `[doc 1].credential` | localizedString |  |
+| 69 | `teachers.list[1].bio` | `teacher` | `[doc 1].bio` | localizedText |  |
+| 70 | `teachers.list[1].image` | `teacher` | `[doc 1].image` | image | path today -> Sanity image asset (NCT-3.04, B2) |
+| 71 | `teachers.list[1].videoUrl` | `teacher` | `[doc 1].videoUrl` | url | empty -> no “Watch intro” on that card |
+| 72 | `teachers.list[2].name` | `teacher` | `[doc 2].name` | string | proper noun, not translated |
+| 73 | `teachers.list[2].credential` | `teacher` | `[doc 2].credential` | localizedString |  |
+| 74 | `teachers.list[2].bio` | `teacher` | `[doc 2].bio` | localizedText |  |
+| 75 | `teachers.list[2].image` | `teacher` | `[doc 2].image` | image | path today -> Sanity image asset (NCT-3.04, B2) |
+| 76 | `teachers.list[2].videoUrl` | `teacher` | `[doc 2].videoUrl` | url | empty -> no “Watch intro” on that card |
+| 77 | `testimonials.label` | `homepage` | `testimonialsSection.label` | localizedString | section heading; quotes are hard-coded -> deferred |
+| 78 | `testimonials.heading` | `homepage` | `testimonialsSection.heading` | localizedString | section heading; quotes are hard-coded -> deferred |
+| 79 | `testimonials.list[0].quote` | `testimonial` | `[doc 0].quote` | localizedText |  |
+| 80 | `testimonials.list[0].author` | `testimonial` | `[doc 0].author` | string | proper noun, not translated |
+| 81 | `testimonials.list[0].role` | `testimonial` | `[doc 0].role` | localizedString |  |
+| 82 | `testimonials.list[0].image` | `testimonial` | `[doc 0].image` | image | path today -> Sanity image asset |
+| 83 | `testimonials.list[1].quote` | `testimonial` | `[doc 1].quote` | localizedText |  |
+| 84 | `testimonials.list[1].author` | `testimonial` | `[doc 1].author` | string | proper noun, not translated |
+| 85 | `testimonials.list[1].role` | `testimonial` | `[doc 1].role` | localizedString |  |
+| 86 | `testimonials.list[1].image` | `testimonial` | `[doc 1].image` | image | path today -> Sanity image asset |
+| 87 | `testimonials.list[2].quote` | `testimonial` | `[doc 2].quote` | localizedText |  |
+| 88 | `testimonials.list[2].author` | `testimonial` | `[doc 2].author` | string | proper noun, not translated |
+| 89 | `testimonials.list[2].role` | `testimonial` | `[doc 2].role` | localizedString |  |
+| 90 | `testimonials.list[2].image` | `testimonial` | `[doc 2].image` | image | path today -> Sanity image asset |
+| 91 | `pricing.label` | `homepage` | `pricing.label` | localizedString | tj 2026-09-30 (A1): Homepage tab |
+| 92 | `pricing.heading` | `homepage` | `pricing.heading` | localizedString | tj 2026-09-30 (A1): Homepage tab |
+| 93 | `pricing.freePrice` | `homepage` | `pricing.freePrice` | localizedString | tj 2026-09-30 (A1): Homepage tab |
+| 94 | `pricing.freeDesc` | `homepage` | `pricing.freeDesc` | localizedString | tj 2026-09-30 (A1): Homepage tab |
+| 95 | `pricing.freeCta` | `homepage` | `pricing.freeCta` | localizedString | tj 2026-09-30 (A1): Homepage tab |
+| 96 | `pricing.price` | `homepage` | `pricing.price` | localizedString | tj 2026-09-30 (A1): Homepage tab |
+| 97 | `pricing.priceDesc` | `homepage` | `pricing.priceDesc` | localizedString | tj 2026-09-30 (A1): Homepage tab |
+| 98 | `booking.label` | `formsAndBooking` | `bookingModal.label` | localizedString | tj 2026-09-30 (B2): Forms & booking; global modal |
+| 99 | `booking.heading` | `formsAndBooking` | `bookingModal.heading` | localizedText | tj 2026-09-30 (B2): Forms & booking; global modal |
+| 100 | `booking.body` | `formsAndBooking` | `bookingModal.body` | localizedText | tj 2026-09-30 (B2): Forms & booking; global modal |
+| 101 | `booking.locationNote` | `formsAndBooking` | `bookingModal.locationNote` | localizedText | tj 2026-09-30 (B2): Forms & booking; global modal |
+| 102 | `booking.namePlaceholder` | `formsAndBooking` | `bookingModal.namePlaceholder` | localizedString | tj 2026-09-30 (B2): Forms & booking; global modal |
+| 103 | `booking.emailPlaceholder` | `formsAndBooking` | `bookingModal.emailPlaceholder` | localizedString | tj 2026-09-30 (B2): Forms & booking; global modal |
+| 104 | `booking.phonePlaceholder` | `formsAndBooking` | `bookingModal.phonePlaceholder` | localizedString | tj 2026-09-30 (B2): Forms & booking; global modal |
+| 105 | `booking.inPerson` | `formsAndBooking` | `bookingModal.inPerson` | localizedString | tj 2026-09-30 (B2): Forms & booking; global modal |
+| 106 | `booking.online` | `formsAndBooking` | `bookingModal.online` | localizedString | tj 2026-09-30 (B2): Forms & booking; global modal |
+| 107 | `booking.messagePlaceholder` | `formsAndBooking` | `bookingModal.messagePlaceholder` | localizedString | tj 2026-09-30 (B2): Forms & booking; global modal |
+| 108 | `booking.submitCta` | `formsAndBooking` | `bookingModal.submitCta` | localizedString | tj 2026-09-30 (B2): Forms & booking; global modal |
+| 109 | `booking.modalHeading` | `formsAndBooking` | `bookingModal.modalHeading` | localizedString | tj 2026-09-30 (B2): Forms & booking; global modal |
+| 110 | `contactForm.heading` | `formsAndBooking` | `contactForm.heading` | localizedString | tj 2026-09-30 (B2): Forms & booking; all 7 pages |
+| 111 | `contactForm.namePlaceholder` | `formsAndBooking` | `contactForm.namePlaceholder` | localizedString | tj 2026-09-30 (B2): Forms & booking; all 7 pages |
+| 112 | `contactForm.emailPlaceholder` | `formsAndBooking` | `contactForm.emailPlaceholder` | localizedString | tj 2026-09-30 (B2): Forms & booking; all 7 pages |
+| 113 | `contactForm.phonePlaceholder` | `formsAndBooking` | `contactForm.phonePlaceholder` | localizedString | tj 2026-09-30 (B2): Forms & booking; all 7 pages |
+| 114 | `contactForm.messagePlaceholder` | `formsAndBooking` | `contactForm.messagePlaceholder` | localizedString | tj 2026-09-30 (B2): Forms & booking; all 7 pages |
+| 115 | `contactForm.consent` | `formsAndBooking` | `contactForm.consent` | localizedText | tj 2026-09-30 (B2): Forms & booking; all 7 pages |
+| 116 | `contactForm.submitCta` | `formsAndBooking` | `contactForm.submitCta` | localizedString | tj 2026-09-30 (B2): Forms & booking; all 7 pages |
+| 117 | `contactForm.sendingCta` | `formsAndBooking` | `contactForm.sendingCta` | localizedString | tj 2026-09-30 (B2): Forms & booking; all 7 pages |
+| 118 | `contactForm.successMessage` | `formsAndBooking` | `contactForm.successMessage` | localizedString | tj 2026-09-30 (B2): Forms & booking; all 7 pages |
+| 119 | `contactForm.errorMessage` | `formsAndBooking` | `contactForm.errorMessage` | localizedString | tj 2026-09-30 (B2): Forms & booking; all 7 pages |
+| 120 | `contactForm.phoneLabel` | `—` | `—` | code only | interface text, src/dictionaries (pl: pl-overrides.ts); not in Sanity (2026-11-09) |
+| 121 | `contactForm.emailLabel` | `—` | `—` | code only | interface text, src/dictionaries (pl: pl-overrides.ts); not in Sanity (2026-11-09) |
+| 122 | `map.label` | `homepage` | `mapSection.label` | localizedString | tj 2026-09-30 (A1): Homepage tab |
+| 123 | `map.heading` | `homepage` | `mapSection.heading` | localizedString | tj 2026-09-30 (A1): Homepage tab |
+| 124 | `map.mapTitle` | `—` | `—` | code only | interface text, src/dictionaries (pl: pl-overrides.ts); not in Sanity (2026-11-09) |
+| 125 | `map.description` | `homepage` | `mapSection.description` | localizedText | tj 2026-09-30 (A1): Homepage tab |
+| 126 | `faq.label` | `faqPage` | `label` | localizedString |  |
+| 127 | `faq.heading` | `faqPage` | `heading` | localizedString |  |
+| 128 | `faq.meta.title` | `faqPage` | `seo.title` | localizedString |  |
+| 129 | `faq.meta.description` | `faqPage` | `seo.description` | localizedText |  |
+| 130 | `faq.items[0].question` | `faqPage` | `items[0].question` | localizedString |  |
+| 131 | `faq.items[0].answer` | `faqPage` | `items[0].answer` | localizedText |  |
+| 132 | `faq.items[1].question` | `faqPage` | `items[1].question` | localizedString |  |
+| 133 | `faq.items[1].answer` | `faqPage` | `items[1].answer` | localizedText |  |
+| 134 | `faq.items[2].question` | `faqPage` | `items[2].question` | localizedString |  |
+| 135 | `faq.items[2].answer` | `faqPage` | `items[2].answer` | localizedText |  |
+| 136 | `faq.items[3].question` | `faqPage` | `items[3].question` | localizedString |  |
+| 137 | `faq.items[3].answer` | `faqPage` | `items[3].answer` | localizedText |  |
+| 138 | `faq.items[4].question` | `faqPage` | `items[4].question` | localizedString |  |
+| 139 | `faq.items[4].answer` | `faqPage` | `items[4].answer` | localizedText |  |
+| 140 | `faq.items[5].question` | `faqPage` | `items[5].question` | localizedString |  |
+| 141 | `faq.items[5].answer` | `faqPage` | `items[5].answer` | localizedText |  |
+| 142 | `faq.items[6].question` | `faqPage` | `items[6].question` | localizedString |  |
+| 143 | `faq.items[6].answer` | `faqPage` | `items[6].answer` | localizedText |  |
+| 144 | `faq.items[7].question` | `faqPage` | `items[7].question` | localizedString |  |
+| 145 | `faq.items[7].answer` | `faqPage` | `items[7].answer` | localizedText |  |
+| 146 | `faq.items[8].question` | `faqPage` | `items[8].question` | localizedString |  |
+| 147 | `faq.items[8].answer` | `faqPage` | `items[8].answer` | localizedText |  |
+| 148 | `faq.items[9].question` | `faqPage` | `items[9].question` | localizedString |  |
+| 149 | `faq.items[9].answer` | `faqPage` | `items[9].answer` | localizedText |  |
+| 150 | `faq.items[10].question` | `faqPage` | `items[10].question` | localizedString |  |
+| 151 | `faq.items[10].answer` | `faqPage` | `items[10].answer` | localizedText |  |
+| 152 | `faq.items[11].question` | `faqPage` | `items[11].question` | localizedString |  |
+| 153 | `faq.items[11].answer` | `faqPage` | `items[11].answer` | localizedText |  |
+| 154 | `faq.items[12].question` | `faqPage` | `items[12].question` | localizedString |  |
+| 155 | `faq.items[12].answer` | `faqPage` | `items[12].answer` | localizedText |  |
+| 156 | `faq.items[13].question` | `faqPage` | `items[13].question` | localizedString |  |
+| 157 | `faq.items[13].answer` | `faqPage` | `items[13].answer` | localizedText |  |
+| 158 | `faq.items[14].question` | `faqPage` | `items[14].question` | localizedString |  |
+| 159 | `faq.items[14].answer` | `faqPage` | `items[14].answer` | localizedText |  |
+| 160 | `faq.items[15].question` | `faqPage` | `items[15].question` | localizedString |  |
+| 161 | `faq.items[15].answer` | `faqPage` | `items[15].answer` | localizedText |  |
+| 162 | `faq.items[16].question` | `faqPage` | `items[16].question` | localizedString |  |
+| 163 | `faq.items[16].answer` | `faqPage` | `items[16].answer` | localizedText |  |
+| 164 | `faq.items[17].question` | `faqPage` | `items[17].question` | localizedString |  |
+| 165 | `faq.items[17].answer` | `faqPage` | `items[17].answer` | localizedText |  |
+| 166 | `faq.items[18].question` | `faqPage` | `items[18].question` | localizedString |  |
+| 167 | `faq.items[18].answer` | `faqPage` | `items[18].answer` | localizedText |  |
+| 168 | `faq.items[19].question` | `faqPage` | `items[19].question` | localizedString |  |
+| 169 | `faq.items[19].answer` | `faqPage` | `items[19].answer` | localizedText |  |
+| 170 | `faq.items[20].question` | `faqPage` | `items[20].question` | localizedString |  |
+| 171 | `faq.items[20].answer` | `faqPage` | `items[20].answer` | localizedText |  |
+| 172 | `faq.items[21].question` | `faqPage` | `items[21].question` | localizedString |  |
+| 173 | `faq.items[21].answer` | `faqPage` | `items[21].answer` | localizedText |  |
+| 174 | `faq.items[22].question` | `faqPage` | `items[22].question` | localizedString |  |
+| 175 | `faq.items[22].answer` | `faqPage` | `items[22].answer` | localizedText |  |
+| 176 | `faq.items[23].question` | `faqPage` | `items[23].question` | localizedString |  |
+| 177 | `faq.items[23].answer` | `faqPage` | `items[23].answer` | localizedText |  |
+| 178 | `faq.items[24].question` | `faqPage` | `items[24].question` | localizedString |  |
+| 179 | `faq.items[24].answer` | `faqPage` | `items[24].answer` | localizedText |  |
+| 180 | `faq.items[25].question` | `faqPage` | `items[25].question` | localizedString |  |
+| 181 | `faq.items[25].answer` | `faqPage` | `items[25].answer` | localizedText |  |
+| 182 | `faq.items[26].question` | `faqPage` | `items[26].question` | localizedString |  |
+| 183 | `faq.items[26].answer` | `faqPage` | `items[26].answer` | localizedText |  |
+| 184 | `faq.items[27].question` | `faqPage` | `items[27].question` | localizedString |  |
+| 185 | `faq.items[27].answer` | `faqPage` | `items[27].answer` | localizedText |  |
+| 186 | `faq.items[28].question` | `faqPage` | `items[28].question` | localizedString |  |
+| 187 | `faq.items[28].answer` | `faqPage` | `items[28].answer` | localizedText |  |
+| 188 | `faq.items[29].question` | `faqPage` | `items[29].question` | localizedString |  |
+| 189 | `faq.items[29].answer` | `faqPage` | `items[29].answer` | localizedText |  |
+| 190 | `faq.items[30].question` | `faqPage` | `items[30].question` | localizedString |  |
+| 191 | `faq.items[30].answer` | `faqPage` | `items[30].answer` | localizedText |  |
+| 192 | `faq.items[31].question` | `faqPage` | `items[31].question` | localizedString |  |
+| 193 | `faq.items[31].answer` | `faqPage` | `items[31].answer` | localizedText |  |
+| 194 | `faq.items[32].question` | `faqPage` | `items[32].question` | localizedString |  |
+| 195 | `faq.items[32].answer` | `faqPage` | `items[32].answer` | localizedText |  |
+| 196 | `faq.items[33].question` | `faqPage` | `items[33].question` | localizedString |  |
+| 197 | `faq.items[33].answer` | `faqPage` | `items[33].answer` | localizedText |  |
+| 198 | `faq.items[34].question` | `faqPage` | `items[34].question` | localizedString |  |
+| 199 | `faq.items[34].answer` | `faqPage` | `items[34].answer` | localizedText |  |
+| 200 | `faq.items[35].question` | `faqPage` | `items[35].question` | localizedString |  |
+| 201 | `faq.items[35].answer` | `faqPage` | `items[35].answer` | localizedText |  |
+| 202 | `faq.items[36].question` | `faqPage` | `items[36].question` | localizedString |  |
+| 203 | `faq.items[36].answer` | `faqPage` | `items[36].answer` | localizedText |  |
+| 204 | `faq.items[37].question` | `faqPage` | `items[37].question` | localizedString |  |
+| 205 | `faq.items[37].answer` | `faqPage` | `items[37].answer` | localizedText |  |
+| 206 | `faq.items[38].question` | `faqPage` | `items[38].question` | localizedString |  |
+| 207 | `faq.items[38].answer` | `faqPage` | `items[38].answer` | localizedText |  |
+| 208 | `faq.items[39].question` | `faqPage` | `items[39].question` | localizedString |  |
+| 209 | `faq.items[39].answer` | `faqPage` | `items[39].answer` | localizedText |  |
+| 210 | `faq.items[40].question` | `faqPage` | `items[40].question` | localizedString |  |
+| 211 | `faq.items[40].answer` | `faqPage` | `items[40].answer` | localizedText |  |
+| 212 | `faq.items[41].question` | `faqPage` | `items[41].question` | localizedString |  |
+| 213 | `faq.items[41].answer` | `faqPage` | `items[41].answer` | localizedText |  |
+| 214 | `site.phone` | `siteSettings` | `phone` | string | not translated; footer + contact row + JSON-LD |
+| 215 | `site.email` | `siteSettings` | `email` | string | not translated; footer + contact row + JSON-LD |
+| 216 | `site.address` | `siteSettings` | `address` | string | not translated; footer + contact row + JSON-LD |
+| 217 | `site.nip` | `siteSettings` | `nip` | string | not translated; footer + contact row + JSON-LD |
+| 218 | `site.bankAccount` | `siteSettings` | `bankAccount` | string | not translated; footer + contact row + JSON-LD |
+| 219 | `site.facebook` | `siteSettings` | `facebook` | string | not translated; footer + contact row + JSON-LD |
+| 220 | `site.messenger` | `siteSettings` | `messenger` | string | not translated; footer + contact row + JSON-LD |
+| 221 | `site.instagram` | `siteSettings` | `instagram` | string | not translated; footer + contact row + JSON-LD |
+| 222 | `footer.phoneLabel` | `footer` | `phoneLabel` | localizedString |  |
+| 223 | `footer.emailLabel` | `footer` | `emailLabel` | localizedString |  |
+| 224 | `footer.socialLabel` | `footer` | `socialLabel` | localizedString |  |
+| 225 | `footer.visitLabel` | `footer` | `visitLabel` | localizedString |  |
+| 226 | `footer.nipLabel` | `footer` | `nipLabel` | localizedString |  |
+| 227 | `footer.bankLabel` | `footer` | `bankLabel` | localizedString |  |
+| 228 | `footer.designedIn` | `footer` | `designedIn` | localizedString |  |
+| 229 | `footer.city` | `—` | `—` | code only | interface text, src/dictionaries (pl: pl-overrides.ts); not in Sanity (2026-11-09) |
+| 230 | `meta.title` | `siteSettings` | `defaultSeo.title` | localizedString | tj 2026-09-30 (C1): Site settings default SEO |
+| 231 | `meta.description` | `siteSettings` | `defaultSeo.description` | localizedText | tj 2026-09-30 (C1): Site settings default SEO |
+| 232 | `adults.meta.title` | `adultsPage` | `seo.title` | localizedString |  |
+| 233 | `adults.meta.description` | `adultsPage` | `seo.description` | localizedText |  |
+| 234 | `adults.hero.headline[0].text` | `adultsPage` | `hero.headline[0].text` | localizedString |  |
+| 235 | `adults.hero.headline[1].text` | `adultsPage` | `hero.headline[1].text` | localizedString |  |
+| 236 | `adults.hero.headline[1].italic` | `adultsPage` | `hero.headline[1].italic` | boolean | styling flag |
+| 237 | `adults.hero.headline[2].text` | `adultsPage` | `hero.headline[2].text` | localizedString |  |
+| 238 | `adults.hero.subtitle` | `adultsPage` | `hero.subtitle` | localizedText | newlines = line breaks |
+| 239 | `adults.hero.cta` | `adultsPage` | `hero.cta` | localizedString |  |
+| 240 | `adults.hero.illustrationAlt` | `adultsPage` | `hero.illustrationAlt` | localizedString |  |
+| 241 | `adults.testimonial.quote` | `adultsPage` | `testimonial.quote` | localizedText |  |
+| 242 | `adults.testimonial.author` | `adultsPage` | `testimonial.author` | string | proper noun, not translated |
+| 243 | `adults.testimonial.role` | `adultsPage` | `testimonial.role` | localizedString |  |
+| 244 | `adults.testimonial.image` | `adultsPage` | `testimonial.image` | image | path today -> Sanity image asset |
+| 245 | `adults.testimonial.imageAlt` | `adultsPage` | `testimonial.imageAlt` | localizedString |  |
+| 246 | `adults.testimonial.imageKind` | `adultsPage` | `testimonial.imageKind` | string (list: photo|logo) |  |
+| 247 | `adults.help.heading` | `adultsPage` | `help.heading` | localizedString |  |
+| 248 | `adults.help.items[0]` | `adultsPage` | `help.items[0]` | localizedString |  |
+| 249 | `adults.help.items[1]` | `adultsPage` | `help.items[1]` | localizedString |  |
+| 250 | `adults.help.items[2]` | `adultsPage` | `help.items[2]` | localizedString |  |
+| 251 | `adults.help.items[3]` | `adultsPage` | `help.items[3]` | localizedString |  |
+| 252 | `business.meta.title` | `businessPage` | `seo.title` | localizedString |  |
+| 253 | `business.meta.description` | `businessPage` | `seo.description` | localizedText |  |
+| 254 | `business.hero.headline[0].text` | `businessPage` | `hero.headline[0].text` | localizedString |  |
+| 255 | `business.hero.headline[1].text` | `businessPage` | `hero.headline[1].text` | localizedString |  |
+| 256 | `business.hero.headline[1].italic` | `businessPage` | `hero.headline[1].italic` | boolean | styling flag |
+| 257 | `business.hero.subtitle` | `businessPage` | `hero.subtitle` | localizedText | newlines = line breaks |
+| 258 | `business.hero.cta` | `businessPage` | `hero.cta` | localizedString |  |
+| 259 | `business.hero.illustrationAlt` | `businessPage` | `hero.illustrationAlt` | localizedString |  |
+| 260 | `business.testimonial.quote` | `businessPage` | `testimonial.quote` | localizedText |  |
+| 261 | `business.testimonial.author` | `businessPage` | `testimonial.author` | string | proper noun, not translated |
+| 262 | `business.testimonial.role` | `businessPage` | `testimonial.role` | localizedString |  |
+| 263 | `business.testimonial.image` | `businessPage` | `testimonial.image` | image | path today -> Sanity image asset |
+| 264 | `business.testimonial.imageAlt` | `businessPage` | `testimonial.imageAlt` | localizedString |  |
+| 265 | `business.testimonial.imageKind` | `businessPage` | `testimonial.imageKind` | string (list: photo|logo) |  |
+| 266 | `business.help.heading` | `businessPage` | `help.heading` | localizedString |  |
+| 267 | `business.help.items[0]` | `businessPage` | `help.items[0]` | localizedString |  |
+| 268 | `business.help.items[1]` | `businessPage` | `help.items[1]` | localizedString |  |
+| 269 | `business.help.items[2]` | `businessPage` | `help.items[2]` | localizedString |  |
+| 270 | `business.help.items[3]` | `businessPage` | `help.items[3]` | localizedString |  |
+| 271 | `children.meta.title` | `childrenPage` | `seo.title` | localizedString |  |
+| 272 | `children.meta.description` | `childrenPage` | `seo.description` | localizedText |  |
+| 273 | `children.hero.headline[0].text` | `childrenPage` | `hero.headline[0].text` | localizedString |  |
+| 274 | `children.hero.headline[1].text` | `childrenPage` | `hero.headline[1].text` | localizedString |  |
+| 275 | `children.hero.headline[2].text` | `childrenPage` | `hero.headline[2].text` | localizedString |  |
+| 276 | `children.hero.headline[2].italic` | `childrenPage` | `hero.headline[2].italic` | boolean | styling flag |
+| 277 | `children.hero.subtitle` | `childrenPage` | `hero.subtitle` | localizedText | newlines = line breaks |
+| 278 | `children.hero.cta` | `childrenPage` | `hero.cta` | localizedString |  |
+| 279 | `children.hero.illustrationAlt` | `childrenPage` | `hero.illustrationAlt` | localizedString |  |
+| 280 | `children.testimonial.quote` | `childrenPage` | `testimonial.quote` | localizedText |  |
+| 281 | `children.testimonial.author` | `childrenPage` | `testimonial.author` | string | proper noun, not translated |
+| 282 | `children.testimonial.role` | `childrenPage` | `testimonial.role` | localizedString |  |
+| 283 | `children.testimonial.image` | `childrenPage` | `testimonial.image` | image | path today -> Sanity image asset |
+| 284 | `children.testimonial.imageAlt` | `childrenPage` | `testimonial.imageAlt` | localizedString |  |
+| 285 | `children.testimonial.imageKind` | `childrenPage` | `testimonial.imageKind` | string (list: photo|logo) |  |
+| 286 | `children.help.heading` | `childrenPage` | `help.heading` | localizedString |  |
+| 287 | `children.help.items[0]` | `childrenPage` | `help.items[0]` | localizedString |  |
+| 288 | `children.help.items[1]` | `childrenPage` | `help.items[1]` | localizedString |  |
+| 289 | `children.help.items[2]` | `childrenPage` | `help.items[2]` | localizedString |  |
+| 290 | `children.help.items[3]` | `childrenPage` | `help.items[3]` | localizedString |  |
+| 291 | `maths.meta.title` | `mathsPage` | `seo.title` | localizedString |  |
+| 292 | `maths.meta.description` | `mathsPage` | `seo.description` | localizedText |  |
+| 293 | `maths.hero.headline[0].text` | `mathsPage` | `hero.headline[0].text` | localizedString |  |
+| 294 | `maths.hero.headline[1].text` | `mathsPage` | `hero.headline[1].text` | localizedString |  |
+| 295 | `maths.hero.headline[1].italic` | `mathsPage` | `hero.headline[1].italic` | boolean | styling flag |
+| 296 | `maths.hero.headline[2].text` | `mathsPage` | `hero.headline[2].text` | localizedString |  |
+| 297 | `maths.hero.subtitle` | `mathsPage` | `hero.subtitle` | localizedText | newlines = line breaks |
+| 298 | `maths.hero.cta` | `mathsPage` | `hero.cta` | localizedString |  |
+| 299 | `maths.hero.illustrationAlt` | `mathsPage` | `hero.illustrationAlt` | localizedString |  |
+| 300 | `maths.testimonial.quote` | `mathsPage` | `testimonial.quote` | localizedText |  |
+| 301 | `maths.testimonial.author` | `mathsPage` | `testimonial.author` | string | proper noun, not translated |
+| 302 | `maths.testimonial.role` | `mathsPage` | `testimonial.role` | localizedString |  |
+| 303 | `maths.testimonial.image` | `mathsPage` | `testimonial.image` | image | path today -> Sanity image asset |
+| 304 | `maths.testimonial.imageAlt` | `mathsPage` | `testimonial.imageAlt` | localizedString |  |
+| 305 | `maths.testimonial.imageKind` | `mathsPage` | `testimonial.imageKind` | string (list: photo|logo) |  |
+| 306 | `maths.help.heading` | `mathsPage` | `help.heading` | localizedString |  |
+| 307 | `maths.help.items[0]` | `mathsPage` | `help.items[0]` | localizedString |  |
+| 308 | `maths.help.items[1]` | `mathsPage` | `help.items[1]` | localizedString |  |
+| 309 | `maths.help.items[2]` | `mathsPage` | `help.items[2]` | localizedString |  |
+| 310 | `maths.help.items[3]` | `mathsPage` | `help.items[3]` | localizedString |  |
+| 311 | `university.meta.title` | `universityPage` | `seo.title` | localizedString |  |
+| 312 | `university.meta.description` | `universityPage` | `seo.description` | localizedText |  |
+| 313 | `university.hero.headline[0].text` | `universityPage` | `hero.headline[0].text` | localizedString |  |
+| 314 | `university.hero.headline[1].text` | `universityPage` | `hero.headline[1].text` | localizedString |  |
+| 315 | `university.hero.headline[1].italic` | `universityPage` | `hero.headline[1].italic` | boolean | styling flag |
+| 316 | `university.hero.subtitle` | `universityPage` | `hero.subtitle` | localizedText | newlines = line breaks |
+| 317 | `university.hero.cta` | `universityPage` | `hero.cta` | localizedString |  |
+| 318 | `university.hero.illustrationAlt` | `universityPage` | `hero.illustrationAlt` | localizedString |  |
+| 319 | `university.testimonial.quote` | `universityPage` | `testimonial.quote` | localizedText |  |
+| 320 | `university.testimonial.author` | `universityPage` | `testimonial.author` | string | proper noun, not translated |
+| 321 | `university.testimonial.role` | `universityPage` | `testimonial.role` | localizedString |  |
+| 322 | `university.testimonial.image` | `universityPage` | `testimonial.image` | image | path today -> Sanity image asset |
+| 323 | `university.testimonial.imageAlt` | `universityPage` | `testimonial.imageAlt` | localizedString |  |
+| 324 | `university.testimonial.imageKind` | `universityPage` | `testimonial.imageKind` | string (list: photo|logo) |  |
+| 325 | `university.help.heading` | `universityPage` | `help.heading` | localizedString |  |
+| 326 | `university.help.items[0]` | `universityPage` | `help.items[0]` | localizedString |  |
+| 327 | `university.help.items[1]` | `universityPage` | `help.items[1]` | localizedString |  |
+| 328 | `university.help.items[2]` | `universityPage` | `help.items[2]` | localizedString |  |
+| 329 | `university.help.items[3]` | `universityPage` | `help.items[3]` | localizedString |  |
+| 330 | `phoneFloat.label` | `—` | `—` | code only | interface text, src/dictionaries (pl: pl-overrides.ts); not in Sanity (2026-11-09) |
+| 331 | `phoneFloat.call` | `—` | `—` | code only | interface text, src/dictionaries (pl: pl-overrides.ts); not in Sanity (2026-11-09) |
+| 332 | `phoneFloat.sms` | `—` | `—` | code only | interface text, src/dictionaries (pl: pl-overrides.ts); not in Sanity (2026-11-09) |
+| 333 | `languageSwitcher.pl` | `header` | `languageSwitcher.pl` | string | tj 2026-09-30 (D1): Header; not rendered yet, Header.tsx stays hard-coded |
+| 334 | `languageSwitcher.en` | `header` | `languageSwitcher.en` | string | tj 2026-09-30 (D1): Header; not rendered yet, Header.tsx stays hard-coded |

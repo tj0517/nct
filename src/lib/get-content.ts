@@ -301,6 +301,10 @@ export async function getContent(locale: Locale): Promise<Dictionary> {
     // The two badges have different shapes in `en.json` (one has a link, the
     // other a description); each keeps the shape of its fallback.
     trustBar: {
+      // Accessible names with no Sanity field.
+      bbcLogoAlt: fb.trustBar.bbcLogoAlt,
+      cambridgeLogoAlt: fb.trustBar.cambridgeLogoAlt,
+      audioTitle: fb.trustBar.audioTitle,
       badges: list(home?.trustBar?.badges, fb.trustBar.badges, (badge, f): Badge => {
         const heading = t(badge?.heading, locale, f?.heading ?? "");
         if (f?.cta !== undefined) return { heading, cta: t(badge?.cta, locale, f.cta) };
@@ -405,6 +409,7 @@ export async function getContent(locale: Locale): Promise<Dictionary> {
       label: t(home?.mapSection?.label, locale, fb.map.label),
       heading: t(home?.mapSection?.heading, locale, fb.map.heading),
       description: t(home?.mapSection?.description, locale, fb.map.description),
+      mapTitle: fb.map.mapTitle,
     },
 
     // The school's own contact details — one source for the footer, the icon

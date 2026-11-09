@@ -22,7 +22,7 @@ declare global {
   }
 }
 
-export default function SoundCloudEmbed({ ctaLabel }: { ctaLabel: string }) {
+export default function SoundCloudEmbed({ ctaLabel, title }: { ctaLabel: string; title: string }) {
   const [open, setOpen] = useState(false);
   const iframeRef = useRef<HTMLIFrameElement>(null);
 
@@ -57,7 +57,7 @@ export default function SoundCloudEmbed({ ctaLabel }: { ctaLabel: string }) {
   return (
     <iframe
       ref={iframeRef}
-      title="Anthony on BBC Radio 4 — Brits Abroad"
+      title={title}
       width="100%"
       height="166"
       allow="autoplay"
